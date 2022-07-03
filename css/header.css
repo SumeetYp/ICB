@@ -107,8 +107,6 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: #D9D9D9; */
-    background: url('../cross.png');
     cursor: pointer;
     display: none;
     z-index: 1;
