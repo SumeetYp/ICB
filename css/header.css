@@ -54,15 +54,15 @@ nav {
 .sideBar {
     position: absolute;
     top: 0;
-    left: -22vw;
-    width: 22vw;
+    left: -22.2vw;
+    width: 22.2vw;
     background-color: #fff;
     transition: 0.5s linear;
 }
 
 .sideItems {
     position: fixed;
-    width: 22vw;
+    width: 22.2vw;
     max-height: 100vh;
     margin: 0;
     background-color: #fff;
