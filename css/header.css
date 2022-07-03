@@ -39,8 +39,8 @@ nav {
 
 .check {
     position: absolute;
-    bottom: -0.9vh;
-    right: -0.9vw;
+    bottom: -20%;
+    right: -20%;
     width: 45%;
 }
 
