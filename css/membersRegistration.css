@@ -51,8 +51,9 @@ textarea{
     border-radius: 10px;
 }
 .f-name{
+    display: flex;
     width: 36.7%;
-
+    flex-wrap: wrap;
 }
 .check-text{
     height: 18px;
@@ -60,7 +61,7 @@ textarea{
     margin-left: 40px;
 }
 .date-ipt{
-    margin-left: 70px;
+    margin-left: 12%;
 }
 .save{
     margin-left: 10px;

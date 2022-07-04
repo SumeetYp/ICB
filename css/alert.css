@@ -16,20 +16,19 @@ form{
     background: #D9D9D9;
     font-size: 22px;
     height: 50vh;
-    width: 40%;
-    align-items: center;
-    text-align: center;
+    width: 50%;
+    /* align-items: center;s */
+    /* text-align: center; */
     margin: auto;
-    padding: 30px;
+    padding: 50px;
 
 }
 form label{
-    font-size: 20px;
-    float:left;
+    font-size: 1.5rem;
 }
 form input{
-    height: 25px;
-    width: 60%;
+    height: 1.7rem;
+    width: 70%;
     border: none;
     float: right;
     outline: none;
@@ -37,8 +36,8 @@ form input{
     font-weight: bold;
 }
 select{
-    height: 25px;
-    width: 60%;
+    height: 1.7rem;
+    width: 70%;
     border: none;
     float:right;
     outline: none;
@@ -48,8 +47,29 @@ select{
 .submit{
     background-color: red;
     color: white;
-    width: 130px;
-    height: 30px;
+    width: 250px;
+    height: 35px;
     font-size: 20px;
-    margin: 30px 200px;
+    float:right;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+@media (max-width:900px) {
+    form{
+        height: 70vh;
+        width: 80%;
+    }
+form input{
+    display: inline-block;
+    width: 100%;
+    margin: 10px;
+}
+select{
+    width: 100%;
+    margin: 10px;
+}
+.submit{
+    width: 100%;
+    cursor: pointer;
+}
 }
