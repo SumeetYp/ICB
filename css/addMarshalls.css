@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;  
+    justify-content: center;
+    overflow: auto;
+    background-color: #E8E8E8;
+    margin: 0;
+    padding: 0;
+}
+
+.addMarshall {
+    height: 98%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.addMarshall a{
+    position: relative;
+    height: 33%;
+    width: 100%;
+    margin: 1rem;
+}
+
+.addMember {
+    background: linear-gradient(90deg, rgba(65, 159, 217, 0.44) 23.96%, rgba(70, 70, 70, 0) 100%), url('../images/addMember.jpeg') no-repeat center center / cover;
+    border-radius: 2rem;
+}
+
+.addSchool {
+    background: linear-gradient(270deg, rgba(224, 21, 24, 0.44) 23.96%, rgba(70, 70, 70, 0) 100%), url('../images/addSchool.jpeg') no-repeat center center / cover;
+    border-radius: 2rem;
+}
+
+.addVolunteer {
+    background: linear-gradient(270deg, rgba(70, 70, 70, 0) 23.96%, rgba(17, 17, 17, 0.44) 100%), url('../images/addVolunteer.jpeg') no-repeat center center / cover;
+    border-radius: 2rem;
+}
+
+.details {
+    position: absolute;
+    top: 10vh;
+    left: 4vw;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.details div {
+    font-size: 1.4rem;
+    width: 200%;
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+}
+
+.details div:first-of-type {
+    font-size: 3rem;
+    padding: 0;
+    margin: 0;
+}
