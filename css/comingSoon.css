@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'Modular';
+    src: url('../AdditionalFonts/adventure_subtitles-webfont.woff2') format('woff2'),
+         url('../AdditionalFonts/adventure_subtitles-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body{
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    position: absolute;
+    top:0;
+    left: 0;
+}
+
+.hamBurger div {
+    background-color: #fff;
+}
+
+.userName {
+    color: #fff;
+}
+
+.comingSoon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    line-height: 7rem;
+}
+
+.comingSoon div:first-of-type {
+    color: #3168D8;
+    font-size: 5rem;
+    font-family: 'Modular';
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    animation: glow1 1s ease-in-out infinite alternate;
+}
+
+.comingSoon div:last-of-type {
+    color: #7900FF;
+    font-family: 'Modular';
+    font-size: 9rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    animation: glow2 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow1 {
+    from {
+      text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 3px #3168D8, 0 0 4px #3168D8, 0 0 5px #3168D8, 0 0 6px #3168D8, 0 0 7px #3168D8;
+    }
+    
+    to {
+      text-shadow: 0 0 1px #fff, 0 0 3px #3168D8, 0 0 4px #3168D8, 0 0 5px #3168D8, 0 0 6px #3168D8, 0 0 7px #3168D8, 0 0 8px #3168D8;
+    }
+}
+
+@-webkit-keyframes glow2 {
+    from {
+      text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 3px #7900FF, 0 0 4px #7900FF, 0 0 5px #7900FF, 0 0 6px #7900FF, 0 0 7px #7900FF;
+    }
+    
+    to {
+      text-shadow: 0 0 1px #fff, 0 0 3px #7900FF, 0 0 4px #7900FF, 0 0 5px #7900FF, 0 0 6px #7900FF, 0 0 7px #7900FF, 0 0 8px #7900FF;
+    }
+}
