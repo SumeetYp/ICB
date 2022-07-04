@@ -1,10 +1,19 @@
 body {
     width: 100vw;
-    overflow: auto;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 h2 {
     margin-left: 1.8rem;
+}
+
+.container {
+    margin: 0 auto;
+    height: 80vh;
+    width: 60%;
+    overflow: auto;
 }
 
 .contactTeam {
@@ -15,17 +24,14 @@ h2 {
 }
 
 .coreTeamMember {
-    width: 60%;
+    width: 97%;
     height: 15vh;
     display: flex;
     flex-direction: row;
     background-color: #D9D9D9;
     margin: 1vh 0;
     border-radius: 0.5rem;
-}
-
-.coreTeamMember:last-of-type {
-    margin-bottom: 4vh;
+    cursor: default;
 }
 
 .profilePictureCTM {
