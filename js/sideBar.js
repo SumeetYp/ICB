@@ -1,4 +1,5 @@
 const sideBar = document.querySelector('.sideBar');
+sideBar.classList.add('hideSideBar');
 const hamBurger = document.querySelector('.hamBurger');
 const cross = document.querySelector('.cross');
 hamBurger.addEventListener('click', e=>{
