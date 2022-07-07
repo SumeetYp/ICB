@@ -69,13 +69,13 @@ h3{
     margin-top: 10vh;
     color: white;
 }
- img{
+ /* img{ */
     /* margin: 10px; */
-    padding: 10px;
+    /* padding: 10px;
     margin-bottom: 5px;
     width: 70px;
-    cursor: pointer;
-}
+    cursor: pointer; */
+/* } */
 button{ 
     background: #33CCCC;
     height: 30px;
