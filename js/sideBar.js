@@ -1,7 +1,9 @@
 const sideBar = document.querySelector('.sideBar');
-sideBar.classList.add('hideSideBar');
 const hamBurger = document.querySelector('.hamBurger');
 const cross = document.querySelector('.cross');
+
+sideBar.classList.add('hideSideBar');
+
 hamBurger.addEventListener('click', e=>{
     sideBar.classList.remove('hideSideBar');
     sideBar.classList.add('displaySideBar');
@@ -9,6 +11,7 @@ hamBurger.addEventListener('click', e=>{
         cross.style.display = 'flex';
     }, 500);
 })
+
 cross.addEventListener('click', e=>{
     sideBar.classList.add('hideSideBar');
     sideBar.classList.remove('displaySideBar');
