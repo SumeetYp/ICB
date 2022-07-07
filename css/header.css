@@ -65,6 +65,7 @@ nav {
     width: 20.2vw;
     background-color: #fff;
     transition: 0.5s linear;
+    z-index: 1;
 }
 
 .sideItems {
