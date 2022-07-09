@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="profile-css/style.css">
+    <link rel="stylesheet" href="profile-css/main.css">
+    <link rel="stylesheet" href="profile-css/header.css">
+
+</head>
+
+<body>
+    <div class="flex-row">
+        
+    <nav>
+
+        <div class="hamBurger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="verified">
+           <img src="images/check.png">
+        </div>
+        
+        <div class="container">
+            <div class="logo">
+                <a href="">Username</a>
+            </div>
+                        <a href="">
+                            <img src="images/profile.jpg" alt="profile" class="profile">
+                        </a>
+                 
+        
+        </div>
+    </nav>
+
+    <div class="sideBar">
+        <div class="sideItems">
+
+            <!-- Side Elements -->
+            <ul>
+                <a href="./index.html">Home</a>
+                <a href="./profile.html">Profile</a>
+                <a href="./trainings.html">My Training</a>
+                <a href="./events.html">My Events</a>
+                <a href="./donate.html">Donate</a>
+                <a href="./differenceIMade.html">Difference I Made</a>
+                <a href="./shareMyStory.html">Share My Story</a>
+                <a href="./addMarshalls.html">Add a Marshal</a>
+                <a href="./settings.html">Settings & Support</a>
+                <a href="./coreTeam.html">Contact Team</a>
+                <a href="./alert.html">Send an Alert</a>
+            </ul>
+            <div class="cross">
+                <img src="./images/cross.png" alt="">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Header Section -->
+
+    <header>
+        <div class="container grid grid-header">
+            <div class="user-profile-div d-flex justify-center">
+                <img src="images/profile.jpg" alt="user-profile" class="user-profile">
+            </div>
+
+            <div class="user-details">
+                <div class="user-name-div">
+                    <span class="username">FullName</span>
+                 
+                   
+                    
+                </div>
+
+                <div class="numbers">
+                    <span class="post">Admin/Member/Volunteer</span>
+                    <span class="follower">Joined on 14th May</span>
+                </div>
+
+                <div class="name-div">
+                    <span class="name">WebApp | UI | Coding</span>
+                </div>
+
+                <div class="light-div">
+                    <span class="light-name">Interests</span>
+                </div>
+
+                <div class="bio-div">
+                    <p class="bio">
+                        I am a Coder💻<br>
+                        I am a WebApp👨‍💻<br>
+                        You can send Email📥<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container hr">
+
+            <button class="btn follow-btn">Instagram</button>
+            <button class="btn follow2-btn">Telegram</button>
+            <button class="btn msg-btn">Connect<img src="images/user.png"></button>  
+            <button id="btn-edit" class="profile-btn">Edit Profile</button>
+            <button id="save" class="save-btn">Save</button>
+            <button id="cancel" class="cancel-btn">Cancel</button>
+            <br><br><br><br><br><br>
+        </div>
+     
+    </header>
+
+
+    <!-- Main Content Section -->
+
+    <section id="edit" class="main-content d-flex">
+        <div class="container">
+            <div class="login-page d-flex">
+                <div class="form">
+                  <form id="form" class="register-form">
+                     <h1> Edit Profile</h1>
+                    <label>Email:</label>
+                    <input type="email" placeholder="Email"/>
+                    <label>Phone:</label>
+                    <input type="phone" placeholder="phone"/>
+                    <label>Bio:</label>
+                    <input type="text"/> 
+                  </form>
+                </div>
+              </div>
+          
+            
+
+           
+
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+
+    <footer class="footer">
+        <div class="container d-flex justify-center">
+            <span class="footer-link">Home</span>
+            <span class="footer-link">Stats</span>
+            <span class="footer-link">Dashboard</span>
+            <span class="footer-link">Posts</span>
+            <span class="footer-link">Connect</span>
+            <span class="footer-link">Settings</span>
+        </div>
+
+        <p class="text-center">© 2022 All Rights Reserved</p>
+    </footer>
+    </div>
+
+    <script src="profile-js/script.js"></script>
+    <script src="profile-js/sideBar.js"></script>
+</body>
+
+</html>
