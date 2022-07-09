@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/membersRegistration.css">
+</head>
+
+<body>
+    <h2 class="main-head">
+        Members Registration
+    </h2>
+    <form action="">
+        <!-- first name and last name -->
+        <label>Name:</label>
+        <input type="text" placeholder="Last Name (Required)" class="input-text f-name">
+        <input type="text" placeholder="First Name (Required)" Name" class="input-text f-name"><br>
+        <!-- email address -->
+        <label>Email Id:</label>
+        <input type="email" placeholder="Email Id (Required)" class="input-text"><br>
+        <!-- date of birth -->
+        <label>DOB:</label>
+        <input type="date" id="birthday" name="dob" class="date-ipt"><br>
+        <!-- gender -->
+        <label>Gender:</label>
+        <input type="radio" name="gender" id="male" value="male" class="check-text" /><label>Male</label>
+        <input type="radio" name="gender" id="female" value="female" class="check-text" /><label>Female</label>
+        <input type="radio" name="gender" id="others" value="others" class="check-text" /><label>Others</label><br>
+        <!-- address -->
+        <label>Address:</label>
+        <textarea name="address" cols="50" rows="5"></textarea><br>
+        <!-- city -->
+        <label>City:</label>
+        <input type="text" placeholder="City (Required)" class="input-text"><br>
+        <!-- state -->
+        <label>State:</label>
+        <input type="text" placeholder="State (Required)" class="input-text"><br>
+        <!-- pin code -->
+        <label>PIN:</label>
+        <input type="text" placeholder="Pin (Required)" class="input-text"><br>
+        <!-- mobile number -->
+        <label>Mobile:</label>
+        <input type="number" placeholder="Add WhatsApp Number Only (Required)" class="input-text"><br>
+        <!-- social-link telegram  -->
+        <label>Telegram:</label>
+        <input type="url" placeholder="Add Telegram Link (Required)" class="input-text"><br>
+        <!-- social-link instagram  -->
+
+        <label>Instagram:</label>
+        <input type="url" placeholder="Add Instagram Link (Required)" class="input-text"><br>
+        <!-- contribution -->
+        <label>Initiatives I will contribute for:</label><br>
+        <input type="checkbox" name="Mission_Shiksha" id="contribute" value="Mission_Shiksha"
+            class="check-text" /><label>Mission
+            Shiksha</label><br>
+        <input type="checkbox" name="Mental_Health" id="contribute" value="Mental_Health"
+            class="check-text" /><label>Mental
+            Health</label><br>
+        <input type="checkbox" name="Animals_Safety" id="contribute" value="Animals_Safety"
+            class="check-text" /><label>Animals
+            Safety</label><br>
+        <input type="checkbox" name="Environment" id="contribute" value="Environment"
+            class="check-text" /><label>Environment</label><br>
+        <input type="checkbox" name="Sex_Education" id="contribute" value="Sex_Education"
+            class="check-text" /><label>Sex Education</label><br>
+        <!-- type of registration -->
+        <label> Type of Registration:</label><br>
+        <input type="radio" name="typesofregistration" id="typesofregistration" value="Volunteer"
+            class="check-text" /><label>Member
+            (rs499/-)</label><br>
+        <!-- <input type="radio" name="typesofregistration" id="typesofregistration" value="Member" /><label>Member
+            (Rs499/-)</label><br>
+        <input type="radio" name="typesofregistration" id="typesofregistration" value="SLTP" /><label>Student Leadership
+            Training Program (Rs 199/-)</label><br>
+        <input type="radio" name="typesofregistration" id="typesofregistration"
+            value="Other_Registration_option" /><label>Other
+            Registration option</label><br> -->
+
+
+        <!-- aadhar card number -->
+        <label>Adhar Card:</label>
+        <input type="text" placeholder="Adhar Card(Required)" class="input-text"><br>
+        <!-- pan card number -->
+        <label>PAN No. :</label>
+        <input type="text" placeholder="(Required)" class="input-text"><br>
+        <input type="checkbox" name="agreement" id="agreement" value="agreement" class="check-text" />
+        <!-- agreement  -->
+        <label>I agree to all the terms & conditions .</label><br>
+        <input type="submit" class="save" value="Save & Continue">
+        <!-- </div> -->
+    </form>
+    <script src="./js/memberRegistration.js"></script>
+</body>
+
+</html>
