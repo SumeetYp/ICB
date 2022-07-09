@@ -11,7 +11,6 @@
     <title>Document</title>
 </head>
 <body>
-
     <!-- Navigation Bar -->
     <nav>
 
@@ -55,17 +54,26 @@
             </div>
         </div>
     </div>
-    <div class="container d-none">
-        <div class="announcements">
+    <div class="container">
+        <div class="announcements d-none">
             <div class="announceHead">Big & Major Announcement</div>
             <div class="announceList">
                 <ul class="announces"></ul>
             </div>
         </div>
-        <div class="opportunities">
+        <div class="opportunities d-none">
             <div class="opportunityHead">Opportunities Calendar</div>
             <div class="opportunityList">
-                <ul class="opportunity"></ul>
+                <!-- Slideshow container -->
+                <div class="slideshow-container">
+                    <!-- next button -->
+                    <a class="prev" onclick="plusSlides(-1)">&#62;&#62;</a>
+                    <div class="slides"></div>
+                    <a class="next" onclick="plusSlides(1)">&#62;&#62;</a>
+                </div>
+                <br>
+                <!-- The dots/circles -->
+                <div style="text-align:center" class="dots"></div>
             </div>
         </div>
         <div class="Feeds">
