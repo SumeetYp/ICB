@@ -1,31 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
-    width: 100vw;
-    height: 100vh;
-    display: flex;  
-    justify-content: center;
-    overflow: auto;
-    background-color: #E8E8E8;
     margin: 0;
     padding: 0;
 }
 
 .addMarshall {
-    height: 98%;
     width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+    margin: 0 auto;
+    padding-bottom: 5vh;
+    box-sizing: border-box;
+    height: 95vh;
+    overflow: auto;
 }
 
 .addMarshall a{
+    display: block;
     position: relative;
-    height: 33%;
-    width: 100%;
-    margin: 1rem;
+    width: 98%;
+    margin: 1%;
 }
 
 .addMember {
@@ -67,59 +60,68 @@ body {
     margin: 0;
 }
 
-@media only screen and (max-width: 900px) {
-    .details {
-        top: 11.5vh;
+@media only screen and (max-width: 2560px){
+    .addMarshall a {
+        height: 470px;
     }
-    .details div{
-        font-size: 1.26rem;
+    .details div {
+        font-size: 1.8rem;
     }
     .details div:first-of-type {
-        font-size: 2.7rem;
+        font-size: 4rem;
     }
 }
 
-@media only screen and (max-width: 800px) {
-    .details {
-        top: 13vh;
+@media only screen and (max-width: 1440px){
+    .addMarshall a {
+        height: 350px;
     }
-    .details div{
-        font-size: 1.12rem;
+    .details {
+        top: 40%;
+    }
+    .details div {
+        font-size: 1.2rem;
     }
     .details div:first-of-type {
-        font-size: 2.75rem;
+        font-size: 3rem;
     }
 }
 
-@media only screen and (max-width: 700px) {
-    .details div{
-        font-size: 0.98rem;
+@media only screen and (max-width: 1024px){
+    .addMarshall a {
+        height: 300px;
+    }
+    .details div {
+        font-size: 1rem;
     }
     .details div:first-of-type {
         font-size: 2.5rem;
     }
 }
 
-@media only screen and (max-width: 500px) {
-    .details {
-        top: 15vh;
+@media only screen and (max-width: 768px) {
+    .addMarshall a {
+        height: 200px;
     }
     .details div {
-        font-size: 0.80rem;
+        font-size: 0.9rem;
     }
     .details div:first-of-type {
         font-size: 2rem;
     }
 }
 
-@media only screen and (max-width: 500px) {
-    .details {
-        top: 17vh;
+@media only screen and (max-width: 425px){
+    .addMarshall a {
+        height: 150px;
     }
     .details div {
-        font-size: 0.70rem;
+        font-size: 0.7rem;
     }
     .details div:first-of-type {
         font-size: 1.5rem;
+    }
+    .addMarshall {
+        width: 90%;
     }
 }
