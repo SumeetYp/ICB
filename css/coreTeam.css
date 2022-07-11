@@ -17,14 +17,14 @@ h2 {
 }
 
 .contactTeam {
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 3vh;
 }
 
 .coreTeamMember {
-    width: 97%;
+    width: 95%;
     height: 15vh;
     display: flex;
     flex-direction: row;
@@ -96,105 +96,75 @@ h2 {
     right: -0.5rem;
 }
 
-@media only screen and (max-width: 1200px) {
-    .container {
-        width: 65%;
-        margin: 0 auto;
-    }
-    .contactTeam {
-        margin: 0;
+@media only screen and (max-width: 1440px) {
+    .coreTeamMember {
+        height: 150px;
+        padding: 2px;
     }
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1024px) {
     .container {
         width: 70%;
-        margin: 0 auto;
-    }
-    .contactTeam {
-        margin: 0;
     }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 768px) {
     .container {
         width: 80%;
-        margin: 0 auto;
-    }
-    .contactTeam {
-        margin: 0;
-    }
-}
-
-@media only screen and (max-width: 850px) {
-    .container {
-        width: 90%;
-        margin: 0 auto;
-    }
-    .contactTeam {
-        margin: 0;
-    }
-}
-
-@media only screen and (max-width: 800px) {
-    .container {
-        width: 100%;
-        margin: 0;
-    }
-    .contactTeam {
-        margin: 0;
     }
     .coreTeamMember {
-        width: 100%;
-        border-radius: 0;
-    }
-}
-
-@media only screen and (max-width: 700px) {
-    .coreTeamMember {
-        height: 12vh;
+        height: 130px;
+        padding: 2px;
     }
     .profilePictureCTM .profilePicture {
-        width: 50px;
-        height: 50px;
-    }
-    .nameCTM {
-        font-size: 1.4rem;
+        width: 65px;
+        height: 65px;
     }
 }
 
-@media only screen and (max-width: 400px) {
-    .coreTeamMember {
-        height: 12vh;
+@media only screen and (max-width: 425px) {
+    .container {
+        width: 100%;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
+    .coreTeamMember {
+        height: 100px;
+        width: 100%;
+    }
+    .container::-webkit-scrollbar {
+        display: none;
+    }
+    .profilePictureCTM .profilePicture {
+        width: 55px;
+        height: 55px;
+    }
+    .nameCTM {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 375px){
+    .profilePictureCTM .profilePicture {
+        width: 45px; 
+        height: 45px;
+    }
+    .nameCTM {
+        font-size: 1.1rem;
+    }
+    .positionCTM {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
     .profilePictureCTM {
-        width: 25%;
-        margin-right: 5vw;
-    }
-    .contactDetailsCTM {
-        width: 75%;
+        padding-right: 5px;
+        box-sizing: border-box;
     }
     .profilePictureCTM .profilePicture {
-        width: 50px;
-        height: 50px;
-    }
-
-    .nameCTM {
-        font-size: 1.2rem;
-    }
-    
-    .socialMediaHandles {
-        margin-top: 0.5vh;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 80%;
-        height: 25%;
-    }
-    
-    .socialMediaHandles a{
-        width: 45%;
-        height: 100%;
-        font-size: 0.8rem;
+        width: 40px;
+        height: 40px;
     }
 }
