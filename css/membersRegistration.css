@@ -139,4 +139,7 @@ select {
   select {
     margin-bottom: 15px;
   }
+  p {
+    margin-top: 15px;
+  }
 }
