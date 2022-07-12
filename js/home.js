@@ -38,6 +38,14 @@ const fetchOpportunites = async ()=>{
     return parsedOpportunities;
 }
 
+const setLinearGradient = opportunity => {
+    if(opportunity.Initiative === 'Animal Safety')return 'linear-gradient(90deg, #E01518 0%, rgba(70, 70, 70, 0) 100%)';
+    if(opportunity.Initiative === 'Mental Health')return 'linear-gradient(90deg, #CB8FBD 0%, rgba(70, 70, 70, 0) 100%)';
+    if(opportunity.Initiative === 'Mission Shiksha')return 'linear-gradient(90deg, #2EC5B6 0%, rgba(70, 70, 70, 0) 100%)';
+    if(opportunity.Initiative === 'Environment')return 'linear-gradient(90deg, #41D950 0%, rgba(70, 70, 70, 0) 100%)';
+    if(opportunity.Initiative === 'Sex Education')return 'linear-gradient(90deg, #FFBE00 0%, rgba(70, 70, 70, 0) 100%)';
+}
+
 const displayOpportunities = async ()=>{
     const opportunities = await fetchOpportunites();
     if(opportunities.totalResults!==0){
@@ -45,15 +53,12 @@ const displayOpportunities = async ()=>{
         containerOpportunities.classList.add('d-block');
         for(let i=0; i<opportunities.totalResults; i++){
             const opportunity = opportunities.opportunityList[i];
+            const linearGradient = await setLinearGradient(opportunity);
 
             const newSlide = document.createElement('div');
             newSlide.classList.add('mySlides');
             newSlide.classList.add('fade');
-
-            const newSlideImg = document.createElement('img');
-            newSlideImg.classList.add('mySlideImg');
-            newSlideImg.src = opportunity.imgSrc;
-            newSlide.append(newSlideImg);
+            newSlide.style.background = `${linearGradient}, url('${opportunity.imgSrc}') no-repeat center center / cover`;
 
             const opportunityDetails = document.createElement('div');
             opportunityDetails.classList.add('opportunityDetails');
@@ -123,7 +128,6 @@ function currentSlide(n) {
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
-  let slideImg = document.getElementsByClassName("mySlideImg");
   let dots = document.getElementsByClassName("dot");
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
@@ -135,7 +139,6 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "flex";
   slides[slideIndex-1].style.justifyContent = "center";
-  slideImg[slideIndex-1].style.borderRadius = "2.5rem";
   dots[slideIndex-1].className += " active";
 }
 
@@ -209,7 +212,8 @@ const displayPosts = async ()=>{
             likeAndShare.append(Like);
             likeAndShare.append(Share);
 
-            const postDescription = document.createElement('description');
+            const postDescription = document.createElement('div');
+            postDescription.classList.add('description');
             postDescription.innerText = post.description.slice(0, 100)+'...';
 
             postFooter.append(likeAndShare);

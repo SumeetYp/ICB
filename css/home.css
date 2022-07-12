@@ -6,8 +6,7 @@ body{
 
 .container {
     padding: 0 2vw;
-    margin-bottom: 20vh;
-    height: 90vh;
+    height: 95vh;
     overflow: auto;
     cursor: default;
 }
@@ -18,7 +17,8 @@ body{
 }
 
 .announceList {
-    border: 2px solid red;
+    border: 4px solid #E01518;
+    color: #E01518;
     margin: 2vh 2vw;
 }
 
@@ -30,22 +30,15 @@ body{
 .announceList ul li {
     list-style: none;
     font-size: 1.3rem;
-}
-
-.announceList ul li::before {
-    content: '';
-    display: inline-block;
-    margin-right: 10px;
-    height: 20px;
-    width: 20px;
-    background-image: url("../images/announcement.png");
+    font-weight: 500;
 }
 
 .opportunityList {
     margin: 2vh 2vw;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Slideshow container */
 .slideshow-container {
   width: 90vw;
   position: relative;
@@ -63,12 +56,6 @@ body{
 .mySlides {
   display: none;
   width: 100%;
-}
-
-.mySlides img {
-    width: 100%;
-    height: 50vh;
-    filter: brightness(40%);
 }
 
 .opportunityDetails {
@@ -107,6 +94,13 @@ body{
 .prev {
     margin: 0 1% 0 0;
     direction: rtl;
+}
+
+.dots {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .dot {
@@ -162,11 +156,9 @@ body{
 }
 
 .postUser {
-    height: 12%;
     width: 100%;
     display: flex;
     align-items: center;
-    font-size: 2rem;
     font-weight: 700;
     box-sizing: border-box;
     padding: 2rem 1.5rem;
@@ -193,7 +185,6 @@ body{
 }
 
 .postFooter {
-    height: 18%;
     background-color: #D9D9D9;
     display: flex;
     align-items: center;
@@ -222,303 +213,568 @@ body{
     color: #464646;
 }
 
-@media only screen and (max-width: 1100px) {
-    .post {
-        width: 60vw;
+@media  only screen and (max-width: 2560px) {
+    .announceHead, .opportunityHead, .FeedsHead{
+        font-size: 3rem;
     }
-    .postUser {
-        font-size: 1.9rem;
+    .announceList ul {
+        margin: 1.3vh 1.3vw;
     }
-    .FeedProfilePicture img:first-of-type {
-        width: 32px;
-        height: 32px;
+    .announceList ul li {
+        font-size: 2rem;
     }
-    .FeedProfilePicture .check {
-        bottom: -4%;
-        right: -4%;
+    .slides {
+        width: 90%;
     }
-    .mySlides img {
-        height: 45vh;
+    .mySlides{
+        height: 40vh;
+        width: 100%;
+        border-radius: 4rem;
+    }
+    .opportunityDetails {
+        position: absolute;
+        top: 10vh;
+        left: 10vw;
+        color: #fff;
+        overflow: hidden;
     }
     .opportunityName {
-        font-size: 2.5rem;
-    } 
+        font-size: 5rem;
+    }
     .opportunityInitiative {
-        font-size: 1.7rem;
+        font-size: 4rem;
     }
     .coreOpportunityDetails {
-        margin-top: 1.7vh;
-        font-size: 1.2rem;
-    }
-    .dot {
-        height: 11px;
-        width: 11px;
-        transition: background-color 0.6s ease;
+        margin-top: 1.5vh;
+        font-size: 2.3rem;
     }
     .prev, .next {
-        font-size: 2.9rem;
+        font-size: 5rem;
+    }
+    .dot {
+        height: 25px;
+        width: 25px;
+    }
+    .post {
+
+        height: 1480px;
+        width: 1200px;
+    }
+    .postUser {
+        height: 130px;
+        font-size: 4rem;
+    }
+    .FeedProfilePicture {
+        display: flex;
+        align-items: center;
+    }
+    .FeedProfilePicture img:first-of-type {
+        width: 90px;
+        height: 90px;
+        border-width: 5px;
+    }
+    .FeedProfilePicture .check {
+        width: 40px;
+        bottom: -90%;
+        right: -150%;
+    }
+    .postImage {
+        height: 1200px;
+    }
+    .postFooter {
+        height: 150px;
+    }
+    .LikeAndShare{
+        height: 100%;
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .LikeAndShare img{
+        width: 30%;
+    }
+    .description {
+        width: 75%;
+        height: 100%;
+        font-size: 2rem;
     }
 }
 
-@media only screen and (max-width: 950px) {
-    .post {
-        width: 65vw;
+@media  only screen and (max-width: 1440px) {
+    .announceHead, .opportunityHead, .FeedsHead{
+        font-size: 2rem;
     }
-    .postUser {
-        font-size: 1.8rem;
+    .announceList ul {
+        margin: 1.3vh 1.3vw;
     }
-    .FeedProfilePicture img:first-of-type {
-        width: 28px;
-        height: 28px;
-    }
-    .FeedProfilePicture .check {
-        bottom: 5%;
-        right: 5%;
-    }
-    .mySlides img {
-        height: 40vh;
-    }
-    .opportunityName {
-        font-size: 2.2rem;
-    } 
-    .opportunityInitiative {
+    .announceList ul li {
         font-size: 1.4rem;
     }
+    .slides {
+        width: 90%;
+    }
+    .mySlides{
+        height: 40vh;
+        width: 100%;
+        border-radius: 3.5rem;
+    }
+    .opportunityDetails {
+        position: absolute;
+        top: 10vh;
+        left: 10vw;
+        color: #fff;
+        overflow: hidden;
+    }
+    .opportunityName {
+        font-size: 2.3rem;
+    }
+    .opportunityInitiative {
+        font-size: 2rem;
+    }
     .coreOpportunityDetails {
-        margin-top: 1.4vh;
+        margin-top: 1.5vh;
         font-size: 1rem;
     }
-    .dot {
-        height: 9.5px;
-        width: 9.5px;
-        transition: background-color 0.6s ease;
-    }
     .prev, .next {
-        font-size: 2.8rem;
+        font-size: 4.5rem;
     }
-}
-
-@media only screen and (max-width: 850px) {
+    .dot {
+        height: 14px;
+        width: 14px;
+    }
     .post {
-        width: 70vw;
+        height: 500px;
+        width: 500px;
     }
     .postUser {
-        font-size: 1.7rem;
+        height: 60px;
+        font-size: 2rem;
     }
-    .FeedProfilePicture{
+    .FeedProfilePicture {
         display: flex;
-        justify-content: center;
         align-items: center;
-        margin: 0;
     }
     .FeedProfilePicture img:first-of-type {
-        width: 23px;
-        height: 23px;
+        width: 35px;
+        height: 35px;
+        border-width: 4px;
     }
     .FeedProfilePicture .check {
-        bottom: 5%;
-        right: 5%;
+        width: 17px;
+        bottom: -10%;
+        right: -10%;
     }
-    .prev, .next {
-        font-size: 2.65rem;
+    .postImage img {
+        width: 100%;
+        height: 100%;
+    }
+    .postFooter {
+        height: 100px;
+    }
+    .LikeAndShare{
+        height: 100%;
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .LikeAndShare img{
+        width: 30%;
+    }
+    .description {
+        width: 75%;
+        height: 100%;
+        font-size: 1.2rem;
     }
 }
 
-@media only screen and (max-width: 750px) {
+@media  only screen and (max-width: 1024px) {
     .announceHead, .opportunityHead, .FeedsHead{
-        font-size: 1.25rem;
-        font-weight: 400;
+        font-size: 1.5rem;
     }
-    
+    .announceList ul {
+        margin: 1.1vh 1.1vw;
+    }
     .announceList ul li {
         font-size: 1.1rem;
     }
-    
-    .announceList ul li::before {
-        height: 17px;
-        width: 17px;
+    .slides {
+        width: 90%;
     }
-    .post {
-        width: 75vw;
+    .mySlides{
+        height: 40vh;
+        width: 100%;
+        border-radius: 2.5rem;
     }
-    .postUser {
-        font-size: 1.6rem;
-    }
-    .prev, .next {
-        font-size: 2.5rem;
-    }
-}
-
-@media only screen and (max-width: 650px) {
-    .FeedsHead {
-        position: static;
-    }
-    .post {
-        width: 90vw;
-    }
-    .postUser {
-        font-size: 1.5rem;
-    }
-    .mySlides img {
-        height: 45vh;
-    }
-    .opportunityName {
-        font-size: 2.5rem;
-    } 
-    .opportunityInitiative {
-        font-size: 1.7rem;
-    }
-    .coreOpportunityDetails {
-        margin-top: 1.7vh;
-        font-size: 1.2rem;
-    }
-    .dot {
-        height: 11px;
-        width: 11px;
-        transition: background-color 0.6s ease;
-    }
-    .mySlides img {
-        height: 36vh;
+    .opportunityDetails {
+        position: absolute;
+        top: 10vh;
+        left: 10vw;
+        color: #fff;
+        overflow: hidden;
     }
     .opportunityName {
         font-size: 2rem;
-    } 
+    }
     .opportunityInitiative {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
     }
     .coreOpportunityDetails {
-        margin-top: 1vh;
-        font-size: 0.9rem;
+        margin-top: 1.2vh;
+        font-size: 1.1rem;
     }
     .prev, .next {
-        font-size: 2.4rem;
+        font-size: 3.2rem;
+    }
+    .dot {
+        height: 12px;
+        width: 12px;
+    }
+    .post {
+        height: 500px;
+        width: 500px;
+    }
+    .postUser {
+        height: 60px;
+        font-size: 2rem;
+    }
+    .FeedProfilePicture {
+        display: flex;
+        align-items: center;
+    }
+    .FeedProfilePicture img:first-of-type {
+        width: 35px;
+        height: 35px;
+        border-width: 4px;
+    }
+    .FeedProfilePicture .check {
+        width: 17px;
+        bottom: -10%;
+        right: -10%;
+    }
+    .postImage img {
+        width: 100%;
+        height: 100%;
+    }
+    .postFooter {
+        height: 100px;
+    }
+    .LikeAndShare{
+        height: 100%;
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .LikeAndShare img{
+        width: 30%;
+    }
+    .description {
+        width: 75%;
+        height: 100%;
+        font-size: 1.2rem;
+    }
+}
+
+@media  only screen and (max-width: 768px) {
+    .announceHead, .opportunityHead, .FeedsHead{
+        font-size: 1.2rem;
+    }
+    .announceList ul {
+        margin: 1vh 1vw;
+    }
+    .announceList ul li {
+        font-size: 0.9rem;
+    }
+    .slides {
+        width: 90%;
+    }
+    .mySlides{
+        height: 280px;
+        width: 100%;
+        border-radius: 2rem;
+    }
+    .opportunityDetails {
+        position: absolute;
+        top: 10vh;
+        left: 10vw;
+        color: #fff;
+        overflow: hidden;
+    }
+    .opportunityName {
+        font-size: 1.5rem;
+    }
+    .opportunityInitiative {
+        font-size: 1.2rem;
+    }
+    .coreOpportunityDetails {
+        margin-top: 1.2vh;
+        font-size: 1rem;
+    }
+    .prev, .next {
+        font-size: 2.5rem;
+    }
+    .dot {
+        height: 9px;
+        width: 9px;
+    }
+    .post {
+        height: 450px;
+        width: 450px;
+    }
+    .postUser {
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    .FeedProfilePicture {
+        display: flex;
+        align-items: center;
+    }
+    .FeedProfilePicture img:first-of-type {
+        width: 30px;
+        height: 30px;
+        border-width: 3px;
+    }
+    .FeedProfilePicture .check {
+        width: 14px;
+        bottom: 0;
+        right: 10%;
+    }
+    .postImage {
+        height: 700px;
+    }
+    .postImage img {
+        width: 100%;
+        height: 100%;
+    }
+    .postFooter {
+        height: 100px;
+        padding: 2px;
+    }
+    .LikeAndShare{
+        height: 100%;
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .LikeAndShare img{
+        width: 30%;
+    }
+    .description {
+        width: 75%;
+        height: 100%;
+        font-size: 1rem;
     }
 }
 
 @media only screen and (max-width: 600px) {
+    .FeedsHead {
+        position: static;
+    }
+}
+
+@media  only screen and (max-width: 425px) {
     .announceHead, .opportunityHead, .FeedsHead{
         font-size: 1.1rem;
-        font-weight: 400;
     }
-    
+    .announceList {
+        border: 2.5px solid #E01518;
+    }
     .announceList ul {
-        margin: 1vh 2vw;
-        padding: 0;
+        margin: 1vh 1vw;
     }
-    
     .announceList ul li {
-        line-height: 1.2rem;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
-    
-    .announceList ul li::before {
-        height: 15px;
-        width: 15px;
+    .slides {
+        width: 90%;
     }
-    .post {
-        width: 100vw;
+    .mySlides{
+        height: 200px;
+        width: 100%;
+        border-radius: 1.5rem;
     }
-    .postUser {
-        font-size: 1.4rem;
-    }
-    .FeedsHead {
-        font-weight: 500;
-    }
-    .mySlides img {
-        height: 32vh;
+    .opportunityDetails {
+        position: absolute;
+        top: 7vh;
+        left: 10vw;
+        color: #fff;
+        overflow: hidden;
     }
     .opportunityName {
-        font-size: 1.8rem;
-    } 
+        font-size: 1.2rem;
+    }
     .opportunityInitiative {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
     .coreOpportunityDetails {
         margin-top: 1vh;
         font-size: 0.8rem;
     }
     .prev, .next {
-        font-size: 2.3rem;
+        font-size: 2rem;
+    }
+    .dot {
+        height: 7px;
+        width: 7px;
+    }
+    .post {
+        height: 425px;
+        width: 100%;
+    }
+    .postUser {
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    .FeedProfilePicture {
+        display: flex;
+        align-items: center;
+    }
+    .FeedProfilePicture img:first-of-type {
+        width: 30px;
+        height: 30px;
+        border-width: 3px;
+    }
+    .FeedProfilePicture .check {
+        width: 14px;
+        bottom: -7%;
+        right: -10%;
+    }
+    .postImage img {
+        width: 100%;
+        height: 100%;
+    }
+    .postFooter {
+        height: 100px;
+        padding: 2px;
+    }
+    .LikeAndShare{
+        height: 100%;
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .LikeAndShare img{
+        width: 30%;
+    }
+    .description {
+        width: 75%;
+        height: 100%;
+        font-size: 1rem;
     }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 375px) {
+    .postUser {
+        padding: 2px 0 5px 15px;
+    }
+    .FeedProfilePicture {
+        display: flex;
+        align-items: center;
+    }
+    .FeedProfilePicture img:first-of-type {
+        width: 25px;
+        height: 25px;
+        border-width: 3px;
+    }
+    .FeedProfilePicture .check {
+        width: 12px;
+        bottom: -7%;
+        right: -7%;
+    }
+}
+
+@media  only screen and (max-width: 325px) {
     .announceHead, .opportunityHead, .FeedsHead{
         font-size: 1rem;
-        font-weight: 400;
     }
-
+    .announceList {
+        border: 2px solid #E01518;
+    }
+    .announceList ul {
+        margin: 1vh 1vw;
+    }
     .announceList ul li {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
-    
-    .announceList ul li::before {
-        height: 12px;
-        width: 12px;
+    .slides {
+        width: 90%;
     }
-
-    .postUser {
-        font-size: 1.3rem;
+    .mySlides{
+        height: 150px;
+        width: 100%;
+        border-radius: 1.2rem;
     }
-
-    .FeedsHead {
-        font-weight: 600;
-    }
-
-    .FeedProfilePicture img:first-of-type {
-        width: 20px;
-        height: 20px;
-    }
-    
-    .FeedProfilePicture .check {
-        bottom: 2%;
-        right: 2%;
-    }
-    .mySlides img {
-        height: 28vh;
+    .opportunityDetails {
+        position: absolute;
+        top: 5vh;
+        left: 10vw;
+        color: #fff;
+        overflow: hidden;
     }
     .opportunityName {
-        font-size: 1.5rem;
-    } 
+        font-size: 1rem;
+    }
     .opportunityInitiative {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     .coreOpportunityDetails {
         margin-top: 0.8vh;
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
     .prev, .next {
-        font-size: 2.2rem;
+        font-size:  1.5rem;
     }
-}
-
-@media only screen and (max-width: 450px) {
+    .dot {
+        height: 4px;
+        width: 4px;
+    }
     .post {
-        height: 50vh;
+        height: 325px;
+        width: 100%;
     }
     .postUser {
-        padding: 15px;
+        height: 40px;
+        font-size: 1rem;
     }
-    .prev, .next {
-        font-size: 2.1rem;
+    .FeedProfilePicture {
+        display: flex;
+        align-items: center;
     }
-}
-
-@media only screen and (max-width: 450px) {
-    .mySlides img {
-        height: 25vh;
+    .FeedProfilePicture img:first-of-type {
+        width: 20px;
+        height: 20px;
+        border-width: 2px;
     }
-    .opportunityName {
-        font-size: 1.4rem;
-    } 
-    .opportunityInitiative {
+    .FeedProfilePicture .check {
+        width: 10px;
+        bottom: 2%;
+        right: 14%;
+    }
+    .postImage img {
+        width: 100%;
+        height: 100%;
+    }
+    .postFooter {
+        height: 80px;
+        padding: 2px;
+    }
+    .LikeAndShare{
+        height: 100%;
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .LikeAndShare img{
+        width: 35%;
+    }
+    .description {
+        width: 75%;
+        height: 100%;
         font-size: 0.8rem;
-    }
-    .coreOpportunityDetails {
-        margin-top: 0.7vh;
-        font-size: 0.5rem;
-    }
-    .prev, .next {
-        font-size: 2rem;
     }
 }
