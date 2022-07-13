@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
-    <link rel="stylesheet" href="profile-css/style.css">
-    <link rel="stylesheet" href="profile-css/main.css">
-    <link rel="stylesheet" href="profile-css/header.css">
-    <link rel="stylesheet" href="profile-css/settings.css">
+    <link rel="stylesheet" href="css/profile-css/style.css">
+    <link rel="stylesheet" href="css/profile-css/main.css">
+    <link rel="stylesheet" href="css/profile-css/header.css">
+    <link rel="stylesheet" href="css/profile-css/settings.css">
 
 </head>
 
@@ -24,18 +24,16 @@
                 <div></div>
                 <div></div>
             </div>
-
+    
             <!-- Username -->
-            <div class="container">
-                <div class="logo">
-                    <a href="">Username</a>
-                </div>
-                <a href="">
-                    <img src="images/profile.jpg" alt="profile" class="profile">
-                </a>
-
-
+            <div class="userName">Username</div>
+    
+            <!-- User's Profile Picture -->
+            <div class="profilePicture">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU" alt="">
+                <img class="check" src="./images/check 1admin.png" alt="">
             </div>
+     
         </nav>
 
         <!-- SideBar Menu -->
@@ -68,10 +66,10 @@
 
 
 
-            <div class="container">
+            <div class="container3">
                 <form>
                     <div class="row input-container">
-                        <div class="col-xs-12">
+                        <div class="col-md-12">
                             <div class="styled-input wide">
                                 <input type="phone" required />
                                 <label class="settings-label">Phone</label>
@@ -116,10 +114,11 @@
 
         <section class="support">
 
-            <div class="container">
+            <div class="container3">
                 <form>
                     <div class="row input-container">
                         <div class="col-xs-12">
+                            <h3 style="margin: 20px;">Enquiry</h3>
                             <div class="styled-input wide">
                                 <textarea required></textarea>
                                 <label class="settings-label">Type</label>
@@ -142,24 +141,9 @@
 
 
 
-
-        <!-- Footer Section -->
-
-        <footer class="footer">
-            <div class="container d-flex justify-center">
-                <span class="footer-link">Home</span>
-                <span class="footer-link">Stats</span>
-                <span class="footer-link">Dashboard</span>
-                <span class="footer-link">Posts</span>
-                <span class="footer-link">Connect</span>
-                <span class="footer-link">Settings</span>
-            </div>
-
-            <p class="text-center">© 2022 All Rights Reserved</p>
-        </footer>
     </div>
 
-    <script src="profile-js/sideBar.js"></script>
+    <script src="js/profile-js/sideBar.js"></script>
 </body>
 
 </html>

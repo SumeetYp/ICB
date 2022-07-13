@@ -6,15 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Difference I Made</title>
-    <link rel="stylesheet" href="profile-css/style.css">
-    <link rel="stylesheet" href="profile-css/main.css">
-    <link rel="stylesheet" href="profile-css/header.css">
-    <link rel="stylesheet" href="profile-css/difference.css">
+    <link rel="stylesheet" href="css/profile-css/style.css">
+    <link rel="stylesheet" href="css/profile-css/main.css">
+    <link rel="stylesheet" href="css/profile-css/header.css">
+    <link rel="stylesheet" href="css/profile-css/difference.css">
 
 </head>
 
 <body>
-    <div class="flex-row">
 
         <nav>
 
@@ -24,21 +23,16 @@
                 <div></div>
                 <div></div>
             </div>
-
+    
             <!-- Username -->
-            <div class="container">
-                <div class="logo">
-                    <a href="">Username</a>
-                </div>
-                <a href="">
-                    <img src="images/profile.jpg" alt="profile" class="profile">
-                </a>
-
-
+            <div class="userName">Username</div>
+    
+            <!-- User's Profile Picture -->
+            <div class="profilePicture">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU" alt="">
+                <img class="check" src="./images/check 1admin.png" alt="">
             </div>
-            <div class="Rank">
-                Rank <b>16</b>
-            </div>
+      
         </nav>
 
         <!-- SideBar Menu -->
@@ -79,23 +73,13 @@
             const data = {
                 labels: ['Mental Health', 'Mission Shiksha', 'Animal Safety', 'Environment', 'Sex Education'],
                 datasets: [{
-                    label: 'Mental Health',
                     data: [15, 12, 5, 20, 10],
                     backgroundColor: [
-                        'rgba(255, 26, 104, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)',
-                        'rgba(0, 0, 0, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 26, 104, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)'
+                        '#CB8FBD',
+                        '#2EC5B6',
+                        '#E01518',
+                        '#41D950',
+                        '#FFBE00'
                     ],
                     borderWidth: 1
                 }]
@@ -142,40 +126,40 @@
                 data: {
                     labels: xValues,
                     datasets: [{
-                        label: 'Environment',
+                        label: 'Mental Health',
                         data: [860, 1140, 1060, 1060, 1070, 1110, 1330],
-                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderColor: '#CB8FBD',
                         fill: false,
                         borderWidth: 1,
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)'
+                        backgroundColor: '#CB8FBD'
                     }, {
                         label: 'Mission Shiksha',
                         data: [1600, 1700, 1700, 1900, 2000, 2700, 4000],
-                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderColor: '#2EC5B6',
                         fill: false,
                         borderWidth: 1,
-                        backgroundColor: 'rgba(54, 162, 235, 0.2)'
-                    }, {
-                        label: 'Mental Health',
-                        data: [300, 700, 2000, 5000, 6000, 4000, 2000],
-                        borderColor: 'rgba(255, 26, 104, 1)',
-                        fill: false,
-                        borderWidth: 1,
-                        backgroundColor: 'rgba(255, 26, 104, 0.2)'
+                        backgroundColor: '#2EC5B6'
                     }, {
                         label: 'Animal Safety',
-                        data: [300, 700, 8000, 5000, 3000, 4500, 2000],
-                        borderColor: 'rgba(255, 206, 86, 1)',
+                        data: [300, 700, 2000, 5000, 6000, 4000, 2000],
+                        borderColor: '#E01518',
                         fill: false,
                         borderWidth: 1,
-                        backgroundColor: 'rgba(255, 206, 86, 0.2)'
+                        backgroundColor: '#E01518'
+                    }, {
+                        label: 'Environment',
+                        data: [300, 700, 8000, 5000, 3000, 4500, 2000],
+                        borderColor: '#41D950',
+                        fill: false,
+                        borderWidth: 1,
+                        backgroundColor: '#41D950'
                     }, {
                         label: 'Sex Education',
                         data: [300, 500, 6000, 5000, 3500, 4500, 4600],
-                        borderColor: 'rgba(153, 102, 255, 1)',
+                        borderColor: '#FFBE00',
                         fill: false,
                         borderWidth: 1,
-                        backgroundColor: 'rgba(153, 102, 255, 0.2)'
+                        backgroundColor: '#FFBE00'
                     }]
                 },
                 options: {
@@ -221,26 +205,40 @@
 
         <div class="Card d-flex">
 
+            
+           
+           
+            
+           
+
             <div class="col1">
+              
                 <h3>Events</h3>
                 <ul>
                     <li>
-                        Animal Safety
+                        <div class="square1 d-flex"></div>
+                        <p>Animal Safety </p>
                     </li>
                     <li>
-                        Mission Shiksha
+                        <div class="square2 d-flex"></div>
+                       <p> Mission Shiksha</p>
                     </li>
                     <li>
-                        Sex Education
+
+                    <div class="square3 d-flex"></div>
+                        <p>Sex Education</p>
                     </li>
                     <li>
-                        Mental Health
+                        <div class="square4 d-flex"></div>
+                        <p>Mental Health</p>
                     </li>
                     <li>
-                        Environment
+                        <div class="square5 d-flex"></div>
+                        <p>Environment</p>
                     </li>
                     <li>
-                        Others
+                        <div class="square6 d-flex"></div>
+                        <p>Others</p>
                     </li>
                 </ul>
             </div>
@@ -285,25 +283,13 @@
 
         </div>
 
+ 
+      
 
 
-        <!-- Footer Section -->
 
-        <footer class="footer">
-            <div class="container d-flex justify-center">
-                <span class="footer-link">Home</span>
-                <span class="footer-link">Stats</span>
-                <span class="footer-link">Dashboard</span>
-                <span class="footer-link">Posts</span>
-                <span class="footer-link">Connect</span>
-                <span class="footer-link">Settings</span>
-            </div>
 
-            <p class="text-center">© 2022 All Rights Reserved</p>
-        </footer>
-    </div>
-
-    <script src="profile-js/sideBar.js"></script>
+    <script src="js/profile-js/sideBar.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </body>
 

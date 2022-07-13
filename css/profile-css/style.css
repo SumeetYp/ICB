@@ -9,12 +9,6 @@
 }
 
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
 .d-flex {
     display: flex;
     align-items: center;
@@ -40,9 +34,10 @@ a {
 }
 
 .login-page {
-  width: 760px;
+  width: 100% !important;
   padding: 8% 0 0;
-  margin: auto;
+  margin-top: -80px;
+  margin-right: 0px;
 }
 
 #edit{
@@ -50,33 +45,59 @@ a {
 
 }
 
+textarea{
+    height: 200px;
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #ffffff;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 15px;
+
+}
+
 .form {
   position: relative;
   z-index: 1;
-  background: #FFFFFF;
-  max-width: 760px;
-  margin: 0 auto 100px;
+  background: #ffffff00;
+  max-width: 100% !important;
   padding: 45px;
-  text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  text-align: justify;
   height: 550px;
+  overflow: hidden;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
 }
 .form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
-  background: #f2f2f2;
+  background: #ffffff;
   width: 100%;
   border: 0;
-  margin: 0 0 15px;
+  margin: 0 0 25px;
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
   border-radius: 15px;
 }
 
+form{
+    width: 100%;
+}
+
 
 .form input[type="text"]{
 height: 150px;
+}
+
+#form{
+    width: 100%;
+    margin-right: 0px;
 }
 
 .form button {
@@ -107,6 +128,11 @@ height: 150px;
 }
 .form .register-form {
   display: none;
+  max-width: 100%;
+}
+
+.line{
+    display: inline;
 }
 
 
@@ -141,14 +167,20 @@ height: 150px;
 
 label{
     margin-right: 97%;
-    font-weight: 500 !important;
-    color: #4CAF50;
+    font-weight: 600 !important;
+    color: #000000;
+    margin-top: 20px !important;
+    
 }
 
 .form h1{
 
     margin-right: 80%;
     margin-bottom: 40px;
+}
+
+.container2{
+    min-width: 100% !important;
 }
 
 @media (min-width:1200px) and (max-width: 1600px) {
@@ -159,6 +191,10 @@ label{
         margin-left: 580px !important;
         
     } 
+
+    .container .profilePicture{
+        overflow: hidden;
+    }
 
 
 }
@@ -176,7 +212,6 @@ label{
 
     .save-btn{
         position: absolute;
-        margin-left: 310px !important;
         margin-top: 30px !important;
     }
 
@@ -187,7 +222,6 @@ label{
     .cancel-btn{
         position: absolute;
         margin-top: 30px !important;
-        margin-left: 430px;
         
     }
 
@@ -205,6 +239,10 @@ label{
     margin-top: 3% !important;
    }
 
+   .container .profilePicture{
+    overflow: hidden;
+}
+
 }
 
 @media (min-width:751px) and (max-width: 900px) {
@@ -220,7 +258,6 @@ label{
 
     .save-btn{
         position: absolute;
-        margin-left: 210px !important;
         margin-top: 30px !important;
     }
 
@@ -231,7 +268,6 @@ label{
     .cancel-btn{
         position: absolute;
         margin-top: 30px !important;
-        margin-left: 330px !important;
         
     }
 
@@ -253,6 +289,12 @@ label{
        margin-left: 40px !important;
    }
 
+   .profilePicture img:first-of-type {
+    border: 2.5px solid #6AF491 !important;
+}
+.container .profilePicture{
+    overflow: hidden;
+}
 
 
 }
@@ -260,7 +302,8 @@ label{
 @media (min-width:550px) and (max-width: 750px) {
 
     #btn-edit{
-        margin-left: 17%;
+        margin-left: 123px;
+        margin-top: 2%;
     }
 
     .verified img{
@@ -274,7 +317,7 @@ label{
     .save-btn{
         position: absolute;
         margin-left: 80px !important;
-        margin-top: 100px !important;
+        margin-top: 70px !important;
     }
 
     .msg-btn{
@@ -285,7 +328,7 @@ label{
 
     .cancel-btn{
         position: absolute;
-        margin-top: 100px !important;
+        margin-top: 70px !important;
         margin-left: 200px !important;
         
     }
@@ -320,45 +363,50 @@ label{
     margin-left: 140px !important;
 }
 
+.profilePicture img:first-of-type {
+    border: 2.5px solid #6AF491 !important;
+}
+
+.container .profilePicture{
+    overflow: hidden;
+}
+
 
 
 }
 
-@media (max-width: 380px) {
+@media (max-width: 560px) {
 
-    body{
-        background-color: white !important;
-    }
 
-    #btn-edit{
-        margin-left: -30%;
-        margin-top: 80px;
+      #btn-edit{
+        margin-left: 103px;
+        margin-top: 2%;
     }
 
     .verified img{
-        margin-left: 15% !important;
+
+        margin-left: -1% !important;
         height: 30px;
         width: 30px;
-        margin-top: 125px !important;
+        margin-top: 190px !important;
     }
 
     .save-btn{
         position: absolute;
-        margin-left: 10px !important;
+        margin-left: 40px !important;
         margin-top: 70px !important;
     }
 
     .msg-btn{
-        position: absolute;
-        margin-left: 20px !important;
-        display: inline;
+        margin-left: 110px !important;
+        display: block;
         margin-top: 20px;
     }
 
     .cancel-btn{
         position: absolute;
         margin-top: 70px !important;
-        margin-left: 110px !important;
+        margin-left: 200px !important;
         
     }
 
@@ -368,71 +416,37 @@ label{
     }
 
    .profile{
-       margin-left: 28% !important;
-       margin-top: -7% !important;
+       margin-left: 22% !important;
    }
 
-   .container a{
-    position: absolute;
-    margin-left: 0px;
-    margin-top: -50px !important;
-    font-size: 20px;
-   }
+   
 
    .follow2-btn{
-       margin-left: 40px !important;
-       display: inline;
+       margin-left: 90px !important;
+       display: block;
        margin-top: 20px;
    }
 
    .follow-btn{
-    position: absolute;
-    margin-left: -80px !important;
+    margin-left: 90px !important;
     margin-top: 20px;
     display: inline;
 }
 
-.hamBurger{
-    position: absolute;
-    margin-right: 0px !important;
-    margin-left: -14px !important;
-    margin-top: -80px !important;
+.hamburger{
+    margin-left: 140px !important;
 }
 
-header img{
-    position: absolute;
-    width: 100px !important;
-    height: 100px !important;
-    margin-left: -10%;
-    margin-top: -26%;
+.profilePicture img:first-of-type {
+    border: 1.5px solid #6AF491 !important;
 }
 
-.username{
-    font-size: 20px !important;
-}
-
-.user-details span{
-    font-size: 13px;
-}
-
-.main-content{
-    background-color: white;
-}
-form{
-    box-shadow: none !important;
-    width: 100%;
-}
-
-form input{
-    width: 100%;
-}
-
-footer{
-    position: absolute;
-    font-size: smaller;
-    margin-left: -50px;
+.container .profilePicture{
+    width:50% !important;
+    height: 100% !important;
+    overflow: hidden;
 }
 
 
-}
 
+}
