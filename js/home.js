@@ -91,6 +91,11 @@ const displayOpportunities = async ()=>{
             opportunityRequirements.classList.add('opportunityRequirements');
             opportunityRequirements.innerText = `Requirements: ${opportunity.Requirements}`;
 
+            const opportunityEnrollment = document.createElement('a');
+            opportunityEnrollment.classList.add('enroll');
+            opportunityEnrollment.innerText = 'Enroll';
+            opportunityEnrollment.href = opportunity.enrolLink;
+
             coreOpportunityDetails.append(opportunityDate);
             coreOpportunityDetails.append(opportunityVenue);
             coreOpportunityDetails.append(opportunityTime);
@@ -100,6 +105,7 @@ const displayOpportunities = async ()=>{
             opportunityDetails.append(opportunityInitiative);
             opportunityDetails.append(coreOpportunityDetails);
             newSlide.append(opportunityDetails);
+            newSlide.append(opportunityEnrollment);
 
             slides.append(newSlide);
 
