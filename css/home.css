@@ -114,9 +114,6 @@ body{
 }
 
 .opportunityDetails {
-    position: absolute;
-    top: 30%;
-    left: 10%;
     color: #fff;
 }
 
@@ -135,19 +132,20 @@ body{
 }
 
 .enroll {
-    text-align: center;
-    padding: 1vh 1vw;
-    width: 10vw;
     background-color: #2196F3;
+    height: max-content;
+    padding: 1vh 1vw;
     color: white;
+    width: 10vw;
+    text-align: center;
     text-decoration: none;
     border-radius: 1.5rem;
-    position: absolute;
-    right: 15%;
-    bottom: 15%;
     font-size: 1.2rem;
     font-weight: 700;
     border: 1px solid rgba(0, 0, 0, 0.6);
+    position: absolute;
+    right: 7em;
+    bottom: 2em;
 }
 
 .prev, .next {
@@ -517,6 +515,10 @@ body{
         margin-top: 1.2vh;
         font-size: 1.1rem;
     }
+    .enroll {
+        right: 5em;
+        bottom: 2em;
+    }
     .prev, .next {
         font-size: 3.2rem;
     }
@@ -673,6 +675,8 @@ body{
     .enroll {
         width: 15vw;
         font-size: 1rem;
+        right: 4em;
+        bottom: 2em;
     }
 }
 
@@ -775,7 +779,8 @@ body{
     .enroll {
         width: 12vw;
         font-size: 0.7rem;
-        bottom: 10%;
+        bottom: 1em;
+        right: 3em;
     }
     .postUser {
         padding: 2px 0 5px 15px;
