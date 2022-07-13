@@ -22,6 +22,10 @@ body{
     cursor: default;
 }
 
+.container::-webkit-scrollbar { 
+    display: none;
+}
+
 .search-container {
     width: 95.5%;
     height: 5vh;

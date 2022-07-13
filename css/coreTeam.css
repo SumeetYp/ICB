@@ -16,6 +16,10 @@ h2 {
     overflow: auto;
 }
 
+.container::-webkit-scrollbar { 
+    display: none;
+}
+
 .contactTeam {
     display: flex;
     flex-direction: column;
