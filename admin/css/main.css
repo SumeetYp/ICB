@@ -174,3 +174,96 @@ body{
 @media only screen and (min-width: 992px) {}
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {}
+
+
+/* ------------------------------------------------- */
+/* Admin Event  */
+/* ------------------------------------------------- */
+
+.eventNavbar{
+    display: flex;
+}
+
+.eButton {
+  align-items: center;
+  border: none;
+  box-sizing: border-box;
+  color: #000;
+  font-weight: 450;
+  background: #FFFFFF;
+  display: inline-flex;
+  font-size: 4.5vw;
+  height: auto;
+  justify-content: center;
+  min-width: 50%;
+  padding: 5px 17px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.pastEvent{
+    border-top: 1.5px solid #C5C4C4;
+    background-color: #D9D9D9;
+    height: 200px;
+    padding-top: 10px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.eventRow{
+    align-items: center;
+    display: flex;
+    margin: 5px 8px;
+    padding: 5px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    height: auto;
+}
+.eventColor{
+    height:4.6vw;
+    aspect-ratio : 1 / 1;
+    border-radius: 50px;
+}
+.eventName, .eventDate{
+    font-size: 4.5vw;
+    padding: 0 5px;
+    font-weight: 400;
+}
+.eventDate{
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    .eventDate,.eventName{
+        font-size: 3vw;
+        font-weight: 400;
+        padding-left: 10px;
+    }
+    .eButton{
+        font-weight: 500;
+        font-size: 3vw;
+        min-width: 170px;
+        padding: 10px;
+    }
+    .eventRow{
+        margin: 10px 20px;
+        padding: 10px;
+    }
+  }
+
+@media (min-width: 992px) {
+    .eButton{
+        padding: 15px 50px;
+        font-weight: 400;
+    }
+    .eventName{
+        padding-left: 20px;
+    }
+    .pastEvent{
+        height: 500px;
+    }
+    .eventRow{
+        border-radius: 20px;
+        padding: 20px;
+        margin: 20px;
+    }
+}
