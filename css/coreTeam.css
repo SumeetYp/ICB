@@ -16,6 +16,10 @@ h2 {
     overflow: auto;
 }
 
+.container::-webkit-scrollbar { 
+    display: none;
+}
+
 .contactTeam {
     display: flex;
     flex-direction: column;
@@ -43,8 +47,8 @@ h2 {
 }
 
 .profilePictureCTM .profilePicture {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,8 +63,9 @@ h2 {
 
 .profilePictureCTM .profilePicture .check {
     position: absolute;
-    bottom: 10%;
-    right: 5%;
+    width: 25%;
+    bottom: 7%;
+    right: 7%;
 }
 
 .contactDetailsCTM {
@@ -169,8 +174,8 @@ h2 {
 
 @media only screen and (max-width: 375px){
     .profilePictureCTM .profilePicture {
-        width: 45px; 
-        height: 45px;
+        width: 50px; 
+        height: 50px;
     }
     .nameCTM {
         font-size: 1.1rem;
@@ -180,13 +185,13 @@ h2 {
     }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 325px) {
     .profilePictureCTM {
         padding-right: 5px;
         box-sizing: border-box;
     }
     .profilePictureCTM .profilePicture {
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
     }
 }

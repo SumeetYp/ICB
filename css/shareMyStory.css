@@ -3,8 +3,10 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
 }
 .container {
   display: flex;
@@ -14,55 +16,71 @@
   flex-direction: column;
   margin: auto;
 }
+.pp-sms img:first-of-type {
+  /* height: 180px; */
+  width: 45%;
+  border: 8px solid #6af491;
+  padding: 5px;
+  border-radius: 50%;
+}
+.pp-sms .right-tick {
+  height: 50px;
+  width: 50px;
+  margin-left: -50px;
+}
+
+/* .container .right-tick {
+  width: 30%;
+} */
 .sms {
   width: 80px;
   height: 80px;
 }
 .name {
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
   font-size: 20px;
 }
 .role {
   opacity: 70%;
+  margin-bottom: 0px;
 }
 .sm-container {
   display: flex;
-  width: 50%;
+  justify-content: center;
+  width: 100%;
+  height: 20vh;
   margin: 5px;
+  /* border: 3px solid red; */
 }
-.right-tick {
-  position: absolute;
-  top: 20px;
-  left: 28px;
-}
-.right-tickk {
-  position: absolute;
-  top: 48px;
-  left: 62px;
+.sm-container img {
+  width: 30px;
+  cursor: pointer;
 }
 h3 {
   margin: 10px;
 }
 .add-post {
-  flex: 30%;
+  /* flex: 30%; */
   background: url(plus.png);
 }
 .share-my-story {
-  flex: 30%;
+  /* flex: 30%; */
 }
 .add-previous-story {
-  flex: 30%;
+  /* flex: 30%; */
 }
 .post-something {
+  position: absolute;
+  top: 435px;
   display: inline-block;
   align-items: center;
   text-align: center;
   position: absolute;
-  height: 25%;
-  width: 50%;
+  height: 30%;
+  width: 70%;
   background-color: white;
   border-radius: 10px;
-  margin-top: 5%;
   box-shadow: #63636333 0px 2px 8px 0px;
 }
 .no-post-yet {
@@ -78,13 +96,56 @@ h3 {
   color: white;
 }
 .upload-image {
-  margin: 10px;
+  margin-top: 8px;
   padding: 10px;
   margin-bottom: 5px;
-  width: 70px;
+  width: 80px;
   cursor: pointer;
 }
-button {
+form .btn-form {
+  /* position: relative; */
+  border: none;
+}
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  border: 1px solid #ccc;
+  color: white;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  background: #33cccc;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* div {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  background: #33cccc;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+label {
+  display: inline-block;
+  position: relative;
+  height: 100px;
+  width: 400px;
+}
+
+div.dragover {
+  background-color: #aaa;
+} */
+form .btn {
+  position: relative;
   background: #33cccc;
   height: 30px;
   width: 100px;
@@ -92,19 +153,18 @@ button {
   border: none;
   font-size: 15px;
   font-weight: bold;
+  margin-left: 8px;
   margin-right: 5px;
   margin-bottom: 5px;
   cursor: pointer;
+  color: white;
 }
-@media (max-width: 900px) {
+@media (max-width: 500px) {
   .post-something {
-    margin-top: 22%;
-    height: 30%;
-    width: 50%;
+    height: 34%;
+    width: 85%;
   }
-  .right-tick {
-    position: absolute;
-    top: 18px;
-    left: 20px;
+  form .btn {
+    margin-top: 7px;
   }
 }
