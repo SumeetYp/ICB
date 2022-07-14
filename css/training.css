@@ -37,6 +37,7 @@ body {
   width: 70%;
   height: 6vh;
   border: 2px solid #000000;
+  border-radius: 10px;
   align-items: center;
   justify-content: flex-end;
   text-align: center;
@@ -47,6 +48,7 @@ body {
   width: 70%;
   height: 6vh;
   border: 2px solid #000000;
+  border-radius: 10px;
   align-items: center;
   justify-content: flex-end;
   text-align: center;
@@ -68,7 +70,7 @@ body {
   width: 20%;
   height: 6vh;
   background: #d9d9d9;
-  border: 2px solid #000000;
+  border-radius: 10px;
   align-items: center;
   text-align: center;
   justify-content: center;
@@ -98,6 +100,39 @@ h2 {
   width: 450px;
   margin: 20px;
   border-radius: 15px;
-  background: #464646;
+  background: linear-gradient(
+      180deg,
+      rgba(13, 232, 237, 0.6) 8.33%,
+      rgba(0, 249, 255, 0) 100%
+    ),
+    url(../images/trainingimg.png);
+  background-size: cover;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, #0000003b 0px 3px 6px;
+  text-align: start;
+}
+.images h3 {
+  margin: 10px;
+  font-size: 30px;
+}
+.images button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 150px;
+  height: 40px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 7px;
+  display: flex;
+  /* align-self: flex-end; */
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: black;
+  border-radius: 20px;
+  color: #ffffff;
+  cursor: pointer;
 }
