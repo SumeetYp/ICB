@@ -125,3 +125,7 @@ const renderOpportunities = async ()=>{
 }
 
 renderOpportunities();
+
+setInterval(()=>{
+  showSlides(slideIndex += 1);
+}, 5000)
