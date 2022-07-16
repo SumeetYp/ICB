@@ -17,7 +17,7 @@
   }
   .chartCard {
     width: 100%;
-    height: calc(100vh - 300px);
+    height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -173,15 +173,13 @@ ul{
 
     .chartCard{
         width: 100%;
-        height: calc(100vh - 400px);
+        height: 50vh;
     }
 
  
-
-
 }
 
-@media (min-width: 1500px) and (max-width: 1600px) {
+@media (min-width: 1000px) and (max-width: 1600px) {
 
     h2{
         margin-bottom: 0px;
@@ -191,7 +189,7 @@ ul{
 
     .chartCard{
         width: 50%;
-        height: calc(100vh - 700px);
+        height: 60vh;
         margin-left: 25%;
     }
 
@@ -202,21 +200,43 @@ ul{
         margin-left: 50%;
         
       }
+      .myChart{
+          margin-top: -20vh !important;
+      }
 
 }
 
-@media (max-width:300px) {
+@media (max-width:500px) {
 
 
     h2{
         margin-bottom: 0px;
         margin-top: 0px;
         margin-left: 25%;
+        font-size: smaller;
     }
 
     .chartCard{
         width: 100%;
-        height: calc(100vh - 900px);
+        height: 40vh;
+    }
+
+    .Card{
+        margin-left: 5% !important;
+        padding: 0px !important;
+        width: 100%;
+    }
+
+    .col1{
+        width:50% !important;
+    }
+
+    .col1 ul{
+        margin-top: 0px !important;
+    }
+
+    .col1 h3{
+        margin-top: 60px !important;
     }
 
 

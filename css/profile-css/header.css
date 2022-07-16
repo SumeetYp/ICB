@@ -5,6 +5,7 @@ nav {
     padding: 20px 0;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .displaySideBar {
@@ -46,6 +47,7 @@ nav .profilePicture {
     width: 40px;
     height: 40px;
     cursor: pointer;
+    overflow: hidden;
 }
 
 nav .profilePicture .check {
@@ -54,6 +56,7 @@ nav .profilePicture .check {
     right: -5% !important;
     width: 45%;
     height:45%;
+    overflow: hidden;
     
 }
 
@@ -62,11 +65,12 @@ nav .profilePicture img:first-of-type {
     height: 100%;
     border-radius: 50%;
     border: 3px solid #6AF491 !important;
+    overflow: hidden;
 }
 
 .sideBar {
     position: absolute;
-    top: 0;
+    top: 30;
     left: -20.2vw;
     width: 20.2vw;
     background-color: #fff;
@@ -113,7 +117,7 @@ nav .profilePicture img:first-of-type {
 
 .cross {
     position: absolute;
-    top: -1vh;
+    top: 2vh;
     right: 0.5vw;
     width: 5vw;
     height: 10vh;
@@ -130,6 +134,7 @@ nav .profilePicture img:first-of-type {
     width: 60%;
     height: 60%;
 }
+
 
 
 @media only screen and (max-width: 2560px) {
@@ -217,13 +222,20 @@ nav .profilePicture img:first-of-type {
     nav .profilePicture img:first-of-type {
         border: 2.5px solid #6AF491;
     }
+    .sideBar {
+        width: 100vw !important;
+    }
+    .hideSideBar {
+        left: -100vw;
+    }
 }
 
 @media only screen and (max-width: 375px) {
     .sideBar {
-        width: 100vw;
+        width: 100vw !important;
+        position: absolute !important;
     }
     .hideSideBar {
-        left: -100vw;
+        left: -100%;
     }
 }

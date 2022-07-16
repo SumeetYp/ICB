@@ -299,7 +299,7 @@ label{
 
 }
 
-@media (min-width:550px) and (max-width: 750px) {
+@media (min-width:561px) and (max-width: 750px) {
 
     #btn-edit{
         margin-left: 123px;
@@ -442,9 +442,22 @@ label{
 }
 
 .container .profilePicture{
-    width:50% !important;
+    width:100% !important;
     height: 100% !important;
     overflow: hidden;
+    margin-left: 20px;
+}
+
+.container{
+    margin-left: 0% !important;
+}
+
+.user-details{
+    margin-top: -120px !important;
+}
+
+.form{
+    margin-top:10px;
 }
 
 
