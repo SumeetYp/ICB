@@ -1,23 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-nav {
-    height: 10vh;
-    padding: 20px 0;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+body{
+height: 95vh;
 }
 
 .displaySideBar {
     left: 0;
+    top:50;
 }
 
 .hideSideBar {
     left: -270px;
 }
 
+nav {
+    height: 5vh;
+    padding: 32px 0;
+    display: flex;
+    align-items: center;
+}
+
 .hamBurger {
-    margin-left:3%;
+    margin: 0 20px;
     cursor: pointer;
 }
 
@@ -29,7 +33,7 @@ nav {
     border-radius: 5px;
 }
 
-.userName {
+nav .userName {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
@@ -37,8 +41,7 @@ nav {
     line-height: 18px;
     color: #000;
     margin: 0 5px;
-    padding-bottom: 20px;
-    padding-top: 20px;
+    padding: 15px;
 }
 
 nav .profilePicture {
@@ -47,52 +50,46 @@ nav .profilePicture {
     width: 40px;
     height: 40px;
     cursor: pointer;
-    overflow: hidden;
 }
 
 nav .profilePicture .check {
     position: absolute;
-    bottom: -6% !important;
-    right: -5% !important;
+    bottom: 0%;
+    right: 0%;
+    top: 50%;
+    left:60%;
     width: 45%;
-    height:45%;
-    overflow: hidden;
-    
 }
 
 nav .profilePicture img:first-of-type {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 3px solid #6AF491 !important;
-    overflow: hidden;
+    border: 1px solid #6AF491;
 }
 
 .sideBar {
     position: absolute;
-    top: 30;
-    left: -20.2vw;
-    width: 20.2vw;
+    top: 50;
+    width: 270px;
     background-color: #fff;
     transition: 0.5s linear;
+    z-index: 1;
 }
 
 .sideItems {
-    position: fixed;
-    width: 20.2vw;
+    width: 100%;
     max-height: 100vh;
     height: 100vh;
     margin: 0;
     background-color: #fff;
-    /* padding-left: 10px; */
-    /* padding-bottom: 60px; */
     overflow: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .sideItems ul {
     padding: 10px 0;    
-    padding-top: 50px;
+    padding-top: 60px;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -109,6 +106,7 @@ nav .profilePicture img:first-of-type {
     padding: 8px 10px;
     font-size: 20px;
     cursor: default;
+    transition: linear 0.4s;
 }
 
 .sideItems ul a:hover {
@@ -117,10 +115,10 @@ nav .profilePicture img:first-of-type {
 
 .cross {
     position: absolute;
-    top: 2vh;
+    top: -1vh;
     right: 0.5vw;
-    width: 5vw;
-    height: 10vh;
+    width: 70px;
+    height: 80px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -134,8 +132,6 @@ nav .profilePicture img:first-of-type {
     width: 60%;
     height: 60%;
 }
-
-
 
 @media only screen and (max-width: 2560px) {
     nav .userName {
@@ -222,20 +218,13 @@ nav .profilePicture img:first-of-type {
     nav .profilePicture img:first-of-type {
         border: 2.5px solid #6AF491;
     }
-    .sideBar {
-        width: 100vw !important;
-    }
-    .hideSideBar {
-        left: -100vw;
-    }
 }
 
 @media only screen and (max-width: 375px) {
     .sideBar {
-        width: 100vw !important;
-        position: absolute !important;
+        width: 100vw;
     }
     .hideSideBar {
-        left: -100%;
+        left: -100vw;
     }
 }
