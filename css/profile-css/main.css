@@ -119,6 +119,7 @@ ul li {
     font-weight: bold;
     border-radius: 0.3rem;
     cursor: pointer;
+    position: relative;
 }
 
 .msg-btn img{
@@ -139,6 +140,7 @@ ul li {
     border: none;
     color: white;
     margin-left: 5%;
+    position: relative;
 }
 
 .follow2-btn{
@@ -147,6 +149,7 @@ ul li {
     border: none;
     color: white;
     margin-left: 18%;
+    position: relative;
 }
 
 .dropdown-btn {
@@ -267,6 +270,7 @@ ul li {
     place-items: center;
     margin-bottom: 30px;
     border-radius: 15px;
+    overflow: hidden;
     
 }
 
@@ -274,16 +278,20 @@ ul li {
 .range-slider-container-slide {
     width: 100%;
     border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    height: 10px;
 }
 
 input[type='range'] {
     width: 100%;
-    position: absolute;
+    position: relative;
     top: 50 !important;
     left: 50%;
     transform: translateX(-50%);
     position: absolute;
     border-radius: 15px;
+
     
 }
 
@@ -293,7 +301,7 @@ input[type='range'] {
     transform: translate(-50%, 230%) scale(0);
     width: 60px;
     height: 50px;
-    position: absolute;
+    position: relative;
     left: 0;
     display: flex;
     align-items: center;
