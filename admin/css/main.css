@@ -296,7 +296,65 @@ button:hover {
     color: black;
 }
 
-@media (min-width: 650px) {
+/* Graph */
+
+:root {
+    --circle-border-width: 1.5px;
+    --default-color: #E4E6ED;
+    --completion-color: seagreen;
+  }
+  
+  .circle-container {
+    min-width:60vw;
+    aspect-ratio : 1 / 1;
+    margin: 35px;
+    transform: rotate(-90deg);
+  }
+  
+  .circle-container__background {
+    fill: none;
+    stroke: var(--default-color);
+    stroke-width: var(--circle-border-width);
+  }
+  
+  .circle-container__progress {
+    fill: none;
+    stroke-linecap: round;
+    stroke: var(--completion-color);
+    stroke-dasharray: 100 100;
+    stroke-linecap: round;
+    stroke-width: var(--circle-border-width);
+    transition: stroke-dashoffset 1s ease-in-out;
+    will-change: transform;
+  }
+  .ringE{
+    stroke: #533CF5;
+  }.ringD{stroke:#2EC5B6;}.ringC{stroke:#E01518}.ringB{stroke:#41D950}.ringA{stroke:#FFBE00}
+
+.graphBox{
+    display: flex;
+}
+.achColor{
+    height:4.6vw;
+    aspect-ratio : 1 / 1;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+.achievements{
+    width: 60%;
+}
+.achHeading{
+    width: 50%;
+    font-style: normal;
+    font-size: 7.5vw;
+    font-weight: 450;
+    letter-spacing: .7px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+@media only screen and (min-device-width: 650px) {
     .eventDate,.eventName{
         font-size: 3vw;
         font-weight: 400;
@@ -337,7 +395,24 @@ button:hover {
     }
   }
 
-@media (min-width: 992px) {
+@media only screen and (min-device-width: 992px) {
+    .circle-container{
+        min-width: 10%;
+    }
+    .achHeading{
+        font-size: 4.5vw;
+        margin: 50px;
+        margin-right: 0;
+    }
+    .gData1,.gData2{
+        width: 50%;
+    }
+    .achievements{
+        width: 100%;
+    }
+    .grapfData{
+        display: flex;
+    }
     button{
         padding: 15px 32px;
         margin-top: 20px;
