@@ -8,6 +8,12 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#btn-edit{
+    position: relative;
+   top: 60px;
+   left: -50px;
+}
+
 
 .d-flex {
     display: flex;
@@ -257,7 +263,6 @@ label{
     }
 
     .save-btn{
-        position: absolute;
         margin-top: 30px !important;
     }
 
@@ -266,8 +271,8 @@ label{
     }
 
     .cancel-btn{
-        position: absolute;
-        margin-top: 30px !important;
+        margin-top: -25px !important;
+        left:30px;
         
     }
 
@@ -302,7 +307,7 @@ label{
 @media (min-width:561px) and (max-width: 750px) {
 
     #btn-edit{
-        margin-left: 123px;
+        margin-left: 163px;
         margin-top: 2%;
     }
 
@@ -315,7 +320,6 @@ label{
     }
 
     .save-btn{
-        position: absolute;
         margin-left: 80px !important;
         margin-top: 70px !important;
     }
@@ -327,8 +331,7 @@ label{
     }
 
     .cancel-btn{
-        position: absolute;
-        margin-top: 70px !important;
+        margin-top: -25px !important;
         margin-left: 200px !important;
         
     }
@@ -379,7 +382,7 @@ label{
 
 
       #btn-edit{
-        margin-left: 103px;
+        margin-left: 149px;
         margin-top: 2%;
     }
 
@@ -392,8 +395,7 @@ label{
     }
 
     .save-btn{
-        position: absolute;
-        margin-left: 40px !important;
+        margin-left: 60px !important;
         margin-top: 70px !important;
     }
 
@@ -404,9 +406,8 @@ label{
     }
 
     .cancel-btn{
-        position: absolute;
-        margin-top: 70px !important;
-        margin-left: 200px !important;
+        margin-top:-25px !important;
+        left:130px;
         
     }
 
@@ -458,6 +459,10 @@ label{
 
 .form{
     margin-top:10px;
+}
+
+.form h1{
+    width:130px;
 }
 
 
