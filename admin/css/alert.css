@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:wght@100;300;400;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:wght@100;300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 * {
   margin: 0;
@@ -16,7 +16,7 @@
 }
 
 nav {
-  /* height: 5vh; */
+  /* height: 5vh; 
   padding: 20px 0;
   display: flex;
   align-items: center;
@@ -164,7 +164,7 @@ nav .profilePicture img:first-of-type {
   nav .profilePicture .check {
     bottom: 0%;
     right: -10%;
-    /* width: 45%; */
+    /* width: 45%; 
     width: 55%;
   }
   .hamBurger div {
@@ -251,27 +251,38 @@ html {
 h2 {
   font-size: 35px;
   margin: 10px 20px;
-  /* text-align: center; */
+  /* text-align: center; 
 }
-.container {
+/* .container {
   height: 30rem;
   width: 100%;
-  top: 120rem;
+  top: 2000rem;
   background: #d9d9d9;
-}
+  top: 200px;
+} 
 form {
   font-weight: bold;
-  /* background: #d9d9d9; */
+  background-color: #d9d9d9;
   font-size: 22px;
-  width: 70%;
+  max-width: 700px;
   margin: auto;
-  padding: 50px;
+  padding: 1rem;
+  margin: 2rem auto 0 auto;
 }
-form label {
+.form-group {
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+  margin-bottom: 0px;
+}
+.form-group label {
   font-size: 1.5rem;
   text-align: left;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
-form input {
+.form-group input {
+  top: 120px;
   height: 1.7rem;
   width: 70%;
   border: none;
@@ -293,34 +304,57 @@ select {
   text-align: center;
   font-size: medium;
 }
-.btn {
-  text-align: center;
+.input-group label {
+  display: block;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  /* text-indent: -15px; 
 }
-.alert {
-  float: none;
-  background-color: red;
-  color: #ffffff;
-  width: 200px;
-  height: 35px;
-  font-size: 20px;
+
+/* .input-group input {
+  width: 70%;
+  height: 1.7rem;;
+  padding-left: 10px;
+  margin: 0;
+  vertical-align: bottom;
+  position: relative;
+  top: 3px;
+  *overflow: hidden;
+  text-align: center;
+  font-size: medium;
+ font-weight: 100;
+ border: none;
+ float: right;
+ outline: none;
+ border-radius: 8px;
+}  
+.button {
+  background: #d60e0e;
+  color: rgb(251, 247, 247);
   cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  margin-top: 50px;
+  border-style: none;
+
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  position: absolute;
+  width: 80px;
+  height: 32px;
+  left: 686px;
+  top: 700px;
 }
 
 .submit:hover {
   background-color: rgb(207, 98, 98);
 }
 @media (max-width: 900px) {
-  .container {
+  /* .container {
     height: 30.5rem;
     width: 100%;
-    top: 120rem;
-  }
-  form {
+  } */
+/* form {
     width: 100%;
+    top: 200rem;
   }
   form input {
     display: inline-block;
@@ -330,10 +364,421 @@ select {
   select {
     width: 100%;
     margin: 10px;
+  } 
+  .form-group {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-gap: 16px;
+  }
+  .form-group label {
+    text-align: right;
+    /* margin-bottom: 10px; 
+  }
+  .input-group label {
+    text-align: left;
+  }
+  .form-group p {
+    text-align: right;
+    grid-column: 1 / 2;
+    align-items: center;
+  }
+
+  input,
+  button,
+  .input-group {
+    grid-column: 2 / 3;
+    margin-bottom: 0;
   }
   .alert {
     margin-top: 50px;
     width: 60%;
     cursor: pointer;
+  }
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:wght@100;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.displaySideBar {
+  left: 0;
+}
+
+.hideSideBar {
+  left: -270px;
+}
+
+nav {
+  /* height: 5vh; */
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.hamBurger {
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.hamBurger div {
+  background-color: #000;
+  height: 6px;
+  width: 40px;
+  margin: 4px;
+  border-radius: 5px;
+}
+
+nav .userName {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 18px;
+  color: #000;
+  margin: 0 5px;
+}
+
+nav .profilePicture {
+  position: relative;
+  margin: 0 15px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+nav .profilePicture .check {
+  position: absolute;
+  bottom: 0%;
+  right: -10%;
+  width: 45%;
+}
+
+nav .profilePicture img:first-of-type {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid #6af491;
+}
+
+.sideBar {
+  position: absolute;
+  top: 0;
+  width: 270px;
+  background-color: #fff;
+  transition: 0.5s linear;
+  z-index: 1;
+}
+
+.sideItems {
+  width: 100%;
+  max-height: 100vh;
+  height: 100vh;
+  margin: 0;
+  background-color: #fff;
+  overflow: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sideItems ul {
+  padding: 10px 0;
+  padding-top: 60px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sideItems ul a {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  font-size: 20px;
+  cursor: default;
+  transition: linear 0.4s;
+}
+
+.sideItems ul a:hover {
+  background-color: #d9d9d9;
+}
+
+.cross {
+  position: absolute;
+  top: -1vh;
+  right: 0.5vw;
+  width: 70px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  display: none;
+  z-index: 1;
+}
+
+.cross img {
+  width: 60%;
+  height: 60%;
+}
+
+@media only screen and (max-width: 2560px) {
+  nav .userName {
+    font-size: 50px;
+  }
+  nav .profilePicture {
+    width: 70px;
+    height: 70px;
+    margin: 0 5px;
+  }
+  nav .profilePicture img:first-of-type {
+    border: 5px solid #6af491;
+  }
+  nav .profilePicture .check {
+    bottom: 0%;
+    right: -10%;
+    /* width: 45%; */
+    width: 55%;
+  }
+  .hamBurger div {
+    height: 10px;
+    width: 60px;
+  }
+  .sideItems ul a {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  nav .userName {
+    font-size: 35px;
+  }
+  nav .profilePicture {
+    width: 40px;
+    height: 40px;
+  }
+  nav .profilePicture img:first-of-type {
+    border: 3px solid #6af491;
+  }
+  nav .profilePicture .check {
+    bottom: 0%;
+    right: -10%;
+    width: 45%;
+  }
+  .hamBurger {
+    margin: 0 15px;
+  }
+  .hamBurger div {
+    height: 6px;
+    width: 40px;
+  }
+  .cross {
+    width: 59.45px;
+  }
+  .cross img {
+    width: 42.8px;
+  }
+  .sideItems ul a {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hamBurger {
+    margin: 0 10px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .hamBurger {
+    margin: 0 7px;
+  }
+  .hamBurger div {
+    width: 30px;
+    height: 5px;
+    margin: 3px;
+  }
+  nav .userName {
+    font-size: 25px;
+  }
+  nav .profilePicture {
+    width: 30px;
+    height: 30px;
+  }
+  nav .profilePicture img:first-of-type {
+    border: 2.5px solid #6af491;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .sideBar {
+    width: 100vw;
+  }
+  .hideSideBar {
+    left: -100vw;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+.heading {
+  /*font-size: 35px;
+  top: 40px;
+  margin: 30px 30px;
+   text-align: center; */
+
+  width: 149px;
+  height: 25px;
+  left: 46px;
+  top: 80px;
+  margin: 30px;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 12px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+.container {
+  height: 22rem;
+  width: 100%;
+  /* background: #d9d9d9; */
+  font-size: small;
+}
+form {
+  font-weight: bold;
+  background: #d9d9d9;
+  font-size: 18px;
+  width: 70%;
+  margin: 2rem auto 0 auto;
+  padding: 1rem;
+}
+.form-group {
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+  margin-bottom: 0px;
+}
+.form-group label {
+  font-size: 1.5rem;
+  text-align: left;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.input-group label {
+  display: block;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  text-indent: -15px;
+  text-align: left;
+}
+
+.input-group input {
+  width: 70px;
+  height: 1.7rem;
+  padding: 10rem;
+  margin: 20px;
+  padding-right: 10px;
+  vertical-align: bottom;
+  position: relative;
+  top: -3px;
+  *overflow: hidden;
+  text-align: center;
+  font-weight: 100;
+}
+/* form input {
+  height: 1.7rem;
+  width: 70%;
+  border: none;
+  float: right;
+  outline: none;
+  border-radius: 8px;
+  font-weight: bold;
+  padding-left: 10px;
+} */
+select {
+  height: 1.7rem;
+  width: 95%;
+  border: none;
+  float: right;
+  outline: none;
+  border-radius: 8px;
+  font-weight: 100;
+  text-align: left;
+  font-size: 15px;
+  color: #464646;
+  margin-right: 20px;
+}
+.button {
+  text-align: center;
+}
+.submit {
+  position: absolute;
+  background-color: red;
+  color: white;
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  font-size: 30px;
+  cursor: pointer;
+  border: none;
+
+  font-weight: bold;
+}
+.submit:hover {
+  background-color: rgb(207, 98, 98);
+}
+@media (min-width: 400px) {
+  .container {
+    height: 28.5rem;
+    width: 100%;
+  }
+  form {
+    width: 100%;
+  }
+  .form-group {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-gap: 16px;
+  }
+  .form-group label {
+    text-align: right;
+  }
+  .input-group label {
+    text-align: left;
+  }
+  .form-group input {
+    display: inline-block;
+    width: 95%;
+    margin: 10px;
+  }
+  input,
+  button,
+  .input-group {
+    grid-column: 2 / 3;
+    margin-bottom: 0;
+  }
+
+  select {
+    display: inline-block;
+    width: 95%;
+    margin: 10px;
+  }
+  .submit {
+    margin-top: 50px;
+    width: 15%;
+    cursor: pointer;
+    text-align: center;
+    left: 40%;
   }
 }

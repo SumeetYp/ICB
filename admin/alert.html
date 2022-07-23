@@ -59,48 +59,50 @@
     <a class="heading">Send an alert</a>
     <div class="container">
       <form>
-        <label>Name:</label>
-        <input
-          type="text"
-          placeholder="Full Name of Patient/Contact Person(Required)"
-          required
-        /><br /><br />
-        <label>Type:</label>
-        <select
-          name="Types of Emergency:"
-          id="cars"
-          placeholder="Types of Emergency:(Required)"
-        >
-          <option value="Human Care">Human Care</option>
-          <option value="Animal Care">Animal Care</option>
-          <option value="Relief/Pandemic">Relief/Pandemic</option>
-          <option value="Medical">Medical</option></select
-        ><br /><br />
-        <label>Place:</label>
-        <input 
-        type="text"
-        placeholder="(Required)"
-         required /><br /><br />
-        <label>Address:</label>
-        <input
-          type="text"
-          placeholder="Patient’s Address(Required)"
-          required
-        /><br /><br />
-        <label>Phone:</label>
-        <input
-          type="number"
-          placeholder="Phone Number of Patient/Contact Person(Required)"
-          required
-        /><br /><br />
-        <div class="btn">
+        <!-- name -->
+        <div class="form-group">
+         <label id="name-label" for="name">Name:</label>
+         <input id="name" type="text"placeholder="Full Name of Patient/Contact Person(Required)"required>
+         <span class="validity"></span>
+        </div>
+        <!-- type of emergency -->
+        <div class="form-group">
+         <label id="select" for="name">Type:</label>
+         <select id="select"  name="Types of Emergency"
+           placeholder="Types of Emergency:(Required)">
+           <option value="Types of Emergency:(Required)">Types of Emergency:(Required)</option>
+           <option value="Human Care">Human Care</option>
+           <option value="Animal Care">Animal Care</option>
+           <option value="Relief/Pandemic">Relief/Pandemic</option>
+           <option value="Medical">Medical</option></select>
+        </div>
+        <!-- place -->
+        <div class="form-group">
+          <label id="name-label" for="name">Place:</label>
+          <input id="name" type="text"placeholder="(Required)"required>
+          <span class="validity"></span>
+         </div>
+        <!-- address -->
+        <div class="form-group">
+         <label id="textarea-label" for="comments">Address:</label>
+         <input  type="text" placeholder="Patient’s Address(Required)" required>
+          
+        </div>
+        <!-- phone no -->
+        <div class="form-group">
+         <label id="name-label" for="name">Phone:</label>
+         <input id="name"type="number" placeholder="Phone Number of Patient/Contact Person(Required)" required/>
+         <span clas="validity"></span> 
+        </div>
+
+
+        <div class="button">
             
-          <input type="alert" class="alert"
-           />
+          <input type="submit" class="submit" value="Alert">
         </div>
       </form>
     </div>
-  <script src="./js/sideBar.js"></script>
+   <script src="./js/sideBar.js"></script>
     
   </body>
 </html>
