@@ -118,10 +118,35 @@ h2 {
     right: -0.5rem;
 }
 
+@media only screen and (max-width: 2560px) {
+    .profilePictureCTM .profilePicture {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 2000px) {
+    .profilePictureCTM .profilePicture {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media only screen and (max-width: 1700px) {
+    .profilePictureCTM .profilePicture {
+        width: 140px;
+        height: 140px;
+    }
+}
+
 @media only screen and (max-width: 1440px) {
     .coreTeamMember {
         height: 150px;
         padding: 2px;
+    }
+    .profilePictureCTM .profilePicture {
+        width: 100px;
+        height: 100px;
     }
 }
 
