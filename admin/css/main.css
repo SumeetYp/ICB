@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 /* ------------------------------------------------- */
 /* Particular Event */
 /* ------------------------------------------------- */
@@ -191,6 +193,7 @@ body{
   box-sizing: border-box;
   color: #000;
   font-weight: 450;
+  font-family: 'Poppins';
   background: #FFFFFF;
   display: inline-flex;
   font-size: 4.5vw;
@@ -378,7 +381,7 @@ button:hover {
     .eButton{
         font-weight: 500;
         font-size: 3vw;
-        min-width: 170px;
+        min-width: 250px;
         padding: 10px;
     }
     .eventRow{
@@ -406,10 +409,18 @@ button:hover {
     .circle-container{
         width: 30%;
     }
+    .eventColor{
+        height:2.5vw;
+        aspect-ratio : 1 / 1;
+    }
+    .pastEvent{
+        padding-left: 80px;
+        padding-right: 80px;
+    }
     .graphBox{
         justify-content: space-evenly;
     }
-    .achHeading{
+    .achHeading,.aeHead{
         font-size: 3.5vw;
         font-weight: 400;
         margin: 20px;
@@ -428,7 +439,8 @@ button:hover {
     }
     .eButton{
         padding: 15px 50px;
-        font-weight: 400;
+        font-weight: 450;
+        font-size: 2vw;
     }
     .aeTitle{
         margin-left: 80px;
@@ -446,7 +458,7 @@ button:hover {
         padding: 15px;
         margin: 15px 80px 15px 0;
         font-weight: 200;
-    };
+    }
     .eventRow{
         border-radius: 20px;
         padding: 20px;
