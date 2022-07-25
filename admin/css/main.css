@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
 /* ------------------------------------------------- */
 /* Particular Event */
 /* ------------------------------------------------- */
 *{
-    font-family: roboto;
+    font-family: 'roboto';
     margin: 0;
     padding: 0;
 }
@@ -219,12 +220,12 @@ body{
     height: auto;
 }
 .eventColor{
-    height:4.6vw;
+    height:4vw;
     aspect-ratio : 1 / 1;
     border-radius: 50px;
 }
 .eventName, .eventDate{
-    font-size: 4.5vw;
+    font-size: 3vw;
     padding: 0 5px;
     font-weight: 400;
 }
@@ -298,6 +299,9 @@ button:hover {
 
 /* Graph */
 
+.legends{
+    font-family: 'Poppins';
+}
 :root {
     --circle-border-width: 1.5px;
     --default-color: #E4E6ED;
@@ -305,7 +309,8 @@ button:hover {
   }
   
   .circle-container {
-    min-width:60vw;
+    height:100%;
+    width: 50%;
     aspect-ratio : 1 / 1;
     margin: 35px;
     transform: rotate(-90deg);
@@ -335,7 +340,7 @@ button:hover {
     display: flex;
 }
 .achColor{
-    height:4.6vw;
+    height:3vw;
     aspect-ratio : 1 / 1;
     border-radius: 10px;
     margin-right: 20px;
@@ -344,7 +349,6 @@ button:hover {
     width: 60%;
 }
 .achHeading{
-    width: 50%;
     font-style: normal;
     font-size: 7.5vw;
     font-weight: 450;
@@ -352,6 +356,9 @@ button:hover {
     margin-top: 10px;
     margin-left: 20px;
     margin-right: 0;
+}
+.legends .eventRow{
+    margin: 0;
 }
 
 @media only screen and (min-device-width: 650px) {
@@ -397,11 +404,15 @@ button:hover {
 
 @media only screen and (min-device-width: 992px) {
     .circle-container{
-        min-width: 10%;
+        width: 30%;
+    }
+    .graphBox{
+        justify-content: space-evenly;
     }
     .achHeading{
-        font-size: 4.5vw;
-        margin: 50px;
+        font-size: 3.5vw;
+        font-weight: 400;
+        margin: 20px;
         margin-right: 0;
     }
     .gData1,.gData2{
@@ -409,9 +420,6 @@ button:hover {
     }
     .achievements{
         width: 100%;
-    }
-    .grapfData{
-        display: flex;
     }
     button{
         padding: 15px 32px;
@@ -429,8 +437,9 @@ button:hover {
     .aeForm{
         padding: 50px 0;
     }
-    .eventName{
+    .eventName,.eventDate{
         padding-left: 20px;
+        font-size: 2vw;
     }
     input,select{
         border-radius: 15px;
