@@ -16,9 +16,6 @@
     padding: 15px 0;
     cursor: default;
 }
-.head div:hover {
-    background-color: #D9D9D9;
-}
 
 .enrollments, .attendedEvents{
     width: 100%;
