@@ -64,6 +64,7 @@ const displayOpportunities = async ()=>{
 
             const opportunityEnrollment = document.createElement('a');
             opportunityEnrollment.classList.add('enroll');
+            opportunityEnrollment.target="_blank";
             opportunityEnrollment.innerText = 'Enroll';
             opportunityEnrollment.href = opportunity.enrolLink;
 
