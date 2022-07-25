@@ -31,15 +31,17 @@ body{
 .peHeading{
     font-style: normal;
     font-weight: 420;
+    font-family: 'Poppins';
     font-size: 7.5vw;
     letter-spacing: .7px;
     color: #FFFFFF;
     margin-top: 10px;
 }
 .peSub{
-    font-style: normal;
     font-weight: 300;
+    padding-bottom: 10px;
     font-size: 2.3vw;
+    font-family: 'Poppins';
     line-height: 12px;
     color: #FFFFFF;
     margin-bottom: 8px;
@@ -49,18 +51,17 @@ body{
 .peDetails{
     display: flex;
     flex-wrap: wrap;
-    padding: 8px;
-    padding-bottom: 0;
+    padding: 5px;
     justify-content: space-between;
 }
 .peList p{
     padding-left: 10px;
-    font-size: 3vw;
+    font-size: 2.6vw;
 }
 .peList{
     align-items: center;
     display: flex;
-    padding: 0 5px 8px 5px;
+    padding: 5px;
     width: 40%;
     font-size: 3.5vw;
 }
@@ -71,44 +72,46 @@ body{
 }
 .peHead{
     box-sizing: border-box;
-    background: #E01518;
+    background: #3D3D3D;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #9E0002;
+    border-bottom: 1px solid #000;
+    padding: 3.5px 12px 3.5px 12px;
 }
 .peBody{
-    padding: 10px 0 10px 0;
-    width: 100%;
-    background: linear-gradient(180deg, rgba(224, 21, 24, 0.9) 0%, rgba(217, 217, 217, 0.6) 100%);
-    border-bottom: 1px solid #D9D9D9;   
-    height: 100px;
-    overflow-y: scroll;
+    padding: 10px 12px 10px 8px;
+    background: linear-gradient(180deg, #464646 0%, rgba(217, 217, 217, 0.6) 100%);
+    border-bottom: 1px solid #D9D9D9; 
+    max-height: 150px;
     overflow-x: hidden;
 }
 .peHead h2{
-    font-family: 'roboto';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 370;
-    font-size: 5vw;
-    padding: 3.5px 0 3.5px 12px;
+    font-size: 4vw;
     color: #FFFFFF;
 }
 .peList i{
-    font-size: 4.5vw;
+    font-size: 3.5vw;
 }
 .eRow{
     width: 100%;
     display: flex;
-    padding: 0 5px 0 5px ;
+    /* padding: 0 5px 0 5px ; */
     align-items: center;
-    justify-content: center;
+    /* justify-content: space-between; */
+    align-content: stretch;
 }
 .eName,.eNum{
     margin: 4px;
     padding: 4px;
-    font-size: 4vw;
+    padding-left: 6px;
+    font-size: 3.5vw;
+    flex-grow: 1;
+    flex-shrink: 1;
     background: #D9D9D9;
-    border-radius: 4px;
+    border-radius: 5px;
     width: 32%;
 }
 .peBody i{
@@ -121,16 +124,13 @@ body{
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    .peDetails{
-        flex-flow: row nowrap;
-    }
-    .peList{
-        font-size: 2vw;
-    }
     .peList i{
-        font-size: 3vw;
+        font-size: 2.5vw;
     }
-    .peList p{
+    .peDetails{
+        padding: 20px;
+    }
+    .peList p,.peList{
         font-size: 2vw;
     }
     .peHeading{
@@ -146,7 +146,8 @@ body{
         padding: 6px 20px;
     }
     .peBody{
-        height: 250px;
+        max-height: 250px;
+        padding: 10px 32px 10px 28px;
     }
     .eName,.eNum{
         width: 37%;
@@ -174,7 +175,31 @@ body{
     }
 }
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 992px) {
+    .peSub{
+        padding-bottom: 30px;
+    }
+    .eName,.eNum{
+        padding: 8px;
+        padding-left: 20px;
+        font-size: 2.5vw;
+        margin-right: 20px;
+        border-radius: 10px;
+    }
+    .eRow{
+        margin-top: 8px;
+    }
+    .peList{
+        padding: 10px;
+    }
+    .peList p{
+        font-size: 1.9vw;
+        padding-left:25px;
+    }
+    .peDetails{
+        padding: 18px 50px 10px 50px;
+    }
+}
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {}
 
