@@ -13,10 +13,11 @@ body {
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
-  margin-top: 70px;
+  margin-top: 40px;
   flex-wrap: wrap;
 }
 .first-donate {
+   /* display: flex; */
   width: 650px;
   height: 30vh;
   background: linear-gradient(
@@ -28,7 +29,6 @@ body {
   border-radius: 20px;
   margin: 20px;
   background-size: cover;
-  /* background-repeat: no-repeat; */
   font-size: 30px;
 }
 .second-donate {
@@ -44,23 +44,32 @@ body {
   border-radius: 20px;
   margin: 20px;
   font-size: 30px;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.another-div{
+  position: relative;
+  text-align: left;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 20px;
 }
 .donate {
   position: relative;
-  top: 30%;
-  left: -30%;
+  /* top: 30%;
+  left: -30%; */
   font-size: 40px;
   color: white;
 }
 .d-donate {
   position: relative;
+  /* top: 27%;
+  left: -33%; */
   color: white;
-  top: 27%;
-  left: -33%;
   font-size: 22px;
 }
-@media (max-width: 550px) {
+/* @media (max-width: 550px) {
   .donate {
     top: 30%;
     left: -22%;
@@ -70,5 +79,16 @@ body {
     top: 27%;
     left: -29%;
     font-size: 16px;
+  }
+} */
+/* @media (max-width: 400px) {
+  .another-div{
+    top: 50%;
+    transform: translateY(50%);
+  }
+} */
+@media (min-width: 1379px) {
+  .container{
+    display: grid;
   }
 }
