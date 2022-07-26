@@ -63,8 +63,8 @@ const displayOpportunities = async ()=>{
             opportunityRequirements.innerText = `Requirements: ${opportunity.Requirements}`;
 
             const opportunityEnrollment = document.createElement('a');
-            opportunityEnrollment.classList.add('enroll');
-            opportunityEnrollment.innerText = 'Enroll';
+            opportunityEnrollment.classList.add('detailsBtn');
+            opportunityEnrollment.innerText = 'Details';
             opportunityEnrollment.href = opportunity.enrolLink;
 
             coreOpportunityDetails.append(opportunityDate);
