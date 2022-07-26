@@ -1,5 +1,6 @@
 // Admin Event Page
 
+
 let upButton = document.querySelector('.upButton');
 let pastButton = document.querySelector('.pastButton');
 
@@ -16,6 +17,34 @@ upButton.addEventListener('click',()=>{
 
 pastButton.addEventListener('click',()=>{
     active(pastButton,upButton,'block');
+})
+
+let infoHidden = document.querySelector('.setInfo');
+let info = document.querySelector('.hiddenText')
+
+infoHidden.addEventListener('mouseover',()=>{
+	info.style.display = "block";
+	setTimeout(()=>{info.style.display = "none"},1000)
+})
+
+function isInTheFuture(date) {
+	const today = new Date();
+	// today.setHours(23, 59, 59, 998);
+	today.setDate(today.getDate() + 1)
+	return date > today;
+  }
+
+console.log(isInTheFuture(new Date('2021-01-25')));
+//validating date
+let neDate = document.querySelector('.neDate')
+let neButton = document.querySelector('.neButton')
+neButton.addEventListener('click',()=>{
+	let date = neDate.value;
+	let mon = neDate.nextElementSibling.value;
+	let year = neDate.nextElementSibling.nextElementSibling.value;
+	if(!isInTheFuture(new Date(`${year}-${mon}-${date}`))){
+		alert('Enter Correct Date')
+	}
 })
 
 // chart

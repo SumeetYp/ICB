@@ -53,37 +53,42 @@
                 <div class="aeRow">
                     <div class="aeTitle">Name:</div>
                     <div class="aeBox">
-                        <input placeholder="Event Name" type="text">
+                        <input placeholder="Event Name" pattern="[a-zA-Z]" type="text">
                     </div>
                 </div>
                 <div class="aeRow">
                     <div class="aeTitle">Initiative:</div>
                     <div class="aeBox">
-                        <select>
-                            <option selected="true" disabled="disabled">Event Inititative</option>     
-                            <option value="">a</option>
-                        </select>
+                            <select>
+                                <option selected="true" disabled="disabled">Event Inititative</option>     
+                                <option value="">Animal Feeding</option>
+                                <option value="">Safe Sex</option>
+                                <option value="">Mental Health</option>
+                                <option value="">Tree Plantation</option>
+                            </select>
                     </div>
                 </div>
                 <div class="aeRow">
                     <div class="aeTitle">Table Name:</div>
                     <div class="aeBox">
-                        <input placeholder="Event Table Name" type="text">
+                        <input class="tableName" pattern="[a-zA-Z0-9_-]" placeholder="Event Table Name" type="text">
+                        <img class="setInfo" src="./images/info.png">
+                        <span class="hiddenText">Event Name (camelcase) + date <br> eg: animalFeeding_19-07-2023 </span>
                     </div>
                 </div>
                 <div class="aeRow">
                     <div class="aeTitle">Date:</div>
                     <div class="aeBox">
-                        <input placeholder="DD" type="text">
-                        <input placeholder="MM" type="text">
-                        <input placeholder="YYYY" type="text">
+                        <input class="neDate" placeholder="DD" step="1" min="1" max="32" type="number">
+                        <input placeholder="MM" step="1" min="1" max="12" type="number">
+                        <input placeholder="YYYY" min="2022" type="text">
                     </div>
                 </div>
                 <div class="aeRow">
                     <div class="aeTitle">Time:</div>
                     <div class="aeBox">
-                        <input placeholder="HH" type="text">
-                        <input placeholder="MM" type="text">
+                        <input placeholder="HH" step="1" min="0" max="24" type="number">
+                        <input placeholder="MM" step="1" min="0" max="60" type="number">
                     </div>
                 </div>
                 <div class="aeRow">
@@ -100,7 +105,7 @@
                 </div>
                 <br>
                 <center>
-                <button type="button">Save and Continue</button>
+                <input type="submit" class = "button neButton" value="Save and Continue">
                 </center>
                 <br>
             </div>
