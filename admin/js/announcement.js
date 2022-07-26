@@ -22,12 +22,12 @@ const displayAnnouncements = async () => {
 
 displayAnnouncements();
 const sideBar = document.querySelector(".sideBar");
-const hamBurger = document.querySelector(".hamBurger");
+const menu = document.querySelector(".menu");
 const cross = document.querySelector(".cross");
 
 sideBar.classList.add("hideSideBar");
 
-hamBurger.addEventListener("click", (e) => {
+menu.addEventListener("click", (e) => {
   sideBar.classList.remove("hideSideBar");
   sideBar.classList.add("displaySideBar");
   setTimeout(() => {

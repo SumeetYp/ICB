@@ -64,7 +64,7 @@
             <div class="range-slider-container-slide">
                 <input type="range" class="range" min="0" max="100" step="1" value="82">
                 <div class="percentage">
-                    <span>50%</span>
+                    <span>80 Days</span>
                 </div>
             </div>
  
@@ -83,7 +83,7 @@
     
             function range () {
                 percentage.style.left = `${rangeEl.value}%`;
-                percentageSpan.innerText = `${rangeEl.value}%`;
+                percentageSpan.innerText = `${rangeEl.value} Days`;
                 percentage.style.filter = `hue-rotate(${rangeEl.value}deg)`
             }
 
