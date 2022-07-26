@@ -18,27 +18,34 @@ html {
   color: #000000;
 }
 .container {
-  height: 22rem;
+  height: 20.5rem;
   width: 100%;
 }
 form {
   font-weight: bold;
   background: #d9d9d9;
   font-size: 22px;
-  width: 70%;
+  width: 100%;
   margin: 5rem auto 0 auto;
   padding: 50px;
 }
 .form-group {
   display: grid;
-  grid-template-columns: 10%;
+  grid-template-columns: 100px 50fr;
   align-items: center;
   margin-bottom: 0px;
+  text-align: center;
 }
 .form-group label {
-  text-align: left;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+form input {
+  width: 75%;
+  height: 15px;
+  margin: 10px;
+  margin-left: 25px;
+  font-size: 18px;
 }
 
 .input-group label {
@@ -61,19 +68,23 @@ form {
   font-weight: 100;
 }
 
-select {
+.select {
+  display: grid;
+  grid-template-columns: 100px 50fr;
   height: 1rem;
-  width: 13px;
+  width: 75%;
   border: none;
-  position: relative;
+  float: right;
+  outline: none;
   border-radius: 8px;
   font-weight: bold;
   text-align: left;
-  font-size: 10px;
+  font-size: 15px;
+  line-height: 10px;
+  margin-left: 25px;
+  margin: 10px;
 }
-.button {
-  text-align: center;
-}
+
 .submit {
   float: none;
   background-color: red;
@@ -86,29 +97,23 @@ select {
   border-radius: 10px;
   font-weight: bold;
   margin-top: 50px;
+  top: 580px;
+  left: 40%;
   position: absolute;
+  text-align: center;
+  display: inline;
+  padding: 5px;
 }
 .submit:hover {
   background-color: rgb(207, 98, 98);
 }
-@media (min-width: 400px) {
+
+@media only screen and (max-width: 2560px) {
   .container {
-    height: 20.5rem;
-    width: 100%;
+    height: 20rem;
   }
   form {
     width: 100%;
-  }
-  .form-group {
-    display: grid;
-    grid-template-columns: 100px 50fr;
-    grid-gap: 10px;
-  }
-  .form-group label {
-    text-align: right;
-  }
-  .input-group label {
-    text-align: left;
   }
   form input {
     width: 75%;
@@ -117,8 +122,66 @@ select {
     margin-left: 25px;
     font-size: 18px;
   }
+  .select {
+    width: 75%;
+    margin: 10px;
+    height: 15px;
+    font-size: 18px;
+  }
+  .submit {
+    margin-top: 80px;
+    width: 15%;
+    cursor: pointer;
+    left: 40%;
+    text-align: center;
+  }
+}
 
-  select {
+@media only screen and (max-width: 1440px) {
+  .container {
+    height: 20rem;
+  }
+  form {
+    width: 100%;
+  }
+  form input {
+    width: 75%;
+    height: 15px;
+    margin: 10px;
+    margin-left: 25px;
+    font-size: 18px;
+  }
+  .select {
+    width: 75%;
+    margin: 10px;
+
+    height: 1rem;
+    font-size: 18px;
+  }
+  .submit {
+    margin-top: 80px;
+    width: 15%;
+    cursor: pointer;
+    left: 40%;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    height: 20rem;
+  }
+  form {
+    width: 100%;
+  }
+  form input {
+    width: 75%;
+    height: 15px;
+    margin: 10px;
+    margin-left: 25px;
+    font-size: 18px;
+  }
+  .select {
     width: 75%;
     margin: 10px;
     height: 1rem;
@@ -129,5 +192,93 @@ select {
     width: 15%;
     cursor: pointer;
     left: 40%;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    height: 20rem;
+  }
+  form {
+    width: 100%;
+  }
+  form input {
+    width: 75%;
+    height: 15px;
+    margin: 10px;
+    margin-left: 25px;
+    font-size: 18px;
+  }
+  .select {
+    width: 75%;
+    margin: 10px;
+    height: 1rem;
+    font-size: 18px;
+  }
+  .submit {
+    margin-top: 80px;
+    width: 15%;
+    cursor: pointer;
+    left: 40%;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .container {
+    height: 20rem;
+  }
+  form {
+    width: 100%;
+  }
+  form input {
+    width: 75%;
+    height: 15px;
+    margin: 10px;
+    margin-left: 25px;
+    font-size: 18px;
+  }
+  .select {
+    width: 75%;
+    margin: 10px;
+    height: 1rem;
+    font-size: 18px;
+  }
+  .submit {
+    margin-top: 80px;
+    width: 15%;
+    cursor: pointer;
+    left: 40%;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .container {
+    height: 20rem;
+  }
+  form {
+    width: 100%;
+  }
+  form input {
+    width: 75%;
+    height: 15px;
+    margin: 10px;
+    margin-left: 25px;
+    font-size: 18px;
+  }
+  .select {
+    width: 75%;
+    margin: 10px;
+    height: 1rem;
+    font-size: 18px;
+  }
+  .submit {
+    margin-top: 80px;
+    width: 15%;
+    cursor: pointer;
+    left: 40%;
+    text-align: center;
   }
 }
