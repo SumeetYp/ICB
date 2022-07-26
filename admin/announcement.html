@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <link rel="stylesheet" href="./css/header.css" /> -->
     <link rel="stylesheet" href="./css/announcement.css" />
-    
-    
 
     <title>Document</title>
   </head>
   <body>
-    <h1 id="title">AddAnnouncement</h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <a class="title">AddAnnouncement</a>
     <nav>
       <div class="menu">
         <div></div>
@@ -44,19 +44,25 @@
       </div>
     </div>
     <div class="addAnnouncement">
-        <form id="announcement-page">
-            <div class="form-group">
-                <label id="name-label" for="name">End Timestamp:</label>
-                <input id="name" type="date" required placeholder="DD">
-                <span class="validity"></span>
-            </div>
-            <div class="form-group">
-                <label id="textarea-label" for="comments">Announcement:</label>
-                <textarea id="comments" cols="70" rows="10" required></textarea>
-            </div>
-            <div class="form-group">
-                <input id="submit" class="button" type="submit" value="Save and Continue">
-            </div>
+      <form id="announcement-page">
+        <div class="form-group">
+          <label id="name-label" for="name">End Timestamp:</label>
+          <input id="name" type="date" required placeholder="DD" />
+          <span class="validity"></span>
+        </div>
+        <div class="form-group">
+          <label id="textarea-label" for="comments">Announcement:</label>
+          <textarea id="comments" cols="70" rows="10" required></textarea>
+        </div>
+        <div class="form-group">
+          <input
+            id="submit"
+            class="button"
+            type="submit"
+            value="Save & Continue"
+          />
+        </div>
+      </form>
     </div>
     <script src="./js/announcement.js"></script>
   </body>

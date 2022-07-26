@@ -95,6 +95,9 @@ body {
 }
 
 @media only screen and (max-width: 2560px) {
+  .title {
+    width: 100%;
+  }
   .addMarshall a {
     height: 470px;
   }
@@ -107,6 +110,9 @@ body {
 }
 
 @media only screen and (max-width: 1440px) {
+  .title {
+    width: 100%;
+  }
   .addMarshall a {
     height: 350px;
   }
@@ -122,6 +128,9 @@ body {
 }
 
 @media only screen and (max-width: 1024px) {
+  .title {
+    width: 100%;
+  }
   .addMarshall a {
     height: 300px;
   }
@@ -134,6 +143,9 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+  .title {
+    width: 100%;
+  }
   .addMarshall a {
     height: 200px;
   }
