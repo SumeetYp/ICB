@@ -7,6 +7,7 @@
 
 body{
     background-color: rgb(255, 255, 255);
+    overflow-y: hidden;
 }
 
 
@@ -223,7 +224,7 @@ ul li {
 }
 
 .layout {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -297,7 +298,7 @@ input[type='range'] {
     background-color: var(--red-clr);
     display: inline-block;
     transform: translate(-50%, 230%) scale(0);
-    width: 60px;
+    width: 220px;
     height: 50px;
     position: relative;
     left: 0;
@@ -323,6 +324,8 @@ input[type='range'] {
     color: rgb(0, 0, 0);
     text-shadow: 0 0 .2rem rgba(0, 0, 0, .6);
     border-radius: 15px;
+    padding-left: -20px;
+    padding-right: -20px;
 
 }
 

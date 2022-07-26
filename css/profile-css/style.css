@@ -48,13 +48,14 @@ a {
 
 #edit{
     display: none;
-    position: absolute;
     width: 100%;
+    position: absolute;
 
 }
 
 header{
-    overflow: hidden !important;
+    overflow-y: hidden !important;
+    position: relative;
 }
 
 textarea{
@@ -182,6 +183,13 @@ label{
 
 .container2{
     width: 100% !important;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container{
+    overflow: hidden;
+    height: 100%;
 }
 
 @media (min-width:1200px) and (max-width: 1600px) {
