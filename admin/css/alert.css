@@ -1,0 +1,133 @@
+html {
+  scroll-behavior: smooth;
+}
+.heading {
+  position: relative;
+  width: 149px;
+  height: 18px;
+  left: 20px;
+  top: 38px;
+  margin: 30px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 12px;
+
+  align-items: center;
+
+  color: #000000;
+}
+.container {
+  height: 22rem;
+  width: 100%;
+}
+form {
+  font-weight: bold;
+  background: #d9d9d9;
+  font-size: 22px;
+  width: 70%;
+  margin: 5rem auto 0 auto;
+  padding: 50px;
+}
+.form-group {
+  display: grid;
+  grid-template-columns: 10%;
+  align-items: center;
+  margin-bottom: 0px;
+}
+.form-group label {
+  text-align: left;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.input-group label {
+  display: block;
+  padding-left: 15px;
+  text-align: left;
+  font-size: 8px;
+}
+
+.input-group input {
+  width: 13px;
+  height: 8px;
+  padding: 0;
+  margin: 0;
+  vertical-align: bottom;
+  position: relative;
+  top: -3px;
+  *overflow: hidden;
+  text-align: center;
+  font-weight: 100;
+}
+
+select {
+  height: 1rem;
+  width: 13px;
+  border: none;
+  position: relative;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: left;
+  font-size: 10px;
+}
+.button {
+  text-align: center;
+}
+.submit {
+  float: none;
+  background-color: red;
+  color: white;
+  width: 200px;
+  height: 35px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 50px;
+  position: absolute;
+}
+.submit:hover {
+  background-color: rgb(207, 98, 98);
+}
+@media (min-width: 400px) {
+  .container {
+    height: 20.5rem;
+    width: 100%;
+  }
+  form {
+    width: 100%;
+  }
+  .form-group {
+    display: grid;
+    grid-template-columns: 100px 50fr;
+    grid-gap: 10px;
+  }
+  .form-group label {
+    text-align: right;
+  }
+  .input-group label {
+    text-align: left;
+  }
+  form input {
+    width: 75%;
+    height: 15px;
+    margin: 10px;
+    margin-left: 25px;
+    font-size: 18px;
+  }
+
+  select {
+    width: 75%;
+    margin: 10px;
+    height: 1rem;
+    font-size: 18px;
+  }
+  .submit {
+    margin-top: 80px;
+    width: 15%;
+    cursor: pointer;
+    left: 40%;
+  }
+}
