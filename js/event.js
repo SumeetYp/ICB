@@ -7,14 +7,14 @@ enrolledEventsHead.addEventListener('click', e=>{
     attendedEvents.classList.add('d-none');
     enrollments.classList.remove('d-none');
     enrollments.classList.add('d-block');
-    attendedEventsHead.classList.remove('active');
-    enrolledEventsHead.classList.add('active');
+    enrolledEventsHead.classList.remove('active');
+    attendedEventsHead.classList.add('active');
 })
 
 attendedEventsHead.addEventListener('click', e=>{
     enrollments.classList.add('d-none');
     attendedEvents.classList.remove('d-none');
     attendedEvents.classList.add('d-block');
-    enrolledEventsHead.classList.remove('active');
-    attendedEventsHead.classList.add('active');
+    attendedEventsHead.classList.remove('active');
+    enrolledEventsHead.classList.add('active');
 })

@@ -82,7 +82,7 @@
                         '#FFBE00'
                     ],
                     borderWidth: 1
-                }]
+                }],
             };
 
             // config 
@@ -90,6 +90,11 @@
                 type: 'bar',
                 data,
                 options: {
+                    plugins: {
+                 legend: {
+                 display: false
+                  }
+                   },
                     scales: {
                         y: {
                             beginAtZero: true
@@ -191,6 +196,7 @@
                 data: {
                     labels: xValues,
                     datasets: [{
+                        label: 'Events',
                         backgroundColor: "rgba(0,0,0,0.3)",
                         borderColor: "rgba(0,0,0,1)",
                         data: yValues,
