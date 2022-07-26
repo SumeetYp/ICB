@@ -71,8 +71,11 @@
         <!-- type of emergency -->
         <div class="form-group">
           <label id="name-label" for="name">Type:</label>
-          <select clsss="select" name="Types of Emergency">
-            <option value="Types of Emergency:">Types of Emergency:</option>
+          <select
+            name="Types of Emergency"
+            id="select"
+            placeholder="Types of Emergency" required/>
+            <option value="none" selected disabled hidden>Types of Emergency: </option>
             <option value="Human Care">Human Care</option>
             <option value="Animal Care">Animal Care</option>
             <option value="Relief/Pandemic">Relief/Pandemic</option>

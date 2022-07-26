@@ -68,7 +68,7 @@ form input {
   font-weight: 100;
 }
 
-select {
+.form-group select {
   display: grid;
   grid-template-columns: 100px 50fr;
   height: 1rem;
@@ -77,11 +77,11 @@ select {
   float: right;
   outline: none;
   border-radius: 8px;
-  font-weight: bold;
+  font-weight: 100;
   text-align: left;
   font-size: 15px;
   line-height: 10px;
-  margin-left: 25px;
+  margin-left: 45px;
   margin: 10px;
 }
 
@@ -122,7 +122,7 @@ select {
     margin-left: 25px;
     font-size: 18px;
   }
-  select {
+  .form-group select {
     width: 75%;
     margin: 10px;
     height: 15px;
@@ -151,7 +151,7 @@ select {
     margin-left: 25px;
     font-size: 18px;
   }
-  select {
+  .form-group select {
     width: 75%;
     margin: 10px;
 
@@ -159,7 +159,7 @@ select {
     font-size: 18px;
   }
   .submit {
-    margin-top: 80px;
+    margin-top: 60px;
     width: 15%;
     cursor: pointer;
     left: 40%;
@@ -181,14 +181,14 @@ select {
     margin-left: 25px;
     font-size: 18px;
   }
-  select {
+  .form-group select {
     width: 75%;
     margin: 10px;
     height: 1rem;
     font-size: 18px;
   }
   .submit {
-    margin-top: 80px;
+    margin-top: 60px;
     width: 15%;
     cursor: pointer;
     left: 40%;
@@ -210,14 +210,14 @@ select {
     margin-left: 25px;
     font-size: 18px;
   }
-  select {
+  .form-group select {
     width: 75%;
     margin: 10px;
     height: 1rem;
     font-size: 18px;
   }
   .submit {
-    margin-top: 80px;
+    margin-top: 60px;
     width: 15%;
     cursor: pointer;
     left: 40%;
@@ -239,14 +239,14 @@ select {
     margin-left: 25px;
     font-size: 18px;
   }
-  select {
+  .form-group select {
     width: 75%;
     margin: 10px;
     height: 1rem;
     font-size: 18px;
   }
   .submit {
-    margin-top: 80px;
+    margin-top: 60px;
     width: 15%;
     cursor: pointer;
     left: 40%;
@@ -268,14 +268,14 @@ select {
     margin-left: 25px;
     font-size: 18px;
   }
-  select {
+  .form-group select {
     width: 75%;
     margin: 10px;
     height: 1rem;
     font-size: 18px;
   }
   .submit {
-    margin-top: 80px;
+    margin-top: 60px;
     width: 15%;
     cursor: pointer;
     left: 40%;
