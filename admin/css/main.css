@@ -208,6 +208,22 @@ body{
 /* Admin Event  */
 /* ------------------------------------------------- */
 
+.aeBox img{
+    position: absolute;
+    right: 20px;
+    height: 18px;
+}
+.hiddenText{
+    position: absolute;
+    right: 20px;
+    margin-bottom: 80px;
+    font-size: 2vw;
+    display: none;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
 .eventNavbar{
     display: flex;
 }
@@ -290,7 +306,7 @@ body{
     font-size: 4.5vw;
     font-weight: 400;
 }
-input,select{
+input[type=text],input[type=number],select{
     width: 100%;
     padding: 5px 10px;
     box-sizing: border-box;
@@ -305,7 +321,7 @@ input,select{
     border-radius: 6px;
     height: auto;
 }
-button {
+.button {
     background-color: #0ED678;
     border: 1px solid #0ED678;
     color: white;
@@ -320,7 +336,7 @@ button {
     transition-duration: 0.4s;
 } */
   
-button:hover {
+.button:hover {
     background-color: white;
     color: black;
 }
@@ -388,12 +404,16 @@ button:hover {
 .legends .eventRow{
     margin: 0;
 }
-
-@media only screen and (min-device-width: 650px) {
+@media only screen and (min-width: 650px) {
     .eventDate,.eventName{
         font-size: 3vw;
         font-weight: 400;
         padding-left: 10px;
+    }
+    .aeBox img{
+        position: absolute;
+        right: 35px;
+        height: 20px;
     }
     .aeHead{
         padding: 20px;
@@ -418,21 +438,28 @@ button:hover {
     .aeForm{
         padding: 30px 0;
     }
-    input,select{
+    input[type=text],input[type=number],select{
         margin: 10px 20px;
         padding: 10px;
+        font-size: 2vw;
     }
     .pastEvent{
         max-height: 500px;
     }
-    button{
+    .button{
         margin-top: 10px;
+        font-size: 2vw;
     }
   }
 
-@media only screen and (min-device-width: 992px) {
+@media only screen and (min-width: 992px) {
     .circle-container{
         width: 30%;
+    }
+    .aeBox img{
+        position: absolute;
+        right: 100px;
+        height: 30px;
     }
     .eventColor{
         height:2.5vw;
@@ -457,7 +484,7 @@ button:hover {
     .achievements{
         width: 100%;
     }
-    button{
+    .button{
         padding: 15px 32px;
         margin-top: 20px;
         border-radius: 15px;
@@ -478,7 +505,7 @@ button:hover {
         padding-left: 20px;
         font-size: 2vw;
     }
-    input,select{
+    input[type=text],input[type=number],select{
         border-radius: 15px;
         padding: 15px;
         margin: 15px 80px 15px 0;
