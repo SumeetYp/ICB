@@ -280,7 +280,6 @@ ul li {
     border-radius: 15px;
     position: relative;
     overflow: hidden;
-    height: 10px;
 }
 
 input[type='range'] {
@@ -289,9 +288,8 @@ input[type='range'] {
     top: 50 !important;
     left: 50%;
     transform: translateX(-50%);
-    position: absolute;
     border-radius: 15px;
-
+    overflow: hidden;
     
 }
 
@@ -307,6 +305,9 @@ input[type='range'] {
     align-items: center;
     justify-content: center;
     transition: 200ms ease-in-out transform;
+    border-radius: 15px;
+    overflow: hidden;
+    transform: translate(-50%, 30%) scale(1);
     border-radius: 15px;
 
 }
@@ -335,6 +336,7 @@ input[type='range'] {
     -webkit-appearance: none;
     background-color: #d3d3d3;
     border-radius: 15px;
+    position: absolute;
   }
   
   input[type='range']::-webkit-slider-runnable-track {
