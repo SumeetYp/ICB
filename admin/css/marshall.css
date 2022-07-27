@@ -3,7 +3,7 @@
 body {
   margin: 0;
   padding: 0;
-  overflow: visible;
+  overflow-x: hidden;
 }
 .title {
   position: absolute;
