@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./css/alert.css" />
-    <link rel="stylesheet" href="./css/main.css" />
+   
     <link rel="stylesheet" href="./css/header.css"
   </head>
-  <body>
-    
+  <b>
     <nav>
       <!-- Hamburger Icon -->
       <div class="hamBurger">
@@ -58,13 +57,13 @@
     <a class="heading">Send an alert</a>
     <div class="container">
       <form>
-        <!-- name -->
+        <!-- Name -->
         <div class="form-group">
           <label id="name-label" for="name">Name:</label>
-          <input id="name" type="text" placeholder="Full Name of Patient/Contact Person" required/>
+          <input class="height" id="name" type="text" placeholder="Full Name of Patient/Contact Person" required/>
           <span class="validity"></span>
         </div>
-        <!-- type of emergency -->
+        <!-- type of Emergency -->
         <div class="form-group">
           <label id="name-label" for="name">Type:</label>
           <select
@@ -79,22 +78,22 @@
           </select>
           <span class="validity"></span>
         </div>
-        <!-- place -->
+       <!-- place -->
         <div class="form-group">
           <label id="name-label" for="name">Place:</label>
-          <input id="name" type="text" placeholder="" required />
+          <input class="height" id="name" type="text" placeholder="" required />
           <span class="validity"></span>
         </div>
         <!-- address -->
         <div class="form-group">
           <label id="textarea-label" for="comments">Address:</label>
-          <input id="name" type="text" placeholder="Patient’s Address" required />
+          <input class="height" id="name" type="text" placeholder="Patient’s Address" required />
         </div>
         <!-- phone no -->
         <div class="form-group">
           <label id="name-label" for="name">Phone:</label>
-          <input id="name" type="text" placeholder="Phone Number of Patient/Contact Person"required/>
-          <span clas="validity"></span>
+          <input class="height" id="name"  type="number" placeholder="Phone Number of Patient/Contact Person"required/>
+          <span class="validity"></span>
         </div>
 
         <div class="form-group">
@@ -102,6 +101,8 @@
         </div>
       </form>
     </div>
+    
     <script src="./js/sideBar.js"></script>
+
   </body>
 </html>
