@@ -161,4 +161,7 @@ select {
   .submit {
     width: 20%;
   }
+  .form-group select {
+    margin-left: 35px;
+  }
 }
