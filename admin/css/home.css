@@ -1,98 +1,99 @@
-body{
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    font-family: 'Roboto', sans-serif;
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
 }
 
-.containerAddStory{
-    position: absolute;
-    right: 2vw;
-    width: 50px;
-    border-radius: 50%;
+.containerAddStory {
+  position: absolute;
+  right: 2vw;
+  width: 50px;
+  border-radius: 50%;
 }
 
-.addStory{
-    width: 100%;
+.addStory {
+  width: 100%;
 }
 
 .container {
-    padding: 0 2vw;
-    height: 90vh;
-    overflow: auto;
-    cursor: default;
+  padding: 0 2vw;
+  height: 90vh;
+  overflow: auto;
+  cursor: default;
 }
 
-.container::-webkit-scrollbar { 
-    display: none;
+.container::-webkit-scrollbar {
+  display: none;
 }
 
 .search-container {
-    width: 95.5%;
-    height: 5vh;
-    margin: 2vh 0;
-    position: relative;
-    border: 2px solid black;
-    padding: 0 2vw;
-    border-radius: 0.7rem;
-    background-color: #D9D9D9;
+  width: 95.5%;
+  height: 5vh;
+  margin: 2vh 0;
+  position: relative;
+  border: 2px solid black;
+  padding: 0 2vw;
+  border-radius: 0.7rem;
+  background-color: #d9d9d9;
 }
 
 .tableSearch {
-    width: 100%;
-    height: 100%;
-    vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
 }
 
 .search {
-    border: none;
-    height: 100%;
-    width: 100%;
-    border-radius: 0.7rem;
-    background-color: #D9D9D9;
-    font-style: italic;
-    font-size: 16px;
+  border: none;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.7rem;
+  background-color: #d9d9d9;
+  font-style: italic;
+  font-size: 16px;
 }
 
 .search::placeholder {
-    font-style: italic;
+  font-style: italic;
 }
 
 .search:focus {
-    outline: none;
+  outline: none;
 }
 
 .searchLogo {
-    width: 2%;
-    text-align: right;
+  width: 2%;
+  text-align: right;
 }
 
-.announceHead, .opportunityHead, .FeedsHead{
-    font-size: 1.5rem;
-    font-weight: 400;
+.announceHead,
+.opportunityHead {
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
 .announceList {
-    border: 4px solid #E01518;
-    color: #E01518;
-    margin: 2vh 2vw;
+  border: 4px solid #e01518;
+  color: #e01518;
+  margin: 2vh 2vw;
 }
 
 .announceList ul {
-    margin: 2vh 2vw;
-    padding: 0;
+  margin: 2vh 2vw;
+  padding: 0;
 }
 
 .announceList ul li {
-    list-style: none;
-    font-size: 1.3rem;
-    font-weight: 500;
+  list-style: none;
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 
 .opportunityList {
-    margin: 2vh 2vw;
-    display: flex;
-    flex-direction: column;
+  margin: 2vh 2vw;
+  display: flex;
+  flex-direction: column;
 }
 
 .slideshow-container {
@@ -105,7 +106,7 @@ body{
 }
 
 .slides {
-    width: 90%;
+  width: 90%;
 }
 
 /* Hide the images by default */
@@ -116,69 +117,148 @@ body{
 }
 
 .opportunityDetails {
-    transform: translateY(-65%);
-    position: absolute;
-    top: 50%;
-    left: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #fff;
+  transform: translateY(-55%);
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
 }
 
 .opportunityName {
-    font-size: 3rem;
-    font-weight: 700;
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 .opportunityInitiative {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .coreOpportunityDetails {
-    margin-top: 2vh;
-    font-size: 1.5rem;
+  margin-top: 2vh;
+  font-size: 1.5rem;
+}
+
+/* //             <section class="range-slider">   daysContainer
+  
+// <div class="container-slide"></div>   daysSlide
+//     <div class="range-slider-container-slide">   daysLeft
+//         <input type="range" class="range" min="2" max="98" step="1" value="82">   //daysLeftSlide
+//         <div class="percentage">   //daysLeftNumber
+//             <span>80 Days</span>    //days
+//         </div>
+//     </div> */
+
+.daysContainer {
+  position: absolute;
+  top: 80%;
+  left: 5%;
+  transform: translateY(-20%);
+  font-family: 'Roboto', sans-serif;
+  width: 60%;
+}
+
+.daysLeftNumber {
+  background-color: var(--red-clr);
+  display: inline-block;
+  transform: translate(-50%, 230%) scale(0);
+  width: 100%;
+  position: relative;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 200ms ease-in-out transform;
+  border-radius: 15px;
+  overflow: hidden;
+  transform: translate(-50%, 30%) scale(1);
+  border-radius: 15px;
+  margin-bottom: 0.5vh;
+}
+.daysLeftNumber::before {
+  content: "";
+  position: absolute;
+  transform: translateY(-100%);
+  border-radius: 15px;
+}
+.daysLeftNumber span {
+  color: #fff;
+  font-weight: 700;
+}
+
+.daysLeft:hover .daysLeftNumber {
+  transform: translate(-50%, 30%) scale(1);
+  border-radius: 15px;
+}
+
+.daysLeftSlide {
+  width: 100%;
+  overflow: hidden;
+  -webkit-appearance: none;
+  background-color: #d3d3d3;
+  border-radius: 15px;
+  position: absolute;
+}
+
+.daysLeftSlide::-webkit-slider-runnable-track {
+  height: 10px;
+  -webkit-appearance: none;
+  color: #6af491;
+  margin-top: -1px;
+  border-radius: 15px;
+}
+
+.daysLeftSlide::-webkit-slider-thumb {
+  width: 20px;
+  -webkit-appearance: none;
+  height: 20px;
+  background: #6af491;
+  box-shadow: -800px 0 0 800px #6af491;
+  border-radius: 15px;
 }
 
 .detailsBtn {
-    background-color: #FFBE00;
-    height: max-content;
-    padding: 1vh 1vw;
-    color: white;
-    width: 10vw;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 1.5rem;
-    font-size: 1.2rem;
-    font-weight: 700;
-    border: 1px solid rgba(0, 0, 0, 0.6);
-    position: absolute;
-    right: 7em;
-    bottom: 2em;
+  background-color: #ffbe00;
+  height: max-content;
+  padding: 1vh 1vw;
+  color: white;
+  width: 10vw;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  position: absolute;
+  right: 7em;
+  bottom: 2em;
 }
 
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   display: inline-block;
   padding: 0;
-  color: #2196F3;
+  color: #2196f3;
   width: 3%;
   font-size: 3.5rem;
   letter-spacing: -0.3rem;
-  transform: scale(.5, 1);
+  transform: scale(0.5, 1);
   margin: 0 0 0 1%;
 }
 
 .prev {
-    margin: 0 1% 0 0;
-    direction: rtl;
+  margin: 0 1% 0 0;
+  direction: rtl;
 }
 
 .dots {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .dot {
@@ -192,276 +272,293 @@ body{
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
 .slide {
-    animation-name: fade;
-    animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
 @keyframes fade {
-  from {opacity: 0.1}
-  to {opacity: 1;}
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-@media  only screen and (max-width: 2560px) {
-    .announceHead, .opportunityHead, .FeedsHead{
-        font-size: 3rem;
-    }
-    .announceList ul {
-        margin: 1.3vh 1.3vw;
-    }
-    .announceList ul li {
-        font-size: 2rem;
-    }
-    .slides {
-        width: 90%;
-    }
-    .mySlides{
-        height: 40vh;
-        width: 100%;
-        border-radius: 4rem;
-    }
-    .opportunityDetails {
-        overflow: hidden;
-    }
-    .opportunityName {
-        font-size: 5rem;
-    }
-    .opportunityInitiative {
-        font-size: 4rem;
-    }
-    .coreOpportunityDetails {
-        margin-top: 1.5vh;
-        font-size: 2.3rem;
-    }
-    .prev, .next {
-        font-size: 5rem;
-    }
-    .dot {
-        height: 25px;
-        width: 25px;
-    }
+@media only screen and (max-width: 2560px) {
+  .announceHead,
+  .opportunityHead {
+    font-size: 3rem;
+  }
+  .announceList ul {
+    margin: 1.3vh 1.3vw;
+  }
+  .announceList ul li {
+    font-size: 2rem;
+  }
+  .slides {
+    width: 90%;
+  }
+  .mySlides {
+    height: 40vh;
+    width: 100%;
+    border-radius: 4rem;
+  }
+  .opportunityDetails {
+    overflow: hidden;
+  }
+  .opportunityName {
+    font-size: 5rem;
+  }
+  .opportunityInitiative {
+    font-size: 4rem;
+  }
+  .coreOpportunityDetails {
+    margin-top: 1.5vh;
+    font-size: 2.3rem;
+  }
+  .prev,
+  .next {
+    font-size: 5rem;
+  }
+  .dot {
+    height: 25px;
+    width: 25px;
+  }
 }
 
-@media  only screen and (max-width: 1440px) {
-    .announceHead, .opportunityHead{
-        font-size: 2rem;
-    }
-    .announceList ul {
-        margin: 1.3vh 1.3vw;
-    }
-    .announceList ul li {
-        font-size: 1.4rem;
-    }
-    .slides {
-        width: 90%;
-    }
-    .mySlides{
-        height: 40vh;
-        width: 100%;
-        border-radius: 3.5rem;
-    }
-    .opportunityName {
-        font-size: 2.3rem;
-    }
-    .opportunityInitiative {
-        font-size: 2rem;
-    }
-    .coreOpportunityDetails {
-        margin-top: 1.5vh;
-        font-size: 1rem;
-    }
-    .prev, .next {
-        font-size: 4.5rem;
-    }
-    .dot {
-        height: 14px;
-        width: 14px;
-    }
+@media only screen and (max-width: 1440px) {
+  .announceHead,
+  .opportunityHead {
+    font-size: 2rem;
+  }
+  .announceList ul {
+    margin: 1.3vh 1.3vw;
+  }
+  .announceList ul li {
+    font-size: 1.4rem;
+  }
+  .slides {
+    width: 90%;
+  }
+  .mySlides {
+    height: 40vh;
+    width: 100%;
+    border-radius: 3.5rem;
+  }
+  .opportunityName {
+    font-size: 2.3rem;
+  }
+  .opportunityInitiative {
+    font-size: 2rem;
+  }
+  .coreOpportunityDetails {
+    margin-top: 1.5vh;
+    font-size: 1rem;
+  }
+  .prev,
+  .next {
+    font-size: 4.5rem;
+  }
+  .dot {
+    height: 14px;
+    width: 14px;
+  }
 }
 
-@media  only screen and (max-width: 1024px) {
-    .announceHead, .opportunityHead, .FeedsHead{
-        font-size: 1.5rem;
-    }
-    .announceList ul {
-        margin: 1.1vh 1.1vw;
-    }
-    .announceList ul li {
-        font-size: 1.1rem;
-    }
-    .slides {
-        width: 90%;
-    }
-    .mySlides{
-        height: 40vh;
-        width: 100%;
-        border-radius: 2.5rem;
-    }
-    .opportunityName {
-        font-size: 2rem;
-    }
-    .opportunityInitiative {
-        font-size: 1.5rem;
-    }
-    .coreOpportunityDetails {
-        margin-top: 1.2vh;
-        font-size: 1.1rem;
-    }
-    .detailsBtn {
-        right: 5em;
-        bottom: 2em;
-    }
-    .prev, .next {
-        font-size: 3.2rem;
-    }
-    .dot {
-        height: 12px;
-        width: 12px;
-    }
+@media only screen and (max-width: 1024px) {
+  .announceHead,
+  .opportunityHead {
+    font-size: 1.5rem;
+  }
+  .announceList ul {
+    margin: 1.1vh 1.1vw;
+  }
+  .announceList ul li {
+    font-size: 1.1rem;
+  }
+  .slides {
+    width: 90%;
+  }
+  .mySlides {
+    height: 40vh;
+    width: 100%;
+    border-radius: 2.5rem;
+  }
+  .opportunityName {
+    font-size: 2rem;
+  }
+  .opportunityInitiative {
+    font-size: 1.5rem;
+  }
+  .coreOpportunityDetails {
+    margin-top: 1.2vh;
+    font-size: 1.1rem;
+  }
+  .detailsBtn {
+    right: 5em;
+    bottom: 2em;
+  }
+  .prev,
+  .next {
+    font-size: 3.2rem;
+  }
+  .dot {
+    height: 12px;
+    width: 12px;
+  }
 }
 
-@media  only screen and (max-width: 768px) {
-    .announceHead, .opportunityHead{
-        font-size: 1.2rem;
-    }
-    .announceList ul {
-        margin: 1vh 1vw;
-    }
-    .announceList ul li {
-        font-size: 0.9rem;
-    }
-    .slides {
-        width: 90%;
-    }
-    .mySlides{
-        height: 280px;
-        width: 100%;
-        border-radius: 2rem;
-    }
-    .opportunityName {
-        font-size: 1.5rem;
-    }
-    .opportunityInitiative {
-        font-size: 1.2rem;
-    }
-    .coreOpportunityDetails {
-        margin-top: 1.2vh;
-        font-size: 1rem;
-    }
-    .detailsBtn {
-        padding: 0.7vh 1vw;
-        font-size: 1rem;
-    }
-    .prev, .next {
-        font-size: 2.5rem;
-    }
-    .dot {
-        height: 9px;
-        width: 9px;
-    }
+@media only screen and (max-width: 768px) {
+  .announceHead,
+  .opportunityHead {
+    font-size: 1.2rem;
+  }
+  .announceList ul {
+    margin: 1vh 1vw;
+  }
+  .announceList ul li {
+    font-size: 0.9rem;
+  }
+  .slides {
+    width: 90%;
+  }
+  .mySlides {
+    height: 280px;
+    width: 100%;
+    border-radius: 2rem;
+  }
+  .opportunityName {
+    font-size: 1.5rem;
+  }
+  .opportunityInitiative {
+    font-size: 1.2rem;
+  }
+  .coreOpportunityDetails {
+    margin-top: 1.2vh;
+    font-size: 1rem;
+  }
+  .detailsBtn {
+    padding: 0.7vh 1vw;
+    font-size: 1rem;
+  }
+  .prev,
+  .next {
+    font-size: 2.5rem;
+  }
+  .dot {
+    height: 9px;
+    width: 9px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    .detailsBtn {
-        width: 15vw;
-        font-size: 1rem;
-        right: 4em;
-        bottom: 2em;
-    }
+  .detailsBtn {
+    width: 15vw;
+    font-size: 1rem;
+    right: 4em;
+    bottom: 2em;
+  }
 }
 
-@media  only screen and (max-width: 425px) {
-    .announceHead, .opportunityHead{
-        font-size: 1.1rem;
-    }
-    .announceList {
-        border: 2.5px solid #E01518;
-    }
-    .announceList ul {
-        margin: 1vh 1vw;
-    }
-    .announceList ul li {
-        font-size: 0.9rem;
-    }
-    .slides {
-        width: 90%;
-    }
-    .mySlides{
-        height: 200px;
-        width: 100%;
-        border-radius: 1.5rem;
-    }
-    .opportunityName {
-        font-size: 1.2rem;
-    }
-    .opportunityInitiative {
-        font-size: 1.1rem;
-    }
-    .coreOpportunityDetails {
-        margin-top: 1vh;
-        font-size: 0.8rem;
-    }
-    .detailsBtn {
-        font-size: 0.8rem;    
-    }
-    .prev, .next {
-        font-size: 2rem;
-    }
-    .dot {
-        height: 7px;
-        width: 7px;
-    }
+@media only screen and (max-width: 425px) {
+  .announceHead,
+  .opportunityHead {
+    font-size: 1.1rem;
+  }
+  .announceList {
+    border: 2.5px solid #e01518;
+  }
+  .announceList ul {
+    margin: 1vh 1vw;
+  }
+  .announceList ul li {
+    font-size: 0.9rem;
+  }
+  .slides {
+    width: 90%;
+  }
+  .mySlides {
+    height: 200px;
+    width: 100%;
+    border-radius: 1.5rem;
+  }
+  .opportunityName {
+    font-size: 1.2rem;
+  }
+  .opportunityInitiative {
+    font-size: 1.1rem;
+  }
+  .coreOpportunityDetails {
+    margin-top: 1vh;
+    font-size: 0.8rem;
+  }
+  .detailsBtn {
+    font-size: 0.8rem;
+  }
+  .prev,
+  .next {
+    font-size: 2rem;
+  }
+  .dot {
+    height: 7px;
+    width: 7px;
+  }
 }
 
 @media only screen and (max-width: 375px) {
-    .detailsBtn {
-        width: 12vw;
-        font-size: 0.7rem;
-        bottom: 1em;
-        right: 3em;
-    }
+  .detailsBtn {
+    width: 12vw;
+    font-size: 0.7rem;
+    bottom: 1em;
+    right: 3em;
+  }
 }
 
-@media  only screen and (max-width: 325px) {
-    .announceHead, .opportunityHead{
-        font-size: 1rem;
-    }
-    .announceList {
-        border: 2px solid #E01518;
-    }
-    .announceList ul {
-        margin: 1vh 1vw;
-    }
-    .announceList ul li {
-        font-size: 0.7rem;
-    }
-    .slides {
-        width: 90%;
-    }
-    .mySlides{
-        height: 150px;
-        width: 100%;
-        border-radius: 1.2rem;
-    }
-    .opportunityName {
-        font-size: 1rem;
-    }
-    .opportunityInitiative {
-        font-size: 0.8rem;
-    }
-    .coreOpportunityDetails {
-        margin-top: 0.8vh;
-        font-size: 0.6rem;
-    }
-    .prev, .next {
-        font-size:  1.5rem;
-    }
-    .dot {
-        height: 4px;
-        width: 4px;
-    }
+@media only screen and (max-width: 325px) {
+  .announceHead,
+  .opportunityHead {
+    font-size: 1rem;
+  }
+  .announceList {
+    border: 2px solid #e01518;
+  }
+  .announceList ul {
+    margin: 1vh 1vw;
+  }
+  .announceList ul li {
+    font-size: 0.7rem;
+  }
+  .slides {
+    width: 90%;
+  }
+  .mySlides {
+    height: 150px;
+    width: 100%;
+    border-radius: 1.2rem;
+  }
+  .opportunityName {
+    font-size: 1rem;
+  }
+  .opportunityInitiative {
+    font-size: 0.8rem;
+  }
+  .coreOpportunityDetails {
+    margin-top: 0.8vh;
+    font-size: 0.6rem;
+  }
+  .prev,
+  .next {
+    font-size: 1.5rem;
+  }
+  .dot {
+    height: 4px;
+    width: 4px;
+  }
 }
