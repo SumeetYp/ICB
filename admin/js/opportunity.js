@@ -62,6 +62,48 @@ const displayOpportunities = async ()=>{
             opportunityRequirements.classList.add('opportunityRequirements');
             opportunityRequirements.innerText = `Requirements: ${opportunity.Requirements}`;
 
+//             <section class="range-slider">   daysContainer
+  
+// <div class="container-slide"></div>   daysSlide
+//     <div class="range-slider-container-slide">   daysLeft
+//         <input type="range" class="range" min="2" max="98" step="1" value="82">   //daysLeftSlide
+//         <div class="percentage">   //daysLeftNumber
+//             <span>80 Days</span>    //days
+//         </div>
+//     </div>
+
+            const oppDate = new Date(`${opportunity.Month}/${opportunity.Date}/${opportunity.Year}`)
+            const today = new Date();
+
+            const daysContainer = document.createElement('div');
+            daysContainer.classList.add('daysContainer');
+
+            const daysSlide = document.createElement('div');
+            daysSlide.classList.add('daysSlide');
+
+            const daysLeft = document.createElement('div');
+            daysLeft.classList.add('daysLeft');
+
+            const daysLeftSlide = document.createElement('input');
+            daysLeftSlide.classList.add('daysLeftSlide');
+            daysLeftSlide.min = 0;
+            daysLeftSlide.max = 20;
+            daysLeftSlide.type = "range";
+            daysLeftSlide.step = 1;
+            daysLeftSlide.value = Math.ceil((oppDate.getTime() - today.getTime())/(1000*3600*24));
+
+            const daysLeftNumber = document.createElement('div');
+            daysLeftNumber.classList.add('daysLeftNumber');
+
+            const days = document.createElement('span');
+            days.append(`-${Math.ceil((oppDate.getTime() - today.getTime())/(1000*3600*24))}D`)
+
+            daysLeftNumber.append(days);
+            daysLeft.append(daysLeftSlide);
+            daysLeft.append(daysLeftNumber);
+            daysSlide.append(daysLeft);
+            daysContainer.append(daysSlide);
+
             const opportunityEnrollment = document.createElement('a');
             opportunityEnrollment.classList.add('detailsBtn');
             opportunityEnrollment.innerText = 'Details';
@@ -75,6 +117,7 @@ const displayOpportunities = async ()=>{
             opportunityDetails.append(opportunityName);
             opportunityDetails.append(opportunityInitiative);
             opportunityDetails.append(coreOpportunityDetails);
+            opportunityDetails.append(daysContainer);
             newSlide.append(opportunityDetails);
             newSlide.append(opportunityEnrollment);
 
