@@ -27,8 +27,10 @@ h4 {
 }
 
 form{
+    padding-top: 30px;
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-bottom: 30px;
 }
 
 /* ///// inputs /////*/
@@ -185,5 +187,294 @@ input[type=checkbox]:checked + label {
   color: #f00;
   font-style: normal;
 }
+
+
+@media (min-width:1200px) and (max-width: 1600px) {
+
+    .cancel-btn{
+        position: absolute;
+        margin-top: -30px !important;
+        margin-left: 580px !important;
+        
+    } 
+
+    .container .profilePicture{
+        overflow: hidden;
+    }
+
+
+}
+
+@media (min-width:901px) and (max-width: 1100px) {
+
+    #btn-edit{
+        margin-left: -49%;
+    }
+
+    .verified img{
+
+        margin-left: 1% !important;
+    }
+
+    .save-btn{
+        position: absolute;
+        margin-top: 30px !important;
+    }
+
+    .msg-btn{
+        margin-left: 78px !important;
+    }
+
+    .cancel-btn{
+        position: absolute;
+        margin-top: 30px !important;
+        
+    }
+
+    .logo a{
+        font-size: smaller;
+        margin-left: 0px;
+    }
+
+   .profile{
+       margin-left: 13% !important;
+   }
+
+   .container a{
+    margin-left: 30px;
+    margin-top: 3% !important;
+   }
+
+   .container .profilePicture{
+    overflow: hidden;
+}
+
+}
+
+@media (min-width:751px) and (max-width: 900px) {
+
+    #btn-edit{
+        margin-left: -49%;
+    }
+
+    .verified img{
+
+        margin-left: 3% !important;
+    }
+
+    .save-btn{
+        margin-top: 30px !important;
+    }
+
+    .msg-btn{
+        margin-left: 23px !important;
+    }
+
+    .cancel-btn{
+        margin-top: -25px !important;
+        left:30px;
+        
+    }
+
+    .logo a{
+        font-size: smaller;
+        margin-left: 0px;
+    }
+
+   .profile{
+       margin-left: 18% !important;
+   }
+
+   .container a{
+    margin-left: 0px;
+    margin-top: 3% !important;
+   }
+
+   .follow2-btn{
+       margin-left: 40px !important;
+   }
+
+   .profilePicture img:first-of-type {
+    border: 2.5px solid #6AF491 !important;
+}
+.container .profilePicture{
+    overflow: hidden;
+}
+
+
+}
+
+@media (min-width:561px) and (max-width: 750px) {
+
+    #btn-edit{
+        margin-left: 163px;
+        margin-top: 2%;
+    }
+
+    .verified img{
+
+        margin-left: -1% !important;
+        height: 30px;
+        width: 30px;
+        margin-top: 190px !important;
+    }
+
+    .save-btn{
+        margin-left: 80px !important;
+        margin-top: 70px !important;
+    }
+
+    .msg-btn{
+        margin-left: 110px !important;
+        display: block;
+        margin-top: 20px;
+    }
+
+    .cancel-btn{
+        margin-top: -25px !important;
+        margin-left: 200px !important;
+        
+    }
+
+    .logo a{
+        font-size: smaller;
+        margin-left: 0px;
+    }
+
+   .profile{
+       margin-left: 22% !important;
+   }
+
+   .container a{
+    margin-left: 0px;
+    margin-top: 20px !important;
+   }
+
+   .follow2-btn{
+       margin-left: 110px !important;
+       display: block;
+       margin-top: 20px;
+   }
+
+   .follow-btn{
+    margin-left: 110px !important;
+    margin-top: 20px;
+    display: inline;
+}
+
+.hamburger{
+    margin-left: 140px !important;
+}
+
+.profilePicture img:first-of-type {
+    border: 2.5px solid #6AF491 !important;
+}
+
+.container .profilePicture{
+    overflow: hidden;
+}
+
+header{
+    overflow: hidden !important;
+}
+
+
+
+}
+
+@media (max-width: 560px) {
+
+
+      #btn-edit{
+        margin-left: 149px;
+        margin-top: 2%;
+    }
+
+    .verified img{
+
+        margin-left: -1% !important;
+        height: 30px;
+        width: 30px;
+        margin-top: 190px !important;
+    }
+
+    .save-btn{
+        margin-left: 60px !important;
+        margin-top: 70px !important;
+    }
+
+    .msg-btn{
+        margin-left: 110px !important;
+        display: block;
+        margin-top: 20px;
+    }
+
+    .cancel-btn{
+        margin-top:-25px !important;
+        left:130px;
+        
+    }
+
+    .logo a{
+        font-size: smaller;
+        margin-left: 0px;
+    }
+
+   .profile{
+       margin-left: 22% !important;
+   }
+
+   
+
+   .follow2-btn{
+       margin-left: 90px !important;
+       display: block;
+       margin-top: 20px;
+   }
+
+   .follow-btn{
+    margin-left: 90px !important;
+    margin-top: 20px;
+    display: inline;
+}
+
+.hamburger{
+    margin-left: 140px !important;
+}
+
+.profilePicture img:first-of-type {
+    border: 1.5px solid #6AF491 !important;
+}
+
+.container .profilePicture{
+    width:100% !important;
+    height: 100% !important;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+.container{
+    margin-left: 0% !important;
+}
+
+.user-details{
+    margin-top: -120px !important;
+}
+
+.form{
+    margin-top:10px;
+}
+
+.form h1{
+    width:130px;
+}
+
+header{
+    overflow: hidden !important;
+}
+
+
+}
+
 
 

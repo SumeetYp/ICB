@@ -264,27 +264,30 @@ ul li {
 }
 
 .range-slider {
-    margin-top: 0px;
+    margin-top: 20px;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     display: flex;
     place-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     border-radius: 15px;
     overflow: hidden;
+    margin-left: 6%;
     
 }
 
 
 .range-slider-container-slide {
-    width: 100%;
+    width: 95%;
     border-radius: 15px;
     position: relative;
     overflow: hidden;
+    padding-left: 28px;
+    padding-right: 28px;
 }
 
 input[type='range'] {
-    width: 100%;
+    width: 98%;
     position: relative;
     top: 50 !important;
     left: 50%;
