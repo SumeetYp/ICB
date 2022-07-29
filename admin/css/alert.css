@@ -265,7 +265,7 @@ form {
 }
 .form-group {
   display: grid;
-  grid-template-columns: 100px 50fr;
+  /* grid-template-columns: 100px 50fr; */
   align-items: center;
   text-align: center;
   width: 75%;
@@ -288,7 +288,7 @@ select {
   box-sizing: border-box;
   background: #ffffff;
   border: none;
-  font-size: 3vw;
+  /* font-size: 3vw; */
   align-items: center;
   display: flex;
   background-color: #ffffff;
@@ -296,15 +296,11 @@ select {
 }
 
 .form-group select {
-  display: grid;
-  grid-template-columns: 100px 50fr;
-
   border: none;
   outline: none;
   font-weight: 100;
   text-align: left;
 
-  margin-left: 30px;
   color: #706c6c;
   padding: 0 0 0 10px;
   align-items: center;
@@ -358,6 +354,7 @@ select {
   }
   .submit {
     width: 15%;
+    top: 600px;
   }
 }
 
@@ -383,10 +380,46 @@ select {
     font-size: 18px;
     height: 28px;
   }
+  .form-group select {
+    display: grid;
+    grid-template-columns: 100px 50fr;
+  }
+  .form-group {
+    display: grid;
+    grid-template-columns: 100px 50fr;
+  }
+}
 
+@media only screen and (max-width: 650px) {
   .submit {
+    left: 35%;
+    top: 620px;
     width: 20%;
-    top: 600px;
+  }
+  form {
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .form-group {
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+  .form-group label {
+    font-size: 18px;
+  }
+  input[type="text"],
+  input[type="number"],
+  select {
+    margin: 15px 0px 15px 5px;
+    font-size: 16px;
+    width: 120%;
+  }
+  .form-group select {
+    margin-left: 5px;
+  }
+  .heading {
+    font-size: 21px;
   }
 }
 @media only screen and (min-width: 300px) {
@@ -398,12 +431,8 @@ select {
   .form-group {
     padding-left: 0;
   }
-  .submit {
-    width: 20%;
-    top: 600px;
-  }
+
   .form-group select {
-    margin-left: 15px;
     padding-left: 3px;
   }
 }
