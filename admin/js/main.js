@@ -24,7 +24,7 @@ let info = document.querySelector('.hiddenText')
 
 infoHidden.addEventListener('mouseover',()=>{
 	info.style.display = "block";
-	setTimeout(()=>{info.style.display = "none"},1000)
+	setTimeout(()=>{info.style.display = "none"},3000)
 })
 
 function isInTheFuture(date) {
