@@ -26,6 +26,10 @@ header{
     height: 100%;
 }
 
+nav .profilePicture{
+    overflow: hidden;
+}
+
 nav .profilePicture img:first-of-type {
     width: 80%;
     height: 80%;
