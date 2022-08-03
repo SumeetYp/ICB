@@ -76,7 +76,7 @@
                     <div class="aeBox">
                         <input class="tableName" pattern="[a-zA-Z0-9_-]" placeholder="Event Table Name" type="text">
                         <img class="setInfo" src="./images/info.png">
-                        <span class="hiddenText">Event Name (camelcase) + date <br> eg: animalFeeding_19-07-2023 </span>
+                        <span class="hiddenText">Event Name (lowercase) + date <br> eg: animalfeeding_19-07-2023 </span>
                     </div>
                 </div>
                 <div class="aeRow">
