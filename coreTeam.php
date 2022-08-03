@@ -1,17 +1,19 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/donate.css">
+    <link rel="stylesheet" href="./css/coreTeam.css">
+    <title>Document</title>
 </head>
-
 <body>
+
     <!-- Navigation Bar -->
     <nav>
 
@@ -27,8 +29,7 @@
 
         <!-- User's Profile Picture -->
         <div class="profilePicture">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU"
-                alt="">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU" alt="">
             <img class="check" src="./images/check 1admin.png" alt="">
         </div>
     </nav>
@@ -41,14 +42,14 @@
             <ul>
                 <a href="./index.html">Home</a>
                 <a href="./profile.html">Profile</a>
-                <a href="./trainings.html" style="background-color: #D9D9D9;">My Training</a>
+                <a href="./trainings.html">My Training</a>
                 <a href="./events.html">My Events</a>
                 <a href="./donate.html">Donate</a>
                 <a href="./differenceIMade.html">Difference I Made</a>
                 <a href="./shareMyStory.html">Share My Story</a>
                 <a href="./addMarshalls.html">Add a Marshal</a>
                 <a href="./settings.html">Settings & Support</a>
-                <a href="./coreTeam.html">Contact Team</a>
+                <a href="./coreTeam.html" style="background-color: #D9D9D9;">Contact Team</a>
                 <a href="./alert.html">Send an Alert</a>
             </ul>
             <div class="cross">
@@ -56,40 +57,14 @@
             </div>
         </div>
     </div>
-    <script src="./js/sideBar.js"></script>
 
-    <!-- donate page  -->
+    <!-- Heading -->
+    <h2>Contact Team</h2>
+
     <div class="container">
-        <div class="first-donate">
-            <div class="another-div">
-                <div class="donate">
-                    <h2>
-                        Donate
-                    </h2>
-                </div>
-                <div class="d-donate">
-                    <h3>
-                        without 80G
-                    </h3>
-                </div>
-            </div>
-        </div>
-        <div class="second-donate">
-            <div class="another-div">
-                <div class="donate">
-                    <h2>
-                        Donate
-                    </h2>
-                </div>
-                <div class="d-donate">
-                    <h3>
-                        without 80G
-                    </h3>
-                </div>
-            </div>
-        </div>
+        <div class="contactTeam"></div>
     </div>
-
+    <script src="./js/sideBar.js"></script>
+    <script src="./js/coreTeam.js"></script>
 </body>
-
 </html>

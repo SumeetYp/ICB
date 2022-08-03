@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,11 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/membersRegistration.css">
+    <link rel="stylesheet" href="./css/studentsRegistration.css">
 </head>
 
+
 <body>
-    <h1 id="title">Members Registration</h1>
+    <h1 id="title">Students Registration</h1>
     <form id="survey-form">
         <div class="form-group">
             <label id="name-label" for="name">First Name:</label>
@@ -128,8 +132,21 @@
         <div class="form-group">
             <p>Type of Registration:</p>
             <div class="input-group">
-                <label for="yes"><input id="yes" type="radio" name="user-rating" value="yes" checked> Member (₹
-                    499/-)</label>
+                <label for="yes"><input id="yes" type="radio" name="user-rating" value="yes" checked> Student
+                    Leadership
+                    Training Program (₹ 199/-)</label>
+            </div>
+        </div>
+
+        <!-- Do you want any of these-->
+
+        <div class="form-group">
+            <p>Do you want any of these:</p>
+            <div class="input-group">
+                <label><input type="checkbox" name="improvements" value="TShirt"> TShirt (₹ 250/-)</label>
+                <label><input type="checkbox" name="improvements" value="Cap"> Cap (Not Available)</label>
+                <label><input type="checkbox" name="improvements" value="Badge"> Badge (₹ 25/-)</label>
+                <label><input type="checkbox" name="improvements" value="Bag"> Bag (Not Available)</label>
             </div>
         </div>
 

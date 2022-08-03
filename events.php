@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +10,8 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/events.css">
     <link rel="stylesheet" href="./css/utils.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -30,18 +33,15 @@
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU" alt="">
             <img class="check" src="./images/check 1admin.png" alt="">
         </div>
-        <a href="./shareMyStory.html" class="containerAddStory">
-            <img src="./images/plus.png" class="addStory"></img>
-        </a>
     </nav>
 
     <!-- SideBar Menu -->
-    <div class="sideBar">
+    <div class="sideBar hideSideBar">
         <div class="sideItems">
 
             <!-- Side Elements -->
             <ul>
-                <a href="./index.html" style="background-color: #D9D9D9;">Home</a>
+                <a href="./index.html">Home</a>
                 <a href="./profile.html">Profile</a>
                 <a href="./trainings.html">My Training</a>
                 <a href="./events.html">My Events</a>
@@ -58,27 +58,42 @@
             </div>
         </div>
     </div>
+
     <div class="container">
-        <div class="search-container">
-            <table class="tableSearch">
-                <tr>
-                    <td>
-                        <input class="search" type="text" placeholder="Search for friends..." name="search">
-                    </td>
-                    <td class="searchLogo">
-                        <a href=""><i class="fa fa-search"></i></a>
-                    </td>
-                </tr>
-            </table>
+        <div class="head">
+            <div class="enrolledEventsHead">Enrolled</div>
+            <div class="attendedEventsHead active">Attended</div>
         </div>
-        <div class="announcements d-none">
-            <div class="announceHead">Big & Major Announcement</div>
-            <div class="announceList">
-                <ul class="announces"></ul>
+        <div class="enrollments d-block">
+            <div class="enrolledEvent">
+                <div class="enrolledEventHeading"></div>
+                <div class="enrolledEventData">
+                    <img src="./images/eye.svg" alt="">
+                </div>
+            </div>
+            <div class="enrolledEvent">
+                <div class="enrolledEventHeading"></div>
+                <div class="enrolledEventData">
+                    <img src="./images/eye.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="attendedEvents d-none">
+            <div class="attendedEvent">
+                <div class="attendedEventHeading"></div>
+                <div class="attendedEventData">
+                    <a href=""><img src="./images/download.svg" alt=""></a>
+                </div>
+            </div>
+            <div class="attendedEvent">
+                <div class="attendedEventHeading"></div>
+                <div class="attendedEventData">
+                    <a href=""><img src="./images/download.svg" alt=""></a>
+                </div>
             </div>
         </div>
         <div class="opportunities d-none">
-            <div class="opportunityHead">Opportunities Calendar</div>
+            <div class="opportunityHead">Enroll Now</div>
             <div class="opportunityList">
                 <!-- Slideshow container -->
                 <div class="slideshow-container">
@@ -92,13 +107,9 @@
                 <div style="text-align:center" class="dots"></div>
             </div>
         </div>
-        <div class="Feeds d-none">
-            <div class="FeedsHead">Feeds</div>
-        </div>
     </div>
-    <script src="./js/announcement.js"></script>
-    <script src="./js/opportunity.js"></script>
-    <script src="./js/Feeds.js"></script>
     <script src="./js/sideBar.js"></script>
+    <script src="./js/opportunity.js"></script>
+    <script src="./js/event.js"></script>
 </body>
 </html>

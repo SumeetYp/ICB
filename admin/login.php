@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en-IN">
 <head>
@@ -12,8 +15,8 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- main css -->
-    <link rel="stylesheet" type="text/css" href="/css/login.css">
-    <title>Login | Member</title>
+    <link rel="stylesheet" type="text/css" href="./css/login.css">
+    <title>Login | Admin</title>
 </head>
 <body>
     <div class="container">

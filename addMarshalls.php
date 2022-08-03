@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/comingSoon.css">
+    <link rel="stylesheet" href="./css/addMarshalls.css">
     <title>Document</title>
 </head>
 <body>
+
     <!-- Navigation Bar -->
     <nav>
 
@@ -31,7 +35,7 @@
     </nav>
 
     <!-- SideBar Menu -->
-    <div class="sideBar">
+    <div class="sideBar hideSideBar">
         <div class="sideItems">
 
             <!-- Side Elements -->
@@ -43,7 +47,7 @@
                 <a href="./donate.html">Donate</a>
                 <a href="./differenceIMade.html">Difference I Made</a>
                 <a href="./shareMyStory.html">Share My Story</a>
-                <a href="./addMarshalls.html">Add a Marshal</a>
+                <a href="./addMarshalls.html" style="background-color: #D9D9D9;">Add a Marshal</a>
                 <a href="./settings.html">Settings & Support</a>
                 <a href="./coreTeam.html">Contact Team</a>
                 <a href="./alert.html">Send an Alert</a>
@@ -53,13 +57,30 @@
             </div>
         </div>
     </div>
-
-    <!-- Coming Soon Text -->
-    <div class="comingSoon">
-        <div class="neonText1">Coming</div>
-        <div class="neonText2">Soon</div>
+    <div class="addMarshall">
+        <div class="marshalls">
+            <a target="_blank" href="./membersRegistration.html" class="addMember">
+                <div class="details">
+                    <div>Member</div>
+                    <div>Membership Fee: &#8377;499/-</div>
+                    <div>Eligibility: 18+ Only</div>
+                </div>
+            </a>
+            <a target="_blank" href="./studentsRegistration.html" class="addSchool">
+                <div class="details">
+                    <div>School</div>
+                    <div>SLTP Fee: &#8377;199/-</div>
+                    <div>Eligibility: Must be enrolled in School</div>
+                </div>
+            </a>
+            <a target="_blank" class="addVolunteer">
+                <div class="details">
+                    <div>Volunteers</div>
+                    <div>(Not Now)</div>
+                </div>
+            </a>
+        </div>
     </div>
-
     <script src="./js/sideBar.js"></script>
 </body>
 </html>

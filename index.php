@@ -1,9 +1,13 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/utils.css">
@@ -29,6 +33,9 @@
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU" alt="">
             <img class="check" src="./images/check 1admin.png" alt="">
         </div>
+        <a href="./shareMyStory.html" class="containerAddStory">
+            <img src="./images/plus.png" class="addStory"></img>
+        </a>
     </nav>
 
     <!-- SideBar Menu -->
@@ -38,11 +45,15 @@
             <!-- Side Elements -->
             <ul>
                 <a href="./index.html" style="background-color: #D9D9D9;">Home</a>
-                <a href="./stats.html">Stats</a>
-                <a href="./events.html">Event</a>
-                <a href="./announcement.html">Announcement</a>
+                <a href="./profile.html">Profile</a>
+                <a href="./trainings.html">My Training</a>
+                <a href="./events.html">My Events</a>
                 <a href="./donate.html">Donate</a>
+                <a href="./differenceIMade.html">Difference I Made</a>
+                <a href="./shareMyStory.html">Share My Story</a>
                 <a href="./addMarshalls.html">Add a Marshal</a>
+                <a href="./settings.html">Settings & Support</a>
+                <a href="./coreTeam.html">Contact Team</a>
                 <a href="./alert.html">Send an Alert</a>
             </ul>
             <div class="cross">
@@ -84,9 +95,13 @@
                 <div style="text-align:center" class="dots"></div>
             </div>
         </div>
+        <div class="Feeds d-none">
+            <div class="FeedsHead">Feeds</div>
+        </div>
     </div>
-    <script src="./js/announcementHome.js"></script>
+    <script src="./js/announcement.js"></script>
     <script src="./js/opportunity.js"></script>
+    <script src="./js/Feeds.js"></script>
     <script src="./js/sideBar.js"></script>
 </body>
 </html>

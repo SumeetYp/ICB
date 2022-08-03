@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/coreTeam.css">
+    <link rel="stylesheet" href="./css/comingSoon.css">
     <title>Document</title>
 </head>
 <body>
-
     <!-- Navigation Bar -->
     <nav>
 
@@ -46,7 +48,7 @@
                 <a href="./shareMyStory.html">Share My Story</a>
                 <a href="./addMarshalls.html">Add a Marshal</a>
                 <a href="./settings.html">Settings & Support</a>
-                <a href="./coreTeam.html" style="background-color: #D9D9D9;">Contact Team</a>
+                <a href="./coreTeam.html">Contact Team</a>
                 <a href="./alert.html">Send an Alert</a>
             </ul>
             <div class="cross">
@@ -55,13 +57,12 @@
         </div>
     </div>
 
-    <!-- Heading -->
-    <h2>Contact Team</h2>
-
-    <div class="container">
-        <div class="contactTeam"></div>
+    <!-- Coming Soon Text -->
+    <div class="comingSoon">
+        <div class="neonText1">Coming</div>
+        <div class="neonText2">Soon</div>
     </div>
+
     <script src="./js/sideBar.js"></script>
-    <script src="./js/coreTeam.js"></script>
 </body>
 </html>
