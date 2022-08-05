@@ -35,13 +35,13 @@
 
             <!-- Side Elements -->
             <ul>
-                <a href="./index.html" style="background-color: #D9D9D9;">Home</a>
-                <a href="./stats.html">Stats</a>
-                <a href="./events.html">Event</a>
-                <a href="./announcement.html">Announcement</a>
-                <a href="./donate.html">Donate</a>
-                <a href="./addMarshalls.html">Add a Marshal</a>
-                <a href="./alert.html">Send an Alert</a>
+                <a href="./index.php" style="background-color: #D9D9D9;">Home</a>
+                <a href="./stats.php">Stats</a>
+                <a href="./events.php">Event</a>
+                <a href="./announcement.php">Announcement</a>
+                <a href="./donate.php">Donate</a>
+                <a href="./addMarshalls.php">Add a Marshal</a>
+                <a href="./alert.php">Send an Alert</a>
             </ul>
             <div class="cross">
                 <img src="./images/cross.png" alt="">

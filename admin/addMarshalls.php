@@ -32,13 +32,13 @@
       <div class="sideItems">
         <!-- Side Elements -->
         <ul>
-          <a href="./index.html" target="_blank">Home</a>
-          <a href="./stats.html" target="_blank">Stat</a>
-          <a href="./events.html" target="_blank">Event</a>
-          <a href="./announcement.html" target="_blank">Announcements</a>
-          <a href="./donate.html" target="_blank">Donate</a>
-          <a href="./addMarshalls.html" target="_blank">Add a Marshal</a>
-          <a href="./alert.html" target="_blank">Send an Alert</a>
+          <a href="./index.php" target="_blank">Home</a>
+          <a href="./stats.php" target="_blank">Stat</a>
+          <a href="./events.php" target="_blank">Event</a>
+          <a href="./announcement.php" target="_blank">Announcements</a>
+          <a href="./donate.php" target="_blank">Donate</a>
+          <a href="./addMarshalls.php" target="_blank" style="background-color: #D9D9D9;">Add a Marshal</a>
+          <a href="./alert.php" target="_blank">Send an Alert</a>
         </ul>
         <div class="cross">
           <img src="./images/cross.png" alt="" />
@@ -46,14 +46,14 @@
       </div>
     </div>
     <div class="addMarshall">
-      <a href="./membersRegistration.html" target="_blank" class="addMember">
+      <a href="./membersRegistration.php" target="_blank" class="addMember">
         <div class="details">
           <div>Member</div>
           <div>Membership Fee: &#8377;499/-</div>
           <div>Eligibility: 18+ Only</div>
         </div>
       </a>
-      <a href="./studentsRegistration.html" target="_blank" class="addSchool">
+      <a href="./studentsRegistration.php" target="_blank" class="addSchool">
         <div class="details">
           <div>School</div>
           <div>SLTP Fee: &#8377;199/-</div>

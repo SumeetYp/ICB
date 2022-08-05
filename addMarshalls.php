@@ -40,17 +40,17 @@
 
             <!-- Side Elements -->
             <ul>
-                <a href="./index.html">Home</a>
-                <a href="./profile.html">Profile</a>
-                <a href="./trainings.html">My Training</a>
-                <a href="./events.html">My Events</a>
-                <a href="./donate.html">Donate</a>
-                <a href="./differenceIMade.html">Difference I Made</a>
-                <a href="./shareMyStory.html">Share My Story</a>
-                <a href="./addMarshalls.html" style="background-color: #D9D9D9;">Add a Marshal</a>
-                <a href="./settings.html">Settings & Support</a>
-                <a href="./coreTeam.html">Contact Team</a>
-                <a href="./alert.html">Send an Alert</a>
+            <a href="./index.php">Home</a>
+                <a href="./profile.php">Profile</a>
+                <a href="./trainings.php">My Training</a>
+                <a href="./events.php">My Events</a>
+                <a href="./donate.php">Donate</a>
+                <a href="./differenceIMade.php">Difference I Made</a>
+                <a href="./shareMyStory.php">Share My Story</a>
+                <a href="./addMarshalls.php" style="background-color: #D9D9D9;">Add a Marshal</a>
+                <a href="./settings.php">Settings & Support</a>
+                <a href="./coreTeam.php">Contact Team</a>
+                <a href="./alert.php">Send an Alert</a>
             </ul>
             <div class="cross">
                 <img src="./images/cross.png" alt="">
@@ -59,14 +59,14 @@
     </div>
     <div class="addMarshall">
         <div class="marshalls">
-            <a target="_blank" href="./membersRegistration.html" class="addMember">
+            <a target="_blank" href="./membersRegistration.php" class="addMember">
                 <div class="details">
                     <div>Member</div>
                     <div>Membership Fee: &#8377;499/-</div>
                     <div>Eligibility: 18+ Only</div>
                 </div>
             </a>
-            <a target="_blank" href="./studentsRegistration.html" class="addSchool">
+            <a target="_blank" href="./studentsRegistration.php" class="addSchool">
                 <div class="details">
                     <div>School</div>
                     <div>SLTP Fee: &#8377;199/-</div>

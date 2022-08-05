@@ -43,17 +43,17 @@
 
             <!-- Side Elements -->
             <ul>
-                <a href="./index.html">Home</a>
-                <a href="./profile.html">Profile</a>
-                <a href="./trainings.html" style="background-color: #D9D9D9;">My Training</a>
-                <a href="./events.html">My Events</a>
-                <a href="./donate.html">Donate</a>
-                <a href="./differenceIMade.html">Difference I Made</a>
-                <a href="./shareMyStory.html">Share My Story</a>
-                <a href="./addMarshalls.html">Add a Marshal</a>
-                <a href="./settings.html">Settings & Support</a>
-                <a href="./coreTeam.html">Contact Team</a>
-                <a href="./alert.html">Send an Alert</a>
+                <a href="./index.php">Home</a>
+                <a href="./profile.php">Profile</a>
+                <a href="./trainings.php" style="background-color: #D9D9D9;">My Training</a>
+                <a href="./events.php">My Events</a>
+                <a href="./donate.php">Donate</a>
+                <a href="./differenceIMade.php">Difference I Made</a>
+                <a href="./shareMyStory.php">Share My Story</a>
+                <a href="./addMarshalls.php">Add a Marshal</a>
+                <a href="./settings.php">Settings & Support</a>
+                <a href="./coreTeam.php">Contact Team</a>
+                <a href="./alert.php">Send an Alert</a>
             </ul>
             <div class="cross">
                 <img src="./images/cross.png" alt="">
