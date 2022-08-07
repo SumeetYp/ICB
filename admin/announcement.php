@@ -15,19 +15,30 @@
   <body>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <a class="title">AddAnnouncement</a>
+    <a class="title">Add Announcement</a>
     <nav>
       <div class="menu">
         <div></div>
         <div></div>
         <div></div>
       </div>
-      <div class="userName">Username</div>
+      <?php
 
-      <div class="profilePicture">
-        <img src="./images/profile.jpg" alt="" />
-        <img class="check" src="./images/check 1admin.png" alt="" />
-      </div>
+            include './config.php';
+            $sql = "SELECT * FROM users";
+            $result = mysqli_query($mysqli, $sql) or die("SQL Failed");
+            $output = NULL;
+            if(mysqli_num_rows($result) > 0){
+                $output = mysqli_fetch_array($result);
+            }
+            mysqli_close($mysqli);
+            echo "<div class='userName'>" . $output['username'] . "</div>" . "\n" .
+                    "<div class='profilePicture'>" . "\n" .
+                    "<img class='profPic' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU' alt=''>" . "\n" .
+                    "<img class='check' src='./images/check 1admin.png' alt=''>" . "\n" .
+                 "</div>";
+
+        ?>
     </nav>
     <div class="sideBar hideSideBar">
       <div class="sideItems">
@@ -47,15 +58,15 @@
       </div>
     </div>
     <div class="addAnnouncement">
-      <form id="announcement-page">
+      <form id="announcement-page" action="./database/addAnnouncement.php" method="POST">
         <div class="form-group">
-          <label id="name-label" for="name">End Timestamp:</label>
-          <input id="name" type="date" required placeholder="DD" />
+          <label id="name-label" for="endDate">End Timestamp:</label>
+          <input id="endDate" type="date" name="endDate" required placeholder="DD" />
           <span class="validity"></span>
         </div>
         <div class="form-group">
-          <label id="textarea-label" for="comments">Announcement:</label>
-          <textarea id="comments" cols="70" rows="10" required></textarea>
+          <label id="textarea-label" for="announcement">Announcement:</label>
+          <textarea id="announcement" name="announcement" cols="70" rows="10" required></textarea>
         </div>
         <div class="form-group">
           <input

@@ -21,19 +21,23 @@
         <div></div>
       </div>
 
-      <!-- Username -->
-      <div class="userName">Username</div>
+      <?php
 
-      <!-- User's Profile Picture -->
-      <div class="profilePicture">
-        <img src="./images/profile.jpg" alt="" />
-        <img
-          class="check"
-          id="right-tick"
-          src="./images/check 1admin.png"
-          alt=""
-        />
-      </div>
+            include './config.php';
+            $sql = "SELECT * FROM users";
+            $result = mysqli_query($mysqli, $sql) or die("SQL Failed");
+            $output = NULL;
+            if(mysqli_num_rows($result) > 0){
+                $output = mysqli_fetch_array($result);
+            }
+            mysqli_close($mysqli);
+            echo "<div class='userName'>" . $output['username'] . "</div>" . "\n" .
+                    "<div class='profilePicture'>" . "\n" .
+                    "<img class='profPic' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU' alt=''>" . "\n" .
+                    "<img class='check' src='./images/check 1admin.png' alt=''>" . "\n" .
+                 "</div>";
+
+        ?>
     </nav>
 
     <!-- SideBar Menu -->
