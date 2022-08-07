@@ -177,7 +177,7 @@ mysqli_close($mysqli);
                                                 "</div>" .
                                             "</div>" .
                                          "</div>" .
-                                         "<a class='detailsBtn' target='_blank' href='" . $outputEvents[$x]["id"] . "'>Details</a>" .
+                                         "<a class='detailsBtn' target='_blank' href='./particularEvent.php?eTN=" . $outputEvents[$x]["eventTableName"] . "'>Details</a>" .
                                      "</div>";
                             }
                         ?>
