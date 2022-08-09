@@ -1,12 +1,18 @@
 <?php
     include './config.php';
 
+    $today = date("Y-m-d");
+
     $sql = "SELECT * FROM users";
     $resultUser = mysqli_query($mysqli, $sql) or die("SQL Failed");
     
+    $sql = "DELETE FROM announcements WHERE expiryDate<'$today'";
+    mysqli_query($mysqli, $sql) or die("SQL Failed");
     $sql = "SELECT * FROM announcements ORDER BY noticeDate DESC";
     $resultAnnouncements = mysqli_query($mysqli, $sql) or die("SQL Failed");
     
+    $sql = "DELETE FROM events WHERE eventDate<'$today'";
+    $delEventsResult = mysqli_query($mysqli, $sql) or die("SQL Failed");
     $sql = "SELECT * FROM events";
     $resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
 
