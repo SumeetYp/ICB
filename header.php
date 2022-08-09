@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/utils.css">
     <title>Document</title>
 </head>
 <body>
@@ -18,16 +19,44 @@
             <div></div>
             <div></div>
             <div></div>
-        </div>
+        </div>  
 
-        <!-- Username -->
-        <div class="userName">Username</div>
 
-        <!-- User's Profile Picture -->
-        <div class="profilePicture">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU" alt="">
-            <img class="check" src="./images/check 1admin.png" alt="">
-        </div>
+        <?php
+
+            include './config.php';
+            $sql = "SELECT * FROM users";
+            $result = mysqli_query($mysqli, $sql) or die("SQL Failed");
+            $output = NULL;
+            $checkSrc = NULL;
+            $borderColor = NULL;
+            if(mysqli_num_rows($result) > 0){
+                $output = mysqli_fetch_array($result);
+                if($output){
+                    switch($output['type']){
+                        case "admin": $borderColor= '#0ED678'; 
+                                      $checkSrc= './images/check 1admin.png';
+                                      break;
+                        case "member": $borderColor= '#2196F3';
+                                       $checkSrc= './images/memberProfile.svg';
+                                       break;
+                        case "volunteer": $borderColor= '#FFBE00';
+                    }
+                }
+            }
+            $display = '';
+            if($checkSrc == NULL){
+                $display = 'd-none';
+            }
+            mysqli_close($mysqli);
+            echo "<div class='userName'>" . $output['username'] . "</div>" . "\n" .
+                    "<div class='profilePicture'>" . "\n" .
+                    "<img class='profPic' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU' style='border-color: " . $borderColor . ";' alt=''>" . "\n" .
+                    "<img class='check" . $display . "' src='" . $checkSrc . "' alt=''>" . "\n" .
+                 "</div>";
+
+        ?>
+
     </nav>
 
     <!-- SideBar Menu -->

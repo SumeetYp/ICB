@@ -136,7 +136,7 @@ nav .profilePicture img:first-of-type {
         margin: 0 5px;
     }
     nav .profilePicture img:first-of-type {
-        border: 5px solid #6AF491;
+        border-width: 5px;
     }
     nav .profilePicture .check {
         bottom: -20%;
@@ -161,7 +161,7 @@ nav .profilePicture img:first-of-type {
         height: 40px;
     }
     nav .profilePicture img:first-of-type {
-        border: 3px solid #6AF491;
+        border-width: 3px;
     }
     nav .profilePicture .check {
         bottom: -20%;
@@ -209,7 +209,7 @@ nav .profilePicture img:first-of-type {
         height: 30px;
     }
     nav .profilePicture img:first-of-type {
-        border: 2.5px solid #6AF491;
+        border-width: 2.5px;
     }
 }
 

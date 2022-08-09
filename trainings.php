@@ -1,5 +1,55 @@
 <?php
+    include './config.php';
 
+    $sql = "SELECT * FROM users";
+    $resultUser = mysqli_query($mysqli, $sql) or die("SQL Failed");
+    $outputUser = NULL;
+    $checkSrc = NULL;
+    $borderColor = NULL;
+    if(mysqli_num_rows($resultUser) > 0){
+        $outputUser = mysqli_fetch_array($resultUser);
+        if($outputUser){
+            switch($outputUser['type']){
+                case "admin": $borderColor= '#0ED678'; 
+                              $checkSrc= './images/check 1admin.png';
+                              break;
+                case "member": $borderColor= '#2196F3';
+                               $checkSrc= './images/memberProfile.svg';
+                               break;
+                case "volunteer": $borderColor= '#FFBE00';
+            }
+        }
+    }
+
+    $sql = "SELECT * FROM trainings";
+    $resultTrainings = mysqli_query($mysqli, $sql) or die("SQL Failed");
+    $outputTrainings = [];
+    if(mysqli_num_rows($resultTrainings) > 0){
+        while($row = mysqli_fetch_assoc($resultTrainings)){
+            $outputTrainings[] = $row;
+        }
+    }
+
+    $completedTrainings = [];
+    $ongoingTrainings = [];
+    for($x=0; $x<sizeof($outputTrainings); $x++){
+        $trainingTableName = $outputTrainings[$x]['trainingTableName'];
+        $id = $outputUser['id'];
+        $sql = "SELECT * FROM $trainingTableName WHERE id=$id";
+        $resultTrainingTable = mysqli_query($mysqli, $sql) or die("SQL Failed");
+        $outputTrainingTable = NULL;
+        if(mysqli_num_rows($resultTrainingTable) > 0){
+            $outputTrainingTable = mysqli_fetch_array($resultTrainingTable);
+            if($outputTrainingTable['enrolledUserCompleted']!=0){
+                $completedTrainings[] = (object) ['id' => $outputTrainingTable['id'], 'enrolledUsername' => $outputTrainingTable['enrolledUsername'], 'enrolledUserMobile' => $outputTrainingTable['enrolledUserMobile'], 'enrolledUserEmail' => $outputTrainingTable['enrolledUserEmail'], 'enrollmentDate' => $outputTrainingTable['enrollmentDate'], 'enrolledUserCompleted' => $outputTrainingTable['enrolledUserCompleted'], 'trainingTableName' => $trainingTableName];
+            }
+            else{
+                $ongoingTrainings[] = (object) ['id' => $outputTrainingTable['id'], 'enrolledUsername' => $outputTrainingTable['enrolledUsername'], 'enrolledUserMobile' => $outputTrainingTable['enrolledUserMobile'], 'enrolledUserEmail' => $outputTrainingTable['enrolledUserEmail'], 'enrollmentDate' => $outputTrainingTable['enrollmentDate'], 'enrolledUserCompleted' => $outputTrainingTable['enrolledUserCompleted'], 'trainingTableName' => $trainingTableName];
+            }
+        }
+    }
+    
+    mysqli_close($mysqli);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +62,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/training.css">
+    <link rel="stylesheet" href="./css/utils.css">
 
 </head>
 
@@ -26,15 +77,19 @@
             <div></div>
         </div>
 
-        <!-- Username -->
-        <div class="userName">Username</div>
+        <?php
+            
+            $display = '';
+            if($checkSrc == NULL){
+                $display = 'd-none';
+            }
+            echo "<div class='userName'>" . $outputUser['username'] . "</div>" . "\n" .
+                    "<div class='profilePicture'>" . "\n" .
+                    "<img class='profPic' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU' style='border-color: " . $borderColor . ";' alt=''>" . "\n" .
+                    "<img class='check" . $display . "' src='" . $checkSrc . "' alt=''>" . "\n" .
+                 "</div>";
 
-        <!-- User's Profile Picture -->
-        <div class="profilePicture">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU"
-                alt="">
-            <img class="check" src="./images/check 1admin.png" alt="">
-        </div>
+        ?>
     </nav>
 
     <!-- SideBar Menu -->
@@ -69,6 +124,7 @@
     <!-- mt training -->
 
     <!-- completed-training -->
+
     <div id="completed-training">
         <h3 class="c-t-text">This box is designated for the ‘completed’ Trainings.</h3>
         <div class="download">
@@ -87,24 +143,22 @@
 
     <!-- book now -->
 
+    <?php
+        $display = '';
+        if(sizeof($outputTrainings) == 0){
+            $display = 'd-none';
+        }
+        echo "<div class='bookings " . $display . "'>" . "\n" .
+            "<h2>Book Now</h2>" . "\n" . 
+            "<div class='book-now'>" . "\n";
+        for($x= 0; $x<sizeof($outputTrainings); $x++){
+            echo "<div class='images'>" . "\n" . 
+                  "<h3>" . $outputTrainings[$x]["trainingName"] . "</h3>" . "\n" .
+                  "<a href='./database/enrollTraining.php?training=" . $outputTrainings[$x]["trainingTableName"] . "&userId=$outputUser[id]'><button>Enroll</button></a></div>";
+        }
+        echo "</div>";
+    ?>
 
-    <h2>Book Now</h2>
-
-
-    <!-- images  -->
-
-
-    <div class="book-now">
-        <div class="images">
-            <h3>Leadership <br> Training</h3>
-            <button>Enroll</button>
-        </div>
-        <div class="images">
-            <h3>Leadership <br> Training</h3>
-            <button>Enroll</button>
-        </div>
-    </div>
-    <hr>
     <script src="./js/sideBar.js"></script>
     <script src="./js/training.js"></script>
 

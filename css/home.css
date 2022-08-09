@@ -154,6 +154,7 @@ body{
     position: absolute;
     right: 7em;
     bottom: 2em;
+    cursor: pointer;
 }
 
 .prev, .next {
@@ -222,7 +223,7 @@ body{
 .post {
     display: flex;
     flex-direction: column;
-    height: 60vh;
+    /* height: 60vh; */
     width: 50vw;
     margin: 1vh 0;
     border-radius: 2rem;
@@ -273,7 +274,7 @@ body{
     right: -10%;
 }
 
-.postImage {
+/* .postImage {
     height: 70%;
     width: 100%;
 }
@@ -281,7 +282,7 @@ body{
 .postImage img {
     width: 100%;
     height: 100%;
-}
+} */
 
 .postFooter {
     background-color: #D9D9D9;
@@ -352,7 +353,7 @@ body{
     }
     .post {
 
-        height: 1480px;
+        /* height: 1480px; */
         width: 1200px;
     }
     .postUser {
@@ -373,9 +374,9 @@ body{
         bottom: -90%;
         right: -150%;
     }
-    .postImage {
+    /* .postImage {
         height: 1200px;
-    }
+    } */
     .postFooter {
         height: 150px;
     }
@@ -432,7 +433,7 @@ body{
         width: 14px;
     }
     .post {
-        height: 500px;
+        /* height: 500px; */
         width: 500px;
     }
     .postUser {
@@ -453,10 +454,10 @@ body{
         bottom: -10%;
         right: -10%;
     }
-    .postImage img {
+    /* .postImage img {
         width: 100%;
         height: 100%;
-    }
+    } */
     .postFooter {
         height: 100px;
     }
@@ -517,7 +518,7 @@ body{
         width: 12px;
     }
     .post {
-        height: 500px;
+        /* height: 500px; */
         width: 500px;
     }
     .postUser {
@@ -538,10 +539,10 @@ body{
         bottom: -10%;
         right: -10%;
     }
-    .postImage img {
+    /* .postImage img {
         width: 100%;
         height: 100%;
-    }
+    } */
     .postFooter {
         height: 100px;
     }
@@ -602,7 +603,7 @@ body{
         width: 9px;
     }
     .post {
-        height: 450px;
+        /* height: 450px; */
         width: 450px;
     }
     .postUser {
@@ -623,13 +624,13 @@ body{
         bottom: 0;
         right: 10%;
     }
-    .postImage {
+    /* .postImage {
         height: 700px;
-    }
-    .postImage img {
+    } */
+    /* .postImage img {
         width: 100%;
         height: 100%;
-    }
+    } */
     .postFooter {
         height: 100px;
         padding: 2px;
@@ -705,7 +706,7 @@ body{
         width: 7px;
     }
     .post {
-        height: 425px;
+        /* height: 425px; */
         width: 100%;
     }
     .postUser {
@@ -726,10 +727,10 @@ body{
         bottom: -2%;
         right: 8%;
     }
-    .postImage img {
+    /* .postImage img {
         width: 100%;
         height: 100%;
-    }
+    } */
     .postFooter {
         height: 100px;
         padding: 2px;
@@ -816,7 +817,7 @@ body{
         width: 4px;
     }
     .post {
-        height: 325px;
+        /* height: 325px; */
         width: 100%;
     }
     .postUser {
@@ -837,10 +838,10 @@ body{
         bottom: 18%;
         right: 35%;
     }
-    .postImage img {
+    /* .postImage img {
         width: 100%;
         height: 100%;
-    }
+    } */
     .postFooter {
         height: 80px;
         padding: 2px;
