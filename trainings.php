@@ -61,6 +61,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/training.css">
     <link rel="stylesheet" href="./css/utils.css">
 
@@ -116,49 +117,59 @@
         </div>
     </div>
 
-    <!-- training section -->
     <div class="container">
-        <h3 id="training" onclick="changetraining()">My Training</h3>
-        <h3 id="completed" onclick="changecomplete()">Completed</h3>
-    </div>
-    <!-- mt training -->
-
-    <!-- completed-training -->
-
-    <div id="completed-training">
-        <h3 class="c-t-text">This box is designated for the ‘completed’ Trainings.</h3>
-        <div class="download">
-            <img src="./images/download.svg" alt="">
+        <div class="head">
+            <div class="enrolledTrainingsHead">My Trainings</div>
+            <div class="completedTrainingsHead active">Completed</div>
         </div>
-    </div>
-    <!-- ongoing-training -->
-    <div id="ongoing-training">
-        <h3 class="c-t-text">This box is designated for the ‘Ongoing’ Trainings.</h3>
-        <div class="play">
-            <img src="./images/play.png" alt="">
+        <div class="enrollments d-block">
+            <div class="enrolledTraining">
+                <div class="enrolledTrainingHeading"></div>
+                <div class="enrolledTrainingData">
+                    <img src="./images/play.png" alt="">
+                </div>
+            </div>
+            <div class="enrolledTraining">
+                <div class="enrolledTrainingHeading"></div>
+                <div class="enrolledTrainingData">
+                    <img src="./images/play.png" alt="">
+                </div>
+            </div>
         </div>
+        <div class="completedTrainings d-none">
+            <div class="completedTraining">
+                <div class="completedTrainingHeading"></div>
+                <div class="completedTrainingData">
+                    <a href=""><img src="./images/download.svg" alt=""></a>
+                </div>
+            </div>
+            <div class="completedTraining">
+                <div class="completedTrainingHeading"></div>
+                <div class="completedTrainingData">
+                    <a href=""><img src="./images/download.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- book now -->
+
+        <?php
+            $display = '';
+            if(sizeof($outputTrainings) == 0){
+                $display = 'd-none';
+            }
+            echo "<div class='bookings " . $display . "'>" . "\n" .
+                "<h2>Book Now</h2>" . "\n" . 
+                "<div class='book-now'>" . "\n";
+            for($x= 0; $x<sizeof($outputTrainings); $x++){
+                echo "<div class='images'>" . "\n" . 
+                    "<h3>" . $outputTrainings[$x]["trainingName"] . "</h3>" . "\n" .
+                    "<a href='./database/enrollTraining.php?training=" . $outputTrainings[$x]["trainingTableName"] . "&userId=$outputUser[id]'><button>Enroll</button></a></div>";
+            }
+            echo "</div>";
+        ?>
     </div>
-    <hr>
-
-
-    <!-- book now -->
-
-    <?php
-        $display = '';
-        if(sizeof($outputTrainings) == 0){
-            $display = 'd-none';
-        }
-        echo "<div class='bookings " . $display . "'>" . "\n" .
-            "<h2>Book Now</h2>" . "\n" . 
-            "<div class='book-now'>" . "\n";
-        for($x= 0; $x<sizeof($outputTrainings); $x++){
-            echo "<div class='images'>" . "\n" . 
-                  "<h3>" . $outputTrainings[$x]["trainingName"] . "</h3>" . "\n" .
-                  "<a href='./database/enrollTraining.php?training=" . $outputTrainings[$x]["trainingTableName"] . "&userId=$outputUser[id]'><button>Enroll</button></a></div>";
-        }
-        echo "</div>";
-    ?>
-
     <script src="./js/sideBar.js"></script>
     <script src="./js/training.js"></script>
 
