@@ -117,6 +117,19 @@
         </div>
 
         <div class="form-group">
+            <p>I&#39;m interested in:</p>
+            <div class="input-group">
+                <label><input type="checkbox" name="improvements" value="Content-Writing"> Content Writing</label>
+                <label><input type="checkbox" name="improvements" value="Admin-Work"> Admin Work</label>
+                <label><input type="checkbox" name="improvements" value="Marketing"> Marketing</label>
+                <label><input type="checkbox" name="improvements" value="Ground-Work"> Ground Work</label>
+                <label><input type="checkbox" name="improvements" value="Research-and-Development"> Research and Development</label>
+                <label><input type="checkbox" name="improvements" value="Operations"> Research and Development</label>
+                <label><input type="checkbox" name="improvements" value="Public-Relations"> Public Relations</label>
+            </div>
+        </div>
+
+        <div class="form-group">
             <p>Type of Registration:</p>
             <div class="input-group">
                 <label for="yes"><input id="yes" type="radio" name="user-rating" value="yes" checked> Member (₹
@@ -136,6 +149,14 @@
             <label id="name-label" for="name">Pan No:</label>
             <input id="name" type="number" required placeholder="pan card number">
             <span class="validity"></span>
+        </div>
+
+        <div class="form-group">
+            <p>Want to join our core team:</p>
+            <div class="input-group">
+                <label><input type="checkbox" name="improvements" value="Yes"> Yes</label>
+                <label><input type="checkbox" name="improvements" value="No"> No</label>
+            </div>
         </div>
 
         <!-- terms and condition -->
