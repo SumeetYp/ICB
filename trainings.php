@@ -125,7 +125,7 @@
         <div class="enrollments d-block">
             <?php 
                 if(sizeof($ongoingTrainings)==0){
-                    echo "You have not enrolled in any training yet";
+                    echo "<div class='empty'>You have not enrolled in any training yet</div>";
                 }
                 else {
                     for($x=0; $x<sizeof($ongoingTrainings); $x++){
@@ -142,7 +142,7 @@
         <div class="completedTrainings d-none">
             <?php
                 if(sizeof($completedTrainings)==0){
-                    echo "You have not completed in any training yet";
+                    echo "<div class='empty'>You have not completed in any training yet</div>";
                 }
                 else {
                     for($x=0; $x<sizeof($completedTrainings); $x++){
