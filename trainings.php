@@ -123,32 +123,38 @@
             <div class="completedTrainingsHead active">Completed</div>
         </div>
         <div class="enrollments d-block">
-            <div class="enrolledTraining">
-                <div class="enrolledTrainingHeading"></div>
-                <div class="enrolledTrainingData">
-                    <img src="./images/play.png" alt="">
-                </div>
-            </div>
-            <div class="enrolledTraining">
-                <div class="enrolledTrainingHeading"></div>
-                <div class="enrolledTrainingData">
-                    <img src="./images/play.png" alt="">
-                </div>
-            </div>
+            <?php 
+                if(sizeof($ongoingTrainings)==0){
+                    echo "You have not enrolled in any training yet";
+                }
+                else {
+                    for($x=0; $x<sizeof($ongoingTrainings); $x++){
+                        echo "<div class='enrolledTraining'>
+                                <div class='enrolledTrainingHeading'>" . $ongoingTrainings[$x]->trainingTableName . "</div>
+                                <div class='enrolledTrainingData'>
+                                    <img src='./images/play.png' alt=''>
+                                </div>
+                              </div>";
+                    }
+                }
+            ?>
         </div>
         <div class="completedTrainings d-none">
-            <div class="completedTraining">
-                <div class="completedTrainingHeading"></div>
-                <div class="completedTrainingData">
-                    <a href=""><img src="./images/download.svg" alt=""></a>
-                </div>
-            </div>
-            <div class="completedTraining">
-                <div class="completedTrainingHeading"></div>
-                <div class="completedTrainingData">
-                    <a href=""><img src="./images/download.svg" alt=""></a>
-                </div>
-            </div>
+            <?php
+                if(sizeof($completedTrainings)==0){
+                    echo "You have not completed in any training yet";
+                }
+                else {
+                    for($x=0; $x<sizeof($completedTrainings); $x++){
+                        echo "<div class='completedTraining'>
+                                <div class='completedTrainingHeading'>" . $ongoingTrainings[$x]->trainingTableName . "</div>
+                                <div class='completedTrainingData'>
+                                    <img src='./images/download.svg' alt=''>
+                                </div>
+                              </div>";
+                    }
+                }
+            ?>
         </div>
 
 
