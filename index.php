@@ -6,14 +6,10 @@
     $sql = "SELECT * FROM users";
     $resultUser = mysqli_query($mysqli, $sql) or die("SQL Failed");
     
-    $sql = "DELETE FROM announcements WHERE expiryDate<'$today'";
-    mysqli_query($mysqli, $sql) or die("SQL Failed");
-    $sql = "SELECT * FROM announcements ORDER BY noticeDate DESC";
+    $sql = "SELECT * FROM announcements WHERE expiryDate>'$today' ORDER BY noticeDate DESC";
     $resultAnnouncements = mysqli_query($mysqli, $sql) or die("SQL Failed");
     
-    $sql = "DELETE FROM events WHERE eventDate<'$today'";
-    $delEventsResult = mysqli_query($mysqli, $sql) or die("SQL Failed");
-    $sql = "SELECT * FROM events";
+    $sql = "SELECT * FROM events WHERE eventDate>'$today'";
     $resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
 
     $sql = "SELECT * FROM publicstory";
@@ -157,7 +153,7 @@
                     <div class="slides">
                         <?php
                             $linearGradient = '';
-                            $id=$outputUser['id'];
+                            $email=$outputUser['email'];
                             for($x=0; $x<sizeof($outputEvents); $x++){
                                 $eventTableName = $outputEvents[$x]['eventTableName'];
                                 switch($outputEvents[$x]["eventInitiative"]){
@@ -195,7 +191,7 @@
                                                  "</div>".
                                              "</div>".
                                          "</div>".
-                                         "<a class='enroll' href='./database/enrollEvent.php?userId=$id&event=$eventTableName'>Enroll</a>" .
+                                         "<a class='enroll' href='./database/enrollEvent.php?userEmail=$email&event=$eventTableName'>Enroll</a>" .
                                      "</div>";
                             }
                         ?>
@@ -269,7 +265,7 @@
                               "<div class='postFooter'>
                                    <div class='LikeAndShare'>
                                        <img src='./images/heart.png' alt=''>
-                                       <img src='./images/paper-plane.png' alt=''>
+                                       <!-- <img src='./images/paper-plane.png' alt=''> -->
                                    </div>
                                    <div class='description'>" .
                                        $outputPosts[$x]['caption'] .
