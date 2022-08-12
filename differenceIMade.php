@@ -1,6 +1,23 @@
 <?php
 
+require "config.php";
+
+$query = $mysqli->query("
+SELECT 
+EVENTNAME(created) as eventname,
+  SUM(numbers) as numbers
+FROM stats
+GROUP BY eventname
+");
+
+  foreach($query as $data)
+  {
+    $events[] = $data['eventname'];
+    $numbers[] = $data['numbers'];
+  }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,40 +43,14 @@
                 <div></div>
             </div>
     
-            <?php
-
-            include './config.php';
-            $sql = "SELECT * FROM users";
-            $result = mysqli_query($mysqli, $sql) or die("SQL Failed");
-            $output = NULL;
-            $checkSrc = NULL;
-            $borderColor = NULL;
-            if(mysqli_num_rows($result) > 0){
-                $output = mysqli_fetch_array($result);
-                if($output){
-                    switch($output['type']){
-                        case "admin": $borderColor= '#0ED678'; 
-                                      $checkSrc= './images/check 1admin.png';
-                                      break;
-                        case "member": $borderColor= '#2196F3';
-                                       $checkSrc= './images/memberProfile.svg';
-                                       break;
-                        case "volunteer": $borderColor= '#FFBE00';
-                    }
-                }
-            }
-            $display = '';
-            if($checkSrc == NULL){
-                $display = 'd-none';
-            }
-            mysqli_close($mysqli);
-            echo "<div class='userName'>" . $output['username'] . "</div>" . "\n" .
-                    "<div class='profilePicture'>" . "\n" .
-                    "<img class='profPic' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU' style='border-color: " . $borderColor . ";' alt=''>" . "\n" .
-                    "<img class='check" . $display . "' src='" . $checkSrc . "' alt=''>" . "\n" .
-                 "</div>";
-
-        ?>
+            <!-- Username -->
+            <div class="userName">Username</div>
+    
+            <!-- User's Profile Picture -->
+            <div class="profilePicture">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU" alt="">
+                <img class="check" src="./images/check 1admin.png" alt="">
+            </div>
       
         </nav>
 
@@ -100,10 +91,11 @@
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script>
             // setup 
+            const labels = <?php echo json_encode($events) ?>;
             const data = {
                 labels: ['Mental Health', 'Mission Shiksha', 'Animal Safety', 'Environment', 'Sex Education'],
                 datasets: [{
-                    data: [15, 12, 5, 20, 10],
+                    data: <?php echo json_encode($numbers) ?>,
                     backgroundColor: [
                         '#CB8FBD',
                         '#2EC5B6',
@@ -321,6 +313,8 @@
 
  
       
+
+
 
 
     <script src="js/sideBar.js"></script>

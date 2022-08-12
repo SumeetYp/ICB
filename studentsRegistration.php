@@ -1,6 +1,32 @@
 <?php
 
+require "config.php";
+require "vendor/autoload.php";
+
+use Razorpay\Api\Api;
+
+
+$keyId = "rzp_test_13G2isdzTpKXkK";
+$keySecret = "7NnSu0AIlRNFcodK20JLKyVn";
+
+session_start();
+
+$api = new Api($keyId, $keySecret);
+$actual_amount = "199";
+$currency = "INR";
+$receipt = str_replace('.','', microtime(true)) . rand(1, 10000) . '_users';
+
+$order = $api->order->create(array('receipt' => $receipt, 'amount' => $actual_amount * 100, 'currency' => $currency));
+$order_id = $order['id'];
+$order_receipt = $order['receipt'];
+$order_amount = $order['amount'];
+$order_currency = $order['currency'];
+$order_created_at = $order['created_at'];
+$_SESSION['razorpay_order_id'] = $order_id;
+
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,21 +41,21 @@
 
 <body>
     <h1 id="title">Students Registration</h1>
-    <form id="survey-form">
+    <form id="survey-form" action="status.php" method="POST">
         <div class="form-group">
             <label id="name-label" for="name">First Name:</label>
-            <input id="name" type="text" required placeholder="First Name">
+            <input id="name" type="text" name="firstName" required placeholder="First Name">
             <span class="validity"></span>
         </div>
         <div class="form-group">
             <label id="name-label" for="name">Last Name:</label>
-            <input id="name" type="text" required placeholder="Last Name">
+            <input id="name" type="text" name="lastName" required placeholder="Last Name">
             <span class="validity"></span>
         </div>
 
         <div class="form-group">
             <label id="email-label" for="email">Email:</label>
-            <input id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required
+            <input id="email" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required
                 placeholder="Email">
             <span class="validity"></span>
         </div>
@@ -38,7 +64,7 @@
 
         <div class="form-group">
             <label id="number-label" for="number">DOB :</label>
-            <input type="date">
+            <input type="date" name="dob">
             <span class="validity"></span>
         </div>
 
@@ -70,20 +96,20 @@
 
         <div class="form-group">
             <label id="textarea-label" for="comments">Address:</label>
-            <textarea id="comments" placeholder="address" cols="30" rows="5" required></textarea>
+            <textarea id="comments" placeholder="address" name="addresses" cols="30" rows="5" required></textarea>
         </div>
 
         <!-- city -->
         <div class="form-group">
             <label id="name-label" for="name">City:</label>
-            <input id="name" type="text" required placeholder="city">
+            <input id="name" type="text" name="city" required placeholder="city">
             <span class="validity"></span>
         </div>
 
         <!-- State -->
         <div class="form-group">
             <label id="name-label" for="name">State:</label>
-            <input id="name" type="text" required placeholder="state">
+            <input id="name" type="text" name="states" required placeholder="state">
             <span class="validity"></span>
         </div>
 
@@ -91,28 +117,28 @@
 
         <div class="form-group">
             <label id="name-label" for="name">PIN:</label>
-            <input id="name" type="number" required placeholder="pin number">
+            <input id="name" type="number" name="pin" required placeholder="pin number">
             <span class="validity"></span>
         </div>
 
         <!-- whatsapp mobile number -->
         <div class="form-group">
             <label id="name-label" for="name">Mobile:</label>
-            <input id="name" type="number" required placeholder="add WhatsApp Number only">
+            <input id="name" type="number" name="mobile" required placeholder="add WhatsApp Number only">
             <span class="validity"></span>
         </div>
 
         <!-- telegram -->
         <div class="form-group">
             <label id="name-label" for="name">Telegram:</label>
-            <input id="name" type="text" required placeholder="add Telegram Link">
+            <input id="name" type="text" name="telegram" required placeholder="add Telegram Link">
             <span class="validity"></span>
         </div>
 
         <!-- instagram -->
         <div class="form-group">
             <label id="name-label" for="name">Instagram:</label>
-            <input id="name" type="text" required placeholder="add Instagram Link">
+            <input id="name" type="text" name="instagram" required placeholder="add Instagram Link">
             <span class="validity"></span>
         </div>
 
@@ -130,19 +156,6 @@
         </div>
 
         <div class="form-group">
-            <p>I&#39;m interested in:</p>
-            <div class="input-group">
-                <label><input type="checkbox" name="improvements" value="Content-Writing"> Content Writing</label>
-                <label><input type="checkbox" name="improvements" value="Admin-Work"> Admin Work</label>
-                <label><input type="checkbox" name="improvements" value="Marketing"> Marketing</label>
-                <label><input type="checkbox" name="improvements" value="Ground-Work"> Ground Work</label>
-                <label><input type="checkbox" name="improvements" value="Research-and-Development"> Research and Development</label>
-                <label><input type="checkbox" name="improvements" value="Operations"> Research and Development</label>
-                <label><input type="checkbox" name="improvements" value="Public-Relations"> Public Relations</label>
-            </div>
-        </div>
-
-        <div class="form-group">
             <p>Type of Registration:</p>
             <div class="input-group">
                 <label for="yes"><input id="yes" type="radio" name="user-rating" value="yes" checked> Student
@@ -156,33 +169,25 @@
         <div class="form-group">
             <p>Do you want any of these:</p>
             <div class="input-group">
-                <label><input type="checkbox" name="improvements" value="TShirt"> TShirt (₹ 265/-)</label>
-                <label><input type="checkbox" name="improvements" value="Cap"> Cap (₹ 80/-)</label>
-                <label><input type="checkbox" name="improvements" value="Badge"> Badge (₹ 20/-)</label>
-                <!-- <label><input type="checkbox" name="improvements" value="Bag"> Bag (Not Available)</label> -->
+                <label><input type="checkbox" name="improvements" value="TShirt"> TShirt (₹ 250/-)</label>
+                <label><input type="checkbox" name="improvements" value="Cap"> Cap (Not Available)</label>
+                <label><input type="checkbox" name="improvements" value="Badge"> Badge (₹ 25/-)</label>
+                <label><input type="checkbox" name="improvements" value="Bag"> Bag (Not Available)</label>
             </div>
         </div>
 
         <!-- adhar card number -->
         <div class="form-group">
-            <label id="name-label" for="name">Aadhaar No:</label>
-            <input id="name" type="number" required placeholder="aadhaar card number">
+            <label id="name-label" for="name">Adhar Card:</label>
+            <input id="name" type="number" name="aadhaar" required placeholder="adhar card number">
             <span class="validity"></span>
         </div>
 
         <!-- pan card number -->
         <div class="form-group">
-            <label id="name-label" for="name">PAN No:</label>
-            <input id="name" type="number" placeholder="pan card number">
+            <label id="name-label" for="name">Pan No:</label>
+            <input id="name" type="number" name="pan" required placeholder="pan card number">
             <span class="validity"></span>
-        </div>
-
-        <div class="form-group">
-            <p>Want to join our core team:</p>
-            <div class="input-group">
-                <label><input type="checkbox" name="improvements" value="Yes"> Yes</label>
-                <label><input type="checkbox" name="improvements" value="No"> No</label>
-            </div>
         </div>
 
         <!-- terms and condition -->
@@ -196,9 +201,52 @@
         </div>
 
         <div class="form-group">
-            <input id="submit" class="button" type="submit" value="Save and Continue">
-        </div>
+            <button id="rzp-button1" class="button" type="submit" name="save">Save and Continue</button>
+            </div>
     </form>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+var options = {
+    "key": "<?=$keyId?>", 
+    "amount": "<?=$order_amount?>", 
+    "currency": "<?=$currency?>",
+    "name": "I Care For Bharat",
+    "description": "Payment",
+    "image": "images/addMember.jpeg",
+    "order_id": "<?=$order_id?>",
+    "handler": function (response){
+        alert(response.razorpay_payment_id);
+        alert(response.razorpay_order_id);
+        alert(response.razorpay_signature)
+    },
+    "theme": {
+        "color": "#6AF491"
+    }
+    
+    };
+
+    var rzp1 = new Razorpay(options);
+rzp1.on('payment.failed', function (response){
+        alert(response.error.code);
+        alert(response.error.description);
+        alert(response.error.source);
+        alert(response.error.step);
+        alert(response.error.reason);
+        alert(response.error.metadata.order_id);
+        alert(response.error.metadata.payment_id);
+});
+
+document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+
+}
+</script>
+
+
+
+
 </body>
 
 </html>
