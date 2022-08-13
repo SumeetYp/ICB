@@ -3,19 +3,7 @@
         session_start();
     }
     if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
-        // header("Location: ./index_login.php");
-        $_SESSION['email'] = 'cg6216530@gmail.com';
-        $_SESSION['username'] = 'Chirag Gupta';
-        $_SESSION['type'] = 'member';
-        $_SESSION['first_name'] = 'Chirag';
-        $_SESSION['last_name'] = 'Gupta';
-        $_SESSION['expiration_date'] = '2023-08-10';
-        $_SESSION['registration_date'] = '2022-08-10';
-        $_SESSION['bio'] = 'Developer';
-        $_SESSION['instagram'] = '';
-        $_SESSION['telegram'] = '';
-        $_SESSION['mobile'] = '987';
-        $_SESSION['address'] = '00';
+        header("Location: ./index_login.php");
     }
 
     include './config.php';
