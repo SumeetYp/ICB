@@ -1,5 +1,10 @@
 <?php
-
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
+        header("Location: ./index_login.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +15,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/events.css">
+    <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/utils.css">
     <title>Document</title>
 </head>
@@ -70,5 +76,6 @@
     </div>
     <script src="./js/opportunity.js"></script>
     <script src="./js/event.js"></script>
+    <script src="./js/sideBar.js"></script>
 </body>
 </html>
