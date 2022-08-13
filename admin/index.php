@@ -1,16 +1,23 @@
 <?php
-include './config.php';
 
-$sql = "SELECT * FROM users";
-$resultUser = mysqli_query($mysqli, $sql) or die("SQL Failed");
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
+        header("Location: ./index_login.php");
+    }
 
-$sql = "SELECT * FROM announcements ORDER BY noticeDate DESC";
-$resultAnnouncements = mysqli_query($mysqli, $sql) or die("SQL Failed");
+    include './config.php';
+
+    $today = date("Y-m-d");
+
+    $sql = "SELECT * FROM announcements WHERE expiryDate>'$today' ORDER BY noticeDate DESC";
+    $resultAnnouncements = mysqli_query($mysqli, $sql) or die("SQL Failed");
     
-$sql = "SELECT * FROM events";
-$resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
+    $sql = "SELECT * FROM events WHERE eventDate>'$today'";
+    $resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
 
-mysqli_close($mysqli);
+    mysqli_close($mysqli);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,49 +35,11 @@ mysqli_close($mysqli);
 
 <body>
     <!-- Navigation Bar -->
-    <nav>
-
-        <!-- Hamburger Icon -->
-        <div class="hamBurger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-
-        <?php
-        $outputUser = NULL;
-        if (mysqli_num_rows($resultUser) > 0) {
-            $outputUser = mysqli_fetch_array($resultUser);
-        }
-        echo "<div class='userName'>" . $outputUser['username'] . "</div>" . "\n" .
-            "<div class='profilePicture'>" . "\n" .
-            "<img class='profPic' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU' alt=''>" . "\n" .
-            "<img class='check' src='./images/check 1admin.png' alt=''>" . "\n" .
-            "</div>";
-        ?>
-    </nav>
-
-    <!-- SideBar Menu -->
-    <div class="sideBar">
-        <div class="sideItems">
-
-            <!-- Side Elements -->
-            <ul>
-                <a href="./index.php" style="background-color: #D9D9D9;">Home</a>
-                <a href="./stats.php">Stats</a>
-                <a href="./events.php">Event</a>
-                <a href="./announcement.php">Announcement</a>
-                <a href="./donate.php">Donate</a>
-                <a href="./addMarshalls.php">Add a Marshal</a>
-                <a href="./alert.php">Send an Alert</a>
-            </ul>
-            <div class="cross">
-                <img src="./images/cross.png" alt="">
-            </div>
-        </div>
-    </div>
+    <?php
+        include './header.php';
+    ?>
     <div class="container">
-        <div class="search-container">
+        <!-- <div class="search-container">
             <table class="tableSearch">
                 <tr>
                     <td>
@@ -81,7 +50,7 @@ mysqli_close($mysqli);
                     </td>
                 </tr>
             </table>
-        </div>
+        </div> -->
 
         <?php
             $outputAnnouncements = [];
@@ -177,7 +146,7 @@ mysqli_close($mysqli);
                                                 "</div>" .
                                             "</div>" .
                                          "</div>" .
-                                         "<a class='detailsBtn' target='_blank' href='./particularEvent.php?eTN=" . $outputEvents[$x]["eventTableName"] . "'>Details</a>" .
+                                         "<a class='detailsBtn' target='_blank' href='./particularEvent.php?eID=" . $outputEvents[$x]['id'] . "&eTN=" . $outputEvents[$x]["eventTableName"] . "'>Details</a>" .
                                      "</div>";
                             }
                         ?>

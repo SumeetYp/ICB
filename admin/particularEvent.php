@@ -1,5 +1,39 @@
 <?php
 
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
+        header("Location: ./index_login.php");
+    }
+    include './config.php';
+
+    $id=$_GET['eID'];
+    $eventTableName=$_GET['eTN'];
+
+    $sql = "SELECT * FROM events WHERE id='$id'";
+    $resultEvent = mysqli_query($mysqli, $sql) or die('Some error occured');
+
+    $outputEvent=NULL;
+    if(mysqli_num_rows($resultEvent)>0){
+        $outputEvent=mysqli_fetch_array($resultEvent);
+    }
+
+    $sql = "SELECT * FROM `$eventTableName`;";
+    $resultUsers = mysqli_query($mysqli, $sql) or die('Some error occured');
+    $outputUsersAll = [];
+    if(mysqli_num_rows($resultUsers) > 0){
+        while($row = mysqli_fetch_assoc($resultUsers)){
+            $outputUsersAll[] = $row;
+        }
+    }
+    $outputUsers = [];
+    for($x=0; $x<sizeof($outputUsersAll); $x++){
+        if($outputUsersAll[$x]['enrolledUserAttended']==0){
+            $outputUsers[] = $outputUsersAll[$x];
+        }
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,42 +41,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Particular Event</title>
+    <title><?php echo $outputEvent['eventName']; ?></title>
 
     <!-- Font awesome key -->
     <script src="https://kit.fontawesome.com/ec7ea1a9d7.js" crossorigin="anonymous"></script>
 
     <!-- stylesheet link -->
+    <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/utils.css">
 </head>
 <body>
 
 <!-- Navbar goes here  -->
-
+<?php
+    include 'header.php';
+?>
 
 <!-- event name banner -->
 <div class="peBanner">
-    <h1 class="peHeading">Animal Feeding</h1>
-    <p class="peSub">Animal Safety</p>
+    <h1 class="peHeading"><?php echo $outputEvent['eventName']; ?></h1>
+    <p class="peSub"><?php echo $outputEvent['eventInitiative']; ?></p>
 </div>
 
 <!-- details list -->
 <div class="peDetails">
     <div class="peList">
         <i class="fa-solid fa-calendar-check fa-2x"></i> 
-        <p>Sunday, 19th June 2022</p>
+        <p><?php echo $outputEvent['eventDate']; ?></p>
     </div>
     <div class="peList">
         <i class="fa-solid fa-clock fa-2x"></i>
-        <p>10 AM - 12 PM</p>
+        <p><?php echo $outputEvent['eventTime']; ?></p>
     </div>
     <div class="peList">
         <i class="fa-solid fa-location-dot fa-2x"></i>
-        <p>Municipal Corporarion Pune</p>
+        <p><?php echo $outputEvent['eventVenue']; ?></p>
     </div>
     <div class="peList">
         <i class="fa-solid fa-rectangle-list fa-2x"></i>        
-        <p>Gloves & Mask</p>
+        <p><?php echo $outputEvent['eventRequirements']; ?></p>
     </div>
 </div>
 
@@ -50,54 +88,24 @@
 <div class="peEnrol">
     <div class="peHead">
         <h2>Enrollments</h2>
-        <h2>Count : <span class="eCount">7</span></h2>
+        <h2>Count : <span class="eCount"><?php echo sizeof($outputUsers); ?></span></h2>
     </div>
     <div class="peBody">
-        <div class="eRow">
-            <div class="eName">Harshal Patil</div>
-            <div class="eNum">+91 123456789</div>
-            <i style="color:#00ba00" class="fa-solid fa-circle-check"></i>
-            <i style="color:#f80505" class="fa-solid fa-circle-xmark"></i>
-        </div>
-        <div class="eRow">
-            <div class="eName">Harshal Patil</div>
-            <div class="eNum">+91 123456789</div>
-            <i style="color:#00ba00" class="fa-solid fa-circle-check"></i>
-            <i style="color:#f80505" class="fa-solid fa-circle-xmark"></i>
-        </div>
-        <div class="eRow">
-            <div class="eName">Harshal Patil</div>
-            <div class="eNum">+91 123456789</div>
-            <i style="color:#00ba00" class="fa-solid fa-circle-check"></i>
-            <i style="color:#f80505" class="fa-solid fa-circle-xmark"></i>
-        </div>
-        <div class="eRow">
-            <div class="eName">Harshal Patil</div>
-            <div class="eNum">+91 123456789</div>
-            <i style="color:#00ba00" class="fa-solid fa-circle-check"></i>
-            <i style="color:#f80505" class="fa-solid fa-circle-xmark"></i>
-        </div>
-        <div class="eRow">
-            <div class="eName">Harshal Patil</div>
-            <div class="eNum">+91 123456789</div>
-            <i style="color:#00ba00" class="fa-solid fa-circle-check"></i>
-            <i style="color:#f80505" class="fa-solid fa-circle-xmark"></i>
-        </div>
-        <div class="eRow">
-            <div class="eName">Harshal Patil</div>
-            <div class="eNum">+91 123456789</div>
-            <i style="color:#00ba00" class="fa-solid fa-circle-check"></i>
-            <i style="color:#f80505" class="fa-solid fa-circle-xmark"></i>
-        </div>
-        <div class="eRow">
-            <div class="eName">Harshal Patil</div>
-            <div class="eNum">+91 123456789</div>
-            <i style="color:#00ba00" class="fa-solid fa-circle-check"></i>
-            <i style="color:#f80505" class="fa-solid fa-circle-xmark"></i>
-        </div>
+        <?php
+            for($x=0; $x<sizeof($outputUsers); $x++){
+                if($outputUsers[$x]['enrolledUserAttended']==0){
+                    echo "<div class='eRow'>
+                            <div class='eName'>" . $outputUsers[$x]['enrolledUsername'] . "</div>" .
+                           "<div class='eNum'>" . $outputUsers[$x]['enrolledUserMobile'] . "</div>
+                            <a href='./database/attendance.php?attended=true&eTN=$eventTableName&email=" . $outputUsers[$x]['enrolledUserEmail'] . "'><i style='color:#00ba00' class='fa-solid fa-circle-check'></i></a>
+                            <a href='./database/attendance.php?attended=false&eTN=$eventTableName&email=" . $outputUsers[$x]['enrolledUserEmail'] . "'><i style='color:#f80505' class='fa-solid fa-circle-xmark'></i></a>
+                         </div>";
+                }
+            }
+        ?>
     </div>
 </div>
-
+<script src="./js/sideBar.js"></script>
 
 </body>
 </html>
