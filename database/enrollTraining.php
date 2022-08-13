@@ -18,7 +18,7 @@
         $enrollmentDate = date("Y-m-d");
         $sql = "INSERT INTO $trainingTableName (enrolledUsername, enrolledUserMobile, enrolledUserEmail, enrollmentDate) VALUES ('$enrolledUsername', $enrolledUserMobile, '$enrolledUserEmail', '$enrollmentDate')";
         $result = mysqli_query($mysqli, $sql) or die('Service Unavailable');
-        mysqli_close($mysqli);
     }
+    mysqli_close($mysqli);
     header("Location: ../trainings.php");
 ?>
