@@ -1,6 +1,5 @@
 <?php
     include '../config.php';
-    $id = $_GET['userId'];
     $userEmail = $_GET['userEmail'];
     $username = $_GET['username'];
     $enquiry = $_POST['enquiry'];

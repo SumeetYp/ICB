@@ -1,10 +1,26 @@
 <?php
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
+        // header("Location: ./index_login.php");
+        $_SESSION['email'] = 'cg6216530@gmail.com';
+        $_SESSION['username'] = 'Chirag Gupta';
+        $_SESSION['type'] = 'member';
+        $_SESSION['first_name'] = 'Chirag';
+        $_SESSION['last_name'] = 'Gupta';
+        $_SESSION['expiration_date'] = '2023-08-10';
+        $_SESSION['registration_date'] = '2022-08-10';
+        $_SESSION['bio'] = 'Developer';
+        $_SESSION['instagram'] = '';
+        $_SESSION['telegram'] = '';
+        $_SESSION['mobile'] = '987';
+        $_SESSION['address'] = '00';
+    }
+
     include './config.php';
 
     $today = date("Y-m-d");
-
-    $sql = "SELECT * FROM users";
-    $resultUser = mysqli_query($mysqli, $sql) or die("SQL Failed");
     
     $sql = "SELECT * FROM announcements WHERE expiryDate>'$today' ORDER BY noticeDate DESC";
     $resultAnnouncements = mysqli_query($mysqli, $sql) or die("SQL Failed");
@@ -24,79 +40,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/utils.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav>
+    <?php
+        include './header.php';
+    ?>
 
-        <!-- Hamburger Icon -->
-        <div class="hamBurger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-
-        <?php
-            $outputUser = NULL;
-            $checkSrc = NULL;
-            $borderColor = NULL;
-            if(mysqli_num_rows($resultUser) > 0){
-                $outputUser = mysqli_fetch_array($resultUser);
-                if($outputUser){
-                    switch($outputUser['type']){
-                        case "admin": $borderColor= '#0ED678'; 
-                                      $checkSrc= './images/check 1admin.png';
-                                      break;
-                        case "member": $borderColor= '#2196F3';
-                                       $checkSrc= './images/memberProfile.svg';
-                                       break;
-                        case "volunteer": $borderColor= '#FFBE00';
-                    }
-                }
-            }
-            $display = '';
-            if($checkSrc == NULL){
-                $display = 'd-none';
-            }
-            echo "<div class='userName'>" . $outputUser['username'] . "</div>" . "\n" .
-                    "<div class='profilePicture'>" . "\n" .
-                    "<img class='profPic' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU' style='border-color: " . $borderColor . ";' alt=''>" . "\n" .
-                    "<img class='check" . $display . "' src='" . $checkSrc . "' alt=''>" . "\n" .
-                 "</div>";
-        ?>
-        <a href="./shareMyStory.php" class="containerAddStory">
-            <img src="./images/plus.png" class="addStory"></img>
-        </a>
-    </nav>
-
-    <!-- SideBar Menu -->
-    <div class="sideBar">
-        <div class="sideItems">
-
-            <!-- Side Elements -->
-            <ul>
-                <a href="./index.php" style="background-color: #D9D9D9;">Home</a>
-                <a href="./profile.php">Profile</a>
-                <a href="./trainings.php">My Training</a>
-                <a href="./events.php">My Events</a>
-                <a href="./donate.php">Donate</a>
-                <a href="./differenceIMade.php">Difference I Made</a>
-                <a href="./shareMyStory.php">Share My Story</a>
-                <a href="./addMarshalls.php">Add a Marshal</a>
-                <a href="./settings.php">Settings & Support</a>
-                <a href="./coreTeam.php">Contact Team</a>
-                <a href="./alert.php">Send an Alert</a>
-            </ul>
-            <div class="cross">
-                <img src="./images/cross.png" alt="">
-            </div>
-        </div>
-    </div>
     <div class="container">
         <div class="search-container">
             <table class="tableSearch">
@@ -153,7 +108,7 @@
                     <div class="slides">
                         <?php
                             $linearGradient = '';
-                            $email=$outputUser['email'];
+                            $email=$_SESSION['email'];
                             for($x=0; $x<sizeof($outputEvents); $x++){
                                 $eventTableName = $outputEvents[$x]['eventTableName'];
                                 switch($outputEvents[$x]["eventInitiative"]){

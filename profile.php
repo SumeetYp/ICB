@@ -1,9 +1,7 @@
 <?php
-include './config.php';
-$sql = "SELECT * FROM users";
-$resultUser = mysqli_query($mysqli, $sql) or die("SQL Failed");
-$outputUser = NULL;
-mysqli_close($mysqli);
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,78 +14,15 @@ mysqli_close($mysqli);
     <link rel="stylesheet" href="css/profile-css/style.css">
     <link rel="stylesheet" href="css/profile-css/main.css">
     <link rel="stylesheet" href="css/profile-css/header.css">
+    <link rel="stylesheet" href="css/utils.css">
 
 </head>
 
 <body>
 
-
-    <nav>
-
-        <!-- Hamburger Icon -->
-        <div class="hamBurger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-
-        <?php
-
-        $checkSrc = NULL;
-        $borderColor = NULL;
-        if (mysqli_num_rows($resultUser) > 0) {
-            $outputUser = mysqli_fetch_array($resultUser);
-            if ($outputUser) {
-                switch ($outputUser['type']) {
-                    case "admin":
-                        $borderColor = '#0ED678';
-                        $checkSrc = './images/check 1admin.png';
-                        break;
-                    case "member":
-                        $borderColor = '#2196F3';
-                        $checkSrc = './images/memberProfile.svg';
-                        break;
-                    case "volunteer":
-                        $borderColor = '#FFBE00';
-                }
-            }
-        }
-        $display = '';
-        if ($checkSrc == NULL) {
-            $display = 'd-none';
-        }
-        echo "<div class='userName'>" . $outputUser['username'] . "</div>" . "\n" .
-            "<div class='profilePicture'>" . "\n" .
-            "<img class='profPic' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU' style='border-color: " . $borderColor . ";' alt=''>" . "\n" .
-            "<img class='check" . $display . "' src='" . $checkSrc . "' alt=''>" . "\n" .
-            "</div>";
-
-        ?>
-    </nav>
-
-    <!-- SideBar Menu -->
-    <div class="sideBar hideSideBar">
-        <div class="sideItems">
-
-            <!-- Side Elements -->
-            <ul>
-                <a href="./index.php">Home</a>
-                <a href="./profile.php" style="background-color: #D9D9D9;">Profile</a>
-                <a href="./trainings.php">My Training</a>
-                <a href="./events.php">My Events</a>
-                <a href="./donate.php">Donate</a>
-                <a href="./differenceIMade.php">Difference I Made</a>
-                <a href="./shareMyStory.php">Share My Story</a>
-                <a href="./addMarshalls.php">Add a Marshal</a>
-                <a href="./settings.php">Settings & Support</a>
-                <a href="./coreTeam.php">Contact Team</a>
-                <a href="./alert.php">Send an Alert</a>
-            </ul>
-            <div class="cross">
-                <img src="./images/cross.png" alt="">
-            </div>
-        </div>
-    </div>
+<?php
+    include './header.php';
+?>
 
     <section class="range-slider">
 
@@ -97,7 +32,7 @@ mysqli_close($mysqli);
             date_default_timezone_set('Asia/Kolkata');
             $date = date('Y-m-d');
             $currDate = strtotime($date);
-            $expire = strtotime($outputUser["expirationDate"]);
+            $expire = strtotime($_SESSION['expiration_date']);
             echo "<input type='range' class='range' min='0' max='365' step='1' value='" . ceil(abs($expire - $currDate) / 86400) . "'>"
             ?>
             <div class="percentage">
@@ -127,17 +62,19 @@ mysqli_close($mysqli);
 
     <header id="topSection" style="overflow: hidden;">
         <div class="container grid grid-header">
-            <div class="profilePicture">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU" alt="">
-                <img class="check2" src="images/check 1admin.png" alt="">
-            </div>
+            <?php
+                echo "<div class='profilePicture'>" . "\n" .
+                        "<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU' style='border-color: " . $borderColor . ";' alt=''>" . "\n" .
+                        "<img class='check2 " . $display . "' src='" . $checkSrc . "' alt=''>" . "\n" .
+                     "</div>";
+            ?>
         </div>
 
         <div class="user-details">
             <div class="user-name-div">
                 <span class="username">
                     <?php
-                        echo $outputUser["username"];
+                        echo $_SESSION['username'];
                     ?>
                 </span>
             </div>
@@ -145,12 +82,12 @@ mysqli_close($mysqli);
             <div class="numbers">
                 <span class="post">
                     <?php
-                        echo ucwords($outputUser["type"]);
+                        echo ucwords($_SESSION['type']);
                     ?>
                 </span>
                 <span class="follower">Joined on 
                     <?php
-                        $date = strtotime($outputUser["registrationDate"]);
+                        $date = strtotime($_SESSION['registration_date']);
                         $monthYear = date('M, Y', $date);
                         $date = date('d', $date);
                         $dateEnds = substr($date, 1);
@@ -188,7 +125,7 @@ mysqli_close($mysqli);
             <div class="bio-div">
                 <p class="bio">
                     <?php
-                        echo $outputUser["bio"];
+                        echo $_SESSION['bio'];
                     ?>
                 </p>
             </div>
@@ -198,8 +135,8 @@ mysqli_close($mysqli);
         <div class="container">
 
             <?php
-                echo "<a href='" . $outputUser["instagram"] . "' target='_blank'><button class='btn follow-btn'>Instagram</button></a>
-                <a href='" . $outputUser["telegram"] . "' target='_blank'><button class='btn follow2-btn'>Telegram</button></a>";
+                echo "<a href='" . $_SESSION['instagram'] . "' target='_blank'><button class='btn follow-btn'>Instagram</button></a>
+                <a href='" . $_SESSION['telegram'] . "' target='_blank'><button class='btn follow2-btn'>Telegram</button></a>";
             ?>
             <!---   <button class="btn msg-btn">Connect<img src="images/user.png"></button>  -->
             <button id="btn-edit" class="profile-btn">Edit Profile</button>
@@ -218,19 +155,19 @@ mysqli_close($mysqli);
             <div class="login-page d-flex">
                 <div class="form">
                     <?php
-                        echo "<form id='form' class='register-form' action='./database/editProfile.php?userId=$outputUser[id]' method='POST'>";
+                        echo "<form id='form' class='register-form' action='./database/editProfile.php?userEmail=" . $_SESSION['email'] . "' method='POST'>";
                     ?>
                         <h1> Edit Profile</h1>
                         <span class="line">
                             <label>Phone:</label>
                             <?php
-                                echo "<input name='mobile' type='phone' placeholder='phone' value='" . $outputUser["mobile"] . "' required/>";
+                                echo "<input name='mobile' type='phone' placeholder='phone' value='" . $_SESSION['mobile'] . "' required/>";
                             ?>
                         </span>
                         <span class="line">
                             <label>Bio:</label>
                             <?php
-                                echo "<textarea name='bio' placeholder='Type'>" . $outputUser["bio"] . "</textarea>";
+                                echo "<textarea name='bio' placeholder='Type'>" . $_SESSION['bio'] . "</textarea>";
                             ?>
                         </span>
                     </form>

@@ -19,6 +19,13 @@ else { // User exists
         $_SESSION['type'] = $user['type'];
         $_SESSION['first_name'] = $user['first_name'];
         $_SESSION['last_name'] = $user['last_name'];
+        $_SESSION['registration_date'] = $user['registrationDate'];
+        $_SESSION['expiration_date'] = $user['expirationDate'];
+        $_SESSION['bio'] = $user['bio'];
+        $_SESSION['mobile'] = $user['mobile'];
+        $_SESSION['instagram'] = $user['instagram'];
+        $_SESSION['telegram'] = $user['telegram'];
+        $_SESSION['address'] = $user['address'];
         
         // This is how we'll know the user is logged in
         $_SESSION['logged_in'] = true;

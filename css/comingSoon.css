@@ -26,8 +26,8 @@ nav {
     background-color: #fff;
 }
 
-.userName {
-    color: #fff;
+nav .userName {
+    color: #fff !important;
 }
 
 .comingSoon{

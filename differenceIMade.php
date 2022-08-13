@@ -1,5 +1,9 @@
 <?php
 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 require "config.php";
 
 $query = $mysqli->query("
@@ -15,7 +19,6 @@ GROUP BY eventname
     $events[] = $data['eventname'];
     $numbers[] = $data['numbers'];
   }
-
 ?>
 
 <!DOCTYPE html>
@@ -28,55 +31,17 @@ GROUP BY eventname
     <title>Difference I Made</title>
     
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/utils.css">
     <link rel="stylesheet" href="css/profile-css/difference.css">
 
 </head>
 
 <body>
 
-        <nav>
-
-            <!-- Hamburger Icon -->
-            <div class="hamBurger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-    
-            <!-- Username -->
-            <div class="userName">Username</div>
-    
-            <!-- User's Profile Picture -->
-            <div class="profilePicture">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU" alt="">
-                <img class="check" src="./images/check 1admin.png" alt="">
-            </div>
-      
-        </nav>
-
-        <!-- SideBar Menu -->
-        <div class="sideBar">
-            <div class="sideItems">
-
-                <!-- Side Elements -->
-                <ul>
-                    <a href="./index.php">Home</a>
-                    <a href="./profile.php">Profile</a>
-                    <a href="./trainings.php">My Training</a>
-                    <a href="./events.php">My Events</a>
-                    <a href="./donate.php">Donate</a>
-                    <a href="./differenceIMade.php" style="background-color: #D9D9D9;">Difference I Made</a>
-                    <a href="./shareMyStory.php">Share My Story</a>
-                    <a href="./addMarshalls.php">Add a Marshal</a>
-                    <a href="./settings.php">Settings & Support</a>
-                    <a href="./coreTeam.php">Contact Team</a>
-                    <a href="./alert.php">Send an Alert</a>
-                </ul>
-                <div class="cross">
-                    <img src="./images/cross.png" alt="">
-                </div>
-            </div>
-        </div>
+    <!-- Navigation Bar -->
+    <?php
+        include './header.php';
+    ?>
 
         <h1 class="Rank">Rank <b class="num">82</b></h1>
 
