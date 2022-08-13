@@ -12,11 +12,11 @@ active(upButton,pastButton,'none')
 
 
 upButton.addEventListener('click',()=>{
-    active(upButton,pastButton,'none');
+    active(pastButton,upButton,'block');
 })
 
 pastButton.addEventListener('click',()=>{
-    active(pastButton,upButton,'block');
+	active(upButton,pastButton,'none');
 })
 
 let infoHidden = document.querySelector('.setInfo');
