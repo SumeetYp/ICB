@@ -87,6 +87,7 @@
                     <a href='./settings.php'>Settings & Support</a>
                     <a href='./coreTeam.php'>Contact Team</a>
                     <a href='./alert.php'>Send an Alert</a>
+                    <a href='./logout.php'>Logout</a>
                 </ul>
                 <div class='cross'>
                     <img src='./images/cross.png' alt=''>
@@ -229,7 +230,7 @@
                 $userID = $outputUser['id'];
                 for($x=0; $x<sizeof($outputPosts); $x++){
                     $postID = $outputPosts[$x]['id'];
-                    $sql = "SELECT * FROM PostLikes WHERE postID=$postID AND userID=$userID";
+                    $sql = "SELECT * FROM postlikes WHERE postID=$postID AND userID=$userID";
                     $result = mysqli_query($mysqli, $sql) or die('Error');
                     $likeSource = './images/empty_heart.png';
                     $liked='false';
