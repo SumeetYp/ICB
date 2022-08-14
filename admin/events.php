@@ -31,11 +31,35 @@
     </div>
 
     <div class="eventBox">
+        <div class="upcomingEvent">
+            <br>
+            <div class="eventRow">
+                <div class="eventColor" style="background-color: #E01518;"></div>
+                <div class="eventName">up Feeding</div>
+                <div class="eventDate">!9 June 22</div>
+            </div>
+            <div class="eventRow">
+                <div class="eventColor" style="background-color: #FFBE00;"></div>
+                <div class="eventName">Safe Sex</div>
+                <div class="eventDate">!9 June 22</div>
+            </div>
+            <div class="eventRow">
+                <div class="eventColor" style="background-color: #533CF5;"></div>
+                <div class="eventName">Mental Health</div>
+                <div class="eventDate">!9 June 22</div>
+            </div>
+            <div class="eventRow">
+                <div class="eventColor" style="background-color: #41D950;"></div>
+                <div class="eventName">Tree Plantation</div>
+                <div class="eventDate">!9 June 22</div>
+            </div>
+            <br>
+        </div>
         <div class="pastEvent">
             <br>
             <div class="eventRow">
                 <div class="eventColor" style="background-color: #E01518;"></div>
-                <div class="eventName">Animal Feeding</div>
+                <div class="eventName">past Feeding</div>
                 <div class="eventDate">!9 June 22</div>
             </div>
             <div class="eventRow">

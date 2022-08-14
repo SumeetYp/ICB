@@ -246,7 +246,7 @@ body{
   text-decoration: none;
 }
 
-.pastEvent{
+.pastEvent,.upcomingEvent{
     border-top: 1.5px solid #C5C4C4;
     background-color: #D9D9D9;
     max-height: 200px;
@@ -443,7 +443,7 @@ input[type=text],input[type=number],select{
         padding: 10px;
         font-size: 2vw;
     }
-    .pastEvent{
+    .pastEvent,.upcomingEvent{
         max-height: 500px;
     }
     .button{
@@ -465,7 +465,7 @@ input[type=text],input[type=number],select{
         height:2.5vw;
         aspect-ratio : 1 / 1;
     }
-    .pastEvent{
+    .pastEvent,.upcomingEvent{
         padding-left: 80px;
         padding-right: 80px;
     }
