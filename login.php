@@ -17,8 +17,9 @@ else { // User exists
         $_SESSION['email'] = $user['email'];
         $_SESSION['username'] = $user['username'];
         $_SESSION['type'] = $user['type'];
-        $_SESSION['first_name'] = $user['first_name'];
-        $_SESSION['last_name'] = $user['last_name'];
+        $_SESSION['first_name'] = $user['firstName'];
+        $_SESSION['last_name'] = $user['lastName'];
+        $_SESSION['full_name'] = $user['firstName']." ".$user['lastName'];
         $_SESSION['registration_date'] = $user['registrationDate'];
         $_SESSION['expiration_date'] = $user['expirationDate'];
         $_SESSION['bio'] = $user['bio'];
