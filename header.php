@@ -40,6 +40,7 @@
                     <a href='./settings.php'>Settings & Support</a>
                     <a href='./coreTeam.php'>Contact Team</a>
                     <a href='./alert.php'>Send an Alert</a>
+                    <a href='./logout.php'>Logout</a>
                 </ul>
                 <div class='cross'>
                     <img src='./images/cross.png' alt=''>
