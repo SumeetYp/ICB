@@ -36,7 +36,7 @@
             $date = date('Y-m-d');
             $currDate = strtotime($date);
             $expire = strtotime($_SESSION['expiration_date']);
-            echo "<input type='range' class='range' min='0' max='365' step='1' value='" . ceil(abs($expire - $currDate) / 86400) . "'>"
+            echo "<input type='range' class='range' min='0' max='365' step='1' disabled='true' value='" . ceil(abs($expire - $currDate) / 86400) . "'>"
             ?>
             <div class="percentage">
                 <span></span>
@@ -77,7 +77,7 @@
             <div class="user-name-div">
                 <span class="username">
                     <?php
-                        echo $_SESSION['username'];
+                        echo $_SESSION['full_name'];
                     ?>
                 </span>
             </div>
