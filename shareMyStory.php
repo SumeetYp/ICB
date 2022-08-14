@@ -54,7 +54,7 @@
         <div class="sm-container">
             <div class="add-post">
                 <h3>Add Post</h3>
-                <img src="./images/plus.png" alt="">
+                <img src="./images/plus.png" class="postButton" alt="">
             </div>
         </div>
         <div class="post-something">
@@ -68,7 +68,7 @@
             <h2>No Post Yet</h2>
         </div>
     </div>
-    
+    <script src="./js/shareMyStory.js"></script>
     <script src="./js/sideBar.js"></script>
 </body>
 

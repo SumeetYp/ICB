@@ -3,7 +3,9 @@ body{
     padding: 0;
     overflow: hidden;
 }
-
+.description{
+    word-break: break-word;
+}
 .containerAddStory{
     position: absolute;
     right: 2vw;
@@ -378,7 +380,8 @@ body{
         height: 1200px;
     } */
     .postFooter {
-        height: 150px;
+        height: auto;
+        min-height: 100px;
     }
     .LikeAndShare{
         height: 100%;
@@ -459,7 +462,8 @@ body{
         height: 100%;
     } */
     .postFooter {
-        height: 100px;
+        height: auto;
+        min-height: 100px;
     }
     .LikeAndShare{
         height: 100%;
@@ -544,7 +548,8 @@ body{
         height: 100%;
     } */
     .postFooter {
-        height: 100px;
+        height: auto;
+        min-height: 100px;
     }
     .LikeAndShare{
         height: 100%;
@@ -632,7 +637,8 @@ body{
         height: 100%;
     } */
     .postFooter {
-        height: 100px;
+        height: auto;
+        min-height: 100px;
         padding: 2px;
     }
     .LikeAndShare{
@@ -732,7 +738,8 @@ body{
         height: 100%;
     } */
     .postFooter {
-        height: 100px;
+        height: auto;
+        min-height: 100px;
         padding: 2px;
     }
     .LikeAndShare{
@@ -843,7 +850,8 @@ body{
         height: 100%;
     } */
     .postFooter {
-        height: 80px;
+        height: auto;
+        min-height: 80px;
         padding: 2px;
     }
     .LikeAndShare{
