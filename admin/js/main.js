@@ -1,34 +1,3 @@
-// Admin Event Page
-
-
-let upButton = document.querySelector('.upButton');
-let pastButton = document.querySelector('.pastButton');
-let upBox = document.querySelector('.upcomingEvent');
-let pastBox = document.querySelector('.pastEvent');
-
-function active(act,deact){
-	if(act == pastButton){
-		pastBox.style.display = "none";
-		upBox.style.display = "block";
-	}
-	else{
-		upBox.style.display = "none";
-		pastBox.style.display = "block";
-	}
-    act.style.cssText += 'border-radius:0;border-top-left-radius: 10px;border-top-right-radius: 10px;background-color: #D9D9D9;';
-    deact.style.cssText += 'border-radius: 0px;background-color: #fff;';
-}
-active(pastButton,upButton)
-
-
-upButton.addEventListener('click',()=>{
-    active(pastButton,upButton);
-})
-
-pastButton.addEventListener('click',()=>{
-	active(upButton,pastButton);
-})
-
 let infoHidden = document.querySelector('.setInfo');
 let info = document.querySelector('.hiddenText')
 

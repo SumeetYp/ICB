@@ -246,7 +246,7 @@ body{
   text-decoration: none;
 }
 
-.pastEvent,.upcomingEvent{
+.pastEvent, .upcomingEvent{
     border-top: 1.5px solid #C5C4C4;
     background-color: #D9D9D9;
     max-height: 200px;
