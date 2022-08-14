@@ -3,7 +3,7 @@
 
 // Escape email to protect against SQL injections
 $email = $mysqli->escape_string($_POST['email']);
-$result = $mysqli->query("SELECT * FROM users WHERE email='$email' and (type='member' or type='student') ");
+$result = $mysqli->query("SELECT * FROM users WHERE (email='$email' && (type='member' || type='student')) ");
 
 if ( $result->num_rows == 0 ){ // User doesn't exist
     $_SESSION['message'] = "User with that email doesn't exist! or is not a Member or Student";
