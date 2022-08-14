@@ -216,10 +216,8 @@
                 }
             }
             $display = sizeof($outputPosts)==0?'d-none':'';
-            echo "<div class='Feeds $display'>"
-        ?>
-            <div class="FeedsHead">Feeds</div>
-            <?php
+            echo "<div class='Feeds $display'>
+            <div class='FeedsHead $display'>Feeds</div>";
                 include './config.php';
                 $userEmail = $_SESSION['email'];
                 $sql = "SELECT id FROM users WHERE email='$userEmail'";
