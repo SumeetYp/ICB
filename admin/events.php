@@ -2,9 +2,33 @@
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
-    if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
-        header("Location: ./index_login.php");
+    // if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
+    //     header("Location: ./index_login.php");
+    // }
+
+    include './config.php';
+
+    $today = date("Y-m-d");
+    $sql = 'SELECT * FROM events';
+    $result = mysqli_query($mysqli, $sql) or die('Data fetching issues');
+    $outputEvents = [];
+    if(mysqli_num_rows($result)>0){
+        while($row = mysqli_fetch_assoc($result)){
+            $outputEvents[] = $row;
+        }
     }
+    $upcomingEvents = [];
+    $pastEvents = [];
+    for($x=0; $x<sizeof($outputEvents); $x++){
+        if($outputEvents[$x]['eventDate'] < $today){
+            $pastEvents[] = $outputEvents[$x];
+        }
+        else {
+            $upcomingEvents[] = $outputEvents[$x];
+        }
+    }
+
+    mysqli_close($mysqli);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,50 +57,54 @@
     <div class="eventBox">
         <div class="upcomingEvent">
             <br>
-            <div class="eventRow">
-                <div class="eventColor" style="background-color: #E01518;"></div>
-                <div class="eventName">up Feeding</div>
-                <div class="eventDate">!9 June 22</div>
-            </div>
-            <div class="eventRow">
-                <div class="eventColor" style="background-color: #FFBE00;"></div>
-                <div class="eventName">Safe Sex</div>
-                <div class="eventDate">!9 June 22</div>
-            </div>
-            <div class="eventRow">
-                <div class="eventColor" style="background-color: #533CF5;"></div>
-                <div class="eventName">Mental Health</div>
-                <div class="eventDate">!9 June 22</div>
-            </div>
-            <div class="eventRow">
-                <div class="eventColor" style="background-color: #41D950;"></div>
-                <div class="eventName">Tree Plantation</div>
-                <div class="eventDate">!9 June 22</div>
-            </div>
+            <?php
+                for($x=0; $x<sizeof($upcomingEvents); $x++){
+                    $eventColor = '#fff';
+                    switch($upcomingEvents[$x]["eventInitiative"]){
+                        case 'Animal Safety': $eventColor = '#E01518 '; 
+                                              break;
+                        case 'Mental Health': $eventColor = '#CB8FBD';
+                                              break;
+                        case 'Mission Shiksha': $eventColor = '#2EC5B6';
+                                                break;
+                        case 'Environment': $eventColor = '#41D950';
+                                            break;
+                        case 'Sex Education': $eventColor = '#FFBE00';
+                                              break;
+                    }
+                    echo "<div class='eventRow'>
+                            <div class='eventColor' style='background-color:$eventColor;'></div>
+                            <div class='eventName'>" . $upcomingEvents[$x]['eventName'] . "</div>
+                            <div class='eventDate'>" . $upcomingEvents[$x]['eventDate'] . "</div>
+                          </div>";
+                }
+            ?>
             <br>
         </div>
         <div class="pastEvent">
             <br>
-            <div class="eventRow">
-                <div class="eventColor" style="background-color: #E01518;"></div>
-                <div class="eventName">past Feeding</div>
-                <div class="eventDate">!9 June 22</div>
-            </div>
-            <div class="eventRow">
-                <div class="eventColor" style="background-color: #FFBE00;"></div>
-                <div class="eventName">Safe Sex</div>
-                <div class="eventDate">!9 June 22</div>
-            </div>
-            <div class="eventRow">
-                <div class="eventColor" style="background-color: #533CF5;"></div>
-                <div class="eventName">Mental Health</div>
-                <div class="eventDate">!9 June 22</div>
-            </div>
-            <div class="eventRow">
-                <div class="eventColor" style="background-color: #41D950;"></div>
-                <div class="eventName">Tree Plantation</div>
-                <div class="eventDate">!9 June 22</div>
-            </div>
+            <?php
+                for($x=0; $x<sizeof($pastEvents); $x++){
+                    $eventColor = '#fff';
+                    switch($pastEvents[$x]["eventInitiative"]){
+                        case 'Animal Safety': $eventColor = '#E01518 '; 
+                                              break;
+                        case 'Mental Health': $eventColor = '#CB8FBD';
+                                              break;
+                        case 'Mission Shiksha': $eventColor = '#2EC5B6';
+                                                break;
+                        case 'Environment': $eventColor = '#41D950';
+                                            break;
+                        case 'Sex Education': $eventColor = '#FFBE00';
+                                              break;
+                    }
+                    echo "<div class='eventRow'>
+                            <div class='eventColor' style='background-color: $eventColor;'></div>
+                            <div class='eventName'>" . $pastEvents[$x]['eventName'] . "</div>
+                            <div class='eventDate'>" . $pastEvents[$x]['eventDate'] . "</div>
+                          </div>";
+                }
+            ?>
             <br>
         </div>
 
@@ -84,31 +112,31 @@
             <center>
             <h4 class="aeHead">Add Event</h4>
             </center>
-            <form>
+            <form action="./database/addEvent.php" method="POST">
             <div class="aeForm">
                 <br>
                 <div class="aeRow">
                     <div class="aeTitle">Name:</div>
                     <div class="aeBox">
-                        <input placeholder="Event Name" pattern="[a-zA-Z]" type="text">
+                        <input placeholder="Event Name" type="text" name='eventName' required>
                     </div>
                 </div>
                 <div class="aeRow">
                     <div class="aeTitle">Initiative:</div>
                     <div class="aeBox">
-                            <select>
-                                <option selected="true" disabled="disabled">Event Inititative</option>     
-                                <option value="">Animal Feeding</option>
-                                <option value="">Safe Sex</option>
-                                <option value="">Mental Health</option>
-                                <option value="">Tree Plantation</option>
+                            <select name='eventInitiative' required>
+                                <option selected="true" disabled="true">Event Inititative</option>     
+                                <option value="Animal Feeding">Animal Feeding</option>
+                                <option value="Safe Sex">Safe Sex</option>
+                                <option value="Mental Health">Mental Health</option>
+                                <option value="Tree Plantation">Tree Plantation</option>
                             </select>
                     </div>
                 </div>
                 <div class="aeRow">
                     <div class="aeTitle">Table Name:</div>
                     <div class="aeBox">
-                        <input class="tableName" pattern="[a-zA-Z0-9_-]" placeholder="Event Table Name" type="text">
+                        <input class="tableName" placeholder="Event Table Name" type="text" name='eventTableName' required>
                         <img class="setInfo" src="./images/info.png">
                         <span class="hiddenText">Event Name (lowercase) + date <br> eg: animalfeeding_19-07-2023 </span>
                     </div>
@@ -116,28 +144,28 @@
                 <div class="aeRow">
                     <div class="aeTitle">Date:</div>
                     <div class="aeBox">
-                        <input class="neDate" placeholder="DD" step="1" min="1" max="32" type="number">
-                        <input placeholder="MM" step="1" min="1" max="12" type="number">
-                        <input placeholder="YYYY" min="2022" type="text">
+                        <input name='date' class="neDate" placeholder="DD" step="1" min="1" max="31" type="number" required>
+                        <input name='month' placeholder="MM" step="1" min="1" max="12" type="number" required>
+                        <input name='year' placeholder="YYYY" min="2022" max="2100" type="text" required>
                     </div>
                 </div>
                 <div class="aeRow">
                     <div class="aeTitle">Time:</div>
                     <div class="aeBox">
-                        <input placeholder="HH" step="1" min="0" max="24" type="number">
-                        <input placeholder="MM" step="1" min="0" max="60" type="number">
+                        <input name='hour' placeholder="HH" step="1" min="0" max="24" type="number" required>
+                        <input name='minute' placeholder="MM" step="1" min="0" max="60" type="number" required>
                     </div>
                 </div>
                 <div class="aeRow">
                     <div class="aeTitle">Venue:</div>
                     <div class="aeBox">
-                        <input placeholder="Event Venue" type="text">
+                        <input name='eventVenue' placeholder="Event Venue" type="text" required>
                     </div>
                 </div>
                 <div class="aeRow">
                     <div class="aeTitle">Requirements:</div>
                     <div class="aeBox">
-                        <input placeholder="Event Requirements" type="text">
+                        <input name='eventRequirements' placeholder="Event Requirements" type="text" required>
                     </div>
                 </div>
                 <br>
@@ -151,7 +179,7 @@
     </div>
 
     <br><br><br>
-    <script src="./js/main.js"></script>
+    <script src="./js/event.js"></script>
     <script src="./js/sideBar.js"></script>
 </body>
 </html>
