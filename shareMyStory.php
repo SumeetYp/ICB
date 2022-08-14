@@ -5,6 +5,8 @@
     if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
         header("Location: ./index_login.php");
     }
+    $username = $_SESSION['username'];
+    $email = $_SESSION['email'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +51,7 @@
             <h2> <?php echo $_SESSION['username']?></h2>
         </div>
         <div class="role">
-            <h2><?php echo $_SESSION['type'] ?></h2>
+            <h2><?php echo ucwords($_SESSION['type']); ?></h2>
         </div>
         <div class="sm-container">
             <div class="add-post">
@@ -58,8 +60,8 @@
             </div>
         </div>
         <div class="post-something">
-            <form action="">
-            <textarea placeholder="Enter Text" rows="20" id="comment_text" cols="40" class="ui-autocomplete-input" ></textarea>
+            <?php echo "<form action='./database/shareMyStory.php?username=$username&email=$email' method='POST'>" ?>
+            <textarea name='caption' placeholder="Enter Text" rows="20" id="comment_text" cols="40" class="ui-autocomplete-input" ></textarea>
             <br>    
             <input type="submit" class="btn">
             </form>
