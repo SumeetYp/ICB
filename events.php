@@ -53,6 +53,11 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/utils.css">
     <title>Document</title>
+
+    <style>
+        <?php include "./css/events.css" ?>
+    </style>
+
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -70,7 +75,7 @@
                 if(sizeof($enrolledEvents)>0){
                     for($x=0; $x<sizeof($enrolledEvents); $x++){
                         echo "<div class='enrolledEvent'>
-                            <div class='enrolledEventHeading'>" . $enrolledEvents[$x]->eventName . "</div>
+                            <div class='enrolledEventHeading'>asdasd". $enrolledEvents[$x]->eventName . "</div>
                             <div class='enrolledEventData'>
                                 <img src='./images/eye.svg' alt=''>
                             </div>
