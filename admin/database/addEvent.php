@@ -20,7 +20,7 @@
 
         $sql = "CREATE TABLE `$eventTableName`(
             id INT(255) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-            enrolledUserName VARCHAR(255),
+            enrolledUsername VARCHAR(255),
             enrolledUserMobile BIGINT(15),
             enrolledUserEmail VARCHAR(255),
             enrolledUserAttended TINYINT(1) DEFAULT 0
