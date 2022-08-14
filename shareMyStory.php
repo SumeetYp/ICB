@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="./css/shareMyStory.css">
     <link rel="stylesheet" href="./css/utils.css">
 
+    <style>
+        <?php include "./css/shareMyStory.css" ?>
+    </style>
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet"
@@ -52,24 +56,12 @@
                 <h3>Add Post</h3>
                 <img src="./images/plus.png" alt="">
             </div>
-            <div class="share-my-story">
-                <h3>Share My Story</h3>
-                <img src="./images/share (1).png" alt="">
-            </div>
-            <div class="add-previous-story">
-                <h3>Add Private Story</h3>
-                <img src="./images/story.png" alt="">
-            </div>
         </div>
         <div class="post-something">
-            <img src="./images/upload.gif" alt="" class="upload-image"> <br>
-            <h4 class="textt">Post Something!</h4> <br>
             <form action="">
-                <label class="custom-file-upload">
-                    <input type="file" />
-                    Choose File
-                </label>
-                <input type="submit" class="btn">
+            <textarea placeholder="Enter Text" rows="20" id="comment_text" cols="40" class="ui-autocomplete-input" ></textarea>
+            <br>    
+            <input type="submit" class="btn">
             </form>
         </div>
         <div class="no-post-yet">
