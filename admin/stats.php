@@ -2,9 +2,53 @@
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
-    if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
-        header("Location: ./index_login.php");
-    }
+    // if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
+    //     header("Location: ./index_login.php");
+    // }
+
+    include './config.php';
+
+    // Mental Health Count
+    $sql = "SELECT * FROM `events` WHERE `eventInitiative` LIKE 'Mental Health'";
+    $resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
+    $tHealth = mysqli_num_rows($resultEvents);
+
+    // Mission Shikha Count
+    $sql = "SELECT * FROM `events` WHERE `eventInitiative` LIKE 'Mission Shiksha'";
+    $resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
+    $tShiksha = mysqli_num_rows($resultEvents);
+
+    // Animal Safet Count
+    $sql = "SELECT * FROM `events` WHERE `eventInitiative` LIKE 'Animal Safety'";
+    $resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
+    $tAnimal = mysqli_num_rows($resultEvents);
+
+    // Environment Count
+    $sql = "SELECT * FROM `events` WHERE `eventInitiative` LIKE 'Environment'";
+    $resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
+    $tEnvironment = mysqli_num_rows($resultEvents);
+
+    // Sex Education Count
+    $sql = "SELECT * FROM `events` WHERE `eventInitiative` LIKE 'Sex Education'";
+    $resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
+    $tSexEd = mysqli_num_rows($resultEvents);
+
+    // Others Count
+    $sql = "SELECT * FROM `events`";
+    $resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
+    $totalEvents = mysqli_num_rows($resultEvents);
+    $tOther = $totalEvents-($tHealth+$tShiksha+$tAnimal+$tEnvironment+$tSexEd);
+
+    $max = max($tEnvironment, $tAnimal, $tHealth, $tShiksha, $tSexEd);
+    
+    // relative value to display in graph
+    $tgEnvironment =100-($tEnvironment/$max)*90;
+    $tgAnimal =100-($tAnimal/$max)*90;
+    $tgHealth =100-($tHealth/$max)*90;
+    $tgShiksha =100-($tShiksha/$max)*90;
+    $tgSexEd =100-($tSexEd/$max)*90;
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,7 +76,7 @@
               r="17"
               cx="16"
               cy="16"
-              style="stroke-dashoffset: 15"
+              style="stroke-dashoffset: <?php echo $tgHealth?>" pathlength="100"
             ></circle>
 
             <circle class="circle-container__background" r="14" cx="16" cy="16"></circle>
@@ -41,7 +85,7 @@
               r="14"
               cx="16"
               cy="16"
-              style="stroke-dashoffset: 60" pathlength="100"
+              style="stroke-dashoffset: <?php echo $tgShiksha?>" pathlength="100"
             ></circle>
 
             <circle class="circle-container__background" r="11" cx="16" cy="16"></circle>
@@ -50,7 +94,7 @@
               r="11"
               cx="16"
               cy="16"
-              style="stroke-dashoffset: 20" pathlength="100"
+              style="stroke-dashoffset: <?php echo $tgAnimal?>" pathlength="100"
             ></circle>
 
             <circle class="circle-container__background" r="8" cx="16" cy="16"></circle>
@@ -59,7 +103,7 @@
               r="8"
               cx="16"
               cy="16"
-              style="stroke-dashoffset: 40" pathlength="100"
+              style="stroke-dashoffset: <?php echo $tgEnvironment?>" pathlength="100"
             ></circle>
 
             <circle class="circle-container__background" r="5" cx="16" cy="16"></circle>
@@ -68,7 +112,7 @@
               r="5"
               cx="16"
               cy="16"
-              style="stroke-dashoffset: 20" pathlength="100"
+              style="stroke-dashoffset: <?php echo $tgSexEd?>" pathlength="100"
             ></circle>
           </svg>
           <div class="legends">
@@ -108,32 +152,32 @@
                 <div class="eventRow" style="margin-bottom: 0; margin-top: 0;">
                     <div class="achColor" style="background-color: #533CF5;"></div>
                     <div class="eventName">Mental Health</div>
-                    <div class="eventDate">1</div>
+                    <div class="eventDate"><?php echo $tHealth?></div>
                 </div>
                 <div class="eventRow" style="margin-bottom: 0; margin-top: 0;">
                     <div class="achColor" style="background-color: #2EC5B6;"></div>
                     <div class="eventName">Mission Shiksha</div>
-                    <div class="eventDate">2</div>
+                    <div class="eventDate"><?php echo $tShiksha?></div>
                 </div>
                 <div class="eventRow" style="margin-bottom: 0; margin-top: 0;">
                     <div class="achColor" style="background-color: #E01518;"></div>
                     <div class="eventName">Animal Safety</div>
-                    <div class="eventDate">4</div>
+                    <div class="eventDate"><?php echo $tAnimal?></div>
                 </div>
                 <div class="eventRow" style="margin-bottom: 0; margin-top: 0;">
                     <div class="achColor" style="background-color: #41D950;"></div>
                     <div class="eventName">Environment</div>
-                    <div class="eventDate">45</div>
+                    <div class="eventDate"><?php echo $tEnvironment?></div>
                 </div>
                 <div class="eventRow" style="margin-bottom: 0; margin-top: 0;">
                     <div class="achColor" style="background-color: #FFBE00;"></div>
                     <div class="eventName">Sex Education</div>
-                    <div class="eventDate">1</div>
+                    <div class="eventDate"><?php echo $tSexEd?></div>
                 </div>
                 <div class="eventRow" style="margin-bottom: 0; margin-top: 0;">
                     <div class="achColor" style="background-color: #D9D9D9;"></div>
                     <div class="eventName">Other</div>
-                    <div class="eventDate">-</div>
+                    <div class="eventDate"><?php echo ($tOther == 0) ? '-' : $tOther; ?></div>
                 </div>
             </div>
           </div>
@@ -144,7 +188,7 @@
             <div class="achievements">
                 <div class="eventRow" style="margin-bottom: 0; margin-top: 0;">
                     <div class="eventName">Total Events Held:</div>
-                    <div class="eventDate">45</div>
+                    <div class="eventDate"><?php echo $totalEvents?></div>
                 </div>
                 <div class="eventRow" style="margin-bottom: 0; margin-top: 0;">
                     <div class="eventName">Total Marshals:</div>
