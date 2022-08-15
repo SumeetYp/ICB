@@ -47,7 +47,6 @@
         </div>
       </form>
     </div>
-    <script src="./js/announcement.js"></script>
     <script src="./js/sideBar.js"></script>
   </body>
 </html>
