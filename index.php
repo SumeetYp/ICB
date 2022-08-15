@@ -42,11 +42,62 @@
 <body>
     <!-- Navigation Bar -->
     <?php
-        include './header.php';
-    ?>
+    $checkSrc = NULL;
+    $borderColor = NULL;
+    switch($_SESSION['type']){
+        case "admin": $borderColor= '#0ED678'; 
+                      $checkSrc= './images/check 1admin.png';
+                      break;
+        case "member": $borderColor= '#2196F3';
+                       $checkSrc= './images/memberProfile.svg';
+                       break;
+        case "volunteer": $borderColor= '#FFBE00';
+    }
+    $display = '';
+    if($checkSrc == NULL){
+        $display = 'd-none';
+    }
+    echo "<nav>
+            <div class='hamBurger'>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>  
+            <div class='userName'>" . $_SESSION['username'] . "</div>" . "\n" .
+                "<div class='profilePicture'>" . "\n" .
+                    "<img class='profPic' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU' style='border-color: " . $borderColor . ";' alt=''>" . "\n" .
+                    "<img class='check " . $display . "' src='" . $checkSrc . "' alt=''>" . "\n" .
+                "</div>" .
+                "<a href='./shareMyStory.html' class='containerAddStory'>
+                    <img src='./images/plus.png' class='addStory'></img>
+                </a>" .
+            "</div>
+        </nav>" .
+        "<div class='sideBar hideSideBar'>
+            <div class='sideItems'>
+                <ul>
+                    <a href='./index.php'>Home</a>
+                    <a href='./profile.php'>Profile</a>
+                    <a href='./trainings.php'>My Training</a>
+                    <a href='./events.php'>My Events</a>
+                    <a href='./donate.php'>Donate</a>
+                    <a href='./differenceIMade.php'>Difference I Made</a>
+                    <a href='./shareMyStory.php'>Share My Story</a>
+                    <a href='./addMarshalls.php'>Add a Marshal</a>
+                    <a href='./settings.php'>Settings & Support</a>
+                    <a href='./coreTeam.php'>Contact Team</a>
+                    <a href='./alert.php'>Send an Alert</a>
+                    <a href='./logout.php'>Logout</a>
+                </ul>
+                <div class='cross'>
+                    <img src='./images/cross.png' alt=''>
+                </div>
+            </div>
+        </div>";
+?>
 
     <div class="container">
-        <div class="search-container">
+        <!-- <div class="search-container">
             <table class="tableSearch">
                 <tr>
                     <td>
@@ -57,7 +108,7 @@
                     </td>
                 </tr>
             </table>
-        </div>
+        </div> -->
 
         <?php
             $outputAnnouncements = [];
@@ -166,13 +217,30 @@
                 }
             }
             $display = sizeof($outputPosts)==0?'d-none':'';
-            echo "<div class='Feeds $display'>"
-        ?>
-            <div class="FeedsHead">Feeds</div>
-            <?php
+            echo "<div class='Feeds $display'>
+            <div class='FeedsHead $display'>Feeds</div>";
                 include './config.php';
+                $userEmail = $_SESSION['email'];
+                $sql = "SELECT id FROM users WHERE email='$userEmail'";
+                $result = mysqli_query($mysqli, $sql) or die('User Not Found');
+                $outputUser = NULL;
+                if(mysqli_num_rows($result)>0){
+                    $outputUser = mysqli_fetch_array($result);
+                }
+                $userID = $outputUser['id'];
                 for($x=0; $x<sizeof($outputPosts); $x++){
-
+                    $postID = $outputPosts[$x]['id'];
+                    $sql = "SELECT * FROM postlikes WHERE postID=$postID AND userID=$userID";
+                    $result = mysqli_query($mysqli, $sql) or die('Error');
+                    $likeSource = './images/empty_heart.png';
+                    $liked='false';
+                    if(mysqli_num_rows($result)>0){
+                        $likeSource = './images/heart.png';
+                        $liked='true';
+                    }
+                    $nLikes = 0;
+                    if($outputPosts[$x]['likes']!=NULL)$nLikes=$outputPosts[$x]['likes'];
+                    $likes = $nLikes==1?'Like': 'Likes';
                     $email = $outputPosts[$x]['userEmail'];
                     $sql = "SELECT `type` FROM users WHERE email='$email'";
                     $result = mysqli_query($mysqli, $sql) or die("SQL Failed");
@@ -212,8 +280,8 @@
                               </div>" .
                               "<div class='postFooter'>
                                    <div class='LikeAndShare'>
-                                       <img src='./images/heart.png' alt=''>
-                                       <!-- <img src='./images/paper-plane.png' alt=''> -->
+                                       <a href='./database/alterLikes.php?userID=$userID&postID=$postID&like=$liked'><img src='$likeSource' alt=''></a>
+                                       <div class='likeNumber'>" . $nLikes . " " . $likes . "</div>
                                    </div>
                                    <div class='description'>" .
                                        $outputPosts[$x]['caption'] .

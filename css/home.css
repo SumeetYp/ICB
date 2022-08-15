@@ -300,8 +300,8 @@ body{
     justify-content: space-evenly;
 }
 
-.LikeAndShare img{
-    width: 32%;
+.LikeAndShare a img{
+    width: 100%;
     cursor: pointer;
 }
 
@@ -472,7 +472,7 @@ body{
         align-items: center;
         justify-content: space-evenly;
     }
-    .LikeAndShare img{
+    .LikeAndShare a{
         width: 30%;
     }
     .description {
@@ -558,7 +558,7 @@ body{
         align-items: center;
         justify-content: space-evenly;
     }
-    .LikeAndShare img{
+    .LikeAndShare a{
         width: 30%;
     }
     .description {
@@ -648,7 +648,7 @@ body{
         align-items: center;
         justify-content: space-evenly;
     }
-    .LikeAndShare img{
+    .LikeAndShare a{
         width: 30%;
     }
     .description {
@@ -749,7 +749,7 @@ body{
         align-items: center;
         justify-content: space-evenly;
     }
-    .LikeAndShare img{
+    .LikeAndShare a{
         width: 30%;
     }
     .description {
@@ -861,7 +861,7 @@ body{
         align-items: center;
         justify-content: space-evenly;
     }
-    .LikeAndShare img{
+    .LikeAndShare a{
         width: 35%;
     }
     .description {

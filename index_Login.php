@@ -45,6 +45,7 @@
             <div class="input-group">
                 <button class="btn" name="login">Login</button>
             </div>
+            <p class="login-register-text"><a href="./forgot.php">Forgot Password?</a></p>
             <p class="login-register-text">Don't have an account? <a href="https://bondsocially.org/contact.html">Contact Team</a></p>
         </form>
     </div>

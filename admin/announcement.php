@@ -5,6 +5,12 @@
   if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
     header("Location: ./index_login.php");
   }
+
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['announcementSubmit'])) {
+        require './database/addAnnouncement.php';
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +32,7 @@
       include './header.php';
     ?>
     <div class="addAnnouncement">
-      <form id="announcement-page" action="./database/addAnnouncement.php" method="POST">
+      <form id="announcement-page" action="announcement.php" method="POST">
         <div class="form-group">
           <label id="name-label" for="endDate">End Timestamp:</label>
           <input id="endDate" type="date" name="endDate" required placeholder="DD" />
@@ -37,12 +43,7 @@
           <textarea id="announcement" name="announcement" cols="70" rows="10" required></textarea>
         </div>
         <div class="form-group">
-          <input
-            id="submit"
-            class="button"
-            type="submit"
-            value="Save & Continue"
-          />
+          <input id="submit" class="button" name="announcementSubmit" type="submit" value="Save & Continue"/>
         </div>
       </form>
     </div>
