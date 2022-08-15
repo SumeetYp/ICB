@@ -5,6 +5,14 @@
     if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
         header("Location: ./index_login.php");
     }
+    $borderColor = NULL;
+    switch($_SESSION['type']){
+        case "admin": $borderColor= '#0ED678'; 
+                      break;
+        case "member": $borderColor= '#2196F3';
+                       break;
+        case "volunteer": $borderColor= '#FFBE00';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,8 +24,27 @@
     <title>Profile</title>
     <link rel="stylesheet" href="css/profile-css/style.css">
     <link rel="stylesheet" href="css/profile-css/main.css">
-    <link rel="stylesheet" href="css/profile-css/header.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/utils.css">
+    <style>
+        input[type='range']::-webkit-slider-runnable-track {
+            height: 10px;
+            -webkit-appearance: none;
+            color: <?php echo $borderColor ?>;
+            margin-top: -1px;
+            border-radius: 15px;
+        }
+  
+        input[type='range']::-webkit-slider-thumb {
+            width: 20px;
+            -webkit-appearance: none;
+            height: 20px;
+            cursor: ew-resize;
+            background: <?php echo $borderColor ?>;
+            box-shadow: -800px 0 0 800px <?php echo $borderColor ?>;
+            border-radius: 15px;
+        }
+    </style>
 
 </head>
 

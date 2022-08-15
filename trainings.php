@@ -21,6 +21,7 @@
     $ongoingTrainings = [];
     for($x=0; $x<sizeof($outputTrainings); $x++){
         $trainingTableName = $outputTrainings[$x]['trainingTableName'];
+        $trainingName = $outputTrainings[$x]['trainingName'];
         $email = $_SESSION['email'];
         $sql = "SELECT * FROM $trainingTableName WHERE enrolledUserEmail='$email'";
         $resultTrainingTable = mysqli_query($mysqli, $sql) or die("SQL Failed");
@@ -28,10 +29,10 @@
         if(mysqli_num_rows($resultTrainingTable) > 0){
             $outputTrainingTable = mysqli_fetch_array($resultTrainingTable);
             if($outputTrainingTable['enrolledUserCompleted'] != 0){
-                $completedTrainings[] = (object) ['id' => $outputTrainingTable['id'], 'enrolledUsername' => $outputTrainingTable['enrolledUsername'], 'enrolledUserMobile' => $outputTrainingTable['enrolledUserMobile'], 'enrolledUserEmail' => $outputTrainingTable['enrolledUserEmail'], 'enrollmentDate' => $outputTrainingTable['enrollmentDate'], 'trainingTableName' => $trainingTableName];
+                $completedTrainings[] = (object) ['id' => $outputTrainingTable['id'], 'enrolledUsername' => $outputTrainingTable['enrolledUsername'], 'enrolledUserMobile' => $outputTrainingTable['enrolledUserMobile'], 'enrolledUserEmail' => $outputTrainingTable['enrolledUserEmail'], 'enrollmentDate' => $outputTrainingTable['enrollmentDate'], 'trainingTableName' => $trainingTableName, 'trainingName' => $trainingName];
             }
             else{
-                $ongoingTrainings[] = (object) ['id' => $outputTrainingTable['id'], 'enrolledUsername' => $outputTrainingTable['enrolledUsername'], 'enrolledUserMobile' => $outputTrainingTable['enrolledUserMobile'], 'enrolledUserEmail' => $outputTrainingTable['enrolledUserEmail'], 'enrollmentDate' => $outputTrainingTable['enrollmentDate'], 'trainingTableName' => $trainingTableName];
+                $ongoingTrainings[] = (object) ['id' => $outputTrainingTable['id'], 'enrolledUsername' => $outputTrainingTable['enrolledUsername'], 'enrolledUserMobile' => $outputTrainingTable['enrolledUserMobile'], 'enrolledUserEmail' => $outputTrainingTable['enrolledUserEmail'], 'enrollmentDate' => $outputTrainingTable['enrollmentDate'], 'trainingTableName' => $trainingTableName, 'trainingName' => $trainingName];
             }
         }
     }
@@ -73,7 +74,7 @@
                 else {
                     for($x=0; $x<sizeof($ongoingTrainings); $x++){
                         echo "<div class='enrolledTraining'>
-                                <div class='enrolledTrainingHeading'>" . $ongoingTrainings[$x]->trainingTableName . "</div>
+                                <div class='enrolledTrainingHeading'>" . $ongoingTrainings[$x]->trainingName . "</div>
                                 <div class='enrolledTrainingData'>
                                     <img src='./images/play.png' alt=''>
                                 </div>
@@ -85,12 +86,12 @@
         <div class="completedTrainings d-none">
             <?php
                 if(sizeof($completedTrainings)==0){
-                    echo "<div class='empty'>You have not completed in any training yet</div>";
+                    echo "<div class='empty'>You have not completed any training yet</div>";
                 }
                 else {
                     for($x=0; $x<sizeof($completedTrainings); $x++){
                         echo "<div class='completedTraining'>
-                                <div class='completedTrainingHeading'>" . $completedTrainings[$x]->trainingTableName . "</div>
+                                <div class='completedTrainingHeading'>" . $completedTrainings[$x]->trainingName . "</div>
                                 <div class='completedTrainingData'>
                                     <img src='./images/download.svg' alt=''>
                                 </div>

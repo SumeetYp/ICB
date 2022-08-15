@@ -26,30 +26,6 @@ header{
     height: 100%;
 }
 
-nav .profilePicture{
-    overflow: hidden;
-}
-
-nav .profilePicture img:first-of-type {
-    width: 80%;
-    height: 80%;
-    border-radius: 50%;
-    border: 2.5px solid #6AF491 !important;
-    margin-top: 2%;
-    margin-left:-1%;
-}
-
-nav .profilePicture .check {
-    position: absolute;
-    bottom: 0%;
-    right: 0%;
-    top: 50%;
-    left:60%;
-    width: 45%;
-    overflow: hidden;
-}
-
-
 li{
     list-style: none;
 }
@@ -459,10 +435,6 @@ ul{
         margin-left: 0px;
     }
 
-   .profile{
-       margin-left: 18% !important;
-   }
-
    .container a{
     margin-left: 0px;
     margin-top: 3% !important;
@@ -471,14 +443,6 @@ ul{
    .follow2-btn{
        margin-left: 40px !important;
    }
-
-   .profilePicture img:first-of-type {
-    border: 2.5px solid #6AF491 !important;
-}
-.container .profilePicture{
-    overflow: hidden;
-}
-
 
 }
 
@@ -519,10 +483,6 @@ ul{
         margin-left: 0px;
     }
 
-   .profile{
-       margin-left: 22% !important;
-   }
-
    .container a{
     margin-left: 0px;
     margin-top: 20px !important;
@@ -540,23 +500,9 @@ ul{
     display: inline;
 }
 
-.hamburger{
-    margin-left: 140px !important;
-}
-
-.profilePicture img:first-of-type {
-    border: 2.5px solid #6AF491 !important;
-}
-
-.container .profilePicture{
-    overflow: hidden;
-}
-
 header{
     overflow: hidden !important;
 }
-
-
 
 }
 
@@ -598,12 +544,6 @@ header{
         margin-left: 0px;
     }
 
-   .profile{
-       margin-left: 22% !important;
-   }
-
-   
-
    .follow2-btn{
        margin-left: 90px !important;
        display: block;
@@ -614,25 +554,6 @@ header{
     margin-left: 90px !important;
     margin-top: 20px;
     display: inline;
-}
-
-.hamburger{
-    margin-left: 140px !important;
-}
-
-.profilePicture img:first-of-type {
-    border: 1.5px solid #6AF491 !important;
-}
-
-.container .profilePicture{
-    width:100% !important;
-    height: 100% !important;
-    overflow: hidden;
-    margin-left: 20px;
-}
-
-.container{
-    margin-left: 0% !important;
 }
 
 .user-details{

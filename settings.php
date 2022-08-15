@@ -14,6 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/profile-css/settings.css">
     <link rel="stylesheet" href="css/utils.css">
@@ -22,11 +23,9 @@
 
 <body>
     <div class="flex-row">
-
         <?php
             include './header.php';
         ?>
-
         <h2>Settings</h2>
 
         <section class="settings">

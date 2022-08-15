@@ -14,7 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="./css/main.css"> -->
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/alert.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/utils.css">
@@ -26,9 +26,9 @@
     <?php
         include './header.php';
     ?>
-
+<div class="container">
     <h2>Send an alert</h2>
-    <div class="container">
+    <div class="form-container">
         <form>
             <label>Name:</label>
             <input type="text" placeholder="Full Name of Patient/Contact Person" required><br><br>
@@ -49,6 +49,7 @@
                 <input type="submit" class="submit">
             </div>
         </form>
+    </div>
     </div>
     <script src="./js/alert.js"></script>
     <script src="./js/sideBar.js"></script>

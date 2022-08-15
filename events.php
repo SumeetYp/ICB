@@ -92,7 +92,7 @@
                         echo "<div class='attendedEvent'>
                             <div class='attendedEventHeading'>" . $attendedEvents[$x]->eventName . "</div>
                             <div class='attendedEventData'>
-                                <img src='./images/eye.svg' alt=''>
+                                <img src='./images/download.svg' alt=''>
                             </div>
                         </div>";
                     }

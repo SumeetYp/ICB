@@ -72,11 +72,11 @@
                         case 'Sex Education': $eventColor = '#FFBE00';
                                               break;
                     }
-                    echo "<div class='eventRow'>
+                    echo "<a target='_blank' href='./particularEvent.php?eID=" . $upcomingEvents[$x]['id'] . "&eTN=" . $upcomingEvents[$x]["eventTableName"] .  "' style='color: black; text-decoration: none;'><div class='eventRow'>
                             <div class='eventColor' style='background-color:$eventColor;'></div>
                             <div class='eventName'>" . $upcomingEvents[$x]['eventName'] . "</div>
                             <div class='eventDate'>" . $upcomingEvents[$x]['eventDate'] . "</div>
-                          </div>";
+                          </div></a>";
                 }
             ?>
             <br>
@@ -98,11 +98,11 @@
                         case 'Sex Education': $eventColor = '#FFBE00';
                                               break;
                     }
-                    echo "<div class='eventRow'>
+                    echo "<a href=''><div class='eventRow'>
                             <div class='eventColor' style='background-color: $eventColor;'></div>
                             <div class='eventName'>" . $pastEvents[$x]['eventName'] . "</div>
                             <div class='eventDate'>" . $pastEvents[$x]['eventDate'] . "</div>
-                          </div>";
+                          </div></a>";
                 }
             ?>
             <br>
