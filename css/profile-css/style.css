@@ -285,9 +285,9 @@ label{
        margin-left: 40px !important;
    }
 
-   .profilePicture img:first-of-type {
+   /* .profilePicture img:first-of-type {
     border: 2.5px solid #6AF491 !important;
-}
+} */
 }
 
 @media (min-width:561px) and (max-width: 750px) {
@@ -352,9 +352,9 @@ label{
     margin-left: 140px !important;
 }
 
-.profilePicture img:first-of-type {
+/* .profilePicture img:first-of-type {
     border: 2.5px solid #6AF491 !important;
-}
+} */
 
 header{
     overflow: hidden !important;
@@ -424,9 +424,9 @@ header{
     margin-left: 140px !important;
 }
 
-.profilePicture img:first-of-type {
+/* .profilePicture img:first-of-type {
     border: 1.5px solid #6AF491 !important;
-}
+} */
 
 .container .profilePicture{
     width:100% !important;

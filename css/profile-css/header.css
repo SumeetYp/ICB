@@ -70,7 +70,7 @@ nav .profilePicture img:first-of-type {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 2.5px solid #6AF491 !important;
+    /* border: 2.5px solid #6AF491 !important; */
 }
 
 .sideBar {
@@ -147,9 +147,9 @@ nav .profilePicture img:first-of-type {
         height: 70px;
         margin: 0 5px;
     }
-    nav .profilePicture img:first-of-type {
+    /* nav .profilePicture img:first-of-type {
         border: 5px solid #6AF491;
-    }
+    } */
     nav .profilePicture .check {
         bottom: -20%;
         right: -20%;
@@ -172,9 +172,9 @@ nav .profilePicture img:first-of-type {
         width: 40px;
         height: 40px;
     }
-    nav .profilePicture img:first-of-type {
+    /* nav .profilePicture img:first-of-type {
         border: 3px solid #6AF491;
-    }
+    } */
     nav .profilePicture .check {
         bottom: -20%;
         right: -20%;
@@ -220,9 +220,9 @@ nav .profilePicture img:first-of-type {
         width: 30px;
         height: 30px;
     }
-    nav .profilePicture img:first-of-type {
+    /* nav .profilePicture img:first-of-type {
         border: 2.5px solid #6AF491;
-    }
+    } */
 }
 
 @media only screen and (max-width: 375px) {
