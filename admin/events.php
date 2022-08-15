@@ -2,9 +2,9 @@
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
-    if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
-        header("Location: ./index_login.php");
-    }
+    // if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
+    //     header("Location: ./index_login.php");
+    // }
 
     include './config.php';
 
@@ -126,10 +126,11 @@
                     <div class="aeBox">
                             <select name='eventInitiative' required>
                                 <option selected="true" disabled="true">Event Inititative</option>     
-                                <option value="Animal Feeding">Animal Feeding</option>
-                                <option value="Safe Sex">Safe Sex</option>
-                                <option value="Mental Health">Mental Health</option>
-                                <option value="Tree Plantation">Tree Plantation</option>
+                                <option value="Animal Feeding">Mental Health</option>
+                                <option value="Safe Sex">Mission Shiksha</option>
+                                <option value="Mental Health">Animal Safety</option>
+                                <option value="Tree Plantation">Environment</option>
+                                <option value="Tree Plantation">Sex Education</option>
                             </select>
                     </div>
                 </div>

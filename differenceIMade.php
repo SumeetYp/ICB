@@ -9,19 +9,168 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
 
 require "config.php";
 
-$query = $mysqli->query("
-SELECT 
-EVENTNAME(created) as eventname,
-  SUM(numbers) as numbers
-FROM stats
-GROUP BY eventname
-");
+// getting ranking
+$sql = "SELECT FIND_IN_SET( totalEventsAttended, (
+    SELECT GROUP_CONCAT( totalEventsAttended
+    ORDER BY totalEventsAttended DESC ) 
+    FROM stats )
+    ) AS rank
+    FROM stats WHERE userEmail = '".$_SESSION['email']."'";
+$result = mysqli_query($mysqli, $sql) or die('Data fetching issues');
+$outputEvents = [];
+if(mysqli_num_rows($result)>0){
+    while($row = mysqli_fetch_assoc($result)){
+        $outputEvents[] = $row;
+    }
+}
+$rank = $outputEvents[0]['rank'];
 
-  foreach($query as $data)
-  {
-    $events[] = $data['eventname'];
-    $numbers[] = $data['numbers'];
-  }
+// getting events attended data
+$sql = 'SELECT * FROM `stats` WHERE `userEmail` LIKE "'.$_SESSION['email'].'"';
+$result = mysqli_query($mysqli, $sql) or die('Data fetching issues');
+$outputEvents = [];
+if(mysqli_num_rows($result)>0){
+    while($row = mysqli_fetch_assoc($result)){
+        $outputEvents[] = $row;
+    }
+}
+
+// monthly total event stats
+
+$fin = array();
+$year = date("Y"); 
+$year = 2023;
+for ($x = 0; $x <= 11; $x++) {
+    $liss = array('01','02','03','04','05','06','07','08','09','10','11','12');
+    $sql = 'SELECT COUNT(*) AS totalEventsAttended FROM `events` WHERE `eventDate` LIKE "'.$year.'-'.$liss[$x].'%"';
+    $result = mysqli_query($mysqli, $sql) or die('Data fetching issues');
+    $oe = [];
+    if(mysqli_num_rows($result)>0){
+    while($row = mysqli_fetch_assoc($result)){
+        $oe[] = $row;
+    }
+}
+array_push($fin, $oe[0]['totalEventsAttended']);
+}
+
+// individuAL Event monthly stats
+$myEnvironment = array(0,0,0,0,0,0,0,0,0,0,0,0);
+$query = "SELECT * FROM `events` WHERE eventInitiative LIKE 'Environment'";
+$result = mysqli_query($mysqli,$query) or die('Data fetching issue');
+    if(mysqli_num_rows($result)>0){
+    while($row = mysqli_fetch_assoc($result)){
+        $tableName = $row['eventTableName'];
+        $monthIndex = (int)substr($row['eventDate'],5,2) -1;
+        $subQuery = 'SELECT * FROM '.$tableName.' WHERE enrolledUserEmail LIKE '.$_SESSION['email'];
+        $subResult = mysqli_query($mysqli,$query) or die('Data fetching issue');
+        if(mysqli_num_rows($subResult)>0){
+            $myEnvironment[$monthIndex] += 1; 
+        }
+
+    }}
+
+$myHealth = array(0,0,0,0,0,0,0,0,0,0,0,0);
+$query = "SELECT * FROM `events` WHERE eventInitiative LIKE 'Mental Health'";
+$result = mysqli_query($mysqli,$query) or die('Data fetching issue');
+    if(mysqli_num_rows($result)>0){
+    while($row = mysqli_fetch_assoc($result)){
+        $tableName = $row['eventTableName'];
+        $monthIndex = (int)substr($row['eventDate'],5,2) -1;
+        $subQuery = 'SELECT * FROM '.$tableName.' WHERE enrolledUserEmail LIKE '.$_SESSION['email'];
+        $subResult = mysqli_query($mysqli,$query) or die('Data fetching issue');
+        if(mysqli_num_rows($subResult)>0){
+            $myEnvironment[$monthIndex] += 1; 
+        }
+
+    }}
+$myShiksha = array(0,0,0,0,0,0,0,0,0,0,0,0);
+$query = "SELECT * FROM `events` WHERE eventInitiative LIKE 'Mission Shiksha'";
+$result = mysqli_query($mysqli,$query) or die('Data fetching issue');
+    if(mysqli_num_rows($result)>0){
+    while($row = mysqli_fetch_assoc($result)){
+        $tableName = $row['eventTableName'];
+        $monthIndex = (int)substr($row['eventDate'],5,2) -1;
+        $subQuery = 'SELECT * FROM '.$tableName.' WHERE enrolledUserEmail LIKE '.$_SESSION['email'];
+        $subResult = mysqli_query($mysqli,$query) or die('Data fetching issue');
+        if(mysqli_num_rows($subResult)>0){
+            $myEnvironment[$monthIndex] += 1; 
+        }
+
+    }}
+$myAnimal = array(0,0,0,0,0,0,0,0,0,0,0,0);
+$query = "SELECT * FROM `events` WHERE eventInitiative LIKE 'Animal Safety'";
+$result = mysqli_query($mysqli,$query) or die('Data fetching issue');
+    if(mysqli_num_rows($result)>0){
+    while($row = mysqli_fetch_assoc($result)){
+        $tableName = $row['eventTableName'];
+        $monthIndex = (int)substr($row['eventDate'],5,2) -1;
+        $subQuery = 'SELECT * FROM '.$tableName.' WHERE enrolledUserEmail LIKE '.$_SESSION['email'];
+        $subResult = mysqli_query($mysqli,$query) or die('Data fetching issue');
+        if(mysqli_num_rows($subResult)>0){
+            $myEnvironment[$monthIndex] += 1; 
+        }
+
+    }}
+$mySexEd = array(0,0,0,0,0,0,0,0,0,0,0,0);
+$query = "SELECT * FROM `events` WHERE eventInitiative LIKE 'Sex Education'";
+$result = mysqli_query($mysqli,$query) or die('Data fetching issue');
+    if(mysqli_num_rows($result)>0){
+    while($row = mysqli_fetch_assoc($result)){
+        $tableName = $row['eventTableName'];
+        $monthIndex = (int)substr($row['eventDate'],5,2) -1;
+        $subQuery = 'SELECT * FROM '.$tableName.' WHERE enrolledUserEmail LIKE '.$_SESSION['email'];
+        $subResult = mysqli_query($mysqli,$query) or die('Data fetching issue');
+        if(mysqli_num_rows($subResult)>0){
+            $myEnvironment[$monthIndex] += 1; 
+        }
+
+    }}
+
+
+// total events data
+
+// Mental Health Count
+$sql = "SELECT * FROM `events` WHERE `eventInitiative` LIKE 'Mental Health'";
+$resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
+$tHealth = mysqli_num_rows($resultEvents);
+
+// Mission Shikha Count
+$sql = "SELECT * FROM `events` WHERE `eventInitiative` LIKE 'Mission Shiksha'";
+$resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
+$tShiksha = mysqli_num_rows($resultEvents);
+
+// Animal Safet Count
+$sql = "SELECT * FROM `events` WHERE `eventInitiative` LIKE 'Animal Safety'";
+$resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
+$tAnimal = mysqli_num_rows($resultEvents);
+
+// Environment Count
+$sql = "SELECT * FROM `events` WHERE `eventInitiative` LIKE 'Environment'";
+$resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
+$tEnvironment = mysqli_num_rows($resultEvents);
+
+// Sex Education Count
+$sql = "SELECT * FROM `events` WHERE `eventInitiative` LIKE 'Sex Education'";
+$resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
+$tSexEd = mysqli_num_rows($resultEvents);
+
+// Others Count
+$sql = "SELECT * FROM `events`";
+$resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
+$totalEvents = mysqli_num_rows($resultEvents);
+$tOther = $totalEvents-($tHealth+$tShiksha+$tAnimal+$tEnvironment+$tSexEd);
+
+
+// marshals count
+$query = "SELECT COUNT(*) FROM `users` WHERE `type` LIKE 'Marshals'";
+$res = mysqli_query($mysqli,$query) or die('SQL Failed');
+$oe = [];
+if(mysqli_num_rows($res)>0){
+    while($row = mysqli_fetch_assoc($res)){
+        $tMarshals = $row['COUNT(*)'];
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +195,7 @@ GROUP BY eventname
         include './header.php';
     ?>
 
-        <h1 class="Rank">Rank <b class="num">82</b></h1>
+        <h1 class="Rank">Rank <b class="num"><?php echo $rank ?></b></h1>
 
         <h2>Difference I Made</h2>
 
@@ -59,11 +208,11 @@ GROUP BY eventname
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script>
             // setup 
-            const labels = <?php echo json_encode($events) ?>;
+            const labels = ['Mental Health', 'Mission Shiksha', 'Animal Safety', 'Environment', 'Sex Education'];
             const data = {
                 labels: ['Mental Health', 'Mission Shiksha', 'Animal Safety', 'Environment', 'Sex Education'],
                 datasets: [{
-                    data: <?php echo json_encode($numbers) ?>,
+                    data: [<?php echo $outputEvents[0]['mental_health'].",".$outputEvents[0]['mission_shiksha'].",".$outputEvents[0]['animal_safety'].",".$outputEvents[0]['environment'].",".$outputEvents[0]['sex_education'] ?>],
                     backgroundColor: [
                         '#CB8FBD',
                         '#2EC5B6',
@@ -122,35 +271,35 @@ GROUP BY eventname
                     labels: xValues,
                     datasets: [{
                         label: 'Mental Health',
-                        data: [860, 1140, 1060, 1060, 1070, 1110, 1330],
+                        data: [<?php echo "$myHealth[0], $myHealth[1], $myHealth[2], $myHealth[3], $myHealth[4], $myHealth[5], $myHealth[6], $myHealth[7], $myHealth[8], $myHealth[9], $myHealth[10], $myHealth[11]" ?>],
                         borderColor: '#CB8FBD',
                         fill: false,
                         borderWidth: 1,
                         backgroundColor: '#CB8FBD'
                     }, {
                         label: 'Mission Shiksha',
-                        data: [1600, 1700, 1700, 1900, 2000, 2700, 4000],
+                        data: [<?php echo "$myShiksha[0], $myShiksha[1], $myShiksha[2], $myShiksha[3], $myShiksha[4], $myShiksha[5], $myShiksha[6], $myShiksha[7], $myShiksha[8], $myShiksha[9], $myShiksha[10], $myShiksha[11]" ?>],
                         borderColor: '#2EC5B6',
                         fill: false,
                         borderWidth: 1,
                         backgroundColor: '#2EC5B6'
                     }, {
                         label: 'Animal Safety',
-                        data: [300, 700, 2000, 5000, 6000, 4000, 2000],
+                        data: [<?php echo "$myAnimal[0], $myAnimal[1], $myAnimal[2], $myAnimal[3], $myAnimal[4], $myAnimal[5], $myAnimal[6], $myAnimal[7], $myAnimal[8], $myAnimal[9], $myAnimal[10], $myAnimal[11]" ?>],
                         borderColor: '#E01518',
                         fill: false,
                         borderWidth: 1,
                         backgroundColor: '#E01518'
                     }, {
                         label: 'Environment',
-                        data: [300, 700, 8000, 5000, 3000, 4500, 2000],
+                        data: [<?php echo "$myEnvironment[0], $myEnvironment[1], $myEnvironment[2], $myEnvironment[3], $myEnvironment[4], $myEnvironment[5], $myEnvironment[6], $myEnvironment[7], $myEnvironment[8], $myEnvironment[9], $myEnvironment[10], $myEnvironment[11]" ?>],
                         borderColor: '#41D950',
                         fill: false,
                         borderWidth: 1,
                         backgroundColor: '#41D950'
                     }, {
                         label: 'Sex Education',
-                        data: [300, 500, 6000, 5000, 3500, 4500, 4600],
+                        data: [<?php echo "$mySexEd[0], $mySexEd[1], $mySexEd[2], $mySexEd[3], $mySexEd[4], $mySexEd[5], $mySexEd[6], $mySexEd[7], $mySexEd[8], $mySexEd[9], $mySexEd[10], $mySexEd[11]" ?>],
                         borderColor: '#FFBE00',
                         fill: false,
                         borderWidth: 1,
@@ -179,7 +328,7 @@ GROUP BY eventname
             var xValues = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
                 'November', 'December'
             ];
-            var yValues = [7, 8, 8, 9, 9, 9, 10];
+            var yValues = [<?php echo "$fin[0], $fin[1], $fin[2], $fin[3], $fin[4], $fin[5], $fin[6], $fin[7], $fin[8], $fin[9], $fin[10], $fin[11]" ?>];
 
             new Chart("myChart3", {
                 type: "line",
@@ -241,22 +390,24 @@ GROUP BY eventname
             <div class="col2">
                 <h3>Events Attended</h3>
                 <ul class="attend">
-                    <li>5</li>
-                    <li>12</li>
-                    <li>10</li>
-                    <li>15</li>
-                    <li>20</li>
+                    <li><?php echo $outputEvents[0]['animal_safety'] ?></li>
+                    <li><?php echo $outputEvents[0]['mission_shiksha'] ?></li>
+                    <li><?php echo $outputEvents[0]['sex_education'] ?></li>
+                    <li><?php echo $outputEvents[0]['mental_health'] ?></li>
+                    <li><?php echo $outputEvents[0]['environment'] ?></li>
+                    <li><?php echo $outputEvents[0]['totalEventsAttended']-($outputEvents[0]['animal_safety']+$outputEvents[0]['mission_shiksha']+$outputEvents[0]['sex_education']+$outputEvents[0]['mental_health']+$outputEvents[0]['environment']) ?></li>
                 </ul>
 
             </div>
             <div class="col3">
                 <h3>Events Held</h3>
                 <ul>
-                    <li>6</li>
-                    <li>15</li>
-                    <li>15</li>
-                    <li>20</li>
-                    <li>22</li>
+                    <li><?php echo $tAnimal ?></li>
+                    <li><?php echo $tShiksha ?></li>
+                    <li><?php echo $tSexEd ?></li>
+                    <li><?php echo $tHealth ?></li>
+                    <li><?php echo $tEnvironment ?></li>
+                    <li><?php echo $tOther ?></li>
                 </ul>
 
             </div>
@@ -271,10 +422,10 @@ GROUP BY eventname
 
             <ul>
 
-                <li>Total Events Attended: <b>62</b></li>
-                <li>Total Events Held: <b>85</b></li>
-                <li>Current Ranking: <b>16</b></li>
-                <li>Total Marshals: <b>119</b></li>
+                <li>Total Events Attended: <b><?php echo $outputEvents[0]['totalEventsAttended']?></b></li>
+                <li>Total Events Held: <b><?php echo $totalEvents?></b></li>
+                <li>Current Ranking: <b><?php echo $rank?></b></li>
+                <li>Total Marshals: <b><?php echo $tMarshals ?></b></li>
             </ul>
 
         </div>

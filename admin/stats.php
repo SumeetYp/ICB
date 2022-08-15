@@ -2,9 +2,9 @@
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
-    // if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
-    //     header("Location: ./index_login.php");
-    // }
+    if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
+        header("Location: ./index_login.php");
+    }
 
     include './config.php';
 
@@ -48,6 +48,15 @@
     $tgShiksha =100-($tShiksha/$max)*90;
     $tgSexEd =100-($tSexEd/$max)*90;
 
+    // marshals count
+    $query = "SELECT COUNT(*) FROM `users` WHERE `type` LIKE 'Marshals'";
+    $res = mysqli_query($mysqli,$query) or die('SQL Failed');
+    $oe = [];
+    if(mysqli_num_rows($res)>0){
+        while($row = mysqli_fetch_assoc($res)){
+            $tMarshals = $row['COUNT(*)'];
+        }
+    }
 
 ?>
 <!DOCTYPE html>
@@ -192,7 +201,7 @@
                 </div>
                 <div class="eventRow" style="margin-bottom: 0; margin-top: 0;">
                     <div class="eventName">Total Marshals:</div>
-                    <div class="eventDate">119</div>
+                    <div class="eventDate"><?php echo $tMarshals ?></div>
                 </div>
             </div>
             </div>
