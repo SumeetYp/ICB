@@ -42,6 +42,7 @@
     $max = max($tEnvironment, $tAnimal, $tHealth, $tShiksha, $tSexEd);
     
     // relative value to display in graph
+
     $tgEnvironment =100-($tEnvironment/$max)*90;
     $tgAnimal =100-($tAnimal/$max)*90;
     $tgHealth =100-($tHealth/$max)*90;
@@ -85,7 +86,7 @@
               r="17"
               cx="16"
               cy="16"
-              style="stroke-dashoffset: <?php echo $tgHealth?>" pathlength="100"
+              style="stroke-dashoffset: <?php echo $tgSexEd?>" pathlength="100"
             ></circle>
 
             <circle class="circle-container__background" r="14" cx="16" cy="16"></circle>
@@ -94,7 +95,7 @@
               r="14"
               cx="16"
               cy="16"
-              style="stroke-dashoffset: <?php echo $tgShiksha?>" pathlength="100"
+              style="stroke-dashoffset: <?php echo $tgEnvironment?>" pathlength="100"
             ></circle>
 
             <circle class="circle-container__background" r="11" cx="16" cy="16"></circle>
@@ -112,7 +113,7 @@
               r="8"
               cx="16"
               cy="16"
-              style="stroke-dashoffset: <?php echo $tgEnvironment?>" pathlength="100"
+              style="stroke-dashoffset: <?php echo $tgShiksha?>" pathlength="100"
             ></circle>
 
             <circle class="circle-container__background" r="5" cx="16" cy="16"></circle>
@@ -121,7 +122,7 @@
               r="5"
               cx="16"
               cy="16"
-              style="stroke-dashoffset: <?php echo $tgSexEd?>" pathlength="100"
+              style="stroke-dashoffset: <?php echo $tgHealth?>" pathlength="100"
             ></circle>
           </svg>
           <div class="legends">

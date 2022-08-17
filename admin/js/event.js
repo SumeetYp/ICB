@@ -1,3 +1,11 @@
+let infoHidden = document.querySelector('.setInfo');
+let info = document.querySelector('.hiddenText')
+
+infoHidden.addEventListener('mouseover',()=>{
+	info.style.display = "block";
+	setTimeout(()=>{info.style.display = "none"},3000)
+})
+
 // Admin Event Page
 
 let upButton = document.querySelector('.upButton');

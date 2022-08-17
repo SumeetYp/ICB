@@ -180,7 +180,8 @@
     </div>
 
     <br><br><br>
-    <script src="./js/event.js"></script>
     <script src="./js/sideBar.js"></script>
+    <script src="./js/event.js"></script>
+
 </body>
 </html>
