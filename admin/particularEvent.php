@@ -108,6 +108,8 @@
                     echo "<div class='eRow'>
                             <div class='eName eNameAttended'>" . $attendedUsers[$x]['enrolledUsername'] . "</div>" .
                            "<div class='eNum eNumAttended'>" . $attendedUsers[$x]['enrolledUserMobile'] . "</div>
+                           <i style='color:#00ba00' class='fa-solid fa-circle-check'></i>
+                           <a href='./database/attendance.php?attended=no&eTN=$eventTableName&email=" . $attendedUsers[$x]['enrolledUserEmail'] . "'><i style='color:#f80505' class='fa-solid fa-circle-xmark'></i></a>
                          </div>";
             }
         ?>

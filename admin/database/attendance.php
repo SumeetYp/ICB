@@ -13,6 +13,10 @@
         $sql = "DELETE FROM `$eventTableName` WHERE enrolledUserEmail='$enrolledUserEmail'";
         $result = mysqli_query($mysqli, $sql) or die("SQL Failed");
     }
+    else if($attended=='no'){
+        $sql = "UPDATE `$eventTableName` SET enrolledUserAttended=0 WHERE enrolledUserEmail='$enrolledUserEmail'";
+        $result = mysqli_query($mysqli, $sql) or die("SQL Failed");
+    }
     else {
         echo 'Some Error Occured';
     }
