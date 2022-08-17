@@ -114,6 +114,9 @@ body{
     border-radius: 5px;
     width: 32%;
 }
+.eNameAttended, .eNumAttended{
+    background: #00ba00;
+}
 .peBody i{
     padding-left: 4px;
     font-size: 4.5vw;

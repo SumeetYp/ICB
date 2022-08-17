@@ -3,9 +3,9 @@
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
-    if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
-        header("Location: ./index_login.php");
-    }
+    // if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
+    //     header("Location: ./index_login.php");
+    // }
     include './config.php';
 
     $id=$_GET['eID'];
@@ -27,10 +27,14 @@
             $outputUsersAll[] = $row;
         }
     }
-    $outputUsers = [];
+    $enrolledUsers = [];
+    $attendedUsers = [];
     for($x=0; $x<sizeof($outputUsersAll); $x++){
         if($outputUsersAll[$x]['enrolledUserAttended']==0){
-            $outputUsers[] = $outputUsersAll[$x];
+            $enrolledUsers[] = $outputUsersAll[$x];
+        }
+        else{
+            $attendedUsers[] = $outputUsersAll[$x];
         }
     }
 
@@ -88,19 +92,23 @@
 <div class="peEnrol">
     <div class="peHead">
         <h2>Enrollments</h2>
-        <h2>Count : <span class="eCount"><?php echo sizeof($outputUsers); ?></span></h2>
+        <h2>Count : <span class="eCount"><?php echo sizeof($outputUsersAll); ?></span></h2>
     </div>
     <div class="peBody">
         <?php
-            for($x=0; $x<sizeof($outputUsers); $x++){
-                if($outputUsers[$x]['enrolledUserAttended']==0){
+            for($x=0; $x<sizeof($enrolledUsers); $x++){
                     echo "<div class='eRow'>
-                            <div class='eName'>" . $outputUsers[$x]['enrolledUsername'] . "</div>" .
-                           "<div class='eNum'>" . $outputUsers[$x]['enrolledUserMobile'] . "</div>
-                            <a href='./database/attendance.php?attended=true&eTN=$eventTableName&email=" . $outputUsers[$x]['enrolledUserEmail'] . "'><i style='color:#00ba00' class='fa-solid fa-circle-check'></i></a>
-                            <a href='./database/attendance.php?attended=false&eTN=$eventTableName&email=" . $outputUsers[$x]['enrolledUserEmail'] . "'><i style='color:#f80505' class='fa-solid fa-circle-xmark'></i></a>
+                            <div class='eName'>" . $enrolledUsers[$x]['enrolledUsername'] . "</div>" .
+                           "<div class='eNum'>" . $enrolledUsers[$x]['enrolledUserMobile'] . "</div>
+                            <a href='./database/attendance.php?attended=true&eTN=$eventTableName&email=" . $enrolledUsers[$x]['enrolledUserEmail'] . "'><i style='color:#00ba00' class='fa-solid fa-circle-check'></i></a>
+                            <a href='./database/attendance.php?attended=false&eTN=$eventTableName&email=" . $enrolledUsers[$x]['enrolledUserEmail'] . "'><i style='color:#f80505' class='fa-solid fa-circle-xmark'></i></a>
                          </div>";
-                }
+            }
+            for($x=0; $x<sizeof($attendedUsers); $x++){
+                    echo "<div class='eRow'>
+                            <div class='eName eNameAttended'>" . $attendedUsers[$x]['enrolledUsername'] . "</div>" .
+                           "<div class='eNum eNumAttended'>" . $attendedUsers[$x]['enrolledUserMobile'] . "</div>
+                         </div>";
             }
         ?>
     </div>
