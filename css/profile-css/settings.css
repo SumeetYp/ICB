@@ -294,9 +294,9 @@ input[type=checkbox]:checked + label {
        margin-left: 40px !important;
    }
 
-   .profilePicture img:first-of-type {
+   /* .profilePicture img:first-of-type {
     border: 2.5px solid #6AF491 !important;
-}
+} */
 .container .profilePicture{
     overflow: hidden;
 }
@@ -366,9 +366,9 @@ input[type=checkbox]:checked + label {
     margin-left: 140px !important;
 }
 
-.profilePicture img:first-of-type {
+/* .profilePicture img:first-of-type {
     border: 2.5px solid #6AF491 !important;
-}
+} */
 
 .container .profilePicture{
     overflow: hidden;
@@ -442,9 +442,9 @@ header{
     margin-left: 140px !important;
 }
 
-.profilePicture img:first-of-type {
+/* .profilePicture img:first-of-type {
     border: 1.5px solid #6AF491 !important;
-}
+} */
 
 .container .profilePicture{
     width:100% !important;
