@@ -35,23 +35,6 @@ if(mysqli_num_rows($result)>0){
     }
 }
 
-// monthly total event stats
-
-$fin = array();
-$year = date("Y"); 
-$year = 2023;
-for ($x = 0; $x <= 11; $x++) {
-    $liss = array('01','02','03','04','05','06','07','08','09','10','11','12');
-    $sql = 'SELECT COUNT(*) AS totalEventsAttended FROM `events` WHERE `eventDate` LIKE "'.$year.'-'.$liss[$x].'%"';
-    $result = mysqli_query($mysqli, $sql) or die('Data fetching issues');
-    $oe = [];
-    if(mysqli_num_rows($result)>0){
-    while($row = mysqli_fetch_assoc($result)){
-        $oe[] = $row;
-    }
-}
-array_push($fin, $oe[0]['totalEventsAttended']);
-}
 
 // individuAL Event monthly stats
 $myEnvironment = array(0,0,0,0,0,0,0,0,0,0,0,0);
@@ -61,8 +44,8 @@ $result = mysqli_query($mysqli,$query) or die('Data fetching issue');
     while($row = mysqli_fetch_assoc($result)){
         $tableName = $row['eventTableName'];
         $monthIndex = (int)substr($row['eventDate'],5,2) -1;
-        $subQuery = 'SELECT * FROM '.$tableName.' WHERE enrolledUserEmail LIKE '.$_SESSION['email'];
-        $subResult = mysqli_query($mysqli,$query) or die('Data fetching issue');
+        $subQuery = 'SELECT * FROM `' . $tableName . '` WHERE enrolledUserEmail LIKE "'.$_SESSION['email'].'" AND enrolledUserAttended LIKE 1 ';
+        $subResult = mysqli_query($mysqli,$subQuery) or die('Data fetching issue');
         if(mysqli_num_rows($subResult)>0){
             $myEnvironment[$monthIndex] += 1; 
         }
@@ -76,10 +59,10 @@ $result = mysqli_query($mysqli,$query) or die('Data fetching issue');
     while($row = mysqli_fetch_assoc($result)){
         $tableName = $row['eventTableName'];
         $monthIndex = (int)substr($row['eventDate'],5,2) -1;
-        $subQuery = 'SELECT * FROM '.$tableName.' WHERE enrolledUserEmail LIKE '.$_SESSION['email'];
-        $subResult = mysqli_query($mysqli,$query) or die('Data fetching issue');
+        $subQuery = 'SELECT * FROM `' . $tableName . '` WHERE enrolledUserEmail LIKE "'.$_SESSION['email'].'" AND enrolledUserAttended LIKE 1 ';
+        $subResult = mysqli_query($mysqli,$subQuery) or die('Data fetching issue');
         if(mysqli_num_rows($subResult)>0){
-            $myEnvironment[$monthIndex] += 1; 
+            $myHealth[$monthIndex] += 1; 
         }
 
     }}
@@ -90,10 +73,10 @@ $result = mysqli_query($mysqli,$query) or die('Data fetching issue');
     while($row = mysqli_fetch_assoc($result)){
         $tableName = $row['eventTableName'];
         $monthIndex = (int)substr($row['eventDate'],5,2) -1;
-        $subQuery = 'SELECT * FROM '.$tableName.' WHERE enrolledUserEmail LIKE '.$_SESSION['email'];
-        $subResult = mysqli_query($mysqli,$query) or die('Data fetching issue');
+        $subQuery = 'SELECT * FROM `' . $tableName . '` WHERE enrolledUserEmail LIKE "'.$_SESSION['email'].'" AND enrolledUserAttended LIKE 1 ';
+        $subResult = mysqli_query($mysqli,$subQuery) or die('Data fetching issue');
         if(mysqli_num_rows($subResult)>0){
-            $myEnvironment[$monthIndex] += 1; 
+            $myShiksha[$monthIndex] += 1; 
         }
 
     }}
@@ -104,10 +87,10 @@ $result = mysqli_query($mysqli,$query) or die('Data fetching issue');
     while($row = mysqli_fetch_assoc($result)){
         $tableName = $row['eventTableName'];
         $monthIndex = (int)substr($row['eventDate'],5,2) -1;
-        $subQuery = 'SELECT * FROM '.$tableName.' WHERE enrolledUserEmail LIKE '.$_SESSION['email'];
-        $subResult = mysqli_query($mysqli,$query) or die('Data fetching issue');
+        $subQuery = 'SELECT * FROM `' . $tableName . '` WHERE enrolledUserEmail LIKE "'.$_SESSION['email'].'" AND enrolledUserAttended LIKE 1 ';
+        $subResult = mysqli_query($mysqli,$subQuery) or die('Data fetching issue');
         if(mysqli_num_rows($subResult)>0){
-            $myEnvironment[$monthIndex] += 1; 
+            $myAnimal[$monthIndex] += 1; 
         }
 
     }}
@@ -118,14 +101,20 @@ $result = mysqli_query($mysqli,$query) or die('Data fetching issue');
     while($row = mysqli_fetch_assoc($result)){
         $tableName = $row['eventTableName'];
         $monthIndex = (int)substr($row['eventDate'],5,2) -1;
-        $subQuery = 'SELECT * FROM '.$tableName.' WHERE enrolledUserEmail LIKE '.$_SESSION['email'];
-        $subResult = mysqli_query($mysqli,$query) or die('Data fetching issue');
+        $subQuery = 'SELECT * FROM `' . $tableName . '` WHERE enrolledUserEmail LIKE "'.$_SESSION['email'].'" AND enrolledUserAttended LIKE 1 ';
+        $subResult = mysqli_query($mysqli,$subQuery) or die('Data fetching issue');
         if(mysqli_num_rows($subResult)>0){
-            $myEnvironment[$monthIndex] += 1; 
+            $mySexEd[$monthIndex] += 1; 
         }
 
     }}
 
+// monthly total event stats
+
+$fin = array();
+for ($x = 0; $x <= 11; $x++) {
+    $fin[$x] = $myEnvironment[$x] + $myAnimal[$x] + $myHealth[$x] + $myShiksha[$x] + $mySexEd[$x];
+}
 
 // total events data
 
@@ -162,7 +151,7 @@ $tOther = $totalEvents-($tHealth+$tShiksha+$tAnimal+$tEnvironment+$tSexEd);
 
 
 // marshals count
-$query = "SELECT COUNT(*) FROM `users` WHERE `type` LIKE 'Marshals'";
+$query = "SELECT COUNT(*) FROM `users`";
 $res = mysqli_query($mysqli,$query) or die('SQL Failed');
 $oe = [];
 if(mysqli_num_rows($res)>0){

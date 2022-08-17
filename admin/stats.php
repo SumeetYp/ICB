@@ -49,7 +49,7 @@
     $tgSexEd =100-($tSexEd/$max)*90;
 
     // marshals count
-    $query = "SELECT COUNT(*) FROM `users` WHERE `type` LIKE 'Marshals'";
+    $query = "SELECT COUNT(*) FROM `users`";
     $res = mysqli_query($mysqli,$query) or die('SQL Failed');
     $oe = [];
     if(mysqli_num_rows($res)>0){
