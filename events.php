@@ -114,50 +114,49 @@
                     <a class="prev" onclick="plusSlides(-1)">&#62;&#62;</a>
                     <div class="slides">
                         <?php
+                            include './config.php';
                             $linearGradient = '';
                             $email=$_SESSION['email'];
                             for($x=0; $x<sizeof($outputEvents); $x++){
                                 if($outputEvents[$x]['eventDate']>$today){
                                     $eventTableName = $outputEvents[$x]['eventTableName'];
+                                    $enrolledEvent = $mysqli->query("SELECT * FROM `$eventTableName` WHERE enrolledUserEmail='$email'");
                                     switch($outputEvents[$x]["eventInitiative"]){
-                                        case 'Animal Safety': $linearGradient = 'linear-gradient(90deg, #E01518 0%, rgba(70, 70, 70, 0) 100%)'; 
+                                        case 'Animal Safety': $linearGradient = 'linear-gradient(90deg, rgba(224, 21, 24, 1) 0%, rgba(70, 70, 70, 0.2) 100%)'; 
+                                                          $bannerImage = 'https://static.independent.co.uk/2022/06/06/11/GettyImages-544673512.jpg';
                                                               break;
-                                        case 'Mental Health': $linearGradient = 'linear-gradient(90deg, #CB8FBD 0%, rgba(70, 70, 70, 0) 100%)';
+                                        case 'Mental Health': $linearGradient = 'linear-gradient(90deg, rgba(203, 143, 189, 1) 0%, rgba(70, 70, 70, 0.2) 100%)';
+                                                            $bannerImage = 'https://images.pexels.com/photos/185801/pexels-photo-185801.jpeg';
                                                               break;
-                                        case 'Mission Shiksha': $linearGradient = 'linear-gradient(90deg, #2EC5B6 0%, rgba(70, 70, 70, 0) 100%)';
+                                        case 'Mission Shiksha': $linearGradient = 'linear-gradient(90deg, rgba(46, 197, 182, 1) 0%, rgba(70, 70, 70, 0.2) 100%)';
+                                                                $bannerImage = 'https://images.pexels.com/photos/5088008/pexels-photo-5088008.jpeg';
                                                               break;
-                                        case 'Environment': $linearGradient = 'linear-gradient(90deg, #41D950 0%, rgba(70, 70, 70, 0) 100%)';
+                                        case 'Environment': $linearGradient = 'linear-gradient(90deg, rgba(65, 217, 80, 1) 0%, rgba(70, 70, 70, 0.2) 100%)';
+                                                            $bannerImage = 'https://images.unsplash.com/photo-1545147986-a9d6f2ab03b5';
                                                             break;
-                                        case 'Sex Education': $linearGradient = 'linear-gradient(90deg, #FFBE00 0%, rgba(70, 70, 70, 0) 100%)';
+                                        case 'Sex Education': $linearGradient = 'linear-gradient(90deg, rgba(255, 190, 0) 0%, rgba(70, 70, 70, 0.2) 100%)';
+                                                            $bannerImage = 'https://images.unsplash.com/photo-1545693315-85b6be26a3d6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80';
                                                                break;
                                     }
-                                    echo "<div class='mySlides slide' style='background: " . $linearGradient . ", url(" . './images/donation.png' . ") no-repeat center center / cover;'>" .
-                                             "<div class='opportunityDetails'>" .
-                                                 "<div class='opportunityName'>" .
-                                                    $outputEvents[$x]["eventName"] .
-                                                 "</div>".
-                                                 "<div class='opportunityInitiative'>Initiative: " .
-                                                    $outputEvents[$x]["eventInitiative"] .
-                                                 "</div>".
-                                                 "<div class='coreOpportunityDetails'>" .
-                                                     "<div class='opportunityDate'>Date: " .
-                                                         $outputEvents[$x]["eventDate"] .
-                                                     "</div>".
-                                                         "<div class='opportunityDate'>Venue: " .
-                                                         $outputEvents[$x]["eventVenue"] .
-                                                     "</div>".
-                                                     "<div class='opportunityDate'>Time: " .
-                                                         $outputEvents[$x]["eventTime"] .
-                                                     "</div>".
-                                                     "<div class='opportunityDate'>Requirements: " .
-                                                         $outputEvents[$x]["eventRequirements"] .
-                                                     "</div>".
-                                                 "</div>".
-                                             "</div>".
-                                             "<a class='enroll' href='./database/enrollEvent.php?userEmail=$email&event=$eventTableName'>Enroll</a>" .
-                                         "</div>";
+                                    echo "<div class='mySlides slide' style='background: $linearGradient, url($bannerImage) no-repeat center center / cover;'>
+                                         <div class='opportunityDetails'>
+                                            <div class='opportunityName'>".$outputEvents[$x]["eventName"]."</div>
+                                             <div class='opportunityInitiative'>Initiative: ".$outputEvents[$x]["eventInitiative"]."</div>
+                                             <div class='coreOpportunityDetails'>
+                                                <div class='opportunityDate'>Date: ".$outputEvents[$x]["eventDate"]."</div>
+                                                <div class='opportunityDate'>Venue: ".$outputEvents[$x]["eventVenue"]."</div>
+                                                <div class='opportunityDate'>Time: ".$outputEvents[$x]["eventTime"]."</div>
+                                                <div class='opportunityDate'>Requirements: ".$outputEvents[$x]["eventRequirements"]."</div>
+                                             </div>
+                                         </div>";
+                                         if($enrolledEvent->num_rows == 0){
+                                            echo"<a class='enroll' href='./database/enrollEvent.php?userEmail=$email&event=$eventTableName'>Enroll</a></div>";
+                                         } else {
+                                            echo"<button disabled id='enrolledbtn' style='cursor:default;'>Enrolled</button></div>";
+                                         }
                                 }
                             }
+                            mysqli_close($mysqli);
                         ?>
                     </div>
                     <a class="next" onclick="plusSlides(1)">&#62;&#62;</a>
