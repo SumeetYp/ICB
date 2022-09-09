@@ -41,12 +41,12 @@
                     <div>Eligibility: Must be enrolled in School</div>
                 </div>
             </a>
-            <a target="_blank" class="addVolunteer">
+            <!-- <a target="_blank" class="addVolunteer">
                 <div class="details">
                     <div>Volunteers</div>
                     <div>(Not Now)</div>
                 </div>
-            </a>
+            </a> -->
         </div>
     </div>
     <script src="./js/sideBar.js"></script>
