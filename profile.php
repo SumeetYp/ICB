@@ -248,5 +248,25 @@
     <script src="js/profile-js/script.js"></script>
     <script src="js/sideBar.js"></script>
 </body>
+<script>
+    function validate() {
+        const file = document.getElementById('file');
+        var errMsg = "";
+        if(file.files.length > 0) {
+            for (const i=0; i<=file.files.length-1; i++) {
+                const filesize = file.files[i].size;
+                const filesizenew = Math.round(filesize/1024);
+                if(filesizenew >= 1024) {
+                    errMsg = 'File too Big, please select a file less than 1MB');
+                }
+                if(errMsg !== ""){
+                    alert(errMsg);
+                    return false;
+                }
+                return true;
+            }
+        }
+    }
+</script>
 
 </html>
