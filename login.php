@@ -3,10 +3,10 @@
 
 // Escape email to protect against SQL injections
 $email = $mysqli->escape_string($_POST['email']);
-$result = $mysqli->query("SELECT * FROM users WHERE (email='$email' && (type='member' || type='student')) ");
+$result = $mysqli->query("SELECT * FROM users WHERE email='$email' ");
 
 if ( $result->num_rows == 0 ){ // User doesn't exist
-    $_SESSION['message'] = "User with that email doesn't exist! or is not a Member or Student";
+    $_SESSION['message'] = "User with that email doesn't exist!";
     header("location: error.php");
 }
 else { // User exists
@@ -31,7 +31,7 @@ else { // User exists
         // This is how we'll know the user is logged in
         $_SESSION['logged_in'] = true;
 
-        header("location: index.php");
+        header("location: home.php");
     }
     else {
         $_SESSION['message'] = "You have entered wrong password, try again!";
