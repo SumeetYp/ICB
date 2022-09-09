@@ -18,11 +18,11 @@ session_start();
     if( isset($_SESSION['message']) AND !empty($_SESSION['message']) ):
         echo $_SESSION['message'];    
     else:
-        header( "location: login_index.php" );
+        header( "location: ./index.php" );
     endif;
     ?>
     </p>
-    <a href="index_login.php"><button class="button button-block"/>Home</button></a>
+    <a href="./index.php"><button class="button button-block"/>Home</button></a>
 </div>
 </body>
 </html>
