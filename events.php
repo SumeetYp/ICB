@@ -86,12 +86,18 @@
         </div>
         <div class="attendedEvents d-none">
             <?php 
+                include './config.php';
                 if(sizeof($attendedEvents)>0){
                     for($x=0; $x<sizeof($attendedEvents); $x++){
                         echo "<div class='attendedEvent'>
                             <div class='attendedEventHeading'>" . $attendedEvents[$x]->eventName . "</div>
                             <div class='attendedEventData'>
-                                <img src='./images/download.svg' alt=''>
+                                <form action='./database/certificate.php' method='post' id='certificate'>
+                                    <input type='hidden' name='userFullName' value='$userfullname'>
+                                    <input type='hidden' name='eventName' value='".$attendedEvents[$x]->eventName."'>
+                                    <input type='hidden' name='eventDate' value='".$attendedEvents[$x]->eventDate."'>
+                                    <input type='submit' value=''>
+                                </form>
                             </div>
                         </div>";
                     }
