@@ -1,29 +1,18 @@
 <?php
 
 require "config.php";
-require "vendor/autoload.php";
 
 use Razorpay\Api\Api;
 
-
-$keyId = "rzp_test_13G2isdzTpKXkK";
-$keySecret = "7NnSu0AIlRNFcodK20JLKyVn";
-
-session_start();
-
-$api = new Api($keyId, $keySecret);
-$actual_amount = "199";
-$currency = "INR";
-$receipt = str_replace('.','', microtime(true)) . rand(1, 10000) . '_users';
-
-$order = $api->order->create(array('receipt' => $receipt, 'amount' => $actual_amount * 100, 'currency' => $currency));
-$order_id = $order['id'];
-$order_receipt = $order['receipt'];
-$order_amount = $order['amount'];
-$order_currency = $order['currency'];
-$order_created_at = $order['created_at'];
-$_SESSION['razorpay_order_id'] = $order_id;
-
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
+    header("Location: ./index.php");
+}
+if (!(isset($_SESSION['type']) && ($_SESSION['type']=='admin' || $_SESSION['type']=='core-team'))){
+    header("Location: ../index.html");
+}
 
 ?>
 
@@ -204,49 +193,5 @@ $_SESSION['razorpay_order_id'] = $order_id;
             <button id="rzp-button1" class="button" type="submit" name="save">Save and Continue</button>
             </div>
     </form>
-
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<script>
-var options = {
-    "key": "<?=$keyId?>", 
-    "amount": "<?=$order_amount?>", 
-    "currency": "<?=$currency?>",
-    "name": "I Care For Bharat",
-    "description": "Payment",
-    "image": "images/addMember.jpeg",
-    "order_id": "<?=$order_id?>",
-    "handler": function (response){
-        alert(response.razorpay_payment_id);
-        alert(response.razorpay_order_id);
-        alert(response.razorpay_signature)
-    },
-    "theme": {
-        "color": "#6AF491"
-    }
-    
-    };
-
-    var rzp1 = new Razorpay(options);
-rzp1.on('payment.failed', function (response){
-        alert(response.error.code);
-        alert(response.error.description);
-        alert(response.error.source);
-        alert(response.error.step);
-        alert(response.error.reason);
-        alert(response.error.metadata.order_id);
-        alert(response.error.metadata.payment_id);
-});
-
-document.getElementById('rzp-button1').onclick = function(e){
-    rzp1.open();
-    e.preventDefault();
-
-}
-</script>
-
-
-
-
 </body>
-
 </html>
