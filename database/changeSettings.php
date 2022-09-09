@@ -10,6 +10,6 @@
         $sql = "UPDATE users SET mobile='$mobile', address='$address', password='$updatedPassword' WHERE email='$email' AND password='$currPassword'";
         $result = mysqli_query($mysqli, $sql) or die("SQL Failed");
         mysqli_close($mysqli);
-        header("Location: ../index.php");
+        header("Location: ../home.php");
     }
 ?>

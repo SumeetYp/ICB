@@ -13,7 +13,7 @@
     if($liked=='false'){
         $likes = $likes + 1;
 
-        $sql = "INSERT INTO PostLikes (userID, postID) VALUES ($userID, $postID)";
+        $sql = "INSERT INTO postlikes (userID, postID) VALUES ($userID, $postID)";
         $result = mysqli_query($mysqli, $sql) or die('Error');
 
         $sql = "UPDATE publicstory SET likes=$likes WHERE id=$postID";
@@ -22,7 +22,7 @@
     else if($liked=='true'){
         $likes = $likes - 1;
         
-        $sql = "DELETE FROM PostLikes WHERE userID=$userID AND postID=$postID";
+        $sql = "DELETE FROM postlikes WHERE userID=$userID AND postID=$postID";
         $result = mysqli_query($mysqli, $sql) or die('Error');
 
         $sql = "UPDATE publicstory SET likes=$likes WHERE id=$postID";
