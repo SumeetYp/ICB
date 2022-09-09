@@ -22,6 +22,7 @@ else { // User exists
         $_SESSION['full_name'] = $user['firstName']." ".$user['lastName'];
         $_SESSION['registration_date'] = $user['registrationDate'];
         $_SESSION['expiration_date'] = $user['expirationDate'];
+        $_SESSION['profile'] = $user['profilepic'];
         $_SESSION['bio'] = $user['bio'];
         $_SESSION['mobile'] = $user['mobile'];
         $_SESSION['instagram'] = $user['instagram'];

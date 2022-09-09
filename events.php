@@ -3,7 +3,10 @@
         session_start();
     }
     if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
-        header("Location: ./index_login.php");
+        header("Location: ./index.php");
+    }
+    if (!isset($_SESSION['type'])){
+        header("Location: ../index.html");
     }
 
     include './config.php';
@@ -53,12 +56,7 @@
     <link rel="stylesheet" href="./css/events.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/utils.css">
-    <title>Document</title>
-
-    <style>
-        <?php include "./css/events.css" ?>
-    </style>
-
+    <title>CareforBharat</title>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -125,19 +123,19 @@
                                     switch($outputEvents[$x]["eventInitiative"]){
                                         case 'Animal Safety': $linearGradient = 'linear-gradient(90deg, rgba(224, 21, 24, 1) 0%, rgba(70, 70, 70, 0.2) 100%)'; 
                                                           $bannerImage = 'https://static.independent.co.uk/2022/06/06/11/GettyImages-544673512.jpg';
-                                                              break;
+                                                          break;
                                         case 'Mental Health': $linearGradient = 'linear-gradient(90deg, rgba(203, 143, 189, 1) 0%, rgba(70, 70, 70, 0.2) 100%)';
                                                             $bannerImage = 'https://images.pexels.com/photos/185801/pexels-photo-185801.jpeg';
-                                                              break;
+                                                            break;
                                         case 'Mission Shiksha': $linearGradient = 'linear-gradient(90deg, rgba(46, 197, 182, 1) 0%, rgba(70, 70, 70, 0.2) 100%)';
                                                                 $bannerImage = 'https://images.pexels.com/photos/5088008/pexels-photo-5088008.jpeg';
-                                                              break;
+                                                                break;
                                         case 'Environment': $linearGradient = 'linear-gradient(90deg, rgba(65, 217, 80, 1) 0%, rgba(70, 70, 70, 0.2) 100%)';
                                                             $bannerImage = 'https://images.unsplash.com/photo-1545147986-a9d6f2ab03b5';
                                                             break;
                                         case 'Sex Education': $linearGradient = 'linear-gradient(90deg, rgba(255, 190, 0) 0%, rgba(70, 70, 70, 0.2) 100%)';
                                                             $bannerImage = 'https://images.unsplash.com/photo-1545693315-85b6be26a3d6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80';
-                                                               break;
+                                                            break;
                                     }
                                     echo "<div class='mySlides slide' style='background: $linearGradient, url($bannerImage) no-repeat center center / cover;'>
                                          <div class='opportunityDetails'>

@@ -3,7 +3,10 @@
         session_start();
     }
     if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
-        header("Location: ./index_login.php");
+        header("Location: ./index.php");
+    }
+    if (!(isset($_SESSION['type']) && ($_SESSION['type']=='admin' || $_SESSION['type']=='core-team'))){
+        header("Location: ../index.html");
     }
 ?>
 <!DOCTYPE html>
@@ -16,7 +19,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/addMarshalls.css">
     <link rel="stylesheet" href="./css/utils.css">
-    <title>Document</title>
+    <title>CareforBharat</title>
 </head>
 <body>
 

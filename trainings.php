@@ -3,7 +3,10 @@
         session_start();
     }
     if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
-        header("Location: ./index_login.php");
+        header("Location: ./index.php");
+    }
+    if (!isset($_SESSION['type'])){
+        header("Location: ../index.html");
     }
     
     include './config.php';
@@ -46,7 +49,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CareforBharat</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/home.css">
@@ -130,6 +133,7 @@
                 
             }
             echo "</div>";
+            mysqli_close($mysqli);
         ?>
     </div>
     <script src="./js/sideBar.js"></script>

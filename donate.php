@@ -1,10 +1,13 @@
 <?php
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
-    if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
-        header("Location: ./index_login.php");
-    }
+  if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+  }
+  if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)){
+    header("Location: ./index.php");
+  }
+  if (!isset($_SESSION['type'])){
+    header("Location: ../index.html");
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +15,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>CareforBharat</title>
     <link rel="stylesheet" href="./css/donate.css" />
     <!-- <link rel="stylesheet" href="./css/main.css" /> -->
     <link rel="stylesheet" href="./css/header.css" />
