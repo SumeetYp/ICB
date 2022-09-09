@@ -21,10 +21,6 @@
     <link rel="stylesheet" href="./css/shareMyStory.css">
     <link rel="stylesheet" href="./css/utils.css">
 
-    <style>
-        <?php include "./css/shareMyStory.css" ?>
-    </style>
-
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet"
@@ -43,7 +39,7 @@
     <div class="container">
         <?php 
             echo "<div class='profilePicture pp-sms'>" . "\n" .
-                     "<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU' style='border-color: " . $borderColor . ";' alt=''>" . "\n" .
+                     "<img src='".$_SESSION['profile']."' style='border-color: " . $borderColor . ";' alt=''>" . "\n" .
                      "<img class='check right-tick " . $display . "' src='" . $checkSrc . "' alt=''>" . "\n" .
                  "</div>";
         ?>
