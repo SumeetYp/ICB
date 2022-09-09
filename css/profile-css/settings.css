@@ -41,14 +41,13 @@ input:focus ~ .settings-label, textarea:focus ~ .settings-label, input:valid ~ .
     top: -3;
     -webkit-transition: all 0.225s ease;
     transition: all 0.225s ease;
-   
 }
 
 .styled-input {
     width: 100%;
     margin: 1rem 0;
     position: relative;
-    border-radius: 4px;
+    border-radius: 15px;
     overflow: hidden;
 }
 

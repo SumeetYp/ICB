@@ -18,6 +18,10 @@ body {
   align-items: center;
 }
 
+#title{
+  margin-top: 15px;
+}
+
 p {
   margin-block-end: 0.3em;
 }
@@ -48,6 +52,10 @@ form {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+.form-group .required:after {
+  content: "*";
+  color: red;
+}
 textarea {
   margin-bottom: 15px;
 }
@@ -55,6 +63,7 @@ input[type="text"],
 input[type="email"],
 input[type="number"],
 input[type="date"],
+input[type="url"],
 textarea,
 select {
   padding: 8px 5px;
@@ -64,6 +73,19 @@ select {
 select {
   margin-bottom: 15px;
 }
+/* #userType {
+  height: 1.7rem;
+  width: -webkit-fill-available;
+  border: none;
+  float: right;
+  outline: none;
+  border-radius: 8px;
+  font-weight: bold;
+  padding-left: 10px;
+  text-align: center;
+  font-size: 15px;
+  margin: 10px 0;
+} */
 .input-group label {
   display: block;
   padding-left: 15px;
@@ -135,6 +157,7 @@ select {
   input[type="email"],
   input[type="number"],
   input[type="date"],
+  input[type="url"],
   textarea,
   select {
     margin-bottom: 15px;

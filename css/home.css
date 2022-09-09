@@ -141,7 +141,7 @@ body{
     font-size: 1.5rem;
 }
 
-.enroll {
+.enroll, #enrolledbtn {
     background-color: #2196F3;
     height: max-content;
     padding: 1vh 1vw;
@@ -510,7 +510,7 @@ body{
         margin-top: 1.2vh;
         font-size: 1.1rem;
     }
-    .enroll {
+    .enroll, #enrolledbtn {
         right: 5em;
         bottom: 2em;
     }
@@ -596,7 +596,7 @@ body{
         margin-top: 1.2vh;
         font-size: 1rem;
     }
-    .enroll {
+    .enroll, #enrolledbtn{
         padding: 0.7vh 1vw;
         font-size: 1rem;
     }
@@ -662,7 +662,7 @@ body{
     .FeedsHead {
         position: static;
     }
-    .enroll {
+    .enroll, #enrolledbtn{
         width: 15vw;
         font-size: 1rem;
         right: 4em;
@@ -701,7 +701,7 @@ body{
         margin-top: 1vh;
         font-size: 0.8rem;
     }
-    .enroll {
+    .enroll, #enrolledbtn{
         font-size: 0.8rem;    
     }
     .prev, .next {
@@ -760,7 +760,7 @@ body{
 }
 
 @media only screen and (max-width: 375px) {
-    .enroll {
+    .enroll, #enrolledbtn{
         width: 12vw;
         font-size: 0.7rem;
         bottom: 1em;

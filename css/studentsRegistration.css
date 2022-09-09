@@ -48,6 +48,10 @@ form {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+.form-group .required:after {
+  content: "*";
+  color: red;
+}
 textarea {
   margin-bottom: 15px;
 }
@@ -55,6 +59,7 @@ input[type="text"],
 input[type="email"],
 input[type="number"],
 input[type="date"],
+input[type="url"],
 textarea,
 select {
   padding: 8px 5px;
@@ -135,6 +140,7 @@ select {
   input[type="email"],
   input[type="number"],
   input[type="date"],
+  input[type="url"],
   textarea,
   select {
     margin-bottom: 15px;

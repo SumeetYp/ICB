@@ -8,6 +8,10 @@
     left: -270px;
 }
 
+.fixed-position {
+    position: fixed;
+}
+
 nav {
     height: 5vh;
     padding: 20px 0;
@@ -36,6 +40,7 @@ nav .userName {
     font-size: 35px;
     line-height: 18px;
     margin: 0 5px;
+    overflow: visible;
 }
 
 nav .profilePicture {
@@ -43,7 +48,6 @@ nav .profilePicture {
     margin: 0 15px;
     width: 40px;
     height: 40px;
-    cursor: pointer;
 }
 
 nav .profilePicture .check {

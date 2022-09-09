@@ -48,14 +48,14 @@ li{
   }
   .chartCard {
     width: 100%;
-    height: 40vh;
+    /* height: 40vh; */
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .chartBox {
     width: 700px;
-    padding: 20px;
+    padding: 20px 0 40px;
     border-radius: 20px;
     background: white;
   }
@@ -103,12 +103,12 @@ h2{
 
 .col2{
     width: 30%;
-    margin-top: -20px;
+    margin-top: 10px;
 }
 
 .col3{
     width: 30%;
-    margin-top: -20px;
+    margin-top: 10px;
 }
 
 .Card{
@@ -206,14 +206,13 @@ ul{
     }
 
     h2{
-        padding-bottom: 30px !important;
         padding-top: 30px !important;
         margin-left: 25%;
     }
 
     .chartCard{
         width: 100%;
-        height: 50vh;
+        /* height: 50vh; */
     }
 
     .num{
@@ -227,11 +226,6 @@ ul{
        margin-top: -60px;
     }
 
-    .achievement{
-        margin-bottom: 20px;
-    }
-    
-
  
 }
 
@@ -243,9 +237,13 @@ ul{
         margin-left: 25%;
     }
 
+    .col2, .col3{
+        margin-top: 25px;
+    }
+
     .chartCard{
         width: 50%;
-        height: 60vh;
+        /* height: 60vh; */
         margin-left: 25%;
     }
 
@@ -271,10 +269,16 @@ ul{
     body{
         overflow-x: hidden;
     }
+    .profilePicture{
+        overflow-x: visible;
+    }
+    .achievement{
+        margin-bottom: 20px;
+    }
 
 
     h2{
-        margin-bottom: -40px;
+        /* margin-bottom: -40px; */
         margin-top: 0px;
         margin-left: 15%;
         font-size: large;
@@ -282,7 +286,7 @@ ul{
 
     .chartCard{
         width: 100%;
-        height: 40vh;
+        /* height: 40vh; */
         margin-left: -1%;
     }
 
@@ -312,7 +316,7 @@ ul{
     }
 
     .col2{
-        margin-top: -40px !important;
+        /* margin-top: 20px; */
     }
 
     .col3 ul{
@@ -322,7 +326,8 @@ ul{
     }
 
     .col3{
-        margin-top: -40px !important;
+        /* margin-top: -40px !important; */
+        width: auto;
     }
 
     .num{
@@ -406,6 +411,10 @@ ul{
 }
 
 @media (min-width:751px) and (max-width: 900px) {
+
+    .col2, .col3{
+        margin-top: 30px;
+    }
 
     #btn-edit{
         margin-left: -49%;

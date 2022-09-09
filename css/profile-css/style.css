@@ -41,7 +41,7 @@ a {
 .login-page {
   width: 100% !important;
   padding: 8% 0 0;
-  margin-top: -80px;
+  margin-top: -100px;
   margin-right: 0px;
 }
 
@@ -58,7 +58,7 @@ header{
 }
 
 textarea{
-    height: 200px;
+    height: 7rem;
     font-family: "Roboto", sans-serif;
     outline: 0;
     background: #ffffff;
@@ -79,7 +79,7 @@ textarea{
   max-width: 100% !important;
   padding: 45px;
   text-align: justify;
-  height: 550px;
+  height: auto;
   overflow: hidden;
   margin-bottom: 0px;
   margin-right: 0px;
@@ -101,11 +101,6 @@ textarea{
 
 form{
     width: 100%;
-}
-
-
-.form input[type="text"]{
-height: 150px;
 }
 
 #form{
@@ -189,39 +184,116 @@ label{
     height: 100%;
 }
 
-@media (min-width:1200px) and (max-width: 1600px) {
+@media only screen and (max-width:2560px){
+    .btn-ctn{
+        position: relative;
+        margin-left: 0;
+        margin-top: 0;
+        padding: 10% 0 8%;
+    }
+    .follow-btn, .follow2-btn, .save-btn, .cancel-btn, #btn-edit{
+        width: 300px;
+        padding: 0.7rem 1.5rem;
+        font-size: 1.2rem;
+    }
+    .follow-btn{
+        position: absolute;
+        margin-left: 0;
+        left: 30%;
+    }
+    .follow2-btn{
+        position: absolute;
+        margin-left: 0;
+        right: 30%;
+    }
+    #btn-edit{
+        position: absolute;
+        margin-left: 0;
+        margin-top: 0;
+        top: 350px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .save-btn{
+        position: absolute;
+        margin-left: 0;
+        margin-top: 0;
+        top: 470px;
+        left: 30%;
+    }
     .cancel-btn{
         position: absolute;
-        margin-top: -30px !important;
-        margin-left: 580px !important;
-        
-    } 
+        margin-left: 0;
+        margin-top: 0;
+        top: 470px;
+        left: auto;
+        right: 30%;
+    }
+    .login-page{
+        padding: 0;
+        margin-top:0;
+    }
+}
+
+@media only screen and (max-width:1440px){
+    .btn-ctn{
+        position: relative;
+        margin-left: 0;
+        margin-top: 0;
+        padding: 8% 0;
+    }
+    .follow-btn, .follow2-btn, .save-btn, .cancel-btn, #btn-edit{
+        padding: 0.3rem 1rem;
+        width: 200px;
+    }
+    .follow-btn{
+        position: absolute;
+        margin-left: 0;
+        left: 20%;
+    }
+    .follow2-btn{
+        position: absolute;
+        margin-left: 0;
+        right: 20%;
+    }
+    #btn-edit{
+        position: absolute;
+        margin-left: 0;
+        margin-top: 0;
+        top: 170px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .save-btn{
+        position: absolute;
+        margin-left: 0;
+        margin-top: 0;
+        top: 230px;
+        left: 20%;
+    }
+    .cancel-btn{
+        position: absolute;
+        margin-left: 0;
+        margin-top: 0;
+        top: 230px;
+        left: auto;
+        right: 20%;
+    }
+    .login-page{
+        padding: 0;
+        margin-top:0;
+    }
 }
 
 @media (min-width:901px) and (max-width: 1100px) {
-
-    #btn-edit{
-        margin-left: -49%;
-    }
 
     .verified img{
 
         margin-left: 1% !important;
     }
 
-    .save-btn{
-        position: absolute;
-        margin-top: 30px !important;
-    }
-
     .msg-btn{
         margin-left: 78px !important;
-    }
-
-    .cancel-btn{
-        position: absolute;
-        margin-top: 30px !important;
-        
     }
 
     .logo a{
@@ -242,29 +314,63 @@ label{
 
 }
 
-@media (min-width:751px) and (max-width: 900px) {
-
-    #btn-edit{
-        margin-left: -49%;
+@media only screen and (max-width:1024px){
+    .btn-ctn{
+        position: relative;
+        margin-left: 0;
+        margin-top: 0;
+        padding: 8% 0;
     }
+    .follow-btn, .follow2-btn, .save-btn, .cancel-btn, #btn-edit{
+        width: 200px;
+    }
+    .follow-btn{
+        position: absolute;
+        margin-left: 0;
+        left: 20%;
+    }
+    .follow2-btn{
+        position: absolute;
+        margin-left: 0;
+        right: 20%;
+    }
+    #btn-edit{
+        position: absolute;
+        margin-left: 0;
+        margin-top: 0;
+        top: 130px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .save-btn{
+        position: absolute;
+        margin-left: 0;
+        margin-top: 0;
+        top: 190px;
+        left: 20%;
+    }
+    .cancel-btn{
+        position: absolute;
+        margin-left: 0;
+        margin-top: 0;
+        top: 190px;
+        left: auto;
+        right: 20%;
+    }
+    .login-page{
+        padding: 0;
+        margin-top:0;
+    }
+}
 
+@media (min-width:751px) and (max-width: 900px) {
     .verified img{
 
         margin-left: 3% !important;
     }
 
-    .save-btn{
-        margin-top: 30px !important;
-    }
-
     .msg-btn{
         margin-left: 23px !important;
-    }
-
-    .cancel-btn{
-        margin-top: -25px !important;
-        left:30px;
-        
     }
 
     .logo a{
@@ -281,22 +387,12 @@ label{
     margin-top: 3% !important;
    }
 
-   .follow2-btn{
-       margin-left: 40px !important;
-   }
-
    /* .profilePicture img:first-of-type {
     border: 2.5px solid #6AF491 !important;
 } */
 }
 
 @media (min-width:561px) and (max-width: 750px) {
-
-    #btn-edit{
-        margin-left: 163px;
-        margin-top: 2%;
-    }
-
     .verified img{
 
         margin-left: -1% !important;
@@ -305,21 +401,10 @@ label{
         margin-top: 190px !important;
     }
 
-    .save-btn{
-        margin-left: 80px !important;
-        margin-top: 70px !important;
-    }
-
     .msg-btn{
         margin-left: 110px !important;
         display: block;
         margin-top: 20px;
-    }
-
-    .cancel-btn{
-        margin-top: -25px !important;
-        margin-left: 200px !important;
-        
     }
 
     .logo a{
@@ -335,17 +420,6 @@ label{
     margin-left: 0px;
     margin-top: 20px !important;
    }
-
-   .follow2-btn{
-       margin-left: 110px !important;
-       display: block;
-       margin-top: 20px;
-   }
-
-   .follow-btn{
-    margin-left: 110px !important;
-    margin-top: 20px;
-    display: inline;
 }
 
 .hamburger{
@@ -360,16 +434,73 @@ header{
     overflow: hidden !important;
 }
 
-
-
+@media only screen and (max-width:770px){
+    .btn-ctn{
+        position: relative;
+        margin-left: 0;
+        margin-top: 0;
+        padding: 10% 0;
+    }
+    .follow-btn, .follow2-btn, .save-btn, .cancel-btn, #btn-edit{
+        width: 200px;
+    }
+    .follow-btn{
+        position: absolute;
+        margin-left: 0;
+        left: 10%;
+    }
+    .follow2-btn{
+        position: absolute;
+        margin-left: 0;
+        right: 10%;
+    }
+    #btn-edit{
+        position: absolute;
+        margin-left: 0;
+        margin-top: 0;
+        top: 130px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .save-btn{
+        position: absolute;
+        margin-left: 0;
+        margin-top: 0;
+        top: 190px;
+        left: 10%;
+    }
+    .cancel-btn{
+        position: absolute;
+        margin-left: 0;
+        margin-top: 0;
+        top: 190px;
+        left: auto;
+        right: 10%;
+    }
+    .login-page{
+        padding: 0;
+        margin-top:0;
+    }
 }
 
-@media (max-width: 560px) {
-
-
-      #btn-edit{
-        margin-left: 149px;
-        margin-top: 2%;
+@media only screen and (max-width: 560px) {
+    .follow-btn, .follow2-btn, .save-btn, .cancel-btn{
+        width: 175px;
+    }
+    .btn-ctn{
+        position: relative;
+        padding: 10% 0;
+    }
+    #btn-edit{
+        width: 170px;
+        position: absolute;
+        margin-left: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .login-page{
+        padding: 0;
+        margin-top:0;
     }
 
     .verified img{
@@ -381,8 +512,11 @@ header{
     }
 
     .save-btn{
-        margin-left: 60px !important;
-        margin-top: 70px !important;
+        position: absolute;
+        margin-left: 0;
+        margin-top: 0;
+        top: 180px;
+        left: 5%;
     }
 
     .msg-btn{
@@ -392,9 +526,12 @@ header{
     }
 
     .cancel-btn{
-        margin-top:-25px !important;
-        left:130px;
-        
+        position: absolute;
+        margin-left: 0;
+        margin-top: 0;
+        top: 180px;
+        left: auto;
+        right: 5%;
     }
 
     .logo a{
@@ -409,15 +546,15 @@ header{
    
 
    .follow2-btn{
-       margin-left: 90px !important;
-       display: block;
-       margin-top: 20px;
+       position: absolute;
+       margin-left: 0;
+       right: 5%;
    }
 
    .follow-btn{
-    margin-left: 90px !important;
-    margin-top: 20px;
-    display: inline;
+    position: absolute;
+    margin-left: 0;
+    left: 5%;
 }
 
 .hamburger{
@@ -427,13 +564,6 @@ header{
 /* .profilePicture img:first-of-type {
     border: 1.5px solid #6AF491 !important;
 } */
-
-.container .profilePicture{
-    width:100% !important;
-    height: 100% !important;
-    overflow: hidden;
-    margin-left: 20px;
-}
 
 .container{
     margin-left: 0% !important;
@@ -456,4 +586,58 @@ header{
 }
 
 
+}
+
+@media only screen and (max-width:400px){
+    .btn-ctn{
+        position: relative;
+    }
+    .follow-btn, .follow2-btn, .save-btn, .cancel-btn{
+        width: 130px;
+    }
+    .follow-btn{
+        position: absolute;
+        margin-left: 0;
+        left: 5%;
+    }
+    .follow2-btn{
+        position: absolute;
+        margin-left: 0;
+        right: 5%;
+    }
+    #btn-edit{
+        position: absolute;
+        margin-left: 0;
+        margin-top: 0;
+        top: 90px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .save-btn{
+        position: absolute;
+        margin-left: 0;
+        margin-top: 0;
+        top: 140px;
+        left: 5%;
+    }
+    .cancel-btn{
+        position: absolute;
+        margin-left: 0;
+        margin-top: 0;
+        top: 140px;
+        left: auto;
+        right: 5%;
+    }
+    header{
+        padding-bottom: 10%;
+    }
+    .login-page{
+        padding: 0;
+        margin-top:0;
+    }
+}
+@media only screen and (max-width:340px){
+    .follow-btn, .follow2-btn, .save-btn, .cancel-btn{
+        width: 130px;
+    }
 }
