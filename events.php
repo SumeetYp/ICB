@@ -9,7 +9,7 @@
     include './config.php';
 
     $today = date("Y-m-d");
-
+    $userfullname = $_SESSION['full_name'];
     $sql = "SELECT * FROM events";
     $resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
     $outputEvents = [];
@@ -23,6 +23,7 @@
     $enrolledEvents = [];
     for($x=0; $x<sizeof($outputEvents); $x++){
         $eventName = $outputEvents[$x]['eventName'];
+        $eventDate = $outputEvents[$x]['eventDate'];
         $eventTableName = $outputEvents[$x]['eventTableName'];
         $email = $_SESSION['email'];
         $sql = "SELECT * FROM `$eventTableName` WHERE enrolledUserEmail='$email'";
@@ -31,10 +32,10 @@
         if(mysqli_num_rows($resultEventTable) > 0){
             $outputEventTable = mysqli_fetch_array($resultEventTable);
             if($outputEventTable['enrolledUserAttended'] != 0){
-                $attendedEvents[] = (object) ['id' => $outputEventTable['id'], 'enrolledUsername' => $outputEventTable['enrolledUsername'], 'enrolledUserMobile' => $outputEventTable['enrolledUserMobile'], 'enrolledUserEmail' => $outputEventTable['enrolledUserEmail'], 'eventName' => $eventName];
+                $attendedEvents[] = (object) ['id' => $outputEventTable['id'], 'enrolledUsername' => $outputEventTable['enrolledUsername'], 'enrolledUserMobile' => $outputEventTable['enrolledUserMobile'], 'enrolledUserEmail' => $outputEventTable['enrolledUserEmail'], 'eventName' => $eventName, 'eventDate' => $eventDate];
             }
             else if($outputEvents[$x]['eventDate']>$today){
-                $enrolledEvents[] = (object) ['id' => $outputEventTable['id'], 'enrolledUsername' => $outputEventTable['enrolledUsername'], 'enrolledUserMobile' => $outputEventTable['enrolledUserMobile'], 'enrolledUserEmail' => $outputEventTable['enrolledUserEmail'], 'eventName' => $eventName];
+                $enrolledEvents[] = (object) ['id' => $outputEventTable['id'], 'enrolledUsername' => $outputEventTable['enrolledUsername'], 'enrolledUserMobile' => $outputEventTable['enrolledUserMobile'], 'enrolledUserEmail' => $outputEventTable['enrolledUserEmail'], 'eventName' => $eventName, 'eventDate' => $eventDate];
             }
         }
     }
