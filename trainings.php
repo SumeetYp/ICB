@@ -105,6 +105,7 @@
         <!-- book now -->
 
         <?php
+            include './config.php';
             $display = '';
             if(sizeof($outputTrainings) == 0){
                 $display = 'd-none';
@@ -113,9 +114,20 @@
                 "<h2>Book Now</h2>" . "\n" . 
                 "<div class='book-now'>" . "\n";
             for($x= 0; $x<sizeof($outputTrainings); $x++){
-                echo "<div class='images'>" . "\n" . 
+                $trainingTableName = $outputTrainings[$x]['trainingTableName'];
+                $sql = "SELECT * FROM $trainingTableName WHERE enrolledUserEmail='$email'";
+                $resultTrainingTable = mysqli_query($mysqli, $sql) or die("SQL Failed");
+                if(mysqli_num_rows($resultTrainingTable) > 0){
+                    echo "<div class='images'>" . "\n" . 
+                    "<h3>" . $outputTrainings[$x]["trainingName"] . "</h3>" . "\n" .
+                    "<button disabled style='cursor:default;'>Enrolled</button></div>";
+                }
+                else{
+                    echo "<div class='images'>" . "\n" . 
                     "<h3>" . $outputTrainings[$x]["trainingName"] . "</h3>" . "\n" .
                     "<a href='./database/enrollTraining.php?training=" . $outputTrainings[$x]["trainingTableName"] . "&userEmail=" . $_SESSION['email'] . "'><button>Enroll</button></a></div>";
+                }
+                
             }
             echo "</div>";
         ?>
