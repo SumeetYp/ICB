@@ -30,8 +30,73 @@
 
     <div class="container">
         <div class="contactTeam"></div>
+        <div class="contactTeam">
+            <div class="coreTeamMember">
+                <div class="profilePictureCTM">
+                    <div class="profilePicture">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&amp;usqp=CAU">
+                        <img class="check" src="./images/checkadmin.png">
+                    </div>
+                </div>
+                <div class="contactDetailsCTM">
+                    <div class="nameCTM">Atharv Sawant</div>
+                    <div class="positionCTM">Chairman</div>
+                    <div class="socialMediaHandles">
+                        <a href="https://t.me/atharvs16escape" target="_blank" class="telegram">Telegram</a>
+                        <a href="https://www.instagram.com/atharvs16escape/" target="_blank" class="instagram">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="coreTeamMember">
+                <div class="profilePictureCTM">
+                    <div class="profilePicture">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&amp;usqp=CAU">
+                        <img class="check" src="./images/checkadmin.png">
+                    </div>
+                </div>
+                <div class="contactDetailsCTM">
+                    <div class="nameCTM">Mandeep Dalavi</div>
+                    <div class="positionCTM">Vice Chairman</div>
+                    <div class="socialMediaHandles">
+                        <a href="https://t.me/MandeepDalavi" target="_blank" class="telegram">Telegram</a>
+                        <a href="https://www.instagram.com/mandeepdalavi" target="_blank" class="instagram">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="coreTeamMember">
+                <div class="profilePictureCTM">
+                    <div class="profilePicture">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&amp;usqp=CAU">
+                        <img class="check" src="./images/checkadmin.png">
+                    </div>
+                </div>
+                <div class="contactDetailsCTM">
+                    <div class="nameCTM">Dhanashree Patil</div>
+                    <div class="positionCTM">Project Director</div>
+                    <div class="socialMediaHandles">
+                        <a href="https://t.me/dhanashreepatil2801" target="_blank" class="telegram">Telegram</a>
+                        <a href="https://www.instagram.com/dhanashree_patil_2801/" target="_blank" class="instagram">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="coreTeamMember">
+                <div class="profilePictureCTM">
+                    <div class="profilePicture">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&amp;usqp=CAU">
+                        <img class="check" src="./images/checkadmin.png">
+                    </div>
+                </div>
+                <div class="contactDetailsCTM">
+                    <div class="nameCTM">Shreya Salunkhe</div>
+                    <div class="positionCTM">ICB President</div>
+                    <div class="socialMediaHandles">
+                        <a href="https://t.me/Shre_sa" target="_blank" class="telegram">Telegram</a>
+                        <a href="https://www.instagram.com/shre.sa_09/" target="_blank" class="instagram">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="./js/sideBar.js"></script>
-    <script src="./js/coreTeam.js"></script>
 </body>
 </html>
