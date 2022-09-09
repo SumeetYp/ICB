@@ -8,11 +8,24 @@
     $borderColor = NULL;
     switch($_SESSION['type']){
         case "admin": $borderColor= '#0ED678'; 
+                      $checkSrc= './images/checkadmin.png';
                       break;
+        case "core-team": $borderColor= '#FC8955';
+                        $checkSrc= './images/shield core-team.png';
+                          break;
         case "member": $borderColor= '#2196F3';
+                       $checkSrc= './images/memberProfile.svg';
                        break;
-        case "volunteer": $borderColor= '#FFBE00';
+        case "student": $borderColor= '#FFC4C4';
+                        break;
     }
+    $display = '';
+    if($checkSrc == NULL){
+        $display = 'd-none';
+    }
+    $profile = $_SESSION['profile'];
+    $instagram = $_SESSION['instagram'] == "" ? 'https://www.instagram.com/bondsocially/' : 'nothing';
+    $telegram = $_SESSION['telegram'] == "" ? 'https://t.me/' : "nothing";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,9 +34,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link rel="stylesheet" href="css/profile-css/style.css">
     <link rel="stylesheet" href="css/profile-css/main.css">
+    <link rel="stylesheet" href="css/profile-css/style.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/utils.css">
     <style>
@@ -94,8 +106,8 @@
         <div class="container grid grid-header">
             <?php
                 echo "<div class='profilePicture'>" . "\n" .
-                        "<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAcQBipWyY0qIXJvbIEOnGmkvcXJBKA-3Yg&usqp=CAU' style='border-color: " . $borderColor . ";' alt=''>" . "\n" .
-                        "<img class='check2 " . $display . "' src='" . $checkSrc . "' alt=''>" . "\n" .
+                        "<img src='".$profile."' style='border-color:".$borderColor.";' alt=''>" . "\n" .
+                        "<img class='check2 ".$display."' src='".$checkSrc."' alt=''>" . "\n" .
                      "</div>";
             ?>
         </div>
@@ -162,11 +174,11 @@
         </div>
         </div>
 
-        <div class="container">
+        <div class="container btn-ctn">
 
             <?php
-                echo "<a href='" . $_SESSION['instagram'] . "' target='_blank'><button class='btn follow-btn'>Instagram</button></a>
-                <a href='" . $_SESSION['telegram'] . "' target='_blank'><button class='btn follow2-btn'>Telegram</button></a>";
+                echo "<a href='" . $instagram . "' target='_blank'><button class='btn follow-btn'>Instagram</button></a>
+                <a href='" . $telegram . "' target='_blank'><button class='btn follow2-btn'>Telegram</button></a>";
             ?>
             <!---   <button class="btn msg-btn">Connect<img src="images/user.png"></button>  -->
             <button id="btn-edit" class="profile-btn">Edit Profile</button>
@@ -185,13 +197,37 @@
             <div class="login-page d-flex">
                 <div class="form">
                     <?php
-                        echo "<form id='form' class='register-form' action='./database/editProfile.php?userEmail=" . $_SESSION['email'] . "' method='POST'>";
+                        echo "<form id='form' class='register-form' action='./database/editProfile.php?userEmail=" . $_SESSION['email'] . "' method='POST' onsubmit='return validate()' enctype='multipart/form-data'>";
                     ?>
                         <h1> Edit Profile</h1>
+                        <span class="line">
+                            <label>Profile:</label>
+                            <?php
+                                echo "<input name='file' type='file' id='file' accept='image/png, image/jpg, image/jpeg'/>";
+                            ?>
+                        </span>
+                        <span class="line">
+                            <label>Username:</label>
+                            <?php
+                                echo "<input name='username' type='text' placeholder='username' value='" . $_SESSION['username'] . "' required/>";
+                            ?>
+                        </span>
                         <span class="line">
                             <label>Phone:</label>
                             <?php
                                 echo "<input name='mobile' type='phone' placeholder='phone' value='" . $_SESSION['mobile'] . "' required/>";
+                            ?>
+                        </span>
+                        <span class="line">
+                            <label>Instagram:</label>
+                            <?php
+                                echo "<input name='instagram' type='url' pattern='https://www.instagram.com/.*' placeholder='https://www.instagram.com/username' value='" . $instagram . "' />";
+                            ?>
+                        </span>
+                        <span class="line">
+                            <label>Telegram:</label>
+                            <?php
+                                echo "<input name='telegram' type='url' pattern='https://t.me/.*' placeholder='https://t.me/username' value='" . $telegram . "'/>";
                             ?>
                         </span>
                         <span class="line">
@@ -203,11 +239,6 @@
                     </form>
                 </div>
             </div>
-
-
-
-
-
         </div>
     </section>
 
