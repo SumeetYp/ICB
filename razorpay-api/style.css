@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #FF9933, #FFFFFF ,#138808);
+}
+
+#rzp-button1 {
+    position: relative;
+    display: inline-block;
+    min-width: 160px;
+    height: 40px;
+    padding: 0;
+    border-radius: 3px;
+    text-align: center;
+    font-style: italic;
+    font-family: Muli,helvetica,sans-serif;
+    font-display: swap;
+    overflow: hidden;
+    background: #072654;
+    border-color: #072654;
+    /* border: 1px solid transparent; */
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+}
+
+#rzp-button1::before{
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 0;
+    width: 46px;
+    height: 100%;
+    background: #1e40a0;
+    border-radius: 2px 0 0 2px;
+    transform: skew(-15deg,0);
+}
+
+#rzp-button1 svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 9px 11px;
+}
+
+.button-contents{
+    padding: 4px 28px 4px 60px;
+    margin: 1px 0;
+}
+
+.button-text{
+    display: block;
+    min-height: 18px;
+    line-height: 18px;
+    font-size: 14px;
+    font-weight: 800;
+    opacity: 1;
+    text-transform: initial;
+}
+
+.button-securedBy{
+    font-size: 8px;
+    line-height: 10px;
+    text-transform: initial;
+    margin-top: 0;
+    opacity: .6;
+}
