@@ -18,6 +18,10 @@ body {
   align-items: center;
 }
 
+#title{
+  margin-top: 15px;
+}
+
 p {
   margin-block-end: 0.3em;
 }
@@ -103,7 +107,7 @@ select {
   border-color: #2d6363;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 425px) {
   .form-group {
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -135,7 +139,7 @@ select {
     margin-bottom: 0;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 425px) {
   input[type="text"],
   input[type="email"],
   input[type="number"],

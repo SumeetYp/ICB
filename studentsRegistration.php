@@ -30,15 +30,15 @@ if (!(isset($_SESSION['type']) && ($_SESSION['type']=='admin' || $_SESSION['type
 
 <body>
     <h1 id="title">Students Registration</h1>
-    <form id="survey-form" action="./razorpay-api/pay.php" method="POST">
+    <form id="survey-form" action="./database/addUser.php" method="POST">
         <div class="form-group">
-            <label id="name-label" for="name" class="required">First Name </label>
-            <input id="name" type="text" name="firstName" required placeholder="first name">
+            <label id="name-label" for="firstname" class="required">First Name </label>
+            <input id="firstname" type="text" name="firstName" required placeholder="first name">
             <span class="validity"></span>
         </div>
         <div class="form-group">
-            <label id="name-label" for="name" class="required">Last Name </label>
-            <input id="name" type="text" name="lastName" required placeholder="last name">
+            <label id="name-label" for="lastname" class="required">Last Name </label>
+            <input id="lastname" type="text" name="lastName" required placeholder="last name">
             <span class="validity"></span>
         </div>
 
@@ -47,11 +47,17 @@ if (!(isset($_SESSION['type']) && ($_SESSION['type']=='admin' || $_SESSION['type
             <input id="email" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required placeholder="email">
             <span class="validity"></span>
         </div>
+        
+        <div class="form-group">
+            <label id="college-label" for="college" class="required">College </label>
+            <input id="college" type="text" name="college" required placeholder="college name">
+            <span class="validity"></span>
+        </div>
 
         <!-- DOB : -->
         <div class="form-group">
-            <label id="number-label" for="number" class="required">DOB </label>
-            <input type="date" name="dob" required>
+            <label id="number-label" for="dob" class="required">DOB </label>
+            <input id="dob" type="date" name="dob" required>
             <span class="validity"></span>
         </div>
 
@@ -74,44 +80,44 @@ if (!(isset($_SESSION['type']) && ($_SESSION['type']=='admin' || $_SESSION['type
 
         <!-- city -->
         <div class="form-group">
-            <label id="name-label" for="name" class="required">City </label>
-            <input id="name" type="text" name="city" required placeholder="city">
+            <label id="name-label" for="city" class="required">City </label>
+            <input id="city" type="text" name="city" required placeholder="city">
             <span class="validity"></span>
         </div>
 
         <!-- State -->
         <div class="form-group">
-            <label id="name-label" for="name" class="required">State </label>
-            <input id="name" type="text" name="state" required placeholder="state">
+            <label id="name-label" for="state" class="required">State </label>
+            <input id="state" type="text" name="state" required placeholder="state">
             <span class="validity"></span>
         </div>
 
         <!-- pin -->
 
         <div class="form-group">
-            <label id="name-label" for="name" class="required">PIN </label>
-            <input id="name" type="number" name="pin" min="100000" pattern="[0-9]{6}" required placeholder="6 digit area pin code">
+            <label id="name-label" for="pin" class="required">PIN </label>
+            <input id="pin" type="number" name="pin" min="100000" pattern="[0-9]{6}" required placeholder="6 digit area pin code">
             <span class="validity"></span>
         </div>
 
         <!-- whatsapp mobile number -->
         <div class="form-group">
-            <label id="name-label" for="name" class="required">Mobile </label>
-            <input id="name" type="number" name="mobile" min="6000000000" pattern="[0-9]{10}" required placeholder="add 10 digit WhatsApp Number only">
+            <label id="name-label" for="mobile" class="required">Mobile </label>
+            <input id="mobile" type="number" name="mobile" min="6000000000" pattern="[0-9]{10}" required placeholder="add 10 digit WhatsApp Number only">
             <span class="validity"></span>
         </div>
 
         <!-- telegram -->
         <div class="form-group">
-            <label id="name-label" for="name">Telegram&nbsp;&nbsp;</label>
-            <input id="name" type="url" name="telegram" pattern="https://t.me/.*" placeholder="add Telegram Link">
+            <label id="name-label" for="telegram">Telegram&nbsp;&nbsp;</label>
+            <input id="telegram" type="url" name="telegram" pattern="https://t.me/.*" placeholder="add Telegram Link">
             <span class="validity"></span>
         </div>
 
         <!-- instagram -->
         <div class="form-group">
-            <label id="name-label" for="name">Instagram&nbsp;&nbsp;</label>
-            <input id="name" type="url" name="instagram" pattern="https://www.instagram.com/.*" placeholder="add Instagram Link">
+            <label id="name-label" for="instagram">Instagram&nbsp;&nbsp;</label>
+            <input id="instagram" type="url" name="instagram" pattern="https://www.instagram.com/.*" placeholder="add Instagram Link">
             <span class="validity"></span>
         </div>
 
@@ -123,6 +129,7 @@ if (!(isset($_SESSION['type']) && ($_SESSION['type']=='admin' || $_SESSION['type
                 <label><input type="checkbox" name="contriMissionShiksha" value="Mission-Shiksha"> Mission Shiksha</label>
                 <label><input type="checkbox" name="contriMentalHealth" value="Mental-Health"> Mental Health</label>
                 <label><input type="checkbox" name="contriAnimalSafety" value="Animals-Safety"> Animals Safety</label>
+                <label><input type="checkbox" name="contriArtandCraft" value="Art-&-Craft"> Art & Craft</label>
                 <label><input type="checkbox" name="contriEnvironment" value="Environment"> Environment</label>
                 <label><input type="checkbox" name="contriSexEducation" value="Sex-Education"> Sex Education</label>
             </div>
@@ -135,8 +142,22 @@ if (!(isset($_SESSION['type']) && ($_SESSION['type']=='admin' || $_SESSION['type
             </div>
         </div>
 
-        <!-- Do you want any of these-->
+        <!-- Interests -->
+        <div class="form-group">
+            <p>Interests</p>
+            <div class="input-group">
+                <label><input type="checkbox" name="interestPublicRelation" value="Public-Relations"> Public Relations</label>
+                <label><input type="checkbox" name="interestSpeakingandCommunication" value="Speaking-&-Communication"> Speaking & Communication</label>
+                <label><input type="checkbox" name="interestOperations" value="Operations"> Operations</label>
+                <label><input type="checkbox" name="interestSocialMediaManager" value="Social-Media-Manager"> Social Media Manager</label>
+                <label><input type="checkbox" name="interestGraphicDesigner" value="Graphic-Designer"> Graphic Designer</label>
+                <label><input type="checkbox" name="interestContentWriter" value="Content-Writer"> Content Writer</label>
+                <label><input type="checkbox" name="interestAdminBodyManagement" value="Admin-Body-Management"> Admin Body Management</label>
+                <label><input type="checkbox" name="interestLegalandFinance" value="Logal-&-Finance"> Legal & Finance</label>
+            </div>
+        </div>
 
+        <!-- Do you want any of these-->
         <div class="form-group">
             <p>Do you want any of these&nbsp;&nbsp;</p>
             <div class="input-group">
@@ -145,20 +166,6 @@ if (!(isset($_SESSION['type']) && ($_SESSION['type']=='admin' || $_SESSION['type
                 <label><input type="checkbox" name="addOnBadge" value="Badge"> Badge (₹ 19/-)</label>
                 <label><input type="checkbox" name="addOnBag" value="Bag"> Bag (Not Available)</label>
             </div>
-        </div>
-
-        <!-- adhar card number -->
-        <div class="form-group">
-            <label id="name-label" for="name" class="required">Aadhaar Card </label>
-            <input id="name" type="number" name="aadhaar" pattern="[0-9]{12}" required placeholder="12 digit aadhaar number">
-            <span class="validity"></span>
-        </div>
-
-        <!-- pan card number -->
-        <div class="form-group">
-            <label id="name-label" for="name" class="required">PAN No. </label>
-            <input id="name" type="text" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" name="pan" required placeholder="pan card number {format: AJCHB7489N}">
-            <span class="validity"></span>
         </div>
 
         <!-- terms and condition -->

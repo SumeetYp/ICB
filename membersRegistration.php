@@ -29,7 +29,7 @@ if (!(isset($_SESSION['type']) && ($_SESSION['type']=='admin' || $_SESSION['type
 
 <body>
     <h1 id="title">Members Registration</h1>
-    <form id="survey-form" action="./razorpay-api/pay.php" onsubmit="return validate()" method="POST">
+    <form id="survey-form" action="./database/addUser.php" onsubmit="return validate()" method="POST">
         <div class="form-group">
             <label id="name-label" for="name" class="required">First Name </label>
             <input id="name" type="text" name="firstName" required placeholder="first name">
@@ -115,13 +115,13 @@ if (!(isset($_SESSION['type']) && ($_SESSION['type']=='admin' || $_SESSION['type
         </div>
 
         <!-- contribution -->
-
         <div class="form-group">
             <p>Initiatives I will contribute for</p>
             <div class="input-group">
                 <label><input type="checkbox" name="contriMissionShiksha" value="Mission-Shiksha"> Mission Shiksha</label>
                 <label><input type="checkbox" name="contriMentalHealth" value="Mental-Health"> Mental Health</label>
                 <label><input type="checkbox" name="contriAnimalSafety" value="Animals-Safety"> Animals Safety</label>
+                <label><input type="checkbox" name="contriArtandCraft" value="Art-&-Craft"> Art & Craft</label>
                 <label><input type="checkbox" name="contriEnvironment" value="Environment"> Environment</label>
                 <label><input type="checkbox" name="contriSexEducation" value="Sex-Education"> Sex Education</label>
             </div>
@@ -131,6 +131,21 @@ if (!(isset($_SESSION['type']) && ($_SESSION['type']=='admin' || $_SESSION['type
             <p class="required">Type of Registration</p>
             <div class="input-group">
                 <label for="yes"><input id="yes" type="radio" name="user-rating" value="yes" required checked> Member (₹ 499/-)</label>
+            </div>
+        </div>
+
+        <!-- Interests -->
+        <div class="form-group">
+            <p>Interests</p>
+            <div class="input-group">
+                <label><input type="checkbox" name="interestPublicRelation" value="Public-Relations"> Public Relations</label>
+                <label><input type="checkbox" name="interestSpeakingandCommunication" value="Speaking-&-Communication"> Speaking & Communication</label>
+                <label><input type="checkbox" name="interestOperations" value="Operations"> Operations</label>
+                <label><input type="checkbox" name="interestSocialMediaManager" value="Social-Media-Manager"> Social Media Manager</label>
+                <label><input type="checkbox" name="interestGraphicDesigner" value="Graphic-Designer"> Graphic Designer</label>
+                <label><input type="checkbox" name="interestContentWriter" value="Content-Writer"> Content Writer</label>
+                <label><input type="checkbox" name="interestAdminBodyManagement" value="Admin-Body-Management"> Admin Body Management</label>
+                <label><input type="checkbox" name="interestLegalandFinance" value="Logal-&-Finance"> Legal & Finance</label>
             </div>
         </div>
 
