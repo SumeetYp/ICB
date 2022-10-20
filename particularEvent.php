@@ -55,7 +55,7 @@
 
     <!-- stylesheet link -->
     <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/eventmanage.css">
+    <!-- <link rel="stylesheet" href="./css/eventmanage.css"> -->
     <link rel="stylesheet" href="./css/utils.css">
     <style>
         <?php
@@ -115,8 +115,10 @@
                  break;
     }
     echo "<div class='peBanner' style='background: linear-gradient(180deg, rgba($bannerColor, 0.7) 22%, rgba($bannerColor, 0.14) 100%), url($bannerImage);background-position: center;background-repeat: no-repeat;background-size: cover;'>
+            <button class='editbtn' onclick='openEventPop()'><img src='./images/edit.png' title='Edit Event' alt='Edit Event' class='sideImg edit'></button>
             <h1 class='peHeading'>".$outputEvent['eventName']."</h1>
             <p class='peSub'>".$outputEvent['eventInitiative']."</p>
+            <button class='deletebtn' onclick='openDeletePop()'><img src='./images/delete.png' title='Delete Event' alt='Delete Event' class='sideImg delete'></button>
           </div>"
 ?>
 
@@ -128,7 +130,7 @@
     </div>
     <div class="peList">
         <i class="fa-solid fa-clock fa-2x"></i>
-        <p><?php echo $outputEvent['eventTime']; ?></p>
+        <p><?php echo date("h:i a", strtotime($outputEvent['eventTime'])); ?></p>
     </div>
     <div class="peList">
         <i class="fa-solid fa-location-dot fa-2x"></i>
@@ -167,7 +169,97 @@
         ?>
     </div>
 </div>
-<script src="./js/sideBar.js"></script>
 
+<div class="eventPopup" id="eventpop">
+    <form action="./database/editEvent.php" method="post" class="event-form">
+        <p class='pop-text'>Event Editor</p>
+        <div class="input-group">
+            <input type="text" title="Event Name" placeholder="Event Name" name="eventName" value="<?php echo $outputEvent['eventName']; ?>" autocomplete="off" required>
+        </div>
+        <div class="input-group">
+            <select name='eventInitiative' title="Event Initiative" required>
+                <option <?php echo ($outputEvent['eventInitiative']=='Mental Health') ? "selected='true'" : "" ?> value="Mental Health">Mental Health</option>
+                <option <?php echo ($outputEvent['eventInitiative']=='Mission Shiksha') ? "selected='true'" : "" ?> value="Mission Shiksha">Mission Shiksha</option>
+                <option <?php echo ($outputEvent['eventInitiative']=='Animal Safety') ? "selected='true'" : "" ?> value="Animal Safety">Animal Safety</option>
+                <option <?php echo ($outputEvent['eventInitiative']=='Art & Craft') ? "selected='true'" : "" ?> value="Art & Craft">Art & Craft</option>
+                <option <?php echo ($outputEvent['eventInitiative']=='Environment') ? "selected='true'" : "" ?> value="Environment">Environment</option>
+                <option <?php echo ($outputEvent['eventInitiative']=='Sex Education') ? "selected='true'" : "" ?> value="Sex Education">Sex Education</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <input type="text" title="Event Table Name" placeholder="Event Table Name" name="eventTableName" value="<?php echo $eventTableName; ?>" autocomplete="off" required>
+        </div>
+        <div class="input-group">
+            <input type="date" id="eventDate" title="Event Date" placeholder="Event Date" name="eventDate" value="<?php echo $outputEvent['eventDate']; ?>" autocomplete="off" required>
+        </div>
+        <div class="input-group">
+            <input type="time" title="Event Time" placeholder="Event Time" name="eventTime" value="<?php echo date("h:i", strtotime($outputEvent['eventTime'])); ?>" autocomplete="off" required>
+        </div>
+        <div class="input-group">
+            <input type="text" title="Event Address" placeholder="Event Venue" name="eventVenue" value="<?php echo $outputEvent['eventVenue']; ?>" autocomplete="off" required>
+        </div>
+        <div class="input-group">
+            <input type="text" title="Any requirements for Attendees" placeholder="Requirements" name="eventRequirements" value="<?php echo $outputEvent['eventRequirements']; ?>" autocomplete="off" required>
+        </div>
+        <input type="hidden" name="eventID" value="<?php echo $id; ?>">
+        <input type="hidden" name="existingEventTableName" value="<?php echo $eventTableName; ?>">
+        <div class="input-group">
+            <button class="btn" name="eventEditSubmit" style="background: rgba(<?php echo $bannerColor; ?>, 0.7)">Submit</button>
+        </div>
+    </form>
+</div>
+<div class="closer" id="closer" onclick="closeEventPop(); closeDeletePop()"></div>
+
+<div class="deletePopup" id="deletepop">
+    <div class="warning">
+        <img src="./images/danger.png" alt="warning">
+    </div>
+    <div class="warning-content">
+        <h1>Warning!</h1>
+        <p>Are you sure you want to delete this event?</p>
+    </div>
+    <form action="./database/deleteEvent.php" method="POST" class="delete-form">
+        <input type="hidden" name="eventID" value="<?php echo $id; ?>">
+        <input type="hidden" name="existingEventTableName" value="<?php echo $eventTableName; ?>">
+        <div class="input-group">
+            <button class="btn" name="eventDeleteSubmit">DELETE</button>
+        </div>
+    </form>
+</div>
+
+<script src="./js/sideBar.js"></script>
+<script>
+    var date = new Date();
+    var dd = date.getDate() + 1;
+    var mm = date.getMonth() + 1; //January is 0!
+    var yyyy = date.getFullYear();
+    if(dd<10){
+      dd='0'+dd
+    } 
+    if(mm<10){
+      mm='0'+mm
+    }
+    
+    var tomorrow = yyyy+'-'+mm+'-'+dd;
+    document.getElementById("eventDate").setAttribute("min", tomorrow);
+
+
+    function openEventPop() {
+        document.getElementById("eventpop").style.display = "block";
+        document.getElementById("closer").style.display = "block";
+    }
+    function closeEventPop() {
+        document.getElementById("eventpop").style.display = "none";
+        document.getElementById("closer").style.display = "none";
+    }
+    function openDeletePop() {
+        document.getElementById("deletepop").style.display = "block";
+        document.getElementById("closer").style.display = "block";
+    }
+    function closeDeletePop() {
+        document.getElementById("deletepop").style.display = "none";
+        document.getElementById("closer").style.display = "none";
+    }
+</script>
 </body>
 </html>
