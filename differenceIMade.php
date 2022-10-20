@@ -16,7 +16,7 @@ require "config.php";
 $sql = "SELECT FIND_IN_SET( totalEventsAttended, (
     SELECT GROUP_CONCAT( totalEventsAttended
     ORDER BY totalEventsAttended DESC ) 
-    FROM stats )
+    FROM stats WHERE `type` NOT IN ('admin','core-team'))
     ) AS rank
     FROM stats WHERE userEmail = '".$_SESSION['email']."'";
 $result = mysqli_query($mysqli, $sql) or die('Data fetching issues');
