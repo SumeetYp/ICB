@@ -210,10 +210,18 @@
                                 echo "<input name='file' type='file' id='file' accept='image/png, image/jpg, image/jpeg'/>";
                             ?>
                         </span>
-                        <span class="line">
+                        <div id="usernameInst">
+                            <ul style="list-style-type:disc;">
+                                <li>username must start with a letter or underscore</li>
+                                <li>username must contain only letters (both case), numbers and underscore</li>
+                                <li>username must contain atleast 6 characters</li>
+                            </ul>
+                        </div>
+                        <span class="line" style="position:relative;">
                             <label>Username:</label>
+                            <div id="error_msg">Minimum length is 6 characters</div>
                             <?php
-                                echo "<input name='username' type='text' placeholder='username' value='" . $_SESSION['username'] . "' required/>";
+                                echo "<input id='username' name='username' type='text' pattern='[a-zA-Z_]{1}[a-zA-Z0-9]{5,50}' placeholder='username' value='" . $_SESSION['username'] . "' required/>";
                             ?>
                         </span>
                         <span class="line">
@@ -248,7 +256,7 @@
 
 
 
-
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="js/profile-js/script.js"></script>
     <script src="js/sideBar.js"></script>
 </body>
@@ -261,7 +269,7 @@
                 const filesize = file.files[i].size;
                 const filesizenew = Math.round(filesize/1024);
                 if(filesizenew >= 1024) {
-                    errMsg = 'File too Big, please select a file less than 1MB');
+                    errMsg = 'File too Big, please select a file less than 1MB';
                 }
                 if(errMsg !== ""){
                     alert(errMsg);
@@ -271,6 +279,33 @@
             }
         }
     }
+
+    $('#username').keyup(function(){
+        var username = $('#username').val();
+
+        if(username!='') {
+            $.post('./database/checkUser.php', {username:username}, function(data){
+                $('#error_msg').html(data);
+                if(data == 'Username Available'){
+                    $('#error_msg').removeClass();
+                    $('#error_msg').addClass("form-success");
+                } else if (data == 'Sorry, Username Not Available') {
+                    $('#error_msg').removeClass();
+                    $('#error_msg').addClass("form-error");
+                }
+            });
+        } else {
+            $('#error_msg').html('');
+        }
+    });
+
+    $('#username').focus(function(){
+        $('#usernameInst').css("display", "block");
+    });
+
+    $('#username').focusout(function(){
+        $('#usernameInst').css("display", "none");
+    });
 </script>
 
 </html>
