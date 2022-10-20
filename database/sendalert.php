@@ -23,7 +23,7 @@
         $mail->Host = 'smtp.hostinger.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'i@careforbharat.in';
-        $mail->Password = 'noPassword';
+        $mail->Password = 'Bharat@Buzz#TY2';
         $mail->SMTPSecure = 'ssl';
         $mail->Port = '465';
 

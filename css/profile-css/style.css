@@ -109,6 +109,28 @@ form{
     position: relative;
 }
 
+#error_msg {
+    position: absolute;
+    font-weight: 600;
+    right: 10px;
+    top: 33px;
+    z-index: 1;
+}
+
+.form-error {
+    color: #D83D5A;
+}
+
+.form-success {
+    color: green;
+}
+
+#usernameInst {
+    display: none;
+    font-weight: 600;
+    margin: 0 0 15px 22px;
+
+}
 
 .form .message {
   margin: 15px 0 0;

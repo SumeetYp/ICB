@@ -70,7 +70,7 @@ nav .profilePicture img:first-of-type {
     width: 270px;
     background-color: #fff;
     transition: 0.5s linear;
-    z-index: 1;
+    z-index: 10;
 }
 
 .sideItems {

@@ -183,8 +183,18 @@ ul{
 
 .square6{
     position: absolute;
-    background-color: #d8d8d8;
+    background-color: #3498DB;
     top:240px;
+    width: 8%;
+    height:9%;
+    left:0px;
+    border-radius: 5px;
+}
+
+.square7{
+    position: absolute;
+    background-color: #d8d8d8;
+    top:290px;
     width: 8%;
     height:9%;
     left:0px;

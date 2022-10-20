@@ -49,8 +49,8 @@ body{
     will-change: transform;
   }
   .ringE{
-    stroke: #533CF5;
-  }.ringD{stroke:#2EC5B6;}.ringC{stroke:#E01518}.ringB{stroke:#41D950}.ringA{stroke:#FFBE00}
+    stroke: #CB8FBD;
+  }.ringD{stroke:#2EC5B6;}.ringC{stroke:#E01518}.ringB{stroke:#41D950}.ringA{stroke:#FFBE00}.ringF{stroke:#3498DB}
 
 .graphBox{
     display: flex;
@@ -58,7 +58,7 @@ body{
 .eventRow{
     align-items: center;
     display: flex;
-    margin: 10px 15px;
+    margin-left: 15px;
     padding: 7px;
     background-color: #FFFFFF;
     border-radius: 6px;
@@ -83,6 +83,13 @@ body{
 .achievements{
     width: 60%;
 }
+.achievements .eventName{
+    width: 30rem;
+}
+.achievements .eventDate{
+    width: 20rem;
+    text-align: center;
+}
 .achHeading{
     font-style: normal;
     font-size: 7.5vw;
@@ -102,7 +109,7 @@ body{
         padding-left: 10px;
     }
     .eventRow{
-        margin: 20px 50px;
+        margin-left: 50px;
         padding: 10px;
         border-radius: 10px;
         padding: 20px;
@@ -138,6 +145,6 @@ body{
     .eventRow{
         border-radius: 20px;
         padding: 20px;
-        margin: 20px 100px;
+        margin-left: 100px;
     }
 }
