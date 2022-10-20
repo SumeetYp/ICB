@@ -35,10 +35,10 @@
         if(mysqli_num_rows($resultEventTable) > 0){
             $outputEventTable = mysqli_fetch_array($resultEventTable);
             if($outputEventTable['enrolledUserAttended'] != 0){
-                $attendedEvents[] = (object) ['id' => $outputEventTable['id'], 'enrolledUsername' => $outputEventTable['enrolledUsername'], 'enrolledUserMobile' => $outputEventTable['enrolledUserMobile'], 'enrolledUserEmail' => $outputEventTable['enrolledUserEmail'], 'eventName' => $eventName, 'eventDate' => $eventDate];
+                $attendedEvents[] = (object) ['id' => $outputEventTable['id'], 'enrolledUserFullName' => $outputEventTable['enrolledUserFullName'], 'enrolledUserMobile' => $outputEventTable['enrolledUserMobile'], 'enrolledUserEmail' => $outputEventTable['enrolledUserEmail'], 'eventName' => $eventName, 'eventDate' => $eventDate];
             }
             else if($outputEvents[$x]['eventDate']>$today){
-                $enrolledEvents[] = (object) ['id' => $outputEventTable['id'], 'enrolledUsername' => $outputEventTable['enrolledUsername'], 'enrolledUserMobile' => $outputEventTable['enrolledUserMobile'], 'enrolledUserEmail' => $outputEventTable['enrolledUserEmail'], 'eventName' => $eventName, 'eventDate' => $eventDate];
+                $enrolledEvents[] = (object) ['id' => $outputEventTable['id'], 'enrolledUserFullName' => $outputEventTable['enrolledUserFullName'], 'enrolledUserMobile' => $outputEventTable['enrolledUserMobile'], 'enrolledUserEmail' => $outputEventTable['enrolledUserEmail'], 'eventName' => $eventName, 'eventDate' => $eventDate];
             }
         }
     }
@@ -138,6 +138,9 @@
                                                                 break;
                                         case 'Environment': $linearGradient = 'linear-gradient(90deg, rgba(65, 217, 80, 1) 0%, rgba(70, 70, 70, 0.2) 100%)';
                                                             $bannerImage = 'https://images.unsplash.com/photo-1545147986-a9d6f2ab03b5';
+                                                            break;
+                                        case 'Art & Craft': $linearGradient = 'linear-gradient(90deg, rgba(52, 152, 219, 1) 0%, rgba(70, 70, 70, 0.2) 100%)';
+                                                            $bannerImage = 'https://images.unsplash.com/photo-1522167428-d603a1d62f26';
                                                             break;
                                         case 'Sex Education': $linearGradient = 'linear-gradient(90deg, rgba(255, 190, 0) 0%, rgba(70, 70, 70, 0.2) 100%)';
                                                             $bannerImage = 'https://images.unsplash.com/photo-1545693315-85b6be26a3d6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80';

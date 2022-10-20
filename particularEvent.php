@@ -150,7 +150,7 @@
         <?php
             for($x=0; $x<sizeof($enrolledUsers); $x++){
                     echo "<div class='eRow'>
-                            <div class='eName'>" . $enrolledUsers[$x]['enrolledUsername'] . "</div>" .
+                            <div class='eName'>" . $enrolledUsers[$x]['enrolledUserFullName'] . "</div>" .
                            "<div class='eNum'>" . $enrolledUsers[$x]['enrolledUserMobile'] . "</div>
                             <a href='./database/attendance.php?attended=true&eTN=$eventTableName&email=" . $enrolledUsers[$x]['enrolledUserEmail'] . "'><i style='color:#00ba00' class='fa-solid fa-circle-check'></i></a>
                             <i style='color:#f80505' class='fa-solid fa-circle-xmark'></i>
@@ -158,7 +158,7 @@
             }
             for($x=0; $x<sizeof($attendedUsers); $x++){
                     echo "<div class='eRow'>
-                            <div class='eName eNameAttended'>" . $attendedUsers[$x]['enrolledUsername'] . "</div>" .
+                            <div class='eName eNameAttended'>" . $attendedUsers[$x]['enrolledUserFullName'] . "</div>" .
                            "<div class='eNum eNumAttended'>" . $attendedUsers[$x]['enrolledUserMobile'] . "</div>
                            <i style='color:#00ba00' class='fa-solid fa-circle-check'></i>
                            <a href='./database/attendance.php?attended=no&eTN=$eventTableName&email=" . $attendedUsers[$x]['enrolledUserEmail'] . "'><i style='color:#f80505' class='fa-solid fa-circle-xmark'></i></a>
