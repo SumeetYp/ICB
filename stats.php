@@ -11,43 +11,50 @@
 
     include './config.php';
 
+    $today = date('Y-m-d');
     // Mental Health Count
-    $sql = "SELECT * FROM `events` WHERE `eventInitiative` LIKE 'Mental Health'";
+    $sql = "SELECT * FROM `events` WHERE ((`eventInitiative` LIKE 'Mental Health') AND eventDate<'$today')";
     $resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
     $tHealth = mysqli_num_rows($resultEvents);
 
     // Mission Shikha Count
-    $sql = "SELECT * FROM `events` WHERE `eventInitiative` LIKE 'Mission Shiksha'";
+    $sql = "SELECT * FROM `events` WHERE ((`eventInitiative` LIKE 'Mission Shiksha') AND eventDate<'$today')";
     $resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
     $tShiksha = mysqli_num_rows($resultEvents);
 
     // Animal Safet Count
-    $sql = "SELECT * FROM `events` WHERE `eventInitiative` LIKE 'Animal Safety'";
+    $sql = "SELECT * FROM `events` WHERE ((`eventInitiative` LIKE 'Animal Safety') AND eventDate<'$today')";
     $resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
     $tAnimal = mysqli_num_rows($resultEvents);
+    
+    // Art & Craft Count
+    $sql = "SELECT * FROM `events` WHERE ((`eventInitiative` LIKE 'Art & Craft') AND eventDate<'$today')";
+    $resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
+    $tArt = mysqli_num_rows($resultEvents);
 
     // Environment Count
-    $sql = "SELECT * FROM `events` WHERE `eventInitiative` LIKE 'Environment'";
+    $sql = "SELECT * FROM `events` WHERE ((`eventInitiative` LIKE 'Environment') AND eventDate<'$today')";
     $resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
     $tEnvironment = mysqli_num_rows($resultEvents);
 
     // Sex Education Count
-    $sql = "SELECT * FROM `events` WHERE `eventInitiative` LIKE 'Sex Education'";
+    $sql = "SELECT * FROM `events` WHERE ((`eventInitiative` LIKE 'Sex Education') AND eventDate<'$today')";
     $resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
     $tSexEd = mysqli_num_rows($resultEvents);
 
     // Others Count
-    $sql = "SELECT * FROM `events`";
+    $sql = "SELECT * FROM `events` WHERE eventDate<'$today'";
     $resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
     $totalEvents = mysqli_num_rows($resultEvents);
-    $tOther = $totalEvents-($tHealth+$tShiksha+$tAnimal+$tEnvironment+$tSexEd);
+    $tOther = $totalEvents-($tHealth+$tShiksha+$tAnimal+$tArt+$tEnvironment+$tSexEd);
 
-    $max = max($tEnvironment, $tAnimal, $tHealth, $tShiksha, $tSexEd);
+    $max = max($tEnvironment, $tAnimal, $tArt, $tHealth, $tShiksha, $tSexEd, 1);
     
     // relative value to display in graph
 
     $tgEnvironment =100-($tEnvironment/$max)*90;
     $tgAnimal =100-($tAnimal/$max)*90;
+    $tgArt =100-($tArt/$max)*90;
     $tgHealth =100-($tHealth/$max)*90;
     $tgShiksha =100-($tShiksha/$max)*90;
     $tgSexEd =100-($tSexEd/$max)*90;
@@ -82,24 +89,33 @@
         ?>
         <h3 class="achHeading">Initiative Stats</h3>
 
-        <div class="graphBox">
-        <svg class="circle-container" viewBox="2 -2 28 36" xmlns="http://www.w3.org/2000/svg">
-            <circle class="circle-container__background" r="17" cx="16" cy="16"></circle>
+        <div class="graphBox"><!-- 2 -2 28 36 -->
+        <svg class="circle-container" viewBox="2 -5 28 42" xmlns="http://www.w3.org/2000/svg">
+            <circle class="circle-container__background" r="20" cx="16" cy="16"></circle>
             <circle
               class="ringA circle-container__progress"
-              r="17"
+              r="20"
               cx="16"
               cy="16"
               style="stroke-dashoffset: <?php echo $tgSexEd?>" pathlength="100"
             ></circle>
 
-            <circle class="circle-container__background" r="14" cx="16" cy="16"></circle>
+            <circle class="circle-container__background" r="17" cx="16" cy="16"></circle>
             <circle
               class="ringB circle-container__progress"
-              r="14"
+              r="17"
               cx="16"
               cy="16"
               style="stroke-dashoffset: <?php echo $tgEnvironment?>" pathlength="100"
+            ></circle>
+
+            <circle class="circle-container__background" r="14" cx="16" cy="16"></circle>
+            <circle
+              class="ringF circle-container__progress"
+              r="14"
+              cx="16"
+              cy="16"
+              style="stroke-dashoffset: <?php echo $tgArt?>" pathlength="100"
             ></circle>
 
             <circle class="circle-container__background" r="11" cx="16" cy="16"></circle>
@@ -131,7 +147,7 @@
           </svg>
           <div class="legends">
             <div class="eventRow">
-                <div class="eventColor" style="background-color: #533CF5;"></div>
+                <div class="eventColor" style="background-color: #CB8FBD;"></div>
                 <div class="eventName">Mental Health</div>
             </div>
             <div class="eventRow">
@@ -141,6 +157,10 @@
             <div class="eventRow">
                 <div class="eventColor" style="background-color: #E01518;"></div>
                 <div class="eventName">Animal Safety</div>
+            </div>
+            <div class="eventRow">
+                <div class="eventColor" style="background-color: #3498DB;"></div>
+                <div class="eventName">Art & Craft</div>
             </div>
             <div class="eventRow">
                 <div class="eventColor" style="background-color: #41D950;"></div>
@@ -164,7 +184,7 @@
                     <div class="eventDate"><b>Events Held</b></div>
                 </div>
                 <div class="eventRow" style="margin-bottom: 0; margin-top: 0;">
-                    <div class="achColor" style="background-color: #533CF5;"></div>
+                    <div class="achColor" style="background-color: #CB8FBD;"></div>
                     <div class="eventName">Mental Health</div>
                     <div class="eventDate"><?php echo $tHealth?></div>
                 </div>
@@ -177,6 +197,11 @@
                     <div class="achColor" style="background-color: #E01518;"></div>
                     <div class="eventName">Animal Safety</div>
                     <div class="eventDate"><?php echo $tAnimal?></div>
+                </div>
+                <div class="eventRow" style="margin-bottom: 0; margin-top: 0;">
+                    <div class="achColor" style="background-color: #3498DB;"></div>
+                    <div class="eventName">Art & Craft</div>
+                    <div class="eventDate"><?php echo $tArt?></div>
                 </div>
                 <div class="eventRow" style="margin-bottom: 0; margin-top: 0;">
                     <div class="achColor" style="background-color: #41D950;"></div>
@@ -199,7 +224,7 @@
             <br>
             <h3 class="achHeading">Events Data</h3>
             <br>
-            <div class="achievements">
+            <div>
                 <div class="eventRow" style="margin-bottom: 0; margin-top: 0;">
                     <div class="eventName">Total Events Held:</div>
                     <div class="eventDate"><?php echo $totalEvents?></div>

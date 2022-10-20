@@ -57,6 +57,30 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/eventmanage.css">
     <link rel="stylesheet" href="./css/utils.css">
+    <style>
+        <?php
+            include './css/eventmanage.css';
+            switch($outputEvent['eventInitiative']){
+                case 'Animal Safety': $bannerColor = '224, 21, 24';break;
+                case 'Mental Health': $bannerColor = '203, 143, 189';break;
+                case 'Mission Shiksha': $bannerColor = '46, 197, 182';break;
+                case 'Environment': $bannerColor = '65, 217, 80';break;
+                case 'Art & Craft': $bannerColor = '52, 152, 219';break;
+                case 'Sex Education': $bannerColor = '255, 190, 0';break;
+                default: $bannerColor = '0, 0, 0';break;
+            }
+
+            echo ".eventPopup .event-form .input-group input:focus, .container .login-email .input-group input:valid {
+                border-color: rgba($bannerColor, 0.7);
+            }
+    
+            .eventPopup .event-form .input-group select:focus, .container .login-email .input-group select:valid {
+                border-color: rgba($bannerColor, 0.7);
+            }";
+        ?>
+        
+    </style>
+
 </head>
 <body>
 
@@ -79,6 +103,9 @@
                                 break;
         case 'Environment': $bannerColor = '65, 217, 80';
                             $bannerImage = 'https://images.unsplash.com/photo-1545147986-a9d6f2ab03b5';
+                            break;
+        case 'Art & Craft': $bannerColor = '52, 152, 219';
+                            $bannerImage = 'https://images.unsplash.com/photo-1522167428-d603a1d62f26';
                             break;
         case 'Sex Education': $bannerColor = '255, 190, 0';
                               $bannerImage = 'https://images.unsplash.com/photo-1545693315-85b6be26a3d6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80';

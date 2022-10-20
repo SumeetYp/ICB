@@ -45,7 +45,6 @@
     <!-- <link rel="stylesheet" href="./css/main.css"> -->
     <link rel="stylesheet" href="./css/eventmanage.css">
     <link rel="stylesheet" href="./css/utils.css">
-
 </head>
 <body>
     
@@ -66,6 +65,8 @@
                     $eventColor = '#fff';
                     switch($upcomingEvents[$x]["eventInitiative"]){
                         case 'Animal Safety': $eventColor = '#E01518 '; 
+                                              break;
+                        case 'Art & Craft': $eventColor = '#3498DB '; 
                                               break;
                         case 'Mental Health': $eventColor = '#CB8FBD';
                                               break;
@@ -92,6 +93,8 @@
                     $eventColor = '#fff';
                     switch($pastEvents[$x]["eventInitiative"]){
                         case 'Animal Safety': $eventColor = '#E01518 '; 
+                                              break;
+                        case 'Art & Craft': $eventColor = '#3498DB '; 
                                               break;
                         case 'Mental Health': $eventColor = '#CB8FBD';
                                               break;
@@ -133,6 +136,7 @@
                                 <option value="Mental Health">Mental Health</option>
                                 <option value="Mission Shiksha">Mission Shiksha</option>
                                 <option value="Animal Safety">Animal Safety</option>
+                                <option value="Art & Craft">Art & Craft</option>
                                 <option value="Environment">Environment</option>
                                 <option value="Sex Education">Sex Education</option>
                             </select>
