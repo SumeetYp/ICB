@@ -1,5 +1,6 @@
 const userName = document.getElementById("user_full_name").textContent;
-const eventName = document.getElementById("event_name").textContent;
+var eventName = document.getElementById("event_name").textContent;
+var eventName = eventName.toUpperCase();
 const eventDate = document.getElementById("event_date").textContent;
 const { PDFDocument, rgb, degrees } = PDFLib;
 
@@ -31,7 +32,7 @@ const generatePDF = async (userName, eventName, eventDate) => {
   pdfDoc.registerFontkit(fontkit);
 
   //get font
-  const fontBytes = await fetch("../AdditionalFonts/Livvic-Bold.ttf").then((res) =>
+  const fontBytes = await fetch("../AdditionalFonts/GreatVibes-Regular.ttf").then((res) =>
     res.arrayBuffer()
   );
   const fontBytes1 = await fetch("../AdditionalFonts/Poppins-Medium.ttf").then((res) =>
@@ -39,7 +40,7 @@ const generatePDF = async (userName, eventName, eventDate) => {
   );
 
   // Embed our custom font in the document
-  const LivvicFont = await pdfDoc.embedFont(fontBytes);
+  const GreatVibesFont = await pdfDoc.embedFont(fontBytes);
   const PoppinsFont = await pdfDoc.embedFont(fontBytes1);
 
   // Get the first page of the document
@@ -49,22 +50,24 @@ const generatePDF = async (userName, eventName, eventDate) => {
   // Draw a string of text diagonally across the first page
   firstPage.drawText(userName, {
     x: 55,
-    y: 275,
+    y: 272,
     size: 50,
-    font: LivvicFont,
+    font: GreatVibesFont,
     color: rgb(0.2, 0.51, 0.82),
   });
   firstPage.drawText(eventName, {
     x: 320,
-    y: 238,
-    size: 20,
+    y: 240,
+    size: 17,
     font: PoppinsFont,
+    color: rgb(0.15, 0.196, 0.22),
   });
   firstPage.drawText(eventDate, {
-    x: 220,
-    y: 215,
-    size: 20,
+    x: 218,
+    y: 218,
+    size: 16,
     font: PoppinsFont,
+    color: rgb(0.15, 0.196, 0.22),
   });
 
   // Serialize the PDFDocument to bytes (a Uint8Array)

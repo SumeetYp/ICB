@@ -14,7 +14,7 @@
 <body>
     <?php
         echo"<div id='user_full_name' style='display:none;'>$userFullName</div>
-        <div id='event_name' style='display:none;'>$eventName</div>
+        <div id='event_name' style='display:none;text-transform:uppercase;'>$eventName</div>
         <div id='event_date' style='display:none;'>$eventDate</div>"
     ?>
     <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
