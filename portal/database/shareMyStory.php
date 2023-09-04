@@ -13,21 +13,21 @@
     //     $fileName = 
     // }
 
-    function uploadPost($file, $userEmail){
+    function uploadPost($file, $userEmail, $caption){
         include '../config.php';
 
         $fileName = $_FILES['file']['name'];    // File name
         $fileTmpName = $_FILES['file']['tmp_name']; // Temporary name of file
         $fileSize = $_FILES['file']['size']; // File Size in bytes
         $fileSizeKb = round($fileSize/1024); // Rounding the file size
-        $fileError = $_FILEs['file']['error'];
-        $fileType  = $_FILES['file']['type'];
+        $fileError = $_FILES['file']['error']; // Checking error status of the uploaded image
+        $fileType  = $_FILES['file']['type']; //Checking the file type
 
-        $fileExt = explode('.', $fileName);
-        $fileActualExt = strtolower(end($fileExt));
-        $allowedExt = array('png', 'jpg', 'jpeg');
+        $fileExt = explode('.', $fileName); // Getting the file extension
+        $fileActualExt = strtolower(end($fileExt)); // converting extension to lowercase
+        $allowedExt = array('png', 'jpg', 'jpeg'); // All possible extensions
 
-        $userFolder = "../../post-pics/".$userEmail."/";
+        $userFolder = "../../post-pics/".$userEmail."/"; //
         if (in_array($fileActualExt, $allowedExt)){
             if($fileError === 0){
                 if($fileSizeKb<2048){
@@ -36,11 +36,12 @@
                     }
                     $newfileName = time().'-'.$fileName.".".$fileActualExt;
                     $fileDest = $userFolder.$newfileName;
-                    $fileDestinationDb = "../post-pics/".$userEmail."/".$newfileName;
+                    $fileDestinationDb = "../post-pics/".$userEmail."/".$newfileName.".".$fileExt;
                     if(move_uploaded_file($_FILES['file']['tmp_name'],$fileDest)) {  
                         // echo "File uploaded successfully!";  
-                        $updateFilePath = "UPDATE publicstory SET postfile='$fileDestinationDb' WHERE userEmail='$userEmail'";
-                        $result = mysqli_query($mysql, $updateFilePath);
+                        // $updateFilePath = "UPDATE publicstory SET postfile='$fileDestinationDb' WHERE userEmail='$userEmail' and caption='$caption';";
+                        $updateFilePath = "UPDATE publicstory SET postfile='$fileDestinationDb' WHERE userEmail='$userEmail' and caption='$caption';";
+                        $result = mysqli_query($mysqli, $updateFilePath);
                         header("Location: ../home.php");
 
                     } else{  
@@ -72,7 +73,7 @@
         // if($statusPost!=NULL){
         //     echo 'You posted the same post!';
         // }else{
-            uploadPost($file, $email);
+            uploadPost($file, $email, $caption);
         // }
     }
 
