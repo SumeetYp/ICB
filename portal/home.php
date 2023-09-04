@@ -328,7 +328,7 @@
                               </div>" .
 
                               "<div class='postImage'>
-                                   <img src='' alt='' class='d-none'>
+                                   <img src='{$outputPosts[$x]['postfile']}' alt='' class=''>
                               </div>" .
                               "<div class='postFooter'>
                                    <div class='LikeAndShare'>

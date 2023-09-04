@@ -36,7 +36,7 @@
                     }
                     $newfileName = time().'-'.$fileName.".".$fileActualExt;
                     $fileDest = $userFolder.$newfileName;
-                    $fileDestinationDb = "../post-pics/".$userEmail."/".$newfileName.".".$fileExt;
+                    $fileDestinationDb = "../post-pics/".$userEmail."/".$newfileName;
                     if(move_uploaded_file($_FILES['file']['tmp_name'],$fileDest)) {  
                         // echo "File uploaded successfully!";  
                         // $updateFilePath = "UPDATE publicstory SET postfile='$fileDestinationDb' WHERE userEmail='$userEmail' and caption='$caption';";
