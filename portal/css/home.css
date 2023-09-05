@@ -231,6 +231,15 @@ body{
     border-radius: 2rem;
 }
 
+.post a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.post a:hover{
+    color: var(--light-gray);
+}
+
 .post:last-of-type {
     margin-bottom: 5vh;
 }

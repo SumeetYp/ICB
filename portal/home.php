@@ -319,13 +319,14 @@
                     }
 
                     echo "<div class='post'>
+                            <a href='./userProfile.php?username={$outputPosts[$x]['username']}' target='_self'>
                               <div class='postUser'>" . 
                                   $outputPosts[$x]['username'] .
                                   "<div class='profilePicture FeedProfilePicture'>
                                        <img src='$userProfilePic' alt='userprofile' style='border-color: $borderColor'>
                                        <img src='$checkSrc' alt='' class='check $display'>
                                   </div>
-                              </div>" .
+                              </div></a>" .
 
                               "<div class='postImage'>
                                    <img src='{$outputPosts[$x]['postfile']}' alt='' class=''>
