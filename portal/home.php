@@ -21,7 +21,9 @@
     $sql = "SELECT * FROM events WHERE endTime>'$currTime'";
     $resultEvents = mysqli_query($mysqli, $sql) or die("SQL Failed");
 
-    $sql = "SELECT * FROM publicstory";
+    $sql = "select * from publicstory 
+    left JOIN followers on publicstory.username=followers.following
+    order by publicstory.dateposted desc, followers.following;";
     $resultPosts = mysqli_query($mysqli, $sql) or die("SQL Failed");
 
     mysqli_close($mysqli);

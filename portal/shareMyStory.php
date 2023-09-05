@@ -68,7 +68,7 @@
             <!-- The post is send to shareMySytory.php file in database where the data is validated and added to database -->
             <?php echo "<form action='./database/shareMyStory.php?username=$username&email=$email' method='POST' enctype='multipart/form-data'>" ?>
             <!-- Accepting the user image post -->
-            <div class="images-input ">
+            <div class="images-input">
                 <label for="post-image-message" class="upload-image">Add your post here</label>
                 <br>
                 <!-- <input type="file"> -->

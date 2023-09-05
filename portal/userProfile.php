@@ -98,7 +98,7 @@
     <title>Profile: <?php echo  $userProfile!=NULL?$userProfile['username']:'No account Found'."";  ?></title>
 </head>
 <body>
-    <?php include "./components/navbar.php" ?>
+    <?php include "./header.php" ?>
 
     <header id="topSection" class="row" style="overflow: hidden;">
         <div class="container grid grid-header col-4">
@@ -156,7 +156,10 @@
         </div>
 
     </header>
-
+    
+    <section class="userPosts">
+        
+    </section>
             
 
 </body>
