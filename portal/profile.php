@@ -9,6 +9,7 @@
         header("Location: ../index.html");
     }
     $borderColor = NULL;
+    $checkSrc = NULL;
     switch($_SESSION['type']){
         case "admin": $borderColor= '#00FF00'; 
                       $checkSrc= './images/verify-admin.png';
@@ -50,6 +51,9 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/utils.css">
     <style>
+        <?php include "./css/header.css" ?>
+    </style>
+    <style>
         <?php include 'css/profile-css/style.css'; ?>
         input[type='range']::-webkit-slider-runnable-track {
             height: 10px;
@@ -69,6 +73,7 @@
             border-radius: 15px;
         }
     </style>
+    <script src="./js/sliderAccordian.js" defer></script>
 
 </head>
 
