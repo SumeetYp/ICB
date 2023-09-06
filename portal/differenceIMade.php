@@ -238,7 +238,10 @@ if(mysqli_num_rows($res)>0){
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/utils.css">
     <link rel="stylesheet" href="css/profile-css/difference.css">
-
+    <style>
+        <?php include "./css/header.css" ?>
+    </style>
+    <script src="./js/sliderAccordian.js" defer></script>
 </head>
 
 <body>

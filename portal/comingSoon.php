@@ -19,7 +19,11 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/comingSoon.css">
     <link rel="stylesheet" href="./css/utils.css">
-    <title>Document</title>
+    <style>
+        <?php include "./css/header.css" ?>
+    </style>
+    <script src="./js/sliderAccordian.js" defer></script>
+    <title>Coming Soon</title>
 </head>
 <body>
     <!-- Navigation Bar -->

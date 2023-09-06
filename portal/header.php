@@ -31,7 +31,7 @@
     $commonOptions = "
     <button class='accordian'>Support and Settings</button>
     <ul class='panel'>
-        <a href=''>Settings & Support</a>
+        <a href='./settings.php'>Settings & Support</a>
         <a href='./coreTeam.php'>Contact Team</a>
         <a href='./alert.php'>Send an Alert</a>
         <a href='./logout.php'>Logout</a>

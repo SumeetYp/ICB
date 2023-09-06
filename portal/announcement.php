@@ -32,7 +32,10 @@
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/announcement.css" />
     <link rel="stylesheet" href="./css/utils.css">
-
+    <style>
+        <?php include "./css/header.css" ?>
+    </style>
+    <script src="./js/sliderAccordian.js" defer></script>
     <title>CareforBharat</title>
   </head>
   <body>

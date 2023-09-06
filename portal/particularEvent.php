@@ -79,7 +79,10 @@
         ?>
         
     </style>
-
+    <style>
+        <?php include "./css/header.css" ?>
+    </style>
+    <script src="./js/sliderAccordian.js" defer></script>
 </head>
 <body>
 

@@ -47,6 +47,10 @@
     <!-- <link rel="stylesheet" href="./css/main.css"> -->
     <link rel="stylesheet" href="./css/eventmanage.css">
     <link rel="stylesheet" href="./css/utils.css">
+    <style>
+        <?php include "./css/header.css" ?>
+    </style>
+    <script src="./js/sliderAccordian.js" defer></script>
 
 </head>
 <body>

@@ -81,6 +81,10 @@
         <link rel="stylesheet" href="./css/stats.css">
         <link rel="stylesheet" href="./css/header.css">	
         <link rel="stylesheet" href="./css/utils.css">
+        <style>
+            <?php include "./css/header.css" ?>
+        </style>
+        <script src="./js/sliderAccordian.js" defer></script>
     </head>
     <body>
         

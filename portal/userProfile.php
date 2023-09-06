@@ -45,7 +45,10 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="./js/sideBar.js" defer></script>
-
+    <style>
+        <?php include "./css/header.css" ?>
+    </style>
+    <script src="./js/sliderAccordian.js" defer></script>
     <?php 
         // include "./database/followProfile.php";
         // echo $userProfileResult

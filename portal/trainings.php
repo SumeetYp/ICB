@@ -55,7 +55,10 @@
     <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/training.css">
     <link rel="stylesheet" href="./css/utils.css">
-
+    <style>
+        <?php include "./css/header.css" ?>
+    </style>
+    <script src="./js/sliderAccordian.js" defer></script>
 </head>
 
 <body>

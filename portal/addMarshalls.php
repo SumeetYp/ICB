@@ -33,6 +33,9 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/addMarshalls.css">
     <link rel="stylesheet" href="./css/utils.css">
+    <style>
+        <?php include "./css/header.css" ?>
+    </style>
     <title>CareforBharat</title>
 </head>
 <body>
@@ -68,5 +71,7 @@
         </div>
     </div>
     <script src="./js/sideBar.js"></script>
+    <script src="./js/sliderAccordian.js" defer></script>
+
 </body>
 </html>
