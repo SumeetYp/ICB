@@ -72,15 +72,20 @@
     </ul>",
     "<button class='accordian'>Employee</button>
     <ul class='panel'>
-        <a href='#'>
+        <a href='#'></a>
     </ul>",
     "<button class='accordian'>Partners</button>
     <ul class='panel'>
-        <a href='#'>
+        <a href='#'></a>
+    </ul>",
+    "<button class='accordian'>Adminstrator</button>
+    <ul class='panel'>
+        <a href='./stats.php'>Stats</a>
+        <a href='./eventsManage.php'>Event Manager</a>
+        <a href='./announcement.php'>Announcement</a>
     </ul>"
     );
-    $commonOptions = "
-    <button class='accordian'>Support and Settings</button>
+    $commonOptions = "<button class='accordian'>Support and Settings</button>
     <ul class='panel'>
         <a href=''>Settings & Support</a>
         <a href='./coreTeam.php'>Contact Team</a>
@@ -89,40 +94,41 @@
     </ul>";
     
     switch($_SESSION['type']){
-        case "admin": $borderColor= '#0ED678'; 
-                      $checkSrc= './images/checkadmin.png';
-                      $menu =  "<a href='./home.php'>Home</a>
-                                <a href='./stats.php'>Stats</a>
-                                <a href='./eventsManage.php'>Event Manager</a>
-                                <a href='./announcement.php'>Announcement</a>
-                                <a href='./profile.php'>Profile</a>
-                                <a href='./trainings.php'>My Training</a>
-                                <a href='./events.php'>My Events</a>
-                                <a href='./differenceIMade.php'>Difference I Made</a>
-                                <a href='./shareMyStory.php'>Share My Story</a>
-                                <a href='./donate.php'>Donate</a>
-                                <a href='./addMarshalls.php'>Add a Marshal</a>
-                                <a href='./settings.php'>Settings & Support</a>
-                                <a href='./logout.php'>Logout</a>";
+        case "admin": $borderColor= '#00FF00'; 
+                        $checkSrc= './images/verify-admin.png';
+                        $menu =  $options[0].$options[1].$options[2].$options[3].$options[4]."\n".$commonOptions;
+                    //   "<a href='./home.php'>Home</a>
+                    //             <a href='./stats.php'>Stats</a>
+                    //             <a href='./eventsManage.php'>Event Manager</a>
+                    //             <a href='./announcement.php'>Announcement</a>
+                    //             <a href='./profile.php'>Profile</a>
+                    //             <a href='./trainings.php'>My Training</a>
+                    //             <a href='./events.php'>My Events</a>
+                    //             <a href='./differenceIMade.php'>Difference I Made</a>
+                    //             <a href='./shareMyStory.php'>Share My Story</a>
+                    //             <a href='./donate.php'>Donate</a>
+                    //             <a href='./addMarshalls.php'>Add a Marshal</a>
+                    //             <a href='./settings.php'>Settings & Support</a>
+                    //             <a href='./logout.php'>Logout</a>";
                       break;
-        case "core-team": $borderColor= '#FC8955';
-                        $checkSrc= './images/shield core-team.png';
-                        $menu =  "<a href='./home.php'>Home</a>
-                                    <a href='./profile.php'>Profile</a>
-                                    <a href='./trainings.php'>My Training</a>
-                                    <a href='./events.php'>My Events</a>
-                                    <a href='./differenceIMade.php'>Difference I Made</a>
-                                    <a href='./shareMyStory.php'>Share My Story</a>
-                                    <a href='./donate.php'>Donate</a>
-                                    <a href='./addMarshalls.php'>Add a Marshal</a>
-                                    <a href='./settings.php'>Settings & Support</a>
-                                    <a href='./coreTeam.php'>Contact Team</a>
-                                    <a href='./alert.php'>Send an Alert</a>
-                                    <a href='./logout.php'>Logout</a>";
-                        break;
-        case "volunteer": $borderColor= '#2196F3';
-                       $checkSrc= './images/memberProfile.svg';
-                       $menu = $options[0]."\n".$commonOptions;
+        // case "core-team": $borderColor= '#FC8955';
+        //                 $checkSrc= './images/shield core-team.png';
+        //                 $menu =  "<a href='./home.php'>Home</a>
+        //                             <a href='./profile.php'>Profile</a>
+        //                             <a href='./trainings.php'>My Training</a>
+        //                             <a href='./events.php'>My Events</a>
+        //                             <a href='./differenceIMade.php'>Difference I Made</a>
+        //                             <a href='./shareMyStory.php'>Share My Story</a>
+        //                             <a href='./donate.php'>Donate</a>
+        //                             <a href='./addMarshalls.php'>Add a Marshal</a>
+        //                             <a href='./settings.php'>Settings & Support</a>
+        //                             <a href='./coreTeam.php'>Contact Team</a>
+        //                             <a href='./alert.php'>Send an Alert</a>
+        //                             <a href='./logout.php'>Logout</a>";
+        //                 break;
+        case "volunteer": $borderColor= '#87CEEB';
+                    $checkSrc= './images/verify-volunteer.png';
+                    $menu = $options[0]."\n".$commonOptions;
                     //    "<a href='./home.php'>Home</a>
                     //             <a href='./profile.php'>Profile</a>
                     //             <a href='./trainings.php'>My Training</a>
@@ -151,19 +157,19 @@
         // case "volunteer": $menu = $options[0] + $commonOptions;
         //                         break;
         case "associate":
-            $borderColor= '#FC8955';
-            $checkSrc= './images/shield core-team.png'; 
+            $borderColor= '#4B0082';
+            $checkSrc= './images/verify-asscociate.png'; 
             $menu = $options[0].$options[1].$commonOptions;
             break;
 
         case "employees": 
-            $borderColor= '#0ED678';
-            $checkSrc= './images/shield core-team.png';
+            $borderColor= '#FFA500';
+            $checkSrc= './images/verify-employee.png';
             $menu = $options[0].$options[1].$options[2].$commonOptions;
             break;
         case "partners":
             $borderColor= '#0000FF';
-            $checkSrc= './images/shield core-team.png'; 
+            $checkSrc= './images/verify-partner.png';
             $menu = $options[0].$options[1].$options[3].$commonOptions;
             break;
 
@@ -357,18 +363,25 @@
                         $userProfilePic = $output['profilepic'];
                         if($output){
                             switch($output['type']){
-                                case "admin": $borderColor= '#0ED678'; 
-                                              $checkSrc= './images/checkadmin.png';
-                                              break;
-                                case "core-team": $borderColor= '#FC8955';
-                                                  $checkSrc= './images/shield core-team.png';
-                                                  break;
-                                case "member": $borderColor= '#2196F3';
-                                               $checkSrc= './images/memberProfile.svg';
-                                               break;
-                                case "student": $borderColor= '#FFC4C4';
-                                               break;
-                            }
+                                case "admin": $borderColor= '#00FF00'; 
+                                $checkSrc= './images/verify-admin.png';
+                                break;
+                                // case "core-team": $borderColor= '#FC8955';
+                                //                 $checkSrc= './images/shield core-team.png';
+                                //                 break;
+                                case "volunteer": $borderColor= '#87CEEB';
+                                            $checkSrc= './images/verify-volunteer.png';
+                                            break;
+                                case "asscociate": $borderColor= '#4B0082';
+                                                $checkSrc= './images/verify-asscociate.png'; 
+                                                break;
+                                case "employee": $borderColor= '#FFA500';
+                                                $checkSrc= './images/verify-employee.png';
+                                                break;
+                                case "partner": $borderColor= '#0000FF';
+                                                $checkSrc= './images/verify-partner.png';
+                                                break;
+    }
                         }
                     }
                     $display = '';

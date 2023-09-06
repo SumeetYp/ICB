@@ -10,16 +10,23 @@
     }
     $borderColor = NULL;
     switch($_SESSION['type']){
-        case "admin": $borderColor= '#0ED678'; 
-                      $checkSrc= './images/checkadmin.png';
+        case "admin": $borderColor= '#00FF00'; 
+                      $checkSrc= './images/verify-admin.png';
                       break;
-        case "core-team": $borderColor= '#FC8955';
-                        $checkSrc= './images/shield core-team.png';
-                          break;
-        case "member": $borderColor= '#2196F3';
-                       $checkSrc= './images/memberProfile.svg';
+        // case "core-team": $borderColor= '#FC8955';
+        //                 $checkSrc= './images/shield core-team.png';
+        //                 break;
+        case "volunteer": $borderColor= '#87CEEB';
+                       $checkSrc= './images/verify-volunteer.png';
                        break;
-        case "student": $borderColor= '#FFC4C4';
+        case "asscociate": $borderColor= '#4B0082';
+                        $checkSrc= './images/verify-asscociate.png'; 
+                        break;
+        case "employee": $borderColor= '#FFA500';
+                        $checkSrc= './images/verify-employee.png';
+                        break;
+        case "partner": $borderColor= '#0000FF';
+                        $checkSrc= './images/verify-partner.png';
                         break;
     }
     $display = '';

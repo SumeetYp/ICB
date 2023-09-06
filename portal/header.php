@@ -1,6 +1,42 @@
 <?php
     $checkSrc = NULL;
     $borderColor = NULL;
+    $options = array("<button class='accordian'>Volunteer</button>
+    <ul class='panel'>
+        <a href='./home.php'>Home</a>
+        <a href='./profile.php'>Profile</a>
+        <a href='./trainings.php'>My Training</a>
+        <a href='./events.php'>My Events</a>
+        <a href='./differenceIMade.php'>Difference I Made</a>
+        <a href='./shareMyStory.php'>Share My Story</a>
+        <a href='./donate.php'>Donate</a>
+    </ul>",
+    "<button class='accordian'>Associate</button>
+    <ul class='panel'>
+        <a href='./dashboard.php'>Dashboard</a>
+        <a href='./manageDownline.php'>Manage Downline</a>
+        <a href='./salesCRM.php'>Sales CRM</a>
+        <a href='./products.php'>Products</a>
+        <a href='./learn.php'>Learn</a>
+    </ul>",
+    "<button class='accordian'>Employee</button>
+    <ul class='panel'>
+        <a href='#'>
+    </ul>",
+    "<button class='accordian'>Partners</button>
+    <ul class='panel'>
+        <a href='#'>
+    </ul>"
+    );
+    $commonOptions = "
+    <button class='accordian'>Support and Settings</button>
+    <ul class='panel'>
+        <a href=''>Settings & Support</a>
+        <a href='./coreTeam.php'>Contact Team</a>
+        <a href='./alert.php'>Send an Alert</a>
+        <a href='./logout.php'>Logout</a>
+    </ul>";
+    
     switch($_SESSION['type']){
         case "admin": $borderColor= '#0ED678'; 
                       $checkSrc= './images/checkadmin.png';
@@ -33,33 +69,53 @@
                                     <a href='./alert.php'>Send an Alert</a>
                                     <a href='./logout.php'>Logout</a>";
                         break;
-        case "member": $borderColor= '#2196F3';
+        case "volunteer": $borderColor= '#2196F3';
                        $checkSrc= './images/memberProfile.svg';
-                       $menu = "<a href='./home.php'>Home</a>
-                                <a href='./profile.php'>Profile</a>
-                                <a href='./trainings.php'>My Training</a>
-                                <a href='./events.php'>My Events</a>
-                                <a href='./differenceIMade.php'>Difference I Made</a>
-                                <a href='./shareMyStory.php'>Share My Story</a>
-                                <a href='./donate.php'>Donate</a>
-                                <a href='./settings.php'>Settings & Support</a>
-                                <a href='./coreTeam.php'>Contact Team</a>
-                                <a href='./alert.php'>Send an Alert</a>
-                                <a href='./logout.php'>Logout</a>";
+                       $menu = $options[0]."\n".$commonOptions;
+                    //    "<a href='./home.php'>Home</a>
+                    //             <a href='./profile.php'>Profile</a>
+                    //             <a href='./trainings.php'>My Training</a>
+                    //             <a href='./events.php'>My Events</a>
+                    //             <a href='./differenceIMade.php'>Difference I Made</a>
+                    //             <a href='./shareMyStory.php'>Share My Story</a>
+                    //             <a href='./donate.php'>Donate</a>
+                    //             <a href='./settings.php'>Settings & Support</a>
+                    //             <a href='./coreTeam.php'>Contact Team</a>
+                    //             <a href='./alert.php'>Send an Alert</a>
+                    //             <a href='./logout.php'>Logout</a>";
                        break;
-        case "student": $borderColor= '#FFC4C4';
-                        $menu ="<a href='./home.php'>Home</a>
-                                <a href='./profile.php'>Profile</a>
-                                <a href='./trainings.php'>My Training</a>
-                                <a href='./events.php'>My Events</a>
-                                <a href='./differenceIMade.php'>Difference I Made</a>
-                                <a href='./shareMyStory.php'>Share My Story</a>
-                                <a href='./donate.php'>Donate</a>
-                                <a href='./settings.php'>Settings & Support</a>
-                                <a href='./coreTeam.php'>Contact Team</a>
-                                <a href='./alert.php'>Send an Alert</a>
-                                <a href='./logout.php'>Logout</a>";
-                       break;
+        // case "student": $borderColor= '#FFC4C4';
+        //                 $menu ="<a href='./home.php'>Home</a>
+        //                         <a href='./profile.php'>Profile</a>
+        //                         <a href='./trainings.php'>My Training</a>
+        //                         <a href='./events.php'>My Events</a>
+        //                         <a href='./differenceIMade.php'>Difference I Made</a>
+        //                         <a href='./shareMyStory.php'>Share My Story</a>
+        //                         <a href='./donate.php'>Donate</a>
+        //                         <a href='./settings.php'>Settings & Support</a>
+        //                         <a href='./coreTeam.php'>Contact Team</a>
+        //                         <a href='./alert.php'>Send an Alert</a>
+        //                         <a href='./logout.php'>Logout</a>";
+        //                break;
+        // case "volunteer": $menu = $options[0] + $commonOptions;
+        //                         break;
+        case "associate":
+            $borderColor= '#FC8955';
+            $checkSrc= './images/shield core-team.png'; 
+            $menu = $options[0].$options[1].$commonOptions;
+            break;
+
+        case "employees": 
+            $borderColor= '#0ED678';
+            $checkSrc= './images/shield core-team.png';
+            $menu = $options[0].$options[1].$options[2].$commonOptions;
+            break;
+        case "partners":
+            $borderColor= '#0000FF';
+            $checkSrc= './images/shield core-team.png'; 
+            $menu = $options[0].$options[1].$options[3].$commonOptions;
+            break;
+
     }
     $display = '';
     if($checkSrc == NULL){

@@ -84,8 +84,9 @@ nav .profilePicture img:first-of-type {
 }
 
 .sideItems h2{
-    text-align: center;
-    width: 100%;
+    text-align: left;
+    /* width: 100%; */
+    padding: 0 1vw;
 }
 
 .sideItems .accordian{
