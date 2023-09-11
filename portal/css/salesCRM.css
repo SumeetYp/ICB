@@ -1,0 +1,99 @@
+.sales{
+    background-color: #E4E6ED;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90vw;
+    margin: 2vh auto;
+    /* margin:  0; */
+    border-radius: 12px;
+}
+
+.sales-tab{
+    display: flex;
+}
+
+.active-option{
+    color:#2196F3;
+    border-bottom: solid #2196F3;
+}
+
+table, tr, td, th {
+    width: 100%;
+    text-align: left;
+}
+
+.sale-tab{
+    width: 50%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1vh 0;
+    transition: all ease-in-out 0.25s;
+    border-radius: inherit;
+}
+
+.sale-tab:hover{
+    background-color: #D9D9D9;
+    border-radius: inherit;
+
+}
+
+.sales-table {
+    width: 90%;
+    margin: 2vh auto;
+}
+
+th, td{
+    margin: 2px;
+    /* border: solid gray 1px; */
+    padding: 2px;
+    /* border-width: 0 1px 0 0; */
+}
+
+tr th{
+    background: #D9D9D9;
+}
+
+.sales-table table tr{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+td:nth-child(eve){
+    
+}
+
+.table-hide{
+    display: none;
+}
+
+#table-2 tr th:nth-child(1), #table-2 tr td:nth-child(1){
+    width: 2;
+}
+
+#table-2 div{
+    text-align: right;
+    display: flex;
+    justify-content: end;
+}
+
+button{
+    width: 10vw;
+    border:solid transparent 1px;
+    padding: 4px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all ease-in-out 0.25s;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    justify-content: center;
+}
+
+button:hover{
+    background-color: #D9D9D9;
+}
