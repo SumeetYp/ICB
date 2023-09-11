@@ -52,6 +52,7 @@
     <?php
     $checkSrc = NULL;
     $borderColor = NULL;
+    $icbName = "<h2>Care For Bharat</h2>";
     $options = array("<button class='accordian'>Volunteer</button>
     <ul class='panel'>
         <a href='./home.php'>Home</a>
@@ -72,11 +73,14 @@
     </ul>",
     "<button class='accordian'>Employee</button>
     <ul class='panel'>
-        <a href='#'></a>
+        <a href='#'>My Documents</a>
+        <a href='#'>My Salary</a>
+        <a href='#'>My Attendance</a>
     </ul>",
     "<button class='accordian'>Partners</button>
     <ul class='panel'>
-        <a href='#'></a>
+        <a href='#'>Dashboard</a>
+        <a href='#'>Product Post & Manage</a>
     </ul>",
     "<button class='accordian'>Adminstrator</button>
     <ul class='panel'>
@@ -96,7 +100,7 @@
     switch($_SESSION['type']){
         case "admin": $borderColor= '#00FF00'; 
                         $checkSrc= './images/verify-admin.png';
-                        $menu =  $options[0].$options[1].$options[2].$options[3].$options[4]."\n".$commonOptions;
+                        $menu =  $icbName.$options[0].$options[1].$options[2].$options[3].$options[4]."\n".$commonOptions;
                     //   "<a href='./home.php'>Home</a>
                     //             <a href='./stats.php'>Stats</a>
                     //             <a href='./eventsManage.php'>Event Manager</a>
@@ -128,7 +132,7 @@
         //                 break;
         case "volunteer": $borderColor= '#87CEEB';
                     $checkSrc= './images/verify-volunteer.png';
-                    $menu = $options[0]."\n".$commonOptions;
+                    $menu = $icbName.$options[0]."\n".$commonOptions;
                     //    "<a href='./home.php'>Home</a>
                     //             <a href='./profile.php'>Profile</a>
                     //             <a href='./trainings.php'>My Training</a>
@@ -159,18 +163,18 @@
         case "associate":
             $borderColor= '#4B0082';
             $checkSrc= './images/verify-asscociate.png'; 
-            $menu = $options[0].$options[1].$commonOptions;
+            $menu = $icbName.$options[0].$options[1].$commonOptions;
             break;
 
         case "employees": 
             $borderColor= '#FFA500';
             $checkSrc= './images/verify-employee.png';
-            $menu = $options[0].$options[1].$options[2].$commonOptions;
+            $menu = $icbName.$options[0].$options[1].$options[2].$commonOptions;
             break;
         case "partners":
             $borderColor= '#0000FF';
             $checkSrc= './images/verify-partner.png';
-            $menu = $options[0].$options[1].$options[3].$commonOptions;
+            $menu = $icbName.$options[0].$options[1].$options[3].$commonOptions;
             break;
 
     }
@@ -196,7 +200,6 @@
         </nav>" .
         "<div class='sideBar hideSideBar'>
             <div class='sideItems'>
-                <h2>Care For Bharat</h2>
                     ".$menu."
                 <div class='cross'>
                     <img src='./images/cross.png' alt=''>
