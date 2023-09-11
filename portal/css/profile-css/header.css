@@ -39,7 +39,7 @@ nav .userName {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
-    font-size: 35px;
+    font-size: 1.2rem;
     line-height: 18px;
     color: #000;
     margin: 0 5px;
@@ -140,7 +140,7 @@ nav .profilePicture img:first-of-type {
 
 @media only screen and (max-width: 2560px) {
     nav .userName {
-        font-size: 50px;
+        font-size: 1.5rem;
     }
     nav .profilePicture {
         width: 70px;
@@ -166,7 +166,7 @@ nav .profilePicture img:first-of-type {
 
 @media only screen and (max-width: 1440px) {
     nav .userName {
-        font-size: 35px;
+        font-size: 1.2rem;
     }
     nav .profilePicture {
         width: 40px;
@@ -214,7 +214,7 @@ nav .profilePicture img:first-of-type {
         margin: 3px;
     }
     nav .userName {
-        font-size: 25px;
+        font-size: 1.2rem;
     }
     nav .profilePicture {
         width: 30px;
