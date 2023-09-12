@@ -76,7 +76,10 @@
                 <label for="post-image-message" class="upload-image">Add your post here</label>
                 <br>
                 <!-- <input type="file"> -->
-                <input type='file' name='file'  id='newPost' accept='image/png, image/jpg, image/jpeg' />
+                <label for="add-images" id="addimage" class="center-label"><div>ADD IMAGE</div>
+                    <img src="https://cdn-icons-png.flaticon.com/128/3342/3342137.png" />
+                    <input name="add-images" class="add-images" type='file' name='file'  id='newPost' accept='image/png, image/jpg, image/jpeg'>
+                </label>
 
             </div>
             <!-- <br> -->
@@ -93,6 +96,16 @@
     </div>
     <script src="./js/shareMyStory.js"></script>
     <script src="./js/sideBar.js"></script>
+    <script>
+        const images = document.getElementById('addimage');
+
+        images.addEventListener('click', () => {
+            // let inputImage =document.querySelector("input[type='file']").files[0];
+            const addImage=document.getElementById('newPost');
+            console.log(addImage);
+            addImage.click();
+        })
+    </script>
 </body>
 
 </html>
