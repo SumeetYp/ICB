@@ -15,7 +15,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="widdiv=device-widdiv, initial-scale=1.0" />
     <title>Sales CRM: Care For Bharat</title>
     <link rel="stylesheet" href="./css/donate.css" />
     <link rel="stylesheet" href="./css/header.css" />
@@ -43,75 +43,77 @@
         <div class="sale-tab" id="sale-tab-2">Sold</div>
       </div>
       <div class="sales-table" id="table-1">
-        <table>
-          <tr>
-            <th>Product Name</th>
-            <th>Quantity</th>
-            <th>ID</th>
-            <th>Customer Name</th>
-            <th>Phone Number</th>
-            <th>Email</th>
-            <th>Status</th>
-          </tr>
+        <div class="table">
+        <!-- <table> -->
+          <div class="tr">
+            <div class="th">Product Name</div>
+            <div class="th">Quantity</div>
+            <div class="th">ID</div>
+            <div class="th">Customer Name</div>
+            <div class="th">Phone Number</div>
+            <div class="th">Email</div>
+            <div class="th">Status</div>
+</div>
           <?php echo"
-          <tr>
-              <td>Product101</td>
-              <td>2</td>
-              <td>C930</td>
-              <td>Temp temp</td>
-              <td>12345467890</td>
-              <td>abc@gmail.com</td>
-              <td>Pitching</td>
-            </tr>";
+          <div class='tr'>
+              <div class='td'>Product101</div>
+              <div class='td'>2</div>
+              <div class='td'>C930</div>
+              <div class='td'>Temp temp</div>
+              <div class='td'>12345467890</div>
+              <div class='td'>abc@gmail.com</div>
+              <div class='td'>Pitching</div>
+            </div>";
           ?>
            <?php echo"
-          <tr>
-              <td>Product102</td>
-              <td>2</td>
-              <td>C930</td>
-              <td>Temp temp</td>
-              <td>12345467890</td>
-              <td>abc@gmail.com</td>
-              <td>Closed</td>
-            </tr>";
+          <div>
+              <div>Product102</div>
+              <div>2</div>
+              <div>C930</div>
+              <div>Temp temp</div>
+              <div>12345467890</div>
+              <div>abc@gmail.com</div>
+              <div>Closed</div>
+            </div>";
           ?>
-        </table>
+        <!-- </table> -->
+</div>
       </div>
       <div class="sales-table table-hide" id="table-2">
       <table>
-          <tr>
-            <th>&nbsp;&nbsp;&nbsp;</th>
-            <th>Product Name</th>
-            <th>Quantity</th>
-            <th>ID</th>
-            <th>Customer Details</th>
-            <th>Total Price</th>
-            <th>Pay</th>
-            <th>Status</th>
-          </tr>
+          <div>
+            <div>&nbsp;&nbsp;&nbsp;</div>
+            <div>Product Name</div>
+            <div>Quantity</div>
+            <div>ID</div>
+            <div>Customer Details</div>
+            <div>Total Price</div>
+            <div>Pay</div>
+            <div>Status</div>
+          </div>
           <?php echo"
-          <tr>
-            <td><input type='checkbox'></td>
-            <td>Product102</td>
-            <td>2</td>
-            <td>C930</td>
-            <td>Temp temp</td>
-            <td>123</td>
-            <td><a href='#'><button>Pay</button></a></td>
-            <td>Pending</td>
-            </tr>";
+          <div>
+            <div><input type='checkbox'></div>
+            <div>Product102</div>
+            <div>2</div>
+            <div>C930</div>
+            <div>Temp temp</div>
+            <div>123</div>
+            <div><a href='#'><button>Pay</button></a></div>
+            <div>Pending</div>
+            </div>";
           ?>
            <?php echo"
-          <tr>
-              <td><input type='checkbox'></td>
-              <td>Product102</td>
-              <td>2</td>
-              <td>C930</td>
-              <td>Temp temp</td>
-              <td>123</td>
-              <td><a href='#'><button>Pay</button></a></td>
-              <td>Paid</td>
-            </tr>";
+          <div>
+              <div><input type='checkbox'></div>
+              <div>Product102</div>
+              <div>2</div>
+              <div>C930</div>
+              <div>Temp temp</div>
+              <div>123</div>
+              <div><a href='#'><button>Pay</button></a></div>
+              <div>Paid</div>
+            </div>";
           ?>
         </table>
         <div>
