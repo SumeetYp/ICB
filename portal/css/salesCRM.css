@@ -108,7 +108,7 @@ button:hover{
     background-color: #D9D9D9;
 }
 
-.add-details{
+.add-details, #edit-form-details{
     width: 60vw;
     height: fit-content;
     background: #D9D9D9;
@@ -192,4 +192,98 @@ label{
     width: 15vw;
     /* position: relative; */
     /* left: 100px; */
+}
+
+/* Edit details form */
+#edit-form-details{
+    /* display: block; */
+    width: 60vw;
+}
+
+.order_edit_form{
+    padding:20px 0 20px 20px;
+}
+
+.order_edit_form div h4{
+    text-align: center;
+}
+
+.edit_order_area{
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.edit_order_area__image{
+    width:40%;
+}
+
+.edit_order_area__details{
+    width: 50%;
+}
+
+.edit_order_area__details div{
+    width: 80%;
+    margin: 10px auto;
+    /* border: solid black 1px; */
+    text-align: left !important;
+}
+
+.input_details, .input_details_50{
+    border-radius: 5px;
+    border:solid #87898a 1px;
+    padding: 2px;
+}
+
+.input_details{
+    width: 90%;
+}
+
+
+.input_details_50{
+    width: 44.25%;
+}
+
+.edit_customer_details{
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.edit_customer_details input{
+    margin: 6px 0;
+}
+
+/* For all buttons */
+.form_btn{
+    font-size:1.1rem;
+    background: lightskyblue;
+    border-radius: 12px;
+    padding: 5px 10px;
+    border: none;
+    box-shadow: 2px 2px 4px #999999;
+    margin: 10px auto;
+}
+
+/* For update */
+#edit_update_btn{
+    background:#41D950;
+}
+
+/* Making the compnents sticky */
+.make-sticky{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+}
+
+#edit_form_close{
+    position: relative;
+    right: 0px;
+    top:0px;
+}
+
+@media (max-width:540px) {
+    #edit-form-details{
+        width: 80vw;
+        left: 10vw;
+    }
 }

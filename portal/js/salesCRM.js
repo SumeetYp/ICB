@@ -77,14 +77,19 @@ sale_tab_2.addEventListener("click", () =>{
         document.getElementsByClassName("add-details")[0].style.display="none";
     })
 
+    // Edit form close
+    document.getElementById('edit_form_close').addEventListener('click', () => {
+      document.getElementById('edit-form-details').style.display='none';
+    })
+
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         let orders = JSON.parse(this.responseText);
+        let order_ids = [];
         // console.log(orders);
         const prospectus = document.getElementById('prospectus');
-        console.log(prospectus);
         for(let key in orders){
           const data = orders[key];
           prospectus.innerHTML+=`
@@ -96,9 +101,26 @@ sale_tab_2.addEventListener("click", () =>{
               <div class='td customer_contact'><a href="tel:${data['whatsapp']} target="blank"">${data['whatsapp']}</a><a href="http://wa.me/91${data['whatsapp']}" target="_blank"><img src="./images/whatsapp.png" class="whatsapp-image"/></a></div>
               <div class='td'><a href="mailto:${data['email']}">${data['email']}</a></div>
               <div class='td'>${data['status']}</div>
-  <div class='td customer_contact'><button class="btn-prospectus"><img src="./images/editing.png" class="prospectus-icons"/></button><button class="btn-prospectus"><img src="./images/expand.png" class="prospectus-icons"/></button></div>
+  <div class='td customer_contact'><button class="btn-prospectus btn-prospectus-editing"><img src="./images/editing.png" class="prospectus-icons"/></button><button class="btn-prospectus btn-prospectus-expand"><img src="./images/expand.png" class="prospectus-icons"/></button></div>
             </div>
           `;
+          order_ids.push(data['order_id']);
+        }
+        const edit_buttons =  document.getElementsByClassName('btn-prospectus-editing');
+        for(let i=0;i<edit_buttons.length;i++){
+          const btn = edit_buttons.item(i);
+          btn.addEventListener('click', () => {
+            var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        let editForm = document.getElementById('edit-form-details');
+        editForm.style.display = "block";
+        console.log(this.responseText);
+      }
+    };
+    xmlhttp.open("GET",`database/fetcheditDetailsProspectus.php?ordId=${order_ids[i]}`,true);
+    xmlhttp.send();
+          })
         }
       }
     };
@@ -106,4 +128,4 @@ sale_tab_2.addEventListener("click", () =>{
     xmlhttp.send();
 
 
-function viewDetails()
+    // console.log(document.getElementsByClassName('.btn-prospectus-editing'));

@@ -20,7 +20,7 @@
     $cust_state = $mysqli->escape_string($_POST['cust_state']);
     $cust_pin = $mysqli->escape_string($_POST['cust_pin']);
     $status =  $mysqli->escape_string($_POST['status']);
-
+    $assocaiate_id = $_SESSION['id'];
     // $sql = "INSERT into customer values ('".$product_cust_name."', '".$cust_email."','".$cust_address."','".$cust_city."','".$cust_state."','".$cust_pin."','".$cust_whatasapp."');";
     // $result = mysqli_query($mysqli, $sql) or die('Customer not added');
     
@@ -99,9 +99,15 @@
              VALUES (".$_SESSION["id"].", ".$product_id.", ".$product_qty.", ".$customer_id.", ".$product_qty * $price.");";
       $result_order_table = mysqli_query($mysqli, $sql_order_add) or die('order_added');
       $sql_order_id = "SELECT order_id from order_table where associate_id=".$_SESSION["id"]." and	product_id=".$product_id." and	quantity=".$product_qty." and	customer_id=".$customer_id."	and total_price=".$product_qty * $price.";";
-      echo $sql_order_id;
+      
       $result_order_id = mysqli_query($mysqli, $sql_order_id) or die('prospectus error');
       $order_id = ($result_order_id -> fetch_assoc())['order_id']; 
+      
+      // sql_order_id, associate_id, date
+      $order_hash_message = "".$order_id."".$assocaiate_id."";
+      $order_hash = password_hash($order_hash_message, PASSWORD_BCRYPT);
+      $sql_insert_hash = "UPDATE order_table SET order_hash = '".$order_hash."' where order_id = ".$order_id.";";
+      $result = mysqli_query($mysqli, $sql_insert_hash) or die("ERROR in updating hash");
       // @prospectus = "INSERT into prospectus values()"
       $sql_prospectus_insert = "INSERT INTO prospectus values (".$order_id.", ".$status.");";
       $result_order_id = mysqli_query($mysqli, $sql_prospectus_insert) or die('prospectus error');
