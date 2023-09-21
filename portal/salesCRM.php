@@ -45,37 +45,31 @@
   <h2 class="add-details__title">Add New Customer</h2>
   <img src="https://cdn-icons-png.flaticon.com/128/463/463612.png" alt="close" class="close_add-details"/>
   <div id="content"></div>
-          <form action="" method="post">
+          <form action="database/addCustomer.php" method="post">
           <label for="product_id" class="form_label"><div>Product ID:</div> 
-              <select name="product_id" id="product_id" class="form-input">
-                <?php
-                  //code for getting product_ids enrolled from database
-                ?>
-                <option value="temp">Temp 1</option>
-                <option value="temp">Temp 2</option>
-                <option value="temp">Temp 3</option>
-                <option value="temp">Temp 4</option>
-
+              <select name="product_id" id="product_id" class="form-input" required>
               </select>
             </label>
             <label for="product_name" class="form_label"><div>Product Name: </div>
-              <select name="product_name" id="product_name" class="form-input">
-                <!-- <option value="temp">Temp 1</option>
-                <option value="temp">Temp 2</option>
-                <option value="temp">Temp 3</option>
-                <option value="temp">Temp 4</option> -->
+              <select name="product_name" id="product_name" class="form-input" required>
 
               </select></label>
-            <label class="form_label" for="product_qty"><div>Quantity: </div><input for="product_quantity"  class="form-input" name="product_quantity" placeholder="1,2,..."/></label>
+            <label class="form_label" for="product_qty"><div>Quantity: </div><input for="product_qty"  class="form-input" name="product_qty" placeholder="1,2,..." required/></label>
             <!-- <label for="product_name">Customer ID: <input for="customer_id" name="customer_id"/></label> -->
-            <label class="form_label" for="product_cust_name"><div>Customer Name: </div><input class="form-input" for="customer_name" name="customer_name"/></label>
-            <label class="form_label" for="product_name"><div>Phone: </div><input class="form-input" for="product_name" name=""/></label>
-            <label class="form_label" for="product_name"><div>Email: </div><input class="form-input" for="product_name" name=""/></label>
-            <label class="form_label" for="product_name"><div>Whatsapp Number: </div><input class="form-input" for="product_name" name=""/></label>
-            <label class="form_label" for="product_name"><div>Address: </div><input class="form-input" for="product_name" name=""/></label>
-            <label class="form_label" for="product_name"><div>City: </div><input class="form-input" for="product_name" name=""/></label>
-            <label class="form_label" for="product_name"><div>State: </div><input class="form-input" for="product_name" name=""/></label>
-            <label class="form_label" for="product_name"><div>Pin: </div><input class="form-input" for="product_name" name=""/></label>
+            <label class="form_label" for="product_cust_name"><div>Customer Name: </div><input class="form-input" for="customer_name" name="product_cust_name" required/></label>
+            <label class="form_label" for="cust_email"><div>Email: </div><input class="form-input" for="product_name" name="cust_email" required/></label>
+            <label class="form_label" for="cust_whatasapp"><div>Whatsapp Number: </div><input class="form-input" for="cust_whatasapp" name="cust_whatasapp" required /></label>
+            <label class="form_label" for="cust_address"><div>Address: </div><input class="form-input" for="cust_address" name="cust_address" required/></label>
+            <label class="form_label" for="cust_city"><div>City: </div><input class="form-input" for="cust_city" name="cust_city" required/></label>
+            <label class="form_label" for="cust_state"><div>State: </div><input class="form-input" for="cust_state" name="cust_state" required/></label>
+            <label class="form_label" for="cust_pin"><div>Pin: </div><input class="form-input" for="cust_pin" name="cust_pin" required/></label>
+            <label for="status" class="form_label"><div>Status:</div> 
+              <select name="status" id="status" class="form-input" required>
+                <option value="1">Pitching</option> //Pitching: 1
+                <option value="2">Closed</option> // Closed: 2
+                <option value="0">Cancelled</option> // Canclled: 0
+              </select>
+            </label>
             <input type="submit">
           </form>
         </div>
@@ -85,7 +79,7 @@
         <div class="sale-tab" id="sale-tab-2">Sold</div>
       </div>
       <div class="sales-table" id="table-1">
-        <div class="table">
+        <div class="table" id="prospectus">
         <!-- <table> -->
           <div class="tr">
             <div class="th">Product Name</div>
@@ -97,37 +91,12 @@
             <div class="th">Status</div>
             <div class="th">Further Details</div>
 </div>
-          <?php echo"
-          <div class='tr'>
-              <div class='td'>Product101</div>
-              <div class='td'>2</div>
-              <div class='td'>C930</div>
-              <div class='td'>Temp temp</div>
-              <div class='td'>12345467890</div>
-              <div class='td'>abc@gmail.com</div>
-              <div class='td'>Pitching</div>
-              <div class='td'><button>Add Details</button></div>
-            </div>";
-          ?>
-           <?php echo"
-          <div class='tr'>
-          <div class='td'>Product101</div>
-          <div class='td'>2</div>
-          <div class='td'>C930</div>
-          <div class='td'>Temp temp</div>
-          <div class='td'>12345467890</div>
-          <div class='td'>abc@gmail.com</div>
-          <div class='td'>Pitching</div>
-          <div class='td'><button>Add Details</button></div>
-
-        </div>";
-
-
-          ?>
+          
         <!-- </table> -->
-        <button class="add_new"><img src="" class="add" alt="Add new details"/></button>
 
       </div>
+      <button class="add_new"><img src="./images/add.png" class="add" alt="Add new details"/></button>
+
       </div>
       <div class="sales-table table-hide" id="table-2">
       <table>
@@ -196,7 +165,10 @@
         document.getElementById("product_name").innerHTML = names;
       }
     };
-    xmlhttp.open("GET",`database/getProductList.php?id=${<?php echo $_SESSION['id']; ?>}`,true);
+    xmlhttp.open("GET",`database/getProductList.php`,true);
     xmlhttp.send();
   </script>
+
+  <script defer>
+   
 </html>

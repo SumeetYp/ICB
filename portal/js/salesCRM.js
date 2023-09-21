@@ -77,4 +77,33 @@ sale_tab_2.addEventListener("click", () =>{
         document.getElementsByClassName("add-details")[0].style.display="none";
     })
 
-    document.getElementsByClassName
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        let orders = JSON.parse(this.responseText);
+        // console.log(orders);
+        const prospectus = document.getElementById('prospectus');
+        console.log(prospectus);
+        for(let key in orders){
+          const data = orders[key];
+          prospectus.innerHTML+=`
+          <div class='tr'>
+              <div class='td'>${data['product_name']}</div>
+              <div class='td'>${data['quantity']}</div>
+              <div class='td'>${data['customer_id']}</div>
+              <div class='td'>${data['customer_name']}</div>
+              <div class='td customer_contact'><a href="tel:${data['whatsapp']} target="blank"">${data['whatsapp']}</a><a href="http://wa.me/91${data['whatsapp']}" target="_blank"><img src="./images/whatsapp.png" class="whatsapp-image"/></a></div>
+              <div class='td'><a href="mailto:${data['email']}">${data['email']}</a></div>
+              <div class='td'>${data['status']}</div>
+  <div class='td customer_contact'><button class="btn-prospectus"><img src="./images/editing.png" class="prospectus-icons"/></button><button class="btn-prospectus"><img src="./images/expand.png" class="prospectus-icons"/></button></div>
+            </div>
+          `;
+        }
+      }
+    };
+    xmlhttp.open("GET","database/getProspectusData.php",true);
+    xmlhttp.send();
+
+
+function viewDetails()
