@@ -44,31 +44,30 @@
 <div id="edit-form-details" class="make-sticky">
   <img src="https://cdn-icons-png.flaticon.com/128/463/463612.png" alt="close" id="edit_form_close" class="close_add-details"/>
 
-          <form method="post" action="database/updateOrderDetails.php" class="order_edit_form">
+          <form method="post" action="database/updateOrderDetails.php" id="order_edit_form" class="order_edit_form">
             <div class="edit_order_details">
               <h4>Edit Order Details</h4>
-              <div class="edit_order_area">
+              <div class="edit_order_area"><
                 <div class="edit_order_area__image">
                   <img src="" alt="Product Image"/>
                 </div>
                 <div class="edit_order_area__details">
-                <div id="edit_order_area__details__product_id">Product Id:</div>
+                <div id="edit_order_area__details__product_id">Product Id:<div id="edit_order_area__details__product_id__details"></div></div>
                 <div id="edit_order_area__details__product_name">Temp ProductNmae</div>
-                <div id="edit_order_area__details__product_qty"><input type="number" id="product_qty" name="quantity" max="10" min="1" value="1" placeholder="Quantity" class="input_details"></div>
+                <div id="edit_order_area__details__product_qty"><input type="number" id="edit_order_area__details__product_qty__product_qty" name="quantity" max="10" min="1" value="1" placeholder="Quantity" class="input_details"></div>
                 </div>
               </div>
             </div>
             <div class="edit_customer_details">
             <h4>Edit Customer Details</h4>
             <div class="edit_customer_details">
-              <input for="customer_name" class="input_details_50" value="Temp" placeholder="Customer Name" minlength="2" required /> 
-              <input for="whatsapp" class="input_details_50" value="9876543212" placeholder="Phone Number" min="1000000000" max="9999999999" required /> 
-              <input for="email" class="input_details" value="abc@gmail.com" placeholder="Email" required /> 
-              <input for="state" class="input_details_50" value="Temp" placeholder="Customer Name" minlength="2" required /> 
-              <input for="city" class="input_details_50" value="" placeholder="City" required /> 
-              <input for="address" type="textarea" class="input_details" value="" placeholder="Address" required /> 
-              <input for="pin" class="input_details_50" value="" placeholder="Pin Code" min="100000" max="999999" required /> 
-
+              <input name="customer_name" for="customer_name" id="edit_customer_details__customer_name" class="input_details_50" value="Temp" placeholder="Customer Name" minlength="2" required /> 
+              <input name="whatsapp" for="whatsapp" id="edit_customer_details__whatsapp" class="input_details_50" value="9876543212" placeholder="Phone Number" min="1000000000" max="9999999999" required /> 
+              <input name="email" for="email" id="edit_customer_details__email" class="input_details" value="abc@gmail.com" placeholder="Email" required /> 
+              <input name="state" for="state" id="edit_customer_details__state" class="input_details_50" value="" placeholder="State" required /> 
+              <input name="city" for="city" id="edit_customer_details__city" class="input_details_50" value="" placeholder="City" required /> 
+              <input name="address" for="address" id="edit_customer_details__address" type="textarea" class="input_details" value="" placeholder="Address" required /> 
+              <input name="pin" for="pin" id="edit_customer_details__pin" class="input_details_50" value="" placeholder="Pin Code" min="100000" max="999999" required /> 
             </div>
             </div>
             <input type="submit" class="form_btn" value="Update" id="edit_update_btn"/>

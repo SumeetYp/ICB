@@ -24,34 +24,6 @@ sale_tab_2.addEventListener("click", () =>{
     table1.classList.add("table-hide");
 });
 
-    // const addnew = document.getElementsByClassName('add_new')[0];
-
-    //     function getProductList(){
-    //         let id = 10000003;
-    //         var xmlhttp = new XMLHttpRequest();
-    //         xmlhttp.onreadystatechange = () => {
-    //             if(this.readyState == 4 && this.status == 200){
-    //                 const response = JSON.parse(this.responseText);
-    //                 const productsIdElement = document.getElementById("product_id");
-    //                 const productsNameElement = document.getElementById("product_name");
-    //                 console.log(this.responseText);
-    //             }
-    //         };
-    //         xmlhttp.open("GET", "/database/getProductsList.php?id=", true);
-                
-    //         // } catch (e){
-    //         //     alert("Error in getProducts");
-    //         //     console.log("error");
-    //         // }
-    //     }
-
-    //     getProductList();
-    //     console.log("Workingg");
-
-
-    // Requesting product_details
-
-
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -115,7 +87,24 @@ sale_tab_2.addEventListener("click", () =>{
       if (this.readyState == 4 && this.status == 200) {
         let editForm = document.getElementById('edit-form-details');
         editForm.style.display = "block";
-        console.log(this.responseText);
+        let data = JSON.parse(this.responseText);
+        
+
+        // Product ID
+        document.getElementById("edit_order_area__details__product_id__details").innerText = data["id"];
+        // Product Name
+        document.getElementById("edit_order_area__details__product_name").innerText = data["product_name"];
+        // Quantity
+        // document.getElementById("edit_order_area__details__product_qty") = data["quantity"];
+        document.getElementById("edit_order_area__details__product_qty__product_qty").value = Number(data["quantity"]);
+        // {"id":"101", "product_name": "itr tax", "quantity": "1", "customer_name": "Temp", "whatsapp": "2147483647" , "email": "temp@gmail.com", "state": "Mahrasthra", "city":"Pune", "address":"Karve Nagar", "pin":"411001"}
+        document.getElementById("edit_customer_details__customer_name").value = data["customer_name"];
+        document.getElementById("edit_customer_details__whatsapp").value = data["whatsapp"];
+        document.getElementById("edit_customer_details__email").value = data["email"];
+        document.getElementById("edit_customer_details__state").value = data["state"];
+        document.getElementById("edit_customer_details__city").value = data["city"];
+        document.getElementById("edit_customer_details__address").value = data["address"];
+        document.getElementById("edit_customer_details__pin").value = data["pin"];
       }
     };
     xmlhttp.open("GET",`database/fetcheditDetailsProspectus.php?ordId=${order_ids[i]}`,true);
@@ -129,3 +118,4 @@ sale_tab_2.addEventListener("click", () =>{
 
 
     // console.log(document.getElementsByClassName('.btn-prospectus-editing'));
+    console.log(document.getElementById('order_edit_form').action);

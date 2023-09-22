@@ -104,7 +104,7 @@
       $order_id = ($result_order_id -> fetch_assoc())['order_id']; 
       
       // sql_order_id, associate_id, date
-      $order_hash_message = "".$order_id."".$assocaiate_id."";
+      $order_hash_message = "".(int)$order_id."".(int)$assocaiate_id."";
       $order_hash = password_hash($order_hash_message, PASSWORD_BCRYPT);
       $sql_insert_hash = "UPDATE order_table SET order_hash = '".$order_hash."' where order_id = ".$order_id.";";
       $result = mysqli_query($mysqli, $sql_insert_hash) or die("ERROR in updating hash");
