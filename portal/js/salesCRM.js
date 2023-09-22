@@ -54,7 +54,12 @@ sale_tab_2.addEventListener("click", () =>{
       document.getElementById('edit-form-details').style.display='none';
     })
 
+    // Edit form close
+    document.getElementById('show_form_close').addEventListener('click', () => {
+      document.getElementById('show-form-details').style.display='none';
+    })
 
+    // Prospectus edit and details functionality
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -79,8 +84,10 @@ sale_tab_2.addEventListener("click", () =>{
           order_ids.push(data['order_id']);
         }
         const edit_buttons =  document.getElementsByClassName('btn-prospectus-editing');
+        const details_buttons = document.getElementsByClassName('btn-prospectus-expand');
         for(let i=0;i<edit_buttons.length;i++){
           const btn = edit_buttons.item(i);
+          const details = details_buttons.item(i);
           btn.addEventListener('click', () => {
             var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
@@ -113,7 +120,39 @@ sale_tab_2.addEventListener("click", () =>{
     };
     xmlhttp.open("GET",`database/fetcheditDetailsProspectus.php?ordId=${order_ids[i]}`,true);
     xmlhttp.send();
-          })
+          });
+
+          details.addEventListener('click', () => {
+            var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        let showForm = document.getElementById('show-form-details');
+        showForm.style.display = "block";
+        let data = JSON.parse(this.responseText);
+        
+
+        // Product ID
+        // document.getElementById("ordId").value=data["order_id"];
+        // document.getElementById("ordId").style.display="none";
+        document.getElementById("show_order_area__details__product_id__details").innerText = data["id"];
+        // Product Name
+        document.getElementById("show_order_area__details__product_name").innerText = data["product_name"];
+        // Quantity
+        // document.getElementById("edit_order_area__details__product_qty") = data["quantity"];
+        document.getElementById("show_order_area__details__product_qty__product_qty").innerText = Number(data["quantity"]);
+        // {"id":"101", "product_name": "itr tax", "quantity": "1", "customer_name": "Temp", "whatsapp": "2147483647" , "email": "temp@gmail.com", "state": "Mahrasthra", "city":"Pune", "address":"Karve Nagar", "pin":"411001"}
+        document.getElementById("show_customer_details__customer_name").innerText = data["customer_name"];
+        document.getElementById("show_customer_details__whatsapp").innerText = data["whatsapp"];
+        document.getElementById("show_customer_details__email").innerText = data["email"];
+        document.getElementById("show_customer_details__state").innerText = data["state"];
+        document.getElementById("show_customer_details__city").innerText = data["city"];
+        document.getElementById("show_customer_details__address").innerText = data["address"];
+        document.getElementById("show_customer_details__pin").innerText = data["pin"];
+      }
+    };
+    xmlhttp.open("GET",`database/fetcheditDetailsProspectus.php?ordId=${order_ids[i]}`,true);
+    xmlhttp.send();
+          });
         }
       }
     };

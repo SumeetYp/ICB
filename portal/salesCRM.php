@@ -41,6 +41,7 @@
       include './components/searchBar.php';
     ?>
 
+<!-- Edit Details Form -->
 <div id="edit-form-details" class="make-sticky">
   <img src="https://cdn-icons-png.flaticon.com/128/463/463612.png" alt="close" id="edit_form_close" class="close_add-details"/>
 
@@ -75,6 +76,43 @@
             <input type="submit" class="form_btn" value="Update" id="edit_update_btn"/>
           </form>
         </div>
+
+        <!-- Show details -->
+
+        <div id="show-form-details" class="make-sticky">
+  <img src="https://cdn-icons-png.flaticon.com/128/463/463612.png" alt="close" id="show_form_close" class="close_add-details"/>
+
+          <!-- <form method="post" action="database/updateDetailsProspectusOrder.php" id="order_edit_form" class="order_edit_form"> -->
+            <div class="edit_order_details">
+              <h4>Order Details</h4>
+              <div class="edit_order_area"><
+                <div class="edit_order_area__image">
+                  <img src="" alt="Product Image"/>
+                </div>
+                <div class="edit_order_area__details">
+                <div id="show_order_area__details__product_id">Product Id:<div id="show_order_area__details__product_id__details"></div></div>
+                <div id="show_order_area__details__product_name">Temp ProductNmae</div>
+                <div id="show_order_area__details__product_qty"><div id="show_order_area__details__product_qty__product_qty" class="input_details"></div>
+                </div>
+              </div>
+            </div>
+            <div class="edit_customer_details">
+            <h4>show Customer Details</h4>
+            <div class="edit_customer_details">
+              <div id="show_customer_details__customer_name" class="data_details_50"> </div>
+              <div id="show_customer_details__whatsapp" class="data_details_50"></div> 
+              <div id="show_customer_details__email" class="data_details"> </div>
+              <div id="show_customer_details__state" class="data_details_50"> </div>
+              <div id="show_customer_details__city" class="data_details_50"> </div>
+              <div id="show_customer_details__address" class="data_details"> </div>
+              <div id="show_customer_details__pin" class="data_details_50"> </div>
+            </div>
+            </div>
+          <!-- </form> -->
+        </div>
+        </div>
+
+        <!-- Add new details -->
 <div class="add-details">
   <h2 class="add-details__title">Add New Customer</h2>
   <img src="https://cdn-icons-png.flaticon.com/128/463/463612.png" alt="close" class="close_add-details"/>

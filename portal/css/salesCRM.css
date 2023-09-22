@@ -108,7 +108,7 @@ button:hover{
     background-color: #D9D9D9;
 }
 
-.add-details, #edit-form-details{
+.add-details, #edit-form-details, #show-form-details{
     width: 60vw;
     height: fit-content;
     background: #D9D9D9;
@@ -228,19 +228,21 @@ label{
     text-align: left !important;
 }
 
-.input_details, .input_details_50{
+.input_details, .input_details_50, .data_details, .data_details_50{
     border-radius: 5px;
     border:solid #87898a 1px;
     padding: 2px;
+    font-size: 1rem;
+    /* margin: 2vh 1vw ; */
 }
 
-.input_details{
-    width: 90%;
+.input_details, .data_details{
+    width: 80%;
 }
 
 
-.input_details_50{
-    width: 44.25%;
+.input_details_50,  .data_details_50{
+    width: 40%;
 }
 
 .edit_customer_details{
