@@ -44,7 +44,7 @@
 <div id="edit-form-details" class="make-sticky">
   <img src="https://cdn-icons-png.flaticon.com/128/463/463612.png" alt="close" id="edit_form_close" class="close_add-details"/>
 
-          <form method="post" action="database/updateOrderDetails.php" id="order_edit_form" class="order_edit_form">
+          <form method="post" action="database/updateDetailsProspectusOrder.php" id="order_edit_form" class="order_edit_form">
             <div class="edit_order_details">
               <h4>Edit Order Details</h4>
               <div class="edit_order_area"><
@@ -54,7 +54,7 @@
                 <div class="edit_order_area__details">
                 <div id="edit_order_area__details__product_id">Product Id:<div id="edit_order_area__details__product_id__details"></div></div>
                 <div id="edit_order_area__details__product_name">Temp ProductNmae</div>
-                <div id="edit_order_area__details__product_qty"><input type="number" id="edit_order_area__details__product_qty__product_qty" name="quantity" max="10" min="1" value="1" placeholder="Quantity" class="input_details"></div>
+                <div id="edit_order_area__details__product_qty"><input type="number" id="edit_order_area__details__product_qty__product_qty" for="quantity" name="quantity" max="10" min="1" value="1" placeholder="Quantity" class="input_details"></div>
                 </div>
               </div>
             </div>
@@ -70,6 +70,8 @@
               <input name="pin" for="pin" id="edit_customer_details__pin" class="input_details_50" value="" placeholder="Pin Code" min="100000" max="999999" required /> 
             </div>
             </div>
+            <input type="number" name="ordId" id="ordId" value="" required/>
+            <input type="number" name="customer_id" id="customer_id" value="" required/>
             <input type="submit" class="form_btn" value="Update" id="edit_update_btn"/>
           </form>
         </div>

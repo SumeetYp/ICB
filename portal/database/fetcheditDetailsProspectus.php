@@ -19,10 +19,10 @@
     
     // Verifying the details
     if(password_verify($order_hash_message, $hash_id)){
-        $sql_fetch_order = "SELECT product.id, product.name product_name, order_table.quantity, customer.name customer_name, customer.whatsapp, customer.email, customer.state, customer.city, customer.address, customer.pin FROM order_table inner join customer on order_table.customer_id = customer.id inner join product on order_table.product_id=product.id where order_table.order_id = ".$order_id." and order_table.associate_id = ".$assocaiate_id."; ";
+        $sql_fetch_order = "SELECT  customer.id cust_id, order_table.order_id, product.id, product.name product_name, order_table.quantity, customer.name customer_name, customer.whatsapp, customer.email, customer.state, customer.city, customer.address, customer.pin FROM order_table inner join customer on order_table.customer_id = customer.id inner join product on order_table.product_id=product.id where order_table.order_id = ".$order_id." and order_table.associate_id = ".$assocaiate_id."; ";
         $result_fetch_order = mysqli_query($mysqli, $sql_fetch_order) or die("Error in fecthing details");
         $fetched_order = $result_fetch_order -> fetch_assoc();
-        echo '{"id":"'.$fetched_order["id"].'", "product_name": "'.$fetched_order["product_name"].'", "quantity": "'.$fetched_order["quantity"].'", "customer_name": "'.$fetched_order["customer_name"].'", "whatsapp": "'.$fetched_order["whatsapp"].'" , "email": "'.$fetched_order["email"].'", "state": "'.$fetched_order["state"].'", "city":"'.$fetched_order["city"].'", "address":"'.$fetched_order["address"].'", "pin":"'.$fetched_order["pin"].'"}';
+        echo '{"cust_id": '.$fetched_order["cust_id"].',"order_id":"'.$order_id.'", "id":"'.$fetched_order["id"].'", "product_name": "'.$fetched_order["product_name"].'", "quantity": "'.$fetched_order["quantity"].'", "customer_name": "'.$fetched_order["customer_name"].'", "whatsapp": "'.$fetched_order["whatsapp"].'" , "email": "'.$fetched_order["email"].'", "state": "'.$fetched_order["state"].'", "city":"'.$fetched_order["city"].'", "address":"'.$fetched_order["address"].'", "pin":"'.$fetched_order["pin"].'"}';
     }else{
         echo "Error in request made";
     }

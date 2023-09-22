@@ -91,6 +91,8 @@ sale_tab_2.addEventListener("click", () =>{
         
 
         // Product ID
+        document.getElementById("ordId").value=data["order_id"];
+        document.getElementById("ordId").style.display="none";
         document.getElementById("edit_order_area__details__product_id__details").innerText = data["id"];
         // Product Name
         document.getElementById("edit_order_area__details__product_name").innerText = data["product_name"];
@@ -105,6 +107,8 @@ sale_tab_2.addEventListener("click", () =>{
         document.getElementById("edit_customer_details__city").value = data["city"];
         document.getElementById("edit_customer_details__address").value = data["address"];
         document.getElementById("edit_customer_details__pin").value = data["pin"];
+        document.getElementById('customer_id').value = data["cust_id"];
+        document.getElementById('customer_id').style.display = "none";
       }
     };
     xmlhttp.open("GET",`database/fetcheditDetailsProspectus.php?ordId=${order_ids[i]}`,true);
@@ -118,4 +122,4 @@ sale_tab_2.addEventListener("click", () =>{
 
 
     // console.log(document.getElementsByClassName('.btn-prospectus-editing'));
-    console.log(document.getElementById('order_edit_form').action);
+    // console.log(document.getElementById('order_edit_form').action);
