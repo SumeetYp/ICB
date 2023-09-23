@@ -78,9 +78,9 @@ let order_ids = [];
               <div class="prospectus_product_image"><img src="" alt="" class="prospectus_product_image__img"></div>
               <div class="prospectus_product_details tr">
                 <div class='td prospectus_product_name'><span>${data['product_name']}</span><span>${data['product_id']}</span></div>
-                <div class='td prospectus_qty'>${data['quantity']}</div>
+                <div class='td prospectus_qty'><span class="prospectus_field_name">Qty&nbsp;</span>${data['quantity']}</div>
                 <div class='td prospectus_cust_id'>${data['customer_id']}</div>
-                <div class='td prospectus_cust_name'>${data['customer_name']}</div>
+                <div class='td prospectus_cust_name'><span class="prospectus_field_name">Customer Details&nbsp;</span>${data['customer_name']}</div>
                 <div class='td prospectus_phone customer_contact'><a href="tel:${data['whatsapp']} target="blank"">${data['whatsapp']}</a><a href="http://wa.me/91${data['whatsapp']}" target="_blank"><img src="./images/whatsapp.png" class="whatsapp-image"/></a></div>
                 <div class='td prospectus_email'><a href="mailto:${data['email']}">${data['email']}</a></div>
                 <div class='td prospectus_status'>
