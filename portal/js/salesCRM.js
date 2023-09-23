@@ -97,15 +97,21 @@ let order_ids = [];
         // Updating status of the order from drop down list
         for(let i=0;i<order_ids.length;i++){
         // console.log(document.getElementById(`prospectus_status_${order_ids[i]}`));
-        document.getElementById(`prospectus_status_${order_ids[i]}`).addEventListener('change', (event) =>{
+        document.getElementById(`prospectus_status_${order_ids[i]}`).addEventListener('change', () =>{
             var statusUpdate = new XMLHttpRequest();
             statusUpdate.onreadystatechange = () => {
               if(this.readyState == 4 && this.status == 200){
                 console.log("rEQUEST MADE");
               }
             };
-            statusUpdate.open('POST', `database/updateProspectusStatus.php?orderId=${order_ids[i]}&value=${this.value}`, true);
-            statusUpdate.send();
+            const order_element = document.getElementById(`prospectus_status_${order_ids[i]}`);
+            // console.log(order_element.value);
+            // let url = `database/updateProspectusStatus.php?orderId=${order_ids[i]}&value=${order_element.value}`;
+            // console.log(url);
+            statusUpdate.open('post', "database/updateProspectusStatus.php", true);
+            statusUpdate.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            console.log(`orderId=${order_ids[i]}&value=${order_element.value}`);
+            statusUpdate.send(`orderId=${order_ids[i]}&value=${order_element.value}`);
           });
         }
 
@@ -197,7 +203,7 @@ let order_ids = [];
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        console.log(this.responseText);
+        // console.log(this.responseText);
         const data = JSON.parse(this.responseText);
         const sold_table = document.getElementById("sold_table_data");
         sold_table.innerHTML="";
