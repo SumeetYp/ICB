@@ -163,7 +163,7 @@
             <div class="th">Email</div>
             <div class="th">Status</div>
             <div class="th">Further Details</div>
-</div>
+          </div>
           
         <!-- </table> -->
 
@@ -172,53 +172,56 @@
 
       </div>
       <div class="sales-table table-hide" id="table-2">
-      <table>
+      <div class="table" id="sold">
+        <form method="post" action="#">
           <div class="tr">
-            <div class="th">&nbsp;&nbsp;&nbsp;</div>
-            <div class="th">Product Name</div>
-            <div class="th">Quantity</div>
-            <div class="th"> Customer ID</div>
-            <div class="th">Customer Details</div>
-            <div class="th">Total Price</div>
-            <div class="th">Pay</div>
-            <div class="th">Status</div>
+            <div class="th sold_check_column">&nbsp;&nbsp;&nbsp;</div>
+            <div class="th sold_product_name">Product Name</div>
+            <div class="th sold_quantity">Quantity</div>
+            <div class="th sold_customer_id">Customer ID</div>
+            <div class="th sold_customer_details">Customer Details</div>
+            <div class="th sold_total_price">Total Price</div>
+            <div class="th sold_pay">Pay</div>
+            <div class="th sold_status">Status</div>
           </div>
-          <?php echo"
+          <div id="sold_table_data"></div>
+          <!-- <?php echo"
           <div class='tr'>
-            <div><input type='checkbox'></div>
-            <div class='td'>Product102</div>
-            <div class='td'>2</div>
-            <div class='td'>C930</div>
-            <div class='td'>Temp temp</div>
-            <div class='td'>123</div>
-            <div class='td'><a href='#'><button>Pay</button></a></div>
-            <div class='td'>Pending</div>
+            <div class='td sold_check_column'><input type='checkbox' value='' name='' for=''/></div>
+            <div class='td sold_product_name'>Product102</div>
+            <div class='td sold_quantity'>2</div>
+            <div class='td sold_customer_id'>C930</div>
+            <div class='td sold_customer_details'>Temp temp</div>
+            <div class='td sold_total_price'>123</div>
+            <div class='td sold_pay'><a href='#'><button>Pay</button></a></div>
+            <div class='td sold_status'>Pending</div>
             </div>";
           ?>
            <?php echo"
           <div class='tr'>
-              <div class='td'><input type='checkbox'></div>
-              <div class='td'>Product102</div>
-              <div class='td'>2</div>
-              <div class='td'>C930</div>
-              <div class='td'>Temp temp</div>
-              <div class='td'>123</div>
-              <div class='td'><a href='#'><button>Pay</button></a></div>
-              <div class='td'>Paid</div>
+              <div class='td sold_check_column'><input type='checkbox'></div>
+              <div class='td sold_product_name'>Product102</div>
+              <div class='td sold_quantity'>2</div>
+              <div class='td sold_customer_id'>C930</div>
+              <div class='td sold_customer_details'>Temp temp</div>
+              <div class='td sold_total_price'>123</div>
+              <div class='td sold_pay'><a href='#'><button>Pay</button></a></div>
+              <div class='td sold_status'>Paid</div>
             </div>";
-          ?>
+          ?> -->
 
 
-        </table>
+</div>
         <div class="total-amount">
             <div>Grand Total: <?php
             $totalPay = "20370"; 
             echo "₹".$totalPay."/-";
             ?>
             </div>
-          <a href="#"><button>Pay</button></a>
+          <a href="#"><input type="submit" class="form_btn" value="Pay" name="total_pay"></a>
           </div>
       </div>
+</form>
     </div>
 
     <h1 id="response"></h1>

@@ -58,11 +58,14 @@
 
 .tr .th{
     background: #D9D9D9;
+    text-align: center;
+
 }
 
 .td{
     display: flex;
     align-items: center;
+    text-align: center;
 }
 
 .sales-table table tr{
@@ -281,6 +284,75 @@ label{
     position: relative;
     right: 0px;
     top:0px;
+}
+
+/* Sold Table*/
+/* Defining the column width */
+.sold_check_column{
+    /* width: fit-content; */
+    width: 1vw;
+    /* overflow-x: hidden; */
+
+}
+
+.sold_product_name{
+    width:90%;
+    /* width: 1vw; */
+}
+
+.sold_check_column input[type=checkbox]{
+    width: 1vw;
+}
+
+.sold_quantity{
+    /* width: 6vw; */
+}
+
+.sold_customer_details{
+    width: 30vw;
+}
+
+.sold_pay{
+    width:fit-content;
+}
+
+
+/* Customer Details div */
+.sold_customer_details_all{
+    flex-wrap: wrap;
+}
+
+.sold_customer_details__name{
+    width:fit-content;
+    padding: 2% 6%;
+}
+
+.customer_details_icon{
+    width: fit-content;
+    transition: all 0.5s ease-in-out;    
+}
+
+.sold_customer_details_visible{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.sold_customer_details_hidden{
+    display: flex;
+    flex-direction: column;
+    display: block;
+    transition: height 0.5s ease-in-out;    
+    overflow:hidden;
+    height: 0px;
+}
+
+.detail_display{
+    height: 3rem;
+}
+
+.btn_rotate{
+    transform: rotate(180deg);
 }
 
 @media (max-width:540px) {

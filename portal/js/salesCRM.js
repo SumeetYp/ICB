@@ -162,3 +162,67 @@ sale_tab_2.addEventListener("click", () =>{
 
     // console.log(document.getElementsByClassName('.btn-prospectus-editing'));
     // console.log(document.getElementById('order_edit_form').action);
+
+
+    // Get Details from sold database for products
+    // const fetch_sold_data = 
+
+  document.getElementById('sale-tab-2').addEventListener('click', () => {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        console.log(this.responseText);
+        const data = JSON.parse(this.responseText);
+        const sold_table = document.getElementById("sold_table_data");
+        sold_table.innerHTML="";
+        // console.log(Object.keys(data).length);
+        Object.keys(data).forEach( key => {
+          const payment_message = data[key].status==0?"Pay":"Paid";
+          const payment_btn_active = data[key].status==0?"":"disabled";
+          const status = data[key].status==0?"Pending":"Paid";
+          sold_table.innerHTML+=`<div class='tr'>
+          <div class='td sold_check_column'><input type='checkbox' value='${data[key].order_id}' name='${data[key].order_id}' for='${data[key].order_id}' ${payment_btn_active}/></div>
+          <div class='td sold_product_name'>${data[key].product_name}</div>
+          <div class='td sold_quantity'>${data[key].quantity}</div>
+          <div class='td sold_customer_id'>${data[key].customer_id}</div>
+          <div class='td sold_customer_details'>
+            <div class="sold_customer_details_all">
+            <div class="sold_customer_details_visible">
+              <div class="sold_customer_details__name">${data[key].customer_name}</div>
+              <button type="button" class="form_btn customer_details_icon" id="btn_${data[key].order_id}">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M6 10l6 6l6 -6h-12"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="sold_customer_details_hidden" id="details_id_${data[key].order_id}">
+              <div class="customer_email"><a href="mailto:${data[key].email}" link="_blank">${data[key].email}</a></div>
+              <div class="customer_email"><a href="tel:${data[key].phone}">${data[key].phone}</a></div>
+            </div>
+            </div>
+          </div>
+          <div class='td sold_total_price'>₹ ${data[key].total_price}</div>
+          <div class='td sold_pay'><input type="button" class="form_btn" value="${payment_message}" ${payment_btn_active}></div>
+          <div class='td sold_status'>${status}</div>
+          </div>`;
+        });
+
+      
+// From here
+        // document.getElementById(`btn_${data[key].order_id}`).addEventListener('click', ()=>{
+          // document.getElementById(`details_id_${data[key].order_id}`).classList.toggle('detail_display');
+        Object.keys(data).forEach(key => {
+          document.getElementById(`btn_${data[key].order_id}`).addEventListener('click', ()=>{
+          document.getElementById(`details_id_${data[key].order_id}`).classList.toggle('detail_display');
+          document.getElementById(`btn_${data[key].order_id}`).classList.toggle('btn_rotate');
+          });
+        });
+      }
+
+
+    };
+    xmlhttp.open("GET",`database/getSoldData.php`,true);
+    xmlhttp.send();
+  });
+
