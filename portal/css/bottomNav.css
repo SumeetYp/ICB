@@ -1,0 +1,37 @@
+:root{
+    --icon-size-xxld:128px;
+    --icon-size-xld:64px;
+    --icon-size-ld:40px;
+    --icon-size-md:24px;
+    --icon-size-sd:12px;
+
+}
+
+.footer_navbar{
+    /* width:100vw; */
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    bottom:0px;
+    justify-content: space-around;
+    background: #A6DBFC;
+    width: 80vw;
+    border-radius: 12px;
+    margin: auto;
+}
+
+.footer_navbar a, .footer_navbar a:active, .footer_navbar a:visited, .footer_navbar a:focus {
+    text-decoration: none;
+    color: black;
+}
+
+.footer_navbar_option{
+    width: fit-content;
+    height: fit-content;
+    /* background: red; */
+}
+
+.footer_navbar_option svg{
+    width: var(--icon-size-ld);
+    height: var(--icon-size-ld);
+}
