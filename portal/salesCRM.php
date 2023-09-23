@@ -152,29 +152,28 @@
         <div class="sale-tab" id="sale-tab-2">Sold</div>
       </div>
       <div class="sales-table" id="table-1">
+      <div class="tr">
+            <div class="th">Product Name</div>
+            <div class="th prospectus_qty">Quantity</div>
+            <div class="th prospectus_cust_id">Customer ID</div>
+            <div class="th prospectus_cust_name">Customer Name</div>
+            <div class="th prospectus_phone">Phone Number</div>
+            <div class="th prospectus_email">Email</div>
+            <div class="th prospectus_status">Status</div>
+            <div class="th prospectus_options">More</div>
+          </div>
         <div class="table" id="prospectus">
         <!-- <table> -->
-          <div class="tr">
-            <div class="th">Product Name</div>
-            <div class="th">Quantity</div>
-            <div class="th">ID</div>
-            <div class="th">Customer Name</div>
-            <div class="th">Phone Number</div>
-            <div class="th">Email</div>
-            <div class="th">Status</div>
-            <div class="th">Further Details</div>
-          </div>
+          
           
         <!-- </table> -->
 
       </div>
-      <button class="add_new"><img src="./images/add.png" class="add" alt="Add new details"/></button>
+      <button class="add_new" title="Add new entry"><img src="./images/add.png" class="add" alt="Add new details"/></button>
 
       </div>
       <div class="sales-table table-hide" id="table-2">
-      <div class="table" id="sold">
-        <form method="post" action="#">
-          <div class="tr">
+      <div class="tr">
             <div class="th sold_check_column">&nbsp;&nbsp;&nbsp;</div>
             <div class="th sold_product_name">Product Name</div>
             <div class="th sold_quantity">Quantity</div>
@@ -184,6 +183,10 @@
             <div class="th sold_pay">Pay</div>
             <div class="th sold_status">Status</div>
           </div>
+      <div class="table" id="sold">
+      
+        <form method="post" action="#">
+          
           <div id="sold_table_data"></div>
 
 

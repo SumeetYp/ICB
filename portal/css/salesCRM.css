@@ -1,16 +1,24 @@
 .sales{
-    background-color: #E4E6ED;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background-color: E8E8E8;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
     width: 90vw;
     margin: 2vh auto;
     /* margin:  0; */
     border-radius: 12px;
+    /* max-height: 60vh; */
+    /* overflow-y:scroll; */
 }
 
 .sales-tab{
     display: flex;
+    background:#E4E6ED;
+}
+
+.table{
+    max-height: 50vh;
+    overflow-y: scroll;
 }
 
 .active-option{
@@ -24,8 +32,12 @@
 }
 
 .tr{
+    background:#FFFFFF;
+    border-radius: 5px;
     display: flex;
-    border-bottom: solid 1px #87898a;
+    /* border-bottom: solid 1px #87898a; */
+    margin-bottom: 6px;
+    box-shadow:1px 1px 2px  #E4E6ED;
 }
 
 .sale-tab{
@@ -62,8 +74,18 @@
 
 }
 
+.th{
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
+    border-radius: 2px;
+    font-weight: 700;
+}
+
+.prospectus_qty{
+    width: 70%;
+}
+
 .td{
-    display: flex;
+    /* display: flex; */
     align-items: center;
     text-align: center;
 }
@@ -145,6 +167,10 @@ button:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.add_new{
+    margin: 10px auto;
 }
 
 .add_new img{
