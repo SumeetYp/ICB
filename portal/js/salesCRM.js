@@ -71,7 +71,7 @@ let order_ids = [];
         const prospectus = document.getElementById('prospectus');
         for(let key in orders){
           const data = orders[key];
-          console.log(data);
+          // console.log(data);
           let order_status = data['status']=='Closed'?2:data['status']=="Pitching"?1:0;
           prospectus.innerHTML+=`
           <div class='tr tr_propspectus_order'>
@@ -90,7 +90,7 @@ let order_ids = [];
                   <option value="2" ${order_status==2?"selected":""}>Closed</option>
                 </select>
                 </div>
-                <div class='td customer_contact prospectus_options'><button class="btn-prospectus btn-prospectus-editing"><img src="./images/editing.png" class="prospectus-icons"/></button><button class="btn-prospectus btn-prospectus-expand"><img src="./images/expand.png" class="prospectus-icons"/></button></div>
+                <div class='td customer_contact prospectus_options'><button class="btn-prospectus btn-prospectus-editing"><img src="./images/editing.png" class="prospectus-icons"/><span>Edit</span></button><button class="btn-prospectus btn-prospectus-expand"><img src="./images/expand.png" class="prospectus-icons"/><span>Details</span></button></div>
               </div>
               </div>
           `;

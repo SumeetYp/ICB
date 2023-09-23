@@ -425,6 +425,10 @@ label{
     display: none;
 }
 
+.btn-prospectus span{
+    display: none;
+}
+
 @media (max-width:1439.8px){
     #prospectus_table_header{
         display: none;
@@ -446,10 +450,66 @@ label{
     }
 
     .prospectus_product_name{
-        width: 45%;
+        width: 60%;
         order: 1;
+        display: flex;
+        justify-content: space-between;
+        padding:0 10%;
     }
 
+    .prospectus_qty{
+        order:2;
+        width: 15%;
+        margin-left: 2.5%;
+    }
+
+    .prospectus_cust_id{
+        display: none;
+    }
+
+    .prospectus_cust_name{
+        width: 60%;
+        order:3;
+    }
+
+    .prospectus_phone{
+        width: 35%;
+        order:4;
+        margin-left: 2%;
+    }
+
+    .prospectus_email{
+        width: 70%;
+        order:5;
+    }
+
+    .prospectus_status{
+        width:25%;
+        margin-left: 2%;
+        order: 6;
+    }
+
+    .prospectus_options{
+        width: 100%;
+        order: 7;
+    }
+
+    .btn-prospectus{
+        width: max-content;
+        padding: 6px 12px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn-prospectus span{
+        display: block;
+        font-size: clamp(1rem, 1.2vw, 1.6rem);
+        margin: 0 2px;
+    }
+}
+
+@media (max-width:900px){
     
 }
 
