@@ -24,19 +24,19 @@ sale_tab_2.addEventListener("click", () =>{
     table1.classList.add("table-hide");
 });
 
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        let elements = "";
-        let products = JSON.parse(this.responseText);
-        for(const key in products){
-          elements+=`<option value='${key}'>${key}</option>`;
-        }
-        document.getElementById("product_id").innerHTML = elements;
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      let elements = "";
+      let products = JSON.parse(this.responseText);
+      for(const key in products){
+        elements+=`<option value='${key}'>${key}</option>`;
       }
-    };
-    xmlhttp.open("GET","database/getProductList.php?id=10000003",true);
-    xmlhttp.send();
+      document.getElementById("product_id").innerHTML = elements;
+    }
+  };
+  xmlhttp.open("GET","database/getProductList.php?id=10000003",true);
+  xmlhttp.send();
 
 
     // add details form open
@@ -60,15 +60,18 @@ sale_tab_2.addEventListener("click", () =>{
     })
 
     // Prospectus edit and details functionality
+
+let order_ids = [];
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         let orders = JSON.parse(this.responseText);
-        let order_ids = [];
+        
         // console.log(orders);
         const prospectus = document.getElementById('prospectus');
         for(let key in orders){
           const data = orders[key];
+          let order_status = data['status']=='Closed'?2:data['status']=="Pitching"?1:0;
           prospectus.innerHTML+=`
           <div class='tr'>
               <div class='td'>${data['product_name']}</div>
@@ -77,12 +80,35 @@ sale_tab_2.addEventListener("click", () =>{
               <div class='td'>${data['customer_name']}</div>
               <div class='td customer_contact'><a href="tel:${data['whatsapp']} target="blank"">${data['whatsapp']}</a><a href="http://wa.me/91${data['whatsapp']}" target="_blank"><img src="./images/whatsapp.png" class="whatsapp-image"/></a></div>
               <div class='td'><a href="mailto:${data['email']}">${data['email']}</a></div>
-              <div class='td'>${data['status']}</div>
+              <!-- <div class='td'>${data['status']}</div>-->
+              <div class='td'>
+              <select name="status" id="prospectus_status_${data['order_id']}">
+                <option value="0" ${order_status==0?"selected":""}>Cancelled</option>
+                <option value="1" ${order_status==1?"selected":""}>Pitching</option>
+                <option value="2" ${order_status==2?"selected":""}>Closed</option>
+              </select>
+              </div>
   <div class='td customer_contact'><button class="btn-prospectus btn-prospectus-editing"><img src="./images/editing.png" class="prospectus-icons"/></button><button class="btn-prospectus btn-prospectus-expand"><img src="./images/expand.png" class="prospectus-icons"/></button></div>
             </div>
           `;
           order_ids.push(data['order_id']);
         }
+
+        // Updating status of the order from drop down list
+        for(let i=0;i<order_ids.length;i++){
+        // console.log(document.getElementById(`prospectus_status_${order_ids[i]}`));
+        document.getElementById(`prospectus_status_${order_ids[i]}`).addEventListener('change', (event) =>{
+            var statusUpdate = new XMLHttpRequest();
+            statusUpdate.onreadystatechange = () => {
+              if(this.readyState == 4 && this.status == 200){
+                console.log("rEQUEST MADE");
+              }
+            };
+            statusUpdate.open('POST', `database/updateProspectusStatus.php?orderId=${order_ids[i]}&value=${this.value}`, true);
+            statusUpdate.send();
+          });
+        }
+
         const edit_buttons =  document.getElementsByClassName('btn-prospectus-editing');
         const details_buttons = document.getElementsByClassName('btn-prospectus-expand');
         for(let i=0;i<edit_buttons.length;i++){

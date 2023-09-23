@@ -185,30 +185,6 @@
             <div class="th sold_status">Status</div>
           </div>
           <div id="sold_table_data"></div>
-          <!-- <?php echo"
-          <div class='tr'>
-            <div class='td sold_check_column'><input type='checkbox' value='' name='' for=''/></div>
-            <div class='td sold_product_name'>Product102</div>
-            <div class='td sold_quantity'>2</div>
-            <div class='td sold_customer_id'>C930</div>
-            <div class='td sold_customer_details'>Temp temp</div>
-            <div class='td sold_total_price'>123</div>
-            <div class='td sold_pay'><a href='#'><button>Pay</button></a></div>
-            <div class='td sold_status'>Pending</div>
-            </div>";
-          ?>
-           <?php echo"
-          <div class='tr'>
-              <div class='td sold_check_column'><input type='checkbox'></div>
-              <div class='td sold_product_name'>Product102</div>
-              <div class='td sold_quantity'>2</div>
-              <div class='td sold_customer_id'>C930</div>
-              <div class='td sold_customer_details'>Temp temp</div>
-              <div class='td sold_total_price'>123</div>
-              <div class='td sold_pay'><a href='#'><button>Pay</button></a></div>
-              <div class='td sold_status'>Paid</div>
-            </div>";
-          ?> -->
 
 
 </div>
