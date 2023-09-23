@@ -420,14 +420,37 @@ label{
     transform: rotate(180deg);
 }
 
+/* Prospectus Table */
+.prospectus_product_image{
+    display: none;
+}
+
 @media (max-width:1439.8px){
     #prospectus_table_header{
         display: none;
     }
 
-    .tr{
-        
+    .tr_propspectus_order{
+        display: flex;
+        flex-direction: row;
     }
+
+    .prospectus_product_image{
+        display: block;
+        width: 20%;
+    }
+
+    .prospectus_product_details{
+        width: 80%;
+        flex-wrap: wrap;
+    }
+
+    .prospectus_product_name{
+        width: 45%;
+        order: 1;
+    }
+
+    
 }
 
 @media (max-width:540px) {
