@@ -29,6 +29,7 @@
 .table, .tr, .td, .th {
     width: 100%;
     text-align: left;
+    font-weight:500;
 }
 
 .tr{
@@ -75,13 +76,51 @@
 }
 
 .th{
-    font-size: clamp(1rem, 1.2vw, 1.5rem);
+    font-size: clamp(1rem, 1.2vw, 2rem);
     border-radius: 2px;
     font-weight: 700;
 }
 
+.td{
+    border:solid red 1px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    text-align: center;
+    font-size: clamp(1rem, 1vw, 1.8rem);
+}
+
+.prospectus_product_name{
+    width: 90%;
+}
+
 .prospectus_qty{
-    width: 70%;
+    width: 50%;
+}
+
+.prospectus_cust_id{
+    width: 40%;
+}
+
+.prospectus_cust_name{
+    width:100%;
+    word-wrap: break-word;
+}
+
+.prospectus_email{
+    width: 120%;
+}
+
+.prospectus_status{
+    width: 60%;
+}
+
+.prospectus_options{
+    width: 50%;
+}
+
+.tr.th prospectus_options{
+    padding-left: 10px;
 }
 
 .td{
@@ -379,6 +418,16 @@ label{
 
 .btn_rotate{
     transform: rotate(180deg);
+}
+
+@media (max-width:1439.8px){
+    #prospectus_table_header{
+        display: none;
+    }
+
+    .tr{
+        
+    }
 }
 
 @media (max-width:540px) {

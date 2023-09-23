@@ -152,14 +152,14 @@
         <div class="sale-tab" id="sale-tab-2">Sold</div>
       </div>
       <div class="sales-table" id="table-1">
-      <div class="tr">
-            <div class="th">Product Name</div>
+      <div class="tr" id="prospectus_table_header">
+            <div class="th prospectus_product_name">Product Name</div>
             <div class="th prospectus_qty">Quantity</div>
-            <div class="th prospectus_cust_id">Customer ID</div>
+            <div class="th prospectus_cust_id">Cust ID</div>
             <div class="th prospectus_cust_name">Customer Name</div>
             <div class="th prospectus_phone">Phone Number</div>
-            <div class="th prospectus_email">Email</div>
-            <div class="th prospectus_status">Status</div>
+            <div class="th prospectus_email" id="prospectus_email">Email</div>
+            <div class="th prospectus_status" id="prospectus_status">Status</div>
             <div class="th prospectus_options">More</div>
           </div>
         <div class="table" id="prospectus">

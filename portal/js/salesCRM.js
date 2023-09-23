@@ -74,21 +74,20 @@ let order_ids = [];
           let order_status = data['status']=='Closed'?2:data['status']=="Pitching"?1:0;
           prospectus.innerHTML+=`
           <div class='tr'>
-              <div class='td'>${data['product_name']}</div>
-              <div class='td'>${data['quantity']}</div>
-              <div class='td'>${data['customer_id']}</div>
-              <div class='td'>${data['customer_name']}</div>
-              <div class='td customer_contact'><a href="tel:${data['whatsapp']} target="blank"">${data['whatsapp']}</a><a href="http://wa.me/91${data['whatsapp']}" target="_blank"><img src="./images/whatsapp.png" class="whatsapp-image"/></a></div>
-              <div class='td'><a href="mailto:${data['email']}">${data['email']}</a></div>
-              <!-- <div class='td'>${data['status']}</div>-->
-              <div class='td'>
+              <div class='td prospectus_product_name'>${data['product_name']}</div>
+              <div class='td prospectus_qty'>${data['quantity']}</div>
+              <div class='td prospectus_cust_id'>${data['customer_id']}</div>
+              <div class='td prospectus_cust_name'>${data['customer_name']}</div>
+              <div class='td prospectus_phone customer_contact'><a href="tel:${data['whatsapp']} target="blank"">${data['whatsapp']}</a><a href="http://wa.me/91${data['whatsapp']}" target="_blank"><img src="./images/whatsapp.png" class="whatsapp-image"/></a></div>
+              <div class='td prospectus_email'><a href="mailto:${data['email']}">${data['email']}</a></div>
+              <div class='td prospectus_status'>
               <select name="status" id="prospectus_status_${data['order_id']}">
                 <option value="0" ${order_status==0?"selected":""}>Cancelled</option>
                 <option value="1" ${order_status==1?"selected":""}>Pitching</option>
                 <option value="2" ${order_status==2?"selected":""}>Closed</option>
               </select>
               </div>
-  <div class='td customer_contact'><button class="btn-prospectus btn-prospectus-editing"><img src="./images/editing.png" class="prospectus-icons"/></button><button class="btn-prospectus btn-prospectus-expand"><img src="./images/expand.png" class="prospectus-icons"/></button></div>
+  <div class='td customer_contact prospectus_options'><button class="btn-prospectus btn-prospectus-editing"><img src="./images/editing.png" class="prospectus-icons"/></button><button class="btn-prospectus btn-prospectus-expand"><img src="./images/expand.png" class="prospectus-icons"/></button></div>
             </div>
           `;
           order_ids.push(data['order_id']);
