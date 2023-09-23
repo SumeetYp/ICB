@@ -35,3 +35,9 @@
     width: var(--icon-size-ld);
     height: var(--icon-size-ld);
 }
+
+@media(max-width:900px){
+    .footer_navbar{
+        width:100vw;
+    } 
+}
