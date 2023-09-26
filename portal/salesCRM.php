@@ -173,7 +173,7 @@
 
       </div>
       <div class="sales-table table-hide" id="table-2">
-      <div class="tr">
+      <div class="tr" id="sold_table">
             <div class="th sold_check_column">&nbsp;&nbsp;&nbsp;</div>
             <div class="th sold_product_name">Product Name</div>
             <div class="th sold_quantity">Quantity</div>
@@ -190,19 +190,21 @@
           <div id="sold_table_data"></div>
 
 
-</div>
-        <div class="total-amount">
-            <div>Grand Total: <?php
-            $totalPay = "20370"; 
-            echo "₹".$totalPay."/-";
-            ?>
-            </div>
-          <a href="#"><input type="submit" class="form_btn" value="Pay" name="total_pay"></a>
-          </div>
       </div>
 </form>
     </div>
 
+</div>
+  <div class="total-amount" id="total_amount">
+            <div>Grand Total:</div>
+            <div id="payment-amount">
+              <?php
+                $totalPay = "20370";
+                echo "₹".$totalPay."/-";
+                ?>
+            </div>
+            <form action="post" action="#"><input type="submit" class="form_btn" value="Pay" name="total_pay"></form>
+      </div>
     <h1 id="response"></h1>
   </body>
   <script defer>

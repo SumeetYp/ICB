@@ -1,5 +1,5 @@
 .sales{
-    background-color: E8E8E8;
+    background: #D9D9D9;
     /* display: flex; */
     /* flex-direction: column; */
     /* justify-content: center; */
@@ -9,6 +9,7 @@
     border-radius: 12px;
     /* max-height: 60vh; */
     /* overflow-y:scroll; */
+    /* clip-path: polygon(80% 0%, 80% 100%, 100% 100%, 100% 0%); */
 }
 
 .sales-tab{
@@ -24,7 +25,6 @@
 .active-option{
     color:#2196F3;
     border-bottom: solid #2196F3;
-    background:#D9D9D9;
 }
 
 .table, .tr, .td, .th {
@@ -151,6 +151,11 @@
     text-align: right;
     display: flex;
     justify-content: end;
+    font-weight: 600;
+}
+
+#table-2 .total-amount div{
+
 }
 
 button{
@@ -371,16 +376,47 @@ label{
 
 .sold_quantity{
     /* width: 6vw; */
+    width: 25%;
+
+}
+
+.sold_customer_id{
+    width: 50%;
 }
 
 .sold_customer_details{
-    width: 30vw;
+    width: 100%;
+}
+
+.sold_total_price{
+    width: 60%;
 }
 
 .sold_pay{
-    width:fit-content;
+    width:50%;
+    padding: 0 2%;
 }
 
+.sold_status{
+    width: 50%;
+}
+
+.total-amount{
+    font-size: clamp(1.2rem, 1.2vw, 2vw);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+}
+
+.total-amount div {
+    display: flex;
+}
+
+#payment-amount{
+    color: #0F8ED6;
+    padding: 0 10px;
+}
 
 /* Customer Details div */
 .sold_customer_details_all{
@@ -434,6 +470,13 @@ label{
     height: 80%;
     margin: 5%;
     background-color: #D9D9D9;
+}
+
+.total-amount{
+    padding: 0 5%;
+    justify-content: end;
+    /* display: none; */
+    opacity: 0;
 }
 
 @media (max-width:1439.8px){
@@ -520,6 +563,17 @@ label{
         font-size: clamp(1rem, 1.2vw, 1.6rem);
         margin: 0 2px;
     }
+
+    #table-2 .total-amount{
+        justify-content: space-around;
+    }
+
+    .total-amount{
+        background: linear-gradient(90deg, #004F73, #44B7FE);
+        color: #ffffff;
+        padding: 0 ;
+        justify-content: space-between;
+    }
 }
 
 .sale-tab{
@@ -592,6 +646,17 @@ label{
         width: 89%;
     }
 
+
+    /* Sales Table for Tablet */
+    #sold_table{
+        display: none;
+    }
+
+    /* sold_table_responsive */
+
+    .total-amount{
+        width: 100vw;
+    }
 }
 
 @media (max-width:600px) {

@@ -215,10 +215,12 @@ let order_ids = [];
           const payment_message = data[key].status==0?"Pay":"Paid";
           const payment_btn_active = data[key].status==0?"":"disabled";
           const status = data[key].status==0?"Pending":"Paid";
-          sold_table.innerHTML+=`<div class='tr'>
+          sold_table.innerHTML+=`<div class='tr tr_propspectus_order' id="sold_table_responsive">
+          <div class="prospectus_product_image"><img src="" alt="" class="prospectus_product_image__img"></div>
           <div class='td sold_check_column'><input type='checkbox' value='${data[key].order_id}' name='${data[key].order_id}' for='${data[key].order_id}' ${payment_btn_active}/></div>
+          <div class="prospectus_product_details tr">
           <div class='td sold_product_name'>${data[key].product_name}</div>
-          <div class='td sold_quantity'>${data[key].quantity}</div>
+          <div class='td sold_quantity'><span class="prospectus_field_name">Qty&nbsp;</span>${data[key].quantity}</div>
           <div class='td sold_customer_id'>${data[key].customer_id}</div>
           <div class='td sold_customer_details'>
             <div class="sold_customer_details_all">
@@ -240,7 +242,9 @@ let order_ids = [];
           <div class='td sold_total_price'>₹ ${data[key].total_price}</div>
           <div class='td sold_pay'><input type="button" class="form_btn" value="${payment_message}" ${payment_btn_active}></div>
           <div class='td sold_status'>${status}</div>
-          </div>`;
+          </div>
+          </div>
+          `;
         });
 
       
