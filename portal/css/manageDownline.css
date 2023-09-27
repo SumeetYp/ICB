@@ -97,7 +97,7 @@ body{
     font-weight: 600;
 }
 
-.my_downline_table__header__profile_dp{
+.my_downline_table__header__profile_dp, .my_downline_table__header__mobile_image{
     display: none;
 }
 
@@ -133,19 +133,85 @@ body{
     .my_downline_table__header__profile_dp{
         display: block;
         width: 20%;
-        border: solid black 1px;
+        /* border: solid black 1px; */
         padding: 2%;
     }
 
     .my_downline__card{
         width: 90vw;
         display: flex;
+        box-shadow: 0 4px 4px lightgrey;
+        border-radius: 5px;
     }
 
     .my_downline_table__header___right{
         width: 80%;
-        border: solid black 1px;
-        background: green;
+        /* border: solid black 1px; */
+        /* background: green; */
+    }
+
+    .my_downline_card__drop_down{
+        display: flex;
+        justify-content: end;
+        flex-direction: column;
+    }
+
+    .my_downline_table__header__mobile{
+        display: none;
+    }
+
+    .my_downline_table__header___right__section{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 2% 0 ;
+    }
+
+    .my_downline_table__header___right__col-1{
+        width: 60%;
+    }
+
+    .my_downline_table__header__name{
+        font-size: clamp(1.5rem, 2vw, 2.5rem);
+    }
+
+    .my_downline_table__header__myshare{
+        width: 20%;
+    }
+
+    .my_downline_table__header__mobile_image{
+        width: 10%;
+        display: block;
+        /* border: solid black 1px; */
+    }
+
+    .my_downline_table__header__mobile_image img{
+        width: 100%;
+        height: auto;
+    }
+
+    .my_downline_table__header__uid{
+        color: #C5C4C4;
+    }
+
+    .drop-down-button{
+        display: flex;
+        justify-content: end;
+        width: 90%;
+        margin: auto;
+    }
+
+    .my_downline_card__drop_down_details{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .my_downline_card__phone, .my_downline_card__email{
+        display: flex;
+    }
+
+    .my_downline_card__phone_number, .my_downline_card__email_id{
+        font-weight: 600;
     }
 }
 

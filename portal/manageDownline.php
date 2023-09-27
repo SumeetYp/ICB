@@ -29,6 +29,7 @@
     </style>
     <script src="./js/sliderAccordian.js" defer></script>
     <script src="./js/sideBar.js" defer></script>
+    <script src="./js/manageDownline.js" defer></script>
 </head>
   <body>
     <!-- Navigation Bar -->
@@ -72,12 +73,66 @@
               <?php include "./components/dpuserProfile.php"; ?>
             </div>
             <div class="my_downline_table__header___right">
-              
-              <div class="my_downline_table__header__uid mydownline_col">UID</div>
-              <div class="my_downline_table__header__name mydownline_col">Name</div>
-              <div class="my_downline_table__header__mobile mydownline_col">Mobile</div>
-              <div class="my_downline_table__header__total_income mydownline_col">Total Income</div>
-              <div class="my_downline_table__header__myshare mydownline_col">My % Share</div>
+              <div class="my_downline_table__header___right__section">
+                <div class="my_downline_table__header___right__col-1">
+                  <div class="my_downline_table__header__uid mydownline_col">83749329</div>
+                  <div class="my_downline_table__header__name mydownline_col">Full Name</div>
+                  <div class="my_downline_table__header__mobile mydownline_col">Mobile</div>
+                  <div class="my_downline_table__header__total_income mydownline_col">Total Income: ₹ <?php echo "10,000"?>/-</div>
+                </div>
+                <div class="my_downline_table__header__myshare mydownline_col">My % Share: <div>₹ <?php echo"500"?>/-</div></div>
+                <div class="my_downline_table__header__mobile_image mydownline_col"><a href="tel:<?php echo "9876543210";?>"><img src="./images/call.png" alt="Phone Number"></a></div>
+              </div>
+              <!-- Drop Down menu -->
+              <div class="my_downline_card__drop_down">
+                <div class="drop-down-button">
+                  <svg class="mydownline_dropdown" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-selector" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <!-- <path d="M8 9l4 -4l4 4"></path> -->
+                    <path d="M16 15l-4 4l-4 -4"></path>
+                  </svg>
+                </div>
+                <div class="my_downline_card__drop_down_details">
+                  <div class="my_downline_card__phone">Phone:&nbsp;<div class="my_downline_card__phone_number">29201910102</div></div>
+                  <div class="my_downline_card__email">Email:&nbsp;<div class="my_downline_card__email_id">user@gmail.com</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="my_downline__card">
+            <div class="my_downline_table_col my_downline_table__header__profile_dp">
+              <?php 
+                $user_image_path = $_SESSION['profile'];
+                // $profile_check_image = $_SESSION['']
+              ?>
+              <?php include "./components/dpuserProfile.php"; ?>
+            </div>
+            <div class="my_downline_table__header___right">
+              <div class="my_downline_table__header___right__section">
+                <div class="my_downline_table__header___right__col-1">
+                  <div class="my_downline_table__header__uid mydownline_col">83749329</div>
+                  <div class="my_downline_table__header__name mydownline_col">Full Name</div>
+                  <div class="my_downline_table__header__mobile mydownline_col">Mobile</div>
+                  <div class="my_downline_table__header__total_income mydownline_col">Total Income: ₹ <?php echo "10,000"?>/-</div>
+                </div>
+                <div class="my_downline_table__header__myshare mydownline_col">My % Share: <div>₹ <?php echo"500"?>/-</div></div>
+                <div class="my_downline_table__header__mobile_image mydownline_col"><a href="tel:<?php echo "9876543210";?>"><img src="./images/call.png" alt="Phone Number"></a></div>
+              </div>
+              <!-- Drop Down menu -->
+              <div class="my_downline_card__drop_down">
+                <div class="drop-down-button">
+                  <svg class="mydownline_dropdown" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-selector" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <!-- <path d="M8 9l4 -4l4 4"></path> -->
+                    <path d="M16 15l-4 4l-4 -4"></path>
+                  </svg>
+                </div>
+                <div class="my_downline_card__drop_down_details">
+                  <div class="my_downline_card__phone">Phone:&nbsp;<div class="my_downline_card__phone_number">29201910102</div></div>
+                  <div class="my_downline_card__email">Email:&nbsp;<div class="my_downline_card__email_id">user@gmail.com</div></div>
+                </div>
+              </div>
             </div>
           </div>
       </div>
