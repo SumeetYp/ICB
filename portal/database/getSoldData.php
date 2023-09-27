@@ -23,4 +23,5 @@
         $converter = new sqlToJson();
         $converter->sql_to_json($get_sold_data);
     }
+    mysqli_close($mysqli);
 ?>

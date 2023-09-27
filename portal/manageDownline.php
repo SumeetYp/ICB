@@ -32,5 +32,11 @@
     <?php
       include './header.php';
     ?>
+    <div class="downline-top">
+      <div id="downline_details">
+        <div id="downline_details__username"><?php echo $_SESSION['fullname'];?></div>
+      </div>
+      <div id="downline_income"></div>
+    </div>
   </body>
 </html>

@@ -39,4 +39,5 @@
         $_SESSION['message']= "Error in request made";
         // header("Location: ../Error.php");
     } 
+    mysqli_close($mysqli);
 ?>

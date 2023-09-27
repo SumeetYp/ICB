@@ -42,10 +42,11 @@
         $sql_customer_update = "update customer set 	name='".$customer_name."' ,email ='".$email."', address='".$address."',city='".$city."', state='".$state."', pin='".$pin."', whatsapp=".$whatsapp."  where id=".$cust_id.";";
         // echo $sql_customer_update;
         $result_update = mysqli_query($mysqli, $sql_customer_update);
-        
+        mysqli_close($mysqli);
         header("Location: ../salesCRM.php");
     }else{
         echo "Error in request made";
+        mysqli_close($mysqli);
     }
 
 ?>

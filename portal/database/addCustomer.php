@@ -114,6 +114,7 @@
 
       echo "Data added successfully";
       $_SESSION["message"] = "Data added successfully";
+      mysqli_close($mysqli);
       header("Location: ../salesCRM.php");
     }
   }

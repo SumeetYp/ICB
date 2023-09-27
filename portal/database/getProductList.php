@@ -17,4 +17,5 @@
         $products = $result->fetch_assoc();
         echo $products['pitching_products'];
     }
+    mysqli_close($mysqli);
 ?>

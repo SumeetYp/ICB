@@ -26,5 +26,5 @@
     }else{
         echo "Error in request made";
     }
-
+    mysqli_close($mysqli);
 ?>

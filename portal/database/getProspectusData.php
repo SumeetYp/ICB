@@ -26,4 +26,5 @@
         $output=trim($output, ',').'}';
         echo $output;
     }
+    mysqli_close($mysqli);
 ?>
