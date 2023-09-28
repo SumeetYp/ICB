@@ -1,5 +1,5 @@
 .section-search{
-    padding-top:10vh;
+    /* padding-top:10vh; */
 }
 
 .searchForm{
@@ -63,6 +63,10 @@
 @media (max-width:992px){
     .searchBar{
         width: 90%;
+    }
+
+    .searchButton{
+        width:20%;
     }
 }
 
