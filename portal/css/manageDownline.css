@@ -95,16 +95,63 @@ body{
 .mydownline_col{
     font-size: clamp(1rem, 1.2vw, 2rem);
     font-weight: 600;
+    width: 10vw;
 }
+
+/* .mydownline_value_col{
+    width: 10vw;
+} */
 
 .my_downline_table__header__profile_dp, .my_downline_table__header__mobile_image{
     display: none;
 }
 
+@media (min-width:1024px){
+    /* .mydownline_value_col{
+        width: auto;
+    } */
+    .my_downline_table__header___right, .my_downline_table__header___right__section, .my_downline_table__header___right__col-1, .my_downline_table__header__myshare{
+        display: flex;
+    }
+
+    .my_downline_card__drop_down{
+        display: none;
+    }
+
+    .my_downline_table_message{
+        display: none;
+    }
+
+    .my_downline_table__header___right{
+        width: 90vw;
+    }
+
+    .my_downline_table__header___right__section{
+        width: 90vw;
+    }
+
+    .my_downline_table__header___right__col-1{
+        width: 80vw;
+        justify-content: space-around;
+    }
+
+    .my_downline_table__header__myshare{
+        /* width: 8%; */
+    }
+
+    #my_share_title{
+        /* padding-right: 10%; */
+    }
+}
+
 /* Tablet : 1024px */
-@media (max-width:1024px){
+@media (max-width:1023.8px){
     .downline-top{
         /* overflow: visible; */
+    }
+
+    .my_downline_table_message{
+        display: block;
     }
 
     #downline_details{
@@ -213,6 +260,13 @@ body{
 
     .my_downline_card__phone_number, .my_downline_card__email_id{
         font-weight: 600;
+    }
+
+    .my_downline_table__header__total_income{
+        display: flex;
+    }
+    .my_downline_table__header{
+        display: none;
     }
 }
 
