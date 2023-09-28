@@ -41,6 +41,7 @@ else { // User exists
         $_SESSION['instagram'] = $user['instagram'];
         $_SESSION['telegram'] = $user['telegram'];
         $_SESSION['address'] = $user['address'];
+        $_SESSION['id'] = $user['id'];
         
         // This is how we'll know the user is logged in
         $_SESSION['logged_in'] = true;

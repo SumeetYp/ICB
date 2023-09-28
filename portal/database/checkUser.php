@@ -11,6 +11,7 @@
             } else {
                 echo "Username Not Available";
             }
+            mysqli_close($mysqli);
         }
     }
 ?>

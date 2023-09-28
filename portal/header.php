@@ -2,7 +2,7 @@
     $checkSrc = NULL;
     $borderColor = NULL;
     $icbName = "";
-    $options = array("<h2>Care For Bharat</h2><button class='accordian'>Volunteer</button>
+    $options = array("<h2>Care For Bharat</h2><button class='accordian' id='volunetter'>Volunteer</button>
     <ul class='panel'>
         <a href='./home.php'>Home</a>
         <a href='./profile.php'>Profile</a>
@@ -35,9 +35,10 @@
         <a href='./announcement.php'>Announcement</a>
     </ul>"
     );
-    $commonOptions = "<button class='accordian'>Support and Settings</button>
-    <ul class='panel'>
-        <a href=''>Settings & Support</a>
+    // <button class='accordian'>Support and Settings</button>
+    $commonOptions = "
+    <ul>
+        <a href='./settings.php'>Settings & Support</a>
         <a href='./coreTeam.php'>Contact Team</a>
         <a href='./alert.php'>Send an Alert</a>
         <a href='./logout.php'>Logout</a>

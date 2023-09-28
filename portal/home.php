@@ -40,8 +40,12 @@
     <link rel="stylesheet" href="./css/utils.css">
 
     <style>
-        <?php include "./css/home.css";
-        include "./css/header.css" ?>
+        <?php 
+            include "./css/home.css";
+            include "./css/header.css"; 
+            include "./css/bottomNav.css";
+        ?>
+
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -420,6 +424,9 @@
             ?>
         </div>
     </div>
+    <?php
+        include "components/bottomNav.php";
+    ?>
     <script src="./js/opportunity.js"></script>
     <script src="./js/sideBar.js" defer></script>
     <script src="./js/sliderAccordian.js" defer></script>
