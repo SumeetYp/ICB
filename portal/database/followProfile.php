@@ -60,4 +60,5 @@
     {
         echo "Didn't recive request";
     }
+    mysqli_close($mysqli);
 ?>
