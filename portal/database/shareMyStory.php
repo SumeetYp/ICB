@@ -42,17 +42,20 @@
                         // $updateFilePath = "UPDATE publicstory SET postfile='$fileDestinationDb' WHERE userEmail='$userEmail' and caption='$caption';";
                         $updateFilePath = "UPDATE publicstory SET postfile='$fileDestinationDb' WHERE userEmail='$userEmail' and caption='$caption';";
                         $result = mysqli_query($mysqli, $updateFilePath);
-                        header("Location: ../home.php");
+                        // header("Location: ../home.php");
+                        echo "image added successfullly";
 
                     } else{  
-                        // echo "Sorry, file not uploaded, please try again!";  
+                        $_SESSION['message'] = "Sorry, file not uploaded, please try again!";  
                         header("Location: ../error.php");
                     }  
                 }else{
-                    echo 'Your files size is too big!';
+                    $_SESSION['message'] = 'Your files size is too big!';
+                    header("Location: ../error.php");
                 }
             }else{
-                echo "Error in uploading file";
+                $_SESSION['message'] =  "Error in uploading file";
+                header("Location: ../error.php");
             }
         }
         else{

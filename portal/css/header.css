@@ -107,11 +107,15 @@ nav .profilePicture img:first-of-type {
 
 #volunetter{max-height: 375px;}
 
-.sideItems .panel{
+.sideItems .panel, .sideItems .panel-2{
     /* display: none; */
     max-height: 0px;
     transition: max-height 0.3s ease-out;
     overflow: hidden;
+}
+
+.sideItems .panel-2{
+    max-height:fit-content ;
 }
 
 .sideItems ul {

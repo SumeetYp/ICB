@@ -3,7 +3,8 @@
     $borderColor = NULL;
     $icbName = "";
     $options = array("<h2>Care For Bharat</h2>
-    <ul>
+    <button class='accordian'>Volunteer</button>
+    <ul class='panel-2'>
         <a href='./home.php'>Home</a>
         <a href='./profile.php'>Profile</a>
         <a href='./trainings.php'>My Training</a>
