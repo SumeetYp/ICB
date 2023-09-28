@@ -72,22 +72,23 @@ let order_ids = [];
         for(let key in orders){
           const data = orders[key];
           // console.log(data);
+          // <span class="prospectus_field_name">Customer Details&nbsp;</span>
           let order_status = data['status']=='Closed'?2:data['status']=="Pitching"?1:0;
           prospectus.innerHTML+=`
           <div class='tr tr_propspectus_order'>
-              <div class="prospectus_product_image"><img src="" alt="" class="prospectus_product_image__img"></div>
+              <div class="prospectus_product_image"><img src="./images/pexels-alex-andrews-821651.jpg" alt="" class="prospectus_product_image__img"></div>
               <div class="prospectus_product_details tr">
                 <div class='td prospectus_product_name'><span>${data['product_name']}</span><span>${data['product_id']}</span></div>
                 <div class='td prospectus_qty'><span class="prospectus_field_name">Qty&nbsp;</span>${data['quantity']}</div>
                 <div class='td prospectus_cust_id'>${data['customer_id']}</div>
-                <div class='td prospectus_cust_name'><span class="prospectus_field_name">Customer Details&nbsp;</span>${data['customer_name']}</div>
-                <div class='td prospectus_phone customer_contact'><a href="tel:${data['whatsapp']} target="blank"">${data['whatsapp']}</a><a href="http://wa.me/91${data['whatsapp']}" target="_blank"><img src="./images/whatsapp.png" class="whatsapp-image"/></a></div>
+                <div class='td prospectus_cust_name'>${data['customer_name']}</div>
+                <div class='td prospectus_phone customer_contact'><a href="tel:+91${data['whatsapp']} target="blank"">+91&nbsp;${data['whatsapp']}</a><a href="http://wa.me/91${data['whatsapp']}" target="_blank"><img src="./images/whatsapp.png" class="whatsapp-image"/></a></div>
                 <div class='td prospectus_email'><a href="mailto:${data['email']}">${data['email']}</a></div>
                 <div class='td prospectus_status'>
-                <select name="status" id="prospectus_status_${data['order_id']}">
-                  <option value="0" ${order_status==0?"selected":""}>Cancelled</option>
-                  <option value="1" ${order_status==1?"selected":""}>Pitching</option>
-                  <option value="2" ${order_status==2?"selected":""}>Closed</option>
+                <select name="status" id="prospectus_status_${data['order_id']}" class="prospectus_table_select select_features_${order_status}">
+                  <option value="0" ${order_status==0?"selected":""} style="background:red;">Cancelled</option>
+                  <option value="1" ${order_status==1?"selected":""} style="background:yellow;">Pitching</option>
+                  <option value="2" ${order_status==2?"selected":""} style="background:lightgreen;">Closed</option>
                 </select>
                 </div>
                 <div class='td customer_contact prospectus_options'><button class="btn-prospectus btn-prospectus-editing"><img src="./images/editing.png" class="prospectus-icons"/><span>Edit</span></button><button class="btn-prospectus btn-prospectus-expand"><img src="./images/expand.png" class="prospectus-icons"/><span>Details</span></button></div>
@@ -216,7 +217,7 @@ let order_ids = [];
           const payment_btn_active = data[key].status==0?"":"disabled";
           const status = data[key].status==0?"Pending":"Paid";
           sold_table.innerHTML+=`<div class='tr tr_propspectus_order' id="sold_table_responsive">
-          <div class="prospectus_product_image"><img src="" alt="" class="prospectus_product_image__img"></div>
+          <div class="prospectus_product_image"><img src="./images/pexels-alex-andrews-821651.jpg" alt="" class="prospectus_product_image__img"></div>
           <div class='td sold_check_column'><input type='checkbox' value='${data[key].order_id}' name='${data[key].order_id}' for='${data[key].order_id}' ${payment_btn_active}/></div>
           <div class="prospectus_product_details tr">
           <div class='td sold_product_name'>${data[key].product_name}</div>
@@ -235,7 +236,7 @@ let order_ids = [];
             </div>
             <div class="sold_customer_details_hidden" id="details_id_${data[key].order_id}">
               <div class="customer_email"><a href="mailto:${data[key].email}" link="_blank">${data[key].email}</a></div>
-              <div class="customer_email"><a href="tel:${data[key].phone}">${data[key].phone}</a></div>
+              <div class="customer_email"><a href="tel:+91${data[key].phone}">+91 ${data[key].phone}</a></div>
             </div>
             </div>
           </div>
@@ -264,4 +265,3 @@ let order_ids = [];
     xmlhttp.open("GET",`database/getSoldData.php`,true);
     xmlhttp.send();
   });
-

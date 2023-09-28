@@ -134,9 +134,7 @@
         $display = 'd-none';
     }
     echo "<nav>
-            
-            " . "\n" .
-                "<div class='profilePicture'>" . "\n" .
+            <div class='profilePicture'>" . "\n" .
                 "<img class='profPic' src='".$_SESSION['profile']."' style='border-color: " . $borderColor . ";' alt=''>" . "\n" .
                 "<img class='check " . $display . "' src='" . $checkSrc . "' alt=''>" . "\n" .
             "</div><div class='userName'>" . $_SESSION['username'] . "</div>

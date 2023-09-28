@@ -1,3 +1,17 @@
+/* Common Properties */
+body{
+    background-color: #ECECEC;
+}
+
+a, a:hover, a:active, a:visited, a:focus{
+    text-decoration: none;
+    color:inherit;
+}
+
+a:hover{
+    cursor: hand;
+}
+
 .sales{
     background: #D9D9D9;
     /* display: flex; */
@@ -61,6 +75,7 @@
 .sales-table {
     width: 90%;
     margin: 2vh auto;
+    background: #D9D9D9;
 }
 
 .th, .td{
@@ -118,6 +133,30 @@
 .prospectus_options{
     width: 50%;
 }
+
+.prospectus_table_select{
+    font-size: clamp(1rem, 1.2vw, 2rem);
+    /* width: 0%; */
+}
+
+.select_features_0{
+    background-color: red;
+    /* color:#ffffff; */
+    border: none;
+}
+
+.select_features_1{
+    background-color: yellow;
+    /* color:#ffffff; */
+    border: none;
+}
+
+.select_features_2{
+    background-color: lightgreen;
+    /* color:#ffffff; */
+    border: none;
+}
+
 
 .tr.th prospectus_options{
     padding-left: 10px;
@@ -479,6 +518,20 @@ label{
     opacity: 0;
 }
 
+.btn-prospectus-editing{
+    background:#0F8ED6;
+    color: #ffffff;
+}
+
+.btn-prospectus-expand{
+    background:#41D950;
+    color: #ffffff;    
+}
+
+.btn-prospectus-editing span, .btn-prospectus-expand span{
+    padding: 2px;
+}
+
 @media (max-width:1439.8px){
     #prospectus_table_header{
         display: none;
@@ -526,17 +579,25 @@ label{
     .prospectus_cust_name{
         width: 60%;
         order:3;
+        display: block;
+        text-align:left;
+        color: #7A7979;
+        font-weight: 600;
+        font-size: clamp(1.2rem, 2vw, 2rem);
     }
 
     .prospectus_phone{
         width: 35%;
         order:4;
         margin-left: 2%;
+        font-size: clamp(1.2rem, 2vw, 2rem);
     }
 
     .prospectus_email{
         width: 70%;
         order:5;
+        display: block;
+        text-align: left;
     }
 
     .prospectus_status{
@@ -618,20 +679,33 @@ label{
         padding:0%;
     }
 
+    .prospectus_product_name span{
+        font-size: clamp(1.2rem, 2vw, 2rem);
+    }
+
     .prospectus_qty{
         order:2;
         width: 15%;
         margin-left: 2.5%;
-        font-size: clamp(1rem, 1.2vw, 1.5rem);
+        font-size: clamp(1.2rem, 1.2vw, 1.5rem);
+    }
 
+    .prospectus_qty .prospectus_field_name{
+        display: block;
     }
 
     .prospectus_cust_name{
         width: 50%;
+        display: flex;
+        justify-content: start;
     }
 
     .prospectus_phone{
         width: 35%;
+    }
+
+    .prospectus_phone a {
+        padding: 0 6px;
     }
 
     .prospectus_email{
@@ -726,5 +800,29 @@ label{
     #edit-form-details{
         width: 80vw;
         left: 10vw;
+    }
+
+    /* Prospectus:Date entered */
+    .prospectus_cust_name{
+        width: 40%;
+    }
+
+    .prospectus_phone {
+        /* order: 5; */
+        order: 6;
+        width: 60%;
+        font-size: clamp(1rem, 1vw, 2rem);
+    }
+
+    .prospectus_email{
+        /* order:6; */
+        order:5;
+        width: 40%;
+    }
+
+    /* Prospectus: Add New Entry */
+    .add-details{
+        width: 90vw;
+        left: 5vw;
     }
 }

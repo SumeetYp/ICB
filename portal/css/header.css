@@ -14,7 +14,7 @@
 
 nav {
     height: 5vh;
-    padding: 20px 0;
+    padding: 20px 10px;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -41,6 +41,7 @@ nav .userName {
     line-height: 18px;
     margin: 0 5px;
     overflow: visible;
+    padding:0px 10px;
 }
 
 nav .profilePicture {

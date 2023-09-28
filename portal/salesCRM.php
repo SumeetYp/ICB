@@ -117,7 +117,7 @@
 
         <!-- Add new details -->
 <div class="add-details">
-  <h2 class="add-details__title">Add New Customer</h2>
+  <h2 class="add-details__title">New Entry</h2>
   <img src="https://cdn-icons-png.flaticon.com/128/463/463612.png" alt="close" class="close_add-details"/>
   <div id="content"></div>
           <form action="database/addCustomer.php" method="post">
