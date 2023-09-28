@@ -23,6 +23,7 @@
     <style>
         <?php include "./css/header.css" ?>
         <?php include "./css/search.css" ?>
+        <?php include "./css/productcard.css" ?>
     </style>
     <script src="./js/sliderAccordian.js" defer></script>
     <script src="./js/sideBar.js" defer></script>
@@ -31,6 +32,9 @@
     <!-- Navigation Bar -->
     <?php
       include './header.php';
+    ?>
+    <?php 
+      include "components/productcard.php"; 
     ?>
   </body>
 </html>
