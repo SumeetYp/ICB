@@ -241,6 +241,8 @@ if(mysqli_num_rows($res)>0){
     <style>
         <?php include "./css/header.css" ?>
     </style>
+    <link rel="stylesheet" href="./css/bottomNav.css">
+<script src="./js/sideBar.js" defer></script>
     <script src="./js/sliderAccordian.js" defer></script>
 </head>
 
@@ -519,7 +521,7 @@ if(mysqli_num_rows($res)>0){
 
 
 
-
+        <?php include "./components/bottomNav.php";?>
     <script src="js/sideBar.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </body>

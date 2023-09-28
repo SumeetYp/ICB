@@ -28,6 +28,8 @@
         <?php include "./css/search.css" ?>
         <?php include "./css/salesCRM.css" ?>  
     </style>
+    <link rel="stylesheet" href="./css/bottomNav.css">
+<script src="./js/sideBar.js" defer></script>
     <script src="./js/sliderAccordian.js" defer></script>
     <script src="./js/sideBar.js" defer></script>
     <script src="./js/salesCRM.js" defer></script>
@@ -207,6 +209,7 @@
             <form action="post" action="#"><input type="submit" class="form_btn" value="Pay" name="total_pay"></form>
       </div>
     <h1 id="response"></h1>
+    <?php include "./components/bottomNav.php";?>
   </body>
   <script defer>
   var xmlhttp = new XMLHttpRequest();

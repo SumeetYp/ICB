@@ -1,6 +1,6 @@
 const accordians = document.getElementsByClassName('accordian');
 // console.log(typeof((accordians)));
-for(let i = 0; i<accordians.length;i++){
+for(let i = 1; i<accordians.length;i++){
     accordians[i].addEventListener('click', ()=>{
         accordians[i].classList.toggle("active");
         let panel =accordians[i].nextElementSibling;

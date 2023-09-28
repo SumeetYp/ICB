@@ -73,6 +73,8 @@
             border-radius: 15px;
         }
     </style>
+    <link rel="stylesheet" href="./css/bottomNav.css">
+<script src="./js/sideBar.js" defer></script>
     <script src="./js/sliderAccordian.js" defer></script>
 
 </head>
@@ -272,6 +274,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="js/profile-js/script.js"></script>
     <script src="js/sideBar.js"></script>
+    <?php include "./components/bottomNav.php";?>
 </body>
 <script>
     function validate() {

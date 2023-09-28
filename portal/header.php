@@ -2,8 +2,8 @@
     $checkSrc = NULL;
     $borderColor = NULL;
     $icbName = "";
-    $options = array("<h2>Care For Bharat</h2><button class='accordian' id='volunetter'>Volunteer</button>
-    <ul class='panel'>
+    $options = array("<h2>Care For Bharat</h2>
+    <ul>
         <a href='./home.php'>Home</a>
         <a href='./profile.php'>Profile</a>
         <a href='./trainings.php'>My Training</a>
@@ -22,11 +22,14 @@
     </ul>",
     "<button class='accordian'>Employee</button>
     <ul class='panel'>
-        <a href='#'></a>
+        <a href='#'>My Documents</a>
+        <a href='#'>My Salary</a>
+        <a href='#'>My Attendance</a>
     </ul>",
     "<button class='accordian'>Partners</button>
     <ul class='panel'>
-        <a href='#'></a>
+        <a href='#'>Dashboard</a>
+        <a href='#'>Product Post & Manage</a>
     </ul>",
     "<button class='accordian'>Adminstrator</button>
     <ul class='panel'>
@@ -130,16 +133,12 @@
         $display = 'd-none';
     }
     echo "<nav>
-            <div class='hamBurger'>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>  
-            <div class='userName'>" . $_SESSION['username'] . "</div>" . "\n" .
+            
+            " . "\n" .
                 "<div class='profilePicture'>" . "\n" .
                 "<img class='profPic' src='".$_SESSION['profile']."' style='border-color: " . $borderColor . ";' alt=''>" . "\n" .
                 "<img class='check " . $display . "' src='" . $checkSrc . "' alt=''>" . "\n" .
-            "</div>
+            "</div><div class='userName'>" . $_SESSION['username'] . "</div>
         </nav>" .
         "<div class='sideBar hideSideBar'>
             <div class='sideItems'>
