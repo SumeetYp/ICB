@@ -31,6 +31,7 @@
     <script src="./js/sliderAccordian.js" defer></script>
     <script src="./js/sideBar.js" defer></script>
     <script src="./js/salesCRM.js" defer></script>
+    <script src="./js/searchBar.js" defer></script>
 </head>
   <body>
     <!-- Navigation Bar -->
