@@ -113,8 +113,9 @@ body{
     }
 
     #downline_income{
-        left:-54vw;
+        left:-70vw;
         max-height: 20vh;
+        padding-right: 20vw;
     }
     #downline_income__details{
         flex-direction: column;
@@ -236,5 +237,26 @@ body{
 
     .downline_title{
         top: 30vh;
+    }
+
+    .my_downline_table__header__uid{
+        font-size: clamp(1rem, 1vw, 1.2rem);
+    }
+
+    .my_downline_table__header__name{
+        font-size: clamp(1rem, 1.1vw, 1.2rem);
+    }
+
+    .my_downline_table__header__total_income{
+        font-size: 12px;
+    }
+
+    .my_downline_table__header__myshare{
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .my_downline_card__drop_down_details{
+        font-size: 10px;
     }
 }
