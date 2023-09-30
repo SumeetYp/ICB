@@ -1,3 +1,19 @@
+/* Common Properties */
+body{
+    background-color: #ECECEC;
+}
+
+a, a:hover, a:active, a:visited, a:focus{
+    text-decoration: none;
+    color:inherit;
+}
+
+a:hover{
+    cursor: hand;
+}
+
+/* Header */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 .displaySideBar {

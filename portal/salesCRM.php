@@ -8,6 +8,7 @@
   if (!isset($_SESSION['type'])){
     header("Location: ../index.html");
   }
+
   $searchOn = '';
 
   $productList = '';
@@ -27,13 +28,19 @@
         <?php include "./css/header.css" ?>
         <?php include "./css/search.css" ?>
         <?php include "./css/salesCRM.css" ?>  
+        <?php include "./css/notification.css" ?>
     </style>
     <link rel="stylesheet" href="./css/bottomNav.css">
-<script src="./js/sideBar.js" defer></script>
+<!-- <script src="./js/sideBar.js" defer></script> -->
+    <?php 
+      echo "<script>localStorage.setItem('id', ".$_SESSION['id'].");</script>";
+    ?>
     <script src="./js/sliderAccordian.js" defer></script>
     <script src="./js/sideBar.js" defer></script>
     <script src="./js/salesCRM.js" defer></script>
     <script src="./js/searchBar.js" defer></script>
+    <script src="./js/notification.js" defer></script>
+    
 </head>
   <body>
     <!-- Navigation Bar -->
@@ -118,7 +125,7 @@
         <!-- Add new details -->
 <div class="add-details">
   <h2 class="add-details__title">New Entry</h2>
-  <img src="https://cdn-icons-png.flaticon.com/128/463/463612.png" alt="close" class="close_add-details"/>
+  <img src="https://cdn-icons-png.flaticon.com/128/463/463612.png" alt="close" id="close_add-details" class="close_add-details"/>
   <div id="content"></div>
           <form action="database/addCustomer.php" method="post">
           <label for="product_id" class="form_label"><div>Product ID:</div> 
@@ -209,6 +216,8 @@
             <form action="post" action="#"><input type="submit" class="form_btn" value="Pay" name="total_pay"></form>
       </div>
     <h1 id="response"></h1>
+
+    <?php include "./components/notification.php";?>
     <?php include "./components/bottomNav.php";?>
   </body>
   <script defer>

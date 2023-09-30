@@ -1,6 +1,6 @@
+// 1. Switching the tabs between prospectus and sold table
 const sale_tab_1 = document.getElementById("sale-tab-1");
 const sale_tab_2 = document.getElementById("sale-tab-2");
-
 
 sale_tab_1.addEventListener("click", () =>{
     const sale_tab_1 = document.getElementById("sale-tab-1");
@@ -24,114 +24,132 @@ sale_tab_2.addEventListener("click", () =>{
     table1.classList.add("table-hide");
 });
 
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      let elements = "";
-      let products = JSON.parse(this.responseText);
-      for(const key in products){
-        elements+=`<option value='${key}'>${key}</option>`;
-      }
-      document.getElementById("product_id").innerHTML = elements;
+// 2. Fetching the product details
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    let elements = "";
+    let products = JSON.parse(this.responseText);
+    for(const key in products){
+      elements+=`<option value='${key}'>${key}</option>`;
     }
-  };
-  xmlhttp.open("GET","database/getProductList.php?id=10000003",true);
-  xmlhttp.send();
+    document.getElementById("product_id").innerHTML = elements;
+  }
+};
+// console.log("database/getProductList.php?id="+localStorage.getItem('id'));
+xmlhttp.open("GET","database/getProductList.php?id="+localStorage.getItem('id'),true); // Change the user id 
+xmlhttp.send();
 
+// 3.1 Add details : Form open
+document.getElementsByClassName("add_new")[0].addEventListener('click', () => {
+    document.getElementsByClassName("add-details")[0].style.display="block";
+});
 
-    // add details form open
-    document.getElementsByClassName("add_new")[0].addEventListener('click', () => {
-        document.getElementsByClassName("add-details")[0].style.display="block";
-    })
+// 3.2 Add details: Form close
+document.getElementById("close_add-details").addEventListener('click', () => {
+  // console.log(document.getElementById("close_add-details"));
+  document.getElementsByClassName("add-details")[0].style.display="none";
+});
+    // document.getElementsByClassName("close_add-details")[0].addEventListener('click', () => {
+    //     document.getElementsByClassName("add-details")[0].style.display="none";
+    // })
 
-    //add details form close
-    document.getElementsByClassName("close_add-details")[0].addEventListener('click', () => {
-        document.getElementsByClassName("add-details")[0].style.display="none";
-    })
+// 4.1 Edit form close
+document.getElementById('edit_form_close').addEventListener('click', () => {
+  document.getElementById('edit-form-details').style.display='none';
+});
 
-    // Edit form close
-    document.getElementById('edit_form_close').addEventListener('click', () => {
-      document.getElementById('edit-form-details').style.display='none';
-    })
+// 4.2 Edit form close
+document.getElementById('show_form_close').addEventListener('click', () => {
+  document.getElementById('show-form-details').style.display='none';
+});
 
-    // Edit form close
-    document.getElementById('show_form_close').addEventListener('click', () => {
-      document.getElementById('show-form-details').style.display='none';
-    })
+// 5. Prospectus edit and details functionality
+let order_ids = []; // array to store order ids
 
-    // Prospectus edit and details functionality
+// 5.1 Fetching all orders related to user id
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    let orders = JSON.parse(this.responseText);    
+    // console.log(orders);
+    const prospectus = document.getElementById('prospectus');
+    for(let key in orders){
+      const data = orders[key]; // selecting individual order
+      // console.log(data);
+      // <span class="prospectus_field_name">Customer Details&nbsp;</span>
+      let order_status = data['status']=='Closed'?2:data['status']=="Pitching"?1:0; // Variable representing order status
+      // Prospectus table order details
+      prospectus.innerHTML+=`
+      <div class='tr tr_propspectus_order'>
+        <div class="prospectus_product_image">
+          <img src="./images/pexels-alex-andrews-821651.jpg" alt="" class="prospectus_product_image__img">
+        </div>
+        <div class="prospectus_product_details tr">
+          <div class='td prospectus_product_name'><span>${data['product_name']}</span><span>${data['product_id']}</span></div>
+          <div class='td prospectus_qty'><span class="prospectus_field_name">Qty&nbsp;</span>${data['quantity']}</div>
+          <div class='td prospectus_cust_id'>${data['customer_id']}</div>
+          <div class='td prospectus_cust_name'>${data['customer_name']}</div>
+          <div class='td prospectus_phone customer_contact'><a href="tel:+91${data['whatsapp']} target="blank"">+91&nbsp;${data['whatsapp']}</a><a href="http://wa.me/91${data['whatsapp']}" target="_blank"><img src="./images/whatsapp.png" class="whatsapp-image"/></a></div>
+          <div class='td prospectus_email'><a href="mailto:${data['email']}">${data['email']}</a></div>
+          <div class='td prospectus_status'>
+            <select name="status" id="prospectus_status_${data['order_id']}" class="prospectus_table_select select_features_${order_status}">
+              <option value="0" ${order_status==0?"selected":""} style="background:red;">Cancelled</option>
+              <option value="1" ${order_status==1?"selected":""} style="background:yellow;">Pitching</option>
+              <option value="2" ${order_status==2?"selected":""} style="background:lightgreen;">Closed</option>
+            </select>
+          </div>
+          <div class='td customer_contact prospectus_options'>
+            <button class="btn-prospectus btn-prospectus-editing">
+              <img src="./images/editing.png" class="prospectus-icons"/>
+              <span>Edit</span>
+            </button>
+            
+            <button class="btn-prospectus btn-prospectus-expand">
+              <img src="./images/expand.png" class="prospectus-icons"/>
+              <span>Details</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      `;
+      order_ids.push(data['order_id']);
+    }
 
-let order_ids = [];
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        let orders = JSON.parse(this.responseText);
-        
-        // console.log(orders);
-        const prospectus = document.getElementById('prospectus');
-        for(let key in orders){
-          const data = orders[key];
-          // console.log(data);
-          // <span class="prospectus_field_name">Customer Details&nbsp;</span>
-          let order_status = data['status']=='Closed'?2:data['status']=="Pitching"?1:0;
-          prospectus.innerHTML+=`
-          <div class='tr tr_propspectus_order'>
-              <div class="prospectus_product_image"><img src="./images/pexels-alex-andrews-821651.jpg" alt="" class="prospectus_product_image__img"></div>
-              <div class="prospectus_product_details tr">
-                <div class='td prospectus_product_name'><span>${data['product_name']}</span><span>${data['product_id']}</span></div>
-                <div class='td prospectus_qty'><span class="prospectus_field_name">Qty&nbsp;</span>${data['quantity']}</div>
-                <div class='td prospectus_cust_id'>${data['customer_id']}</div>
-                <div class='td prospectus_cust_name'>${data['customer_name']}</div>
-                <div class='td prospectus_phone customer_contact'><a href="tel:+91${data['whatsapp']} target="blank"">+91&nbsp;${data['whatsapp']}</a><a href="http://wa.me/91${data['whatsapp']}" target="_blank"><img src="./images/whatsapp.png" class="whatsapp-image"/></a></div>
-                <div class='td prospectus_email'><a href="mailto:${data['email']}">${data['email']}</a></div>
-                <div class='td prospectus_status'>
-                <select name="status" id="prospectus_status_${data['order_id']}" class="prospectus_table_select select_features_${order_status}">
-                  <option value="0" ${order_status==0?"selected":""} style="background:red;">Cancelled</option>
-                  <option value="1" ${order_status==1?"selected":""} style="background:yellow;">Pitching</option>
-                  <option value="2" ${order_status==2?"selected":""} style="background:lightgreen;">Closed</option>
-                </select>
-                </div>
-                <div class='td customer_contact prospectus_options'><button class="btn-prospectus btn-prospectus-editing"><img src="./images/editing.png" class="prospectus-icons"/><span>Edit</span></button><button class="btn-prospectus btn-prospectus-expand"><img src="./images/expand.png" class="prospectus-icons"/><span>Details</span></button></div>
-              </div>
-              </div>
-          `;
-          order_ids.push(data['order_id']);
-        }
+    // 5.2 Adding eventListners to the orders in prospectus.
+    // Updating status of the order from drop down list
+    for(let i=0;i<order_ids.length;i++){
+      // console.log(document.getElementById(`prospectus_status_${order_ids[i]}`));
+      document.getElementById(`prospectus_status_${order_ids[i]}`).addEventListener('change', () =>{
+      var statusUpdate = new XMLHttpRequest();
+      statusUpdate.onreadystatechange = () => {
+        if(this.readyState == 4 && this.status == 200){}
+      };
+    
+      // Getting the order element
+      const order_element = document.getElementById(`prospectus_status_${order_ids[i]}`);
+      // Dummy url example
+      // let url = `database/updateProspectusStatus.php?orderId=${order_ids[i]}&value=${order_element.value}`;
+      statusUpdate.open('post', "database/updateProspectusStatus.php", true);
+      statusUpdate.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      statusUpdate.send(`orderId=${order_ids[i]}&value=${order_element.value}`);
+      });
+    }
 
-        // Updating status of the order from drop down list
-        for(let i=0;i<order_ids.length;i++){
-        // console.log(document.getElementById(`prospectus_status_${order_ids[i]}`));
-        document.getElementById(`prospectus_status_${order_ids[i]}`).addEventListener('change', () =>{
-            var statusUpdate = new XMLHttpRequest();
-            statusUpdate.onreadystatechange = () => {
-              if(this.readyState == 4 && this.status == 200){
-                console.log("rEQUEST MADE");
-              }
-            };
-            const order_element = document.getElementById(`prospectus_status_${order_ids[i]}`);
-            // console.log(order_element.value);
-            // let url = `database/updateProspectusStatus.php?orderId=${order_ids[i]}&value=${order_element.value}`;
-            // console.log(url);
-            statusUpdate.open('post', "database/updateProspectusStatus.php", true);
-            statusUpdate.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            console.log(`orderId=${order_ids[i]}&value=${order_element.value}`);
-            statusUpdate.send(`orderId=${order_ids[i]}&value=${order_element.value}`);
-          });
-        }
-
-        const edit_buttons =  document.getElementsByClassName('btn-prospectus-editing');
-        const details_buttons = document.getElementsByClassName('btn-prospectus-expand');
-        for(let i=0;i<edit_buttons.length;i++){
-          const btn = edit_buttons.item(i);
-          const details = details_buttons.item(i);
-          btn.addEventListener('click', () => {
-            var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
+    // 5.3 Edit Button in Prospectus
+    const edit_buttons =  document.getElementsByClassName('btn-prospectus-editing');
+    // Details view
+    const details_buttons = document.getElementsByClassName('btn-prospectus-expand');
+    for(let i=0;i<edit_buttons.length;i++){
+      const btn = edit_buttons.item(i);
+      const details = details_buttons.item(i);
+      btn.addEventListener('click', () => {
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         let editForm = document.getElementById('edit-form-details');
         editForm.style.display = "block";
-        let data = JSON.parse(this.responseText);
-        
+        let data = JSON.parse(this.responseText);  
 
         // Product ID
         document.getElementById("ordId").value=data["order_id"];
@@ -153,13 +171,13 @@ let order_ids = [];
         document.getElementById('customer_id').value = data["cust_id"];
         document.getElementById('customer_id').style.display = "none";
       }
-    };
-    xmlhttp.open("GET",`database/fetcheditDetailsProspectus.php?ordId=${order_ids[i]}`,true);
-    xmlhttp.send();
-          });
+      };
+      xmlhttp.open("GET",`database/fetcheditDetailsProspectus.php?ordId=${order_ids[i]}`,true);
+      xmlhttp.send();
+      });
 
-          details.addEventListener('click', () => {
-            var xmlhttp = new XMLHttpRequest();
+      details.addEventListener('click', () => {
+      var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         let showForm = document.getElementById('show-form-details');
