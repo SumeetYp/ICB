@@ -32,7 +32,7 @@ $searchOn = ''
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.9/dist/js/splide.min.js"></script>
 
 
-  <style>
+  <sty le>
     <?php include "./css/header.css" ?><?php include "./css/search.css" ?><?php include "./css/servicecard.css" ?>
   </style>
   <script src="./js/sliderAccordian.js" defer></script>

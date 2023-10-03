@@ -117,6 +117,32 @@
             </div>
 
         </div>
+        <button id="toggle-sort-container">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sort-descending" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M4 6l9 0"></path>
+                <path d="M4 12l7 0"></path>
+                <path d="M4 18l7 0"></path>
+                <path d="M15 15l3 3l3 -3"></path>
+                <path d="M18 6l0 12"></path>
+            </svg>
+        </button>
+        
+        <div class="sort-container">
+            <!-- <div class="sort-label">Sort by:</div> -->
+            <div class="sort-options">
+                <div class="sort-option" data-sort="price-asc">Sort By Price ↑</div>
+                <div class="sort-option" data-sort="price-desc">Sort By Price ↓</div>
+                <div class="sort-option" data-sort="popularity-asc">Sort By Popularity ↑</div>
+                <div class="sort-option" data-sort="popularity-desc">Sort By Popularity ↓</div>
+                <div class="sort-option" data-sort="arrival-asc">Sort By Arrival ↑</div>
+                <div class="sort-option" data-sort="arrival-desc">Sort By Arrival ↓</div>
+                <!-- Add more sorting options here -->
+            </div>
+        </div>
+
+        <!-- new filter  -->
+        
         <div id="containerProduct">
             <!-- JS rendered code -->
             <div id="containerD">
@@ -245,9 +271,6 @@
                             
             </div>
         </div>
-
-
-
 
 
         <script>
@@ -400,6 +423,16 @@
             });
 
         </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const toggleButton = document.getElementById("toggle-sort-container");
+                    const sortContainer = document.querySelector(".sort-container");
+                
+                    toggleButton.addEventListener("click", function() {
+                        sortContainer.classList.toggle("open");
+                    });
+                });
+            </script>
 
     </body>
 

@@ -59,7 +59,7 @@ $searchOn = ''
                 ?>
             </div>
         </div>
-    </div>
+  </div>
 
 </body>
 
