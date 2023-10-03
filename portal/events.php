@@ -93,6 +93,8 @@ Dependencies:
     <style>
         <?php include "./css/header.css" ?>
     </style>
+    <link rel="stylesheet" href="./css/bottomNav.css">
+<script src="./js/sideBar.js" defer></script>
     <script src="./js/sliderAccordian.js" defer></script>
     <title>CareforBharat</title>
 </head>
@@ -236,6 +238,7 @@ Dependencies:
         </div>
 
     </div>
+    <?php include "./components/bottomNav.php";?>
     <script src="./js/opportunity.js"></script>
     <script src="./js/event.js"></script>
     <script src="./js/sideBar.js"></script>

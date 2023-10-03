@@ -35,6 +35,8 @@ $searchOn = ''
   <style>
     <?php include "./css/header.css" ?><?php include "./css/search.css" ?><?php include "./css/servicecard.css" ?>
   </style>
+  <link rel="stylesheet" href="./css/bottomNav.css">
+<script src="./js/sideBar.js" defer></script>
   <script src="./js/sliderAccordian.js" defer></script>
   <script src="./js/sideBar.js" defer></script>
   <script src="./js/servicecard1.js" defer></script>
@@ -439,6 +441,8 @@ $searchOn = ''
   </div>
   <br><br>
 
+
+  <?php include "./components/bottomNav.php";?>
   <!-- ALL THE SCRIPTS START -->
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>

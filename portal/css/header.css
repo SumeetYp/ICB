@@ -1,3 +1,19 @@
+/* Common Properties */
+body{
+    background-color: #ECECEC;
+}
+
+a, a:hover, a:active, a:visited, a:focus{
+    text-decoration: none;
+    color:inherit;
+}
+
+a:hover{
+    cursor: hand;
+}
+
+/* Header */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 .displaySideBar {
@@ -14,7 +30,7 @@
 
 nav {
     height: 5vh;
-    padding: 20px 0;
+    padding: 20px 10px;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -41,6 +57,7 @@ nav .userName {
     line-height: 18px;
     margin: 0 5px;
     overflow: visible;
+    padding:0px 10px;
 }
 
 nav .profilePicture {
@@ -107,11 +124,15 @@ nav .profilePicture img:first-of-type {
 
 #volunetter{max-height: 375px;}
 
-.sideItems .panel{
+.sideItems .panel, .sideItems .panel-2{
     /* display: none; */
     max-height: 0px;
     transition: max-height 0.3s ease-out;
     overflow: hidden;
+}
+
+.sideItems .panel-2{
+    max-height:fit-content ;
 }
 
 .sideItems ul {

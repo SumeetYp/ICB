@@ -48,6 +48,8 @@
     <style>
         <?php include "./css/header.css" ?>
     </style>
+    <link rel="stylesheet" href="./css/bottomNav.css">
+<script src="./js/sideBar.js" defer></script>
     <script src="./js/sliderAccordian.js" defer></script>
     <?php 
         // include "./database/followProfile.php";
@@ -164,6 +166,6 @@
         
     </section>
             
-
+    <?php include "./components/bottomNav.php";?>
 </body>
 </html>

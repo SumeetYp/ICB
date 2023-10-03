@@ -106,6 +106,10 @@ body{
     display: none;
 }
 
+.my_downline_table__header {
+    padding-left: 6vw;
+}
+
 @media (min-width:1024px){
     /* .mydownline_value_col{
         width: auto;
