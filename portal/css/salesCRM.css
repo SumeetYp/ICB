@@ -288,6 +288,12 @@ button:hover{
     text-align: left;
 }
 
+#edit_image{
+    width: 100%;
+    height: auto;
+}
+
+
 label{
     width: 30vw;
     /* border: solid black 1px; */
@@ -316,7 +322,7 @@ label{
     padding:20px 0 20px 20px;
 }
 
-.order_edit_form div h4{
+.order_edit_form div h2{
     text-align: center;
 }
 
@@ -326,7 +332,7 @@ label{
 }
 
 .edit_order_area__image{
-    width:40%;
+    width:20%;
 }
 
 .edit_order_area__details{
@@ -338,6 +344,23 @@ label{
     margin: 10px auto;
     /* border: solid black 1px; */
     text-align: left !important;
+}
+
+.edit_order_area__details__product_id{
+    display: flex;
+    font-size: clamp(1.2rem, 1.2vw, 2rem);
+}
+
+.edit_order_area__details__product_id span{
+    font-weight: 600;
+}
+
+.edit_order_area__details__product_id__details{
+    width: fit-content;
+}
+
+.edit_order_area__details__product_id__details{
+    width: 60%;
 }
 
 .input_details, .input_details_50, .data_details, .data_details_50{

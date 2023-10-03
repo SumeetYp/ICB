@@ -152,6 +152,7 @@ xmlhttp.onreadystatechange = function() {
         let data = JSON.parse(this.responseText);  
 
         // Product ID
+        document.getElementById("edit_image").src="./images/pexels-alex-andrews-821651.jpg";
         document.getElementById("ordId").value=data["order_id"];
         document.getElementById("ordId").style.display="none";
         document.getElementById("edit_order_area__details__product_id__details").innerText = data["id"];
@@ -188,6 +189,8 @@ xmlhttp.onreadystatechange = function() {
         // Product ID
         // document.getElementById("ordId").value=data["order_id"];
         // document.getElementById("ordId").style.display="none";
+        console.log(document.getElementById("details_image"));
+        document.getElementById("details_image").src="./images/pexels-alex-andrews-821651.jpg";
         document.getElementById("show_order_area__details__product_id__details").innerText = data["id"];
         // Product Name
         document.getElementById("show_order_area__details__product_name").innerText = data["product_name"];
@@ -267,7 +270,7 @@ xmlhttp.onreadystatechange = function() {
         });
 
       
-// From here
+        // From here
         // document.getElementById(`btn_${data[key].order_id}`).addEventListener('click', ()=>{
           // document.getElementById(`details_id_${data[key].order_id}`).classList.toggle('detail_display');
         Object.keys(data).forEach(key => {

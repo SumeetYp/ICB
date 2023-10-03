@@ -12,6 +12,7 @@
   $searchOn = '';
 
   $productList = '';
+  $_SESSION['message'] = "Current";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,13 +58,13 @@
 
           <form method="post" action="database/updateDetailsProspectusOrder.php" id="order_edit_form" class="order_edit_form">
             <div class="edit_order_details">
-              <h4>Edit Order Details</h4>
-              <div class="edit_order_area"><
+              <h2>Edit Order Details</h2>
+              <div class="edit_order_area">
                 <div class="edit_order_area__image">
-                  <img src="" alt="Product Image"/>
+                  <img src="" alt="Product Image" id="edit_image"/>
                 </div>
                 <div class="edit_order_area__details">
-                <div id="edit_order_area__details__product_id">Product Id:<div id="edit_order_area__details__product_id__details"></div></div>
+                <div id="edit_order_area__details__product_id"><span>Product Id:</span><div id="edit_order_area__details__product_id__details"></div></div>
                 <div id="edit_order_area__details__product_name">Temp ProductNmae</div>
                 <div id="edit_order_area__details__product_qty"><input type="number" id="edit_order_area__details__product_qty__product_qty" for="quantity" name="quantity" max="10" min="1" value="1" placeholder="Quantity" class="input_details"></div>
                 </div>
@@ -97,7 +98,7 @@
               <h4>Order Details</h4>
               <div class="edit_order_area"><
                 <div class="edit_order_area__image">
-                  <img src="" alt="Product Image"/>
+                  <img src="" alt="Product Image" id="details_image"/>
                 </div>
                 <div class="edit_order_area__details">
                 <div id="show_order_area__details__product_id">Product Id:<div id="show_order_area__details__product_id__details"></div></div>
