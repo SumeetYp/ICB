@@ -13,7 +13,7 @@
     //     $fileName = 
     // }
 
-    function uploadPost($file, $userEmail, $caption){
+    function uploadPost($file, $userEmail, $caption,$username, $email, $dateposted){
         include '../config.php';
 
         $fileName = $_FILES['file']['name'];    // File name
@@ -40,19 +40,24 @@
                     if(move_uploaded_file($_FILES['file']['tmp_name'],$fileDest)) {  
                         // echo "File uploaded successfully!";  
                         // $updateFilePath = "UPDATE publicstory SET postfile='$fileDestinationDb' WHERE userEmail='$userEmail' and caption='$caption';";
+                        $sql = "INSERT INTO publicstory (username, userEmail, caption, dateposted) VALUES ('$username', '$email', '$caption', '$dateposted')";
+                        $resultStory = mysqli_query($mysqli, $sql) or die ("SQL Failed");
                         $updateFilePath = "UPDATE publicstory SET postfile='$fileDestinationDb' WHERE userEmail='$userEmail' and caption='$caption';";
                         $result = mysqli_query($mysqli, $updateFilePath);
-                        header("Location: ../home.php");
+                        // header("Location: ../home.php");
+                        echo "image added successfullly";
 
                     } else{  
-                        // echo "Sorry, file not uploaded, please try again!";  
+                        $_SESSION['message'] = "Sorry, file not uploaded, please try again!";  
                         header("Location: ../error.php");
                     }  
                 }else{
-                    echo 'Your files size is too big!';
+                    $_SESSION['message'] = 'Your files size is too big!';
+                    header("Location: ../error.php");
                 }
             }else{
-                echo "Error in uploading file";
+                $_SESSION['message'] =  "Error in uploading file";
+                header("Location: ../error.php");
             }
         }
         else{
@@ -60,8 +65,8 @@
         }
     }
 
-    $sql = "INSERT INTO publicstory (username, userEmail, caption, dateposted) VALUES ('$username', '$email', '$caption', '$dateposted')";
-    $resultStory = mysqli_query($mysqli, $sql) or die ("SQL Failed");
+    // $sql = "INSERT INTO publicstory (username, userEmail, caption, dateposted) VALUES ('$username', '$email', '$caption', '$dateposted')";
+    // $resultStory = mysqli_query($mysqli, $sql) or die ("SQL Failed");
     
 
     if($_FILES['file']['error']!=4){
@@ -73,7 +78,7 @@
         // if($statusPost!=NULL){
         //     echo 'You posted the same post!';
         // }else{
-            uploadPost($file, $email, $caption);
+        uploadPost($file, $email, $caption, $username, $email, $dateposted);
         // }
     }
 

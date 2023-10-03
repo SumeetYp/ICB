@@ -23,6 +23,8 @@
     <style>
         <?php include "./css/header.css" ?>
     </style>
+    <link rel="stylesheet" href="./css/bottomNav.css">
+<script src="./js/sideBar.js" defer></script>
     <script src="./js/sliderAccordian.js" defer></script>
   </head>
   <body>
@@ -60,5 +62,6 @@
         </div>
       </a>
     </div>
+    <?php include "./components/bottomNav.php";?>
   </body>
 </html>

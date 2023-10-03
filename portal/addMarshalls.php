@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/addMarshalls.css">
     <link rel="stylesheet" href="./css/utils.css">
+    <link rel="stylesheet" href="./css/bottomNav.css">
     <style>
         <?php include "./css/header.css" ?>
     </style>
@@ -70,8 +71,10 @@
             </a> -->
         </div>
     </div>
-    <script src="./js/sideBar.js"></script>
-    <script src="./js/sliderAccordian.js" defer></script>
 
+    <?php include "./components/bottomNav.php";?>
+    <script src="./js/sideBar.js" defer></script>
+    <script src="./js/sliderAccordian.js" defer></script>
 </body>
+
 </html>

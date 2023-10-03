@@ -22,6 +22,8 @@
     <style>
         <?php include "./css/header.css" ?>
     </style>
+    <link rel="stylesheet" href="./css/bottomNav.css">
+<script src="./js/sideBar.js" defer></script>
     <script src="./js/sliderAccordian.js" defer></script>
     <title>Coming Soon</title>
 </head>
@@ -36,6 +38,7 @@
         <div class="neonText1">Coming</div>
         <div class="neonText2">Soon</div>
     </div>
+    <?php include "./components/bottomNav.php";?>
 
     <script src="./js/sideBar.js"></script>
 </body>

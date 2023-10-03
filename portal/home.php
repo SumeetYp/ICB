@@ -53,7 +53,7 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <?php
+    <!-- <?php
     $checkSrc = NULL;
     $borderColor = NULL;
     $icbName = "<h2>Care For Bharat</h2>";
@@ -210,8 +210,9 @@
                 </div>
             </div>
         </div>";
-?>
+?> -->
 
+<?php include"./header.php";?>
     <div class="container">
         <!-- <div class="search-container">
             <table class="tableSearch">

@@ -8,9 +8,11 @@
   if (!isset($_SESSION['type'])){
     header("Location: ../index.html");
   }
+
   $searchOn = '';
 
   $productList = '';
+  $_SESSION['message'] = "Current";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,11 +29,19 @@
         <?php include "./css/header.css" ?>
         <?php include "./css/search.css" ?>
         <?php include "./css/salesCRM.css" ?>  
+        <?php include "./css/notification.css" ?>
     </style>
+    <link rel="stylesheet" href="./css/bottomNav.css">
+<!-- <script src="./js/sideBar.js" defer></script> -->
+    <?php 
+      echo "<script>localStorage.setItem('id', ".$_SESSION['id'].");</script>";
+    ?>
     <script src="./js/sliderAccordian.js" defer></script>
     <script src="./js/sideBar.js" defer></script>
     <script src="./js/salesCRM.js" defer></script>
     <script src="./js/searchBar.js" defer></script>
+    <script src="./js/notification.js" defer></script>
+    
 </head>
   <body>
     <!-- Navigation Bar -->
@@ -48,13 +58,13 @@
 
           <form method="post" action="database/updateDetailsProspectusOrder.php" id="order_edit_form" class="order_edit_form">
             <div class="edit_order_details">
-              <h4>Edit Order Details</h4>
-              <div class="edit_order_area"><
+              <h2>Edit Order Details</h2>
+              <div class="edit_order_area">
                 <div class="edit_order_area__image">
-                  <img src="" alt="Product Image"/>
+                  <img src="" alt="Product Image" id="edit_image"/>
                 </div>
                 <div class="edit_order_area__details">
-                <div id="edit_order_area__details__product_id">Product Id:<div id="edit_order_area__details__product_id__details"></div></div>
+                <div id="edit_order_area__details__product_id"><span>Product Id:</span><div id="edit_order_area__details__product_id__details"></div></div>
                 <div id="edit_order_area__details__product_name">Temp ProductNmae</div>
                 <div id="edit_order_area__details__product_qty"><input type="number" id="edit_order_area__details__product_qty__product_qty" for="quantity" name="quantity" max="10" min="1" value="1" placeholder="Quantity" class="input_details"></div>
                 </div>
@@ -88,7 +98,7 @@
               <h4>Order Details</h4>
               <div class="edit_order_area"><
                 <div class="edit_order_area__image">
-                  <img src="" alt="Product Image"/>
+                  <img src="" alt="Product Image" id="details_image"/>
                 </div>
                 <div class="edit_order_area__details">
                 <div id="show_order_area__details__product_id">Product Id:<div id="show_order_area__details__product_id__details"></div></div>
@@ -115,8 +125,8 @@
 
         <!-- Add new details -->
 <div class="add-details">
-  <h2 class="add-details__title">Add New Customer</h2>
-  <img src="https://cdn-icons-png.flaticon.com/128/463/463612.png" alt="close" class="close_add-details"/>
+  <h2 class="add-details__title">New Entry</h2>
+  <img src="https://cdn-icons-png.flaticon.com/128/463/463612.png" alt="close" id="close_add-details" class="close_add-details"/>
   <div id="content"></div>
           <form action="database/addCustomer.php" method="post">
           <label for="product_id" class="form_label"><div>Product ID:</div> 
@@ -207,6 +217,9 @@
             <form action="post" action="#"><input type="submit" class="form_btn" value="Pay" name="total_pay"></form>
       </div>
     <h1 id="response"></h1>
+
+    <?php include "./components/notification.php";?>
+    <?php include "./components/bottomNav.php";?>
   </body>
   <script defer>
   var xmlhttp = new XMLHttpRequest();
