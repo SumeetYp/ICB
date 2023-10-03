@@ -29,11 +29,11 @@ $searchOn = ''
   <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
   <!-- <link rel="stylesheet" href="./css/servicecard.css" /> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.9/dist/css/splide.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.9/dist/js/splide.min.js"></script>
+
 
   <style>
-    <?php include "./css/header.css" ?>
-    <?php include "./css/search.css" ?>
-    <?php include "./css/servicecard.css" ?>
+    <?php include "./css/header.css" ?><?php include "./css/search.css" ?><?php include "./css/servicecard.css" ?>
   </style>
   <script src="./js/sliderAccordian.js" defer></script>
   <script src="./js/sideBar.js" defer></script>
@@ -75,6 +75,7 @@ $searchOn = ''
       </div>
     </div>
     <div class="welcome-text">Welcome to ICB</div><br><span class="uid-text">UID: 16426790</span>
+    <hr class="stright-line">
 
 
 
@@ -149,7 +150,8 @@ $searchOn = ''
     </div>
   </div>
 
-  <div class="main-container1 slide-container"><b>My Product</b>
+  <div class="main-container1-a">My Products</div>
+  <div class="main-container1 slide-container">
     <div class="swipper-button-group">
 
       <div class="swiper-button-next"></div>
@@ -157,94 +159,111 @@ $searchOn = ''
     </div>
     <div class="slide-content">
       <div class="swiper-wrapper">
-        <div class="product-component swiper-slide">
-          <div class="card-image">
-            <img src="images/undefined6.png" alt="" class="card-img" />
-          </div>
-
-          <div class="card-content">
-            <h2 class="name">SMART WATCH</h2>
-            <button class="button" id="button1"><b>PITCH PRODUCT</b></button>
-          </div>
-        </div>
-        <div class="product-component swiper-slide">
-          <div class="card-image">
-            <img src="images/undefined6.png" alt="" class="card-img" />
-          </div>
-
-          <div class="card-content">
-            <h2 class="name">SMART WATCH</h2>
-            <button class="button" id="button1"><b>PITCH PRODUCT</b></button>
+        <div class="product-outer swiper-slide swiper-slide">
+          <div class="product-component swiper-slide">
+            <div class="card-image">
+              <img src="images/undefined6.png" alt="" class="card-img" />
+            </div>
+            <div class="card-content">
+              <h2 class="name">SMART WATCH</h2>
+              <button class="button" id="button1"><b>PITCH PRODUCT</b></button>
+            </div>
           </div>
         </div>
-        <div class="product-component swiper-slide">
-          <div class="card-image">
-            <img src="images/undefined6.png" alt="" class="card-img" />
-          </div>
+        <div class="product-outer swiper-slide">
+          <div class="product-component swiper-slide">
+            <div class="card-image">
+              <img src="images/undefined6.png" alt="" class="card-img" />
+            </div>
 
-          <div class="card-content">
-            <h2 class="name">SMART WATCH</h2>
-            <button class="button" id="button1"><b>PITCH PRODUCT</b></button>
+            <div class="card-content">
+              <h2 class="name">SMART WATCH</h2>
+              <button class="button" id="button1"><b>PITCH PRODUCT</b></button>
+            </div>
           </div>
         </div>
-        <div class="product-component swiper-slide">
-          <div class="card-image">
-            <img src="images/undefined6.png" alt="" class="card-img" />
-          </div>
+        <div class="product-outer swiper-slide">
+          <div class="product-component swiper-slide">
+            <div class="card-image">
+              <img src="images/undefined6.png" alt="" class="card-img" />
+            </div>
 
-          <div class="card-content">
-            <h2 class="name">SMART WATCH</h2>
-            <button class="button" id="button1"><b>PITCH PRODUCT</b></button>
+            <div class="card-content">
+              <h2 class="name">SMART WATCH</h2>
+              <button class="button" id="button1"><b>PITCH PRODUCT</b></button>
+            </div>
           </div>
         </div>
-        <div class="product-component swiper-slide">
-          <div class="card-image">
-            <img src="images/undefined6.png" alt="" class="card-img" />
-          </div>
+        <div class="product-outer swiper-slide">
+          <div class="product-component swiper-slide">
+            <div class="card-image">
+              <img src="images/undefined6.png" alt="" class="card-img" />
+            </div>
 
-          <div class="card-content">
-            <h2 class="name">SMART WATCH</h2>
-            <button class="button" id="button1"><b>PITCH PRODUCT</b></button>
+            <div class="card-content">
+              <h2 class="name">SMART WATCH</h2>
+              <button class="button" id="button1"><b>PITCH PRODUCT</b></button>
+            </div>
           </div>
         </div>
-        <div class="product-component swiper-slide">
-          <div class="card-image">
-            <img src="images/undefined6.png" alt="" class="card-img" />
-          </div>
+        <div class="product-outer swiper-slide">
+          <div class="product-component swiper-slide">
+            <div class="card-image">
+              <img src="images/undefined6.png" alt="" class="card-img" />
+            </div>
 
-          <div class="card-content">
-            <h2 class="name">SMART WATCH</h2>
-            <button class="button" id="button1"><b>PITCH PRODUCT</b></button>
+            <div class="card-content">
+              <h2 class="name">SMART WATCH</h2>
+              <button class="button" id="button1"><b>PITCH PRODUCT</b></button>
+            </div>
           </div>
         </div>
-        <div class="product-component swiper-slide">
-          <div class="card-image">
-            <img src="images/undefined6.png" alt="" class="card-img" />
-          </div>
+        <div class="product-outer swiper-slide">
+          <div class="product-component swiper-slide">
+            <div class="card-image">
+              <img src="images/undefined6.png" alt="" class="card-img" />
+            </div>
 
-          <div class="card-content">
-            <h2 class="name">SMART WATCH</h2>
-            <button class="button" id="button1"><b>PITCH PRODUCT</b></button>
+            <div class="card-content">
+              <h2 class="name">SMART WATCH</h2>
+              <button class="button" id="button1"><b>PITCH PRODUCT</b></button>
+            </div>
           </div>
         </div>
-        <div class="product-component swiper-slide">
-          <div class="card-image">
-            <img src="images/undefined6.png" alt="" class="card-img" />
-          </div>
+        <div class="product-outer swiper-slide">
+          <div class="product-component swiper-slide">
+            <div class="card-image">
+              <img src="images/undefined6.png" alt="" class="card-img" />
+            </div>
 
-          <div class="card-content">
-            <h2 class="name">SMART WATCH</h2>
-            <button class="button" id="button1"><b>PITCH PRODUCT</b></button>
+            <div class="card-content">
+              <h2 class="name">SMART WATCH</h2>
+              <button class="button" id="button1"><b>PITCH PRODUCT</b></button>
+            </div>
           </div>
         </div>
-        <div class="product-component swiper-slide">
-          <div class="card-image">
-            <img src="images/undefined6.png" alt="" class="card-img" />
-          </div>
+        <div class="product-outer swiper-slide">
+          <div class="product-component swiper-slide">
+            <div class="card-image">
+              <img src="images/undefined6.png" alt="" class="card-img" />
+            </div>
 
-          <div class="card-content">
-            <h2 class="name">SMART WATCH</h2>
-            <button class="button" id="button1"><b>PITCH PRODUCT</b></button>
+            <div class="card-content">
+              <h2 class="name">SMART WATCH</h2>
+              <button class="button" id="button1"><b>PITCH PRODUCT</b></button>
+            </div>
+          </div>
+        </div>
+        <div class="product-outer swiper-slide">
+          <div class="product-component swiper-slide">
+            <div class="card-image">
+              <img src="images/undefined6.png" alt="" class="card-img" />
+            </div>
+
+            <div class="card-content">
+              <h2 class="name">SMART WATCH</h2>
+              <button class="button" id="button1"><b>PITCH PRODUCT</b></button>
+            </div>
           </div>
         </div>
       </div>
@@ -374,7 +393,7 @@ $searchOn = ''
   </div>
 
   <!-- testimonial start HTML Structure -->
-  <div class="main-container3"><b>Success Story</b>
+  <div class="main-container3"><b class="main-container3-a" >Success Story</b>
     <div class="Testimonial">
       <div class="splide testimonial-splide-instance">
         <div class="testimonial splide__track">
@@ -391,7 +410,7 @@ $searchOn = ''
                       consectetur adipiscing elit.The testimonial text goes here. Lorem
                       ipsum dolor sit amet.
                     </p>
-                    <div class="testimonial-card:after"><b class ="Profit-text">Profit: 1 Lakh</b></div>
+                    <div class="testimonial-card:after"><b class="Profit-text">Profit: 1 Lakh</b></div>
                   </div>
                 </div>
               </div>
@@ -405,9 +424,9 @@ $searchOn = ''
                     <h3 class="testimonial-name">Prashant Singh</h3>
                     <p class="testimonial-description">
                       The testimonial text goes here. Lorem ipsum dolor sit amet,
-                      consectetur adipiscing elit.The testimonial text goes here. 
+                      consectetur adipiscing elit.The testimonial text goes here.
                     </p>
-                    <div class="testimonial-card:after"><b class ="Profit-text">Profit: 1 Lakh</b></div>
+                    <div class="testimonial-card:after"><b class="Profit-text2">Profit: 1 Lakh</b></div>
                   </div>
                 </div>
               </div>
@@ -468,6 +487,7 @@ $searchOn = ''
       splide.mount();
     });
   </script>
+  
 </body>
 
 </html>
